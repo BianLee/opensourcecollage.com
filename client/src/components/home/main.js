@@ -21,9 +21,33 @@ export default class HomeMainComponent extends React.Component {
             category: [],  
             disabled: false,
             alert: false, 
-            posts: [] 
+            posts: [],
+            showMessage: false,
+            message: "View all events"
         }
     }
+
+
+    _showMessage = (bool, e) => {
+        this.setState({
+          showMessage: bool,
+        
+        });
+        if (bool) {
+            this.setState({
+                message: "Collapse all events" 
+              
+              });
+        }
+        else {
+            this.setState({
+                message: "View all events" 
+              
+              });
+        }
+      }
+
+
 
     componentDidMount = () => {
         this.getPost() 
@@ -91,6 +115,32 @@ export default class HomeMainComponent extends React.Component {
     }
     handleCategoryCount = (e) => {
         console.log(this.state.category); 
+        if (this.state.categoryCount == 2) {
+           this.setState({alert: false}) 
+        }
+        if (e.target.checked) {
+            if (this.state.categoryCount > 1) {
+                e.preventDefault(); 
+                this.setState({alert: true}) 
+            }
+            else {
+                this.setState({categoryCount: this.state.categoryCount + 1})
+                this.setState({ category: [...this.state.category, e.target.id] }, function () {
+                    console.log(this.state.category);
+                });
+            }
+        }
+        else {
+            this.setState({categoryCount: this.state.categoryCount - 1})
+            this.setState({category: this.state.category.filter(item => item !== e.target.id)}, function() {
+                console.log(this.state.category); 
+            })
+
+        }
+
+
+        {/*
+        console.log(this.state.category); 
         if (this.state.categoryCount == 3) {
            this.setState({alert: false}) 
         }
@@ -113,6 +163,7 @@ export default class HomeMainComponent extends React.Component {
             })
 
         }
+        */}
     }
 
 
@@ -147,105 +198,6 @@ export default class HomeMainComponent extends React.Component {
     render() {
         return (
             <>
-           {/* 
-            <section>
-            <h1>Promote your virtual event!</h1>
-            <form>
-            <label htmlFor="name">Title</label>
-            <br></br>
-            <div>
-            <textarea id="first" spellCheck="false" type="text" name="content" defaultValue={""} placeholder="Cybersecurity Summer Camp" onChange={this.handleTitleLimit}/> 
-            {this.state.titleLimit >= 0 ? (
-                 <label>{this.state.titleLimit}</label>
-            ) : (
-                <label>{this.state.titleLimit}</label>
-            )}
-            </div>
-
-            <br></br><br></br>
-                <label htmlFor="name">Date: &nbsp;&nbsp;</label>
-                <div><DatePicker
-                selected={this.state.date}
-                onChange={this.onChangeDate}
-                />
-                </div>
-           
-            <br/><br/><label htmlFor="name">Start Time & End Time (follow given format)</label>
-            <br></br><textarea id="fourth" type="text"  spellCheck="false" name="content" defaultValue={""} placeholder="07:00 PM" onChange={this.handleStartTime}/> 
-            <textarea id="fifth" type="text"  spellCheck="false" name="content" defaultValue={""} placeholder="10:00 PM" onChange={this.handleEndTime}/> 
-            <br></br><br></br>
-            <label >Time Zone:{'\u00A0'}</label>
-            <input name="est" id="est" type="checkbox" onChange={this.handleEst} autoFocus checked={! this.state.chkbox}/>
-            <label htmlFor="est">EST</label>
-            <input name="pst" id="pst" type="checkbox" onChange={this.handlePst} autoFocus checked={this.state.chkbox}/>
-            <label htmlFor="pst" >PST</label>
-            
-
-            <br/><br/><label htmlFor="name">Zoom link & password (leave it blank if there's no password): </label>
-          
-            <br></br><textarea id="second" type="text"  spellCheck="false" defaultValue={""} placeholder="https://us04web.zoom.us/j/0123456789" onChange={this.handleZoomLink}/> 
-            
-            <textarea id="third" type="text" spellCheck="false" name="content" defaultValue={""} placeholder="passw0rd" onChange={this.handleZoomPassword} /> 
-            <br/><br/><label htmlFor="content">Description (include event topic / theme & contact info): </label> 
-            <br></br>
-            <div>
-                <textarea type="text" spellCheck="false" id="content" name="content" defaultValue={""} onChange={this.handleDescriptionLimit} 
-                placeholder="Summer camp for all students interested in learning the basics of cybersecurity from OS hardening, networking, cryptography, and ethical hacking!
-                Guest speaker from MIT, Harvard University, and the NSA, and a fun game of jeopardy CTF! abcdefg.com for more info, and abcdefg@gmail.com for contact."/>
-
-                {this.state.descriptionLimit >= 0 ? (
-                 <label>{this.state.descriptionLimit}</label>
-            ) : (
-                <label>{this.state.descriptionLimit}</label>
-            )}
-
-
-                
-            </div>
-            <br></br><br></br>
-            <input type="checkbox" id="science" name="science" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="science">Science</label>
-            <input  type="checkbox" disabled={this.state.disabled} id="technology" name="technology" onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="technology">Technology</label>
-            <input  type="checkbox" disabled={this.state.disabled} id="engineering" name="engineering" onClick={this.handleCategoryCount}autoFocus/>
-            <label htmlFor="engineering">Engineering</label>
-            <input type="checkbox" disabled={this.state.disabled} id="math" name="math" onClick={this.handleCategoryCount}autoFocus/>
-            <label htmlFor="math">Math</label>
-            <input type="checkbox" disabled={this.state.disabled}  id="humanities" name="humanities" onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="humanities">Humanities</label>
-            <input type="checkbox"  disabled={this.state.disabled} id="other" name="other" onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="other">Other</label>
-           <br></br><br></br> { this.state.alert == true ? (
-              <label htmlFor="name"><b>You can only select up to three categories</b></label>
-            ) : (
-                <label htmlFor="name"></label>
-            )}
-            <br /><br /><button className="submitButton" onClick={this.onSubmit}>Post</button>
-
-            </form>
-            
-              
-                </section> 
-
-            <div className="hello">
-                <p>Hello</p>
-                {this.state.posts.slice(0).reverse().map(post => {
-                    return (
-                        <>
-                        <p key={post.id}><b>{post.title}</b>: {post.description}</p>
-                        </>
-                    )
-                })}
-                <br></br>
-                
-                {this.state.posts.slice(0).reverse().map(post => {
-                   return post.category.includes("science") ?
-                        <p key={post.id}>science</p>
-                    :
-                    <p>Hello</p>
-                })}
-            </div> 
-              */}
 
       <div>
         <meta charSet="UTF-8" />
@@ -256,7 +208,7 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4"><a href="/">Caga</a></h1>
+            <h1 className="dod-heading-1 dod-stack-4"><a href="/">🌿Caga</a></h1>
             <p className="dod-heading-3 dod-stack-16">A platform for higher learning</p>
           </div>
           <a href="/submit" className="dod-button">Login</a>
@@ -270,17 +222,38 @@ export default class HomeMainComponent extends React.Component {
                 })}
                 */}
         <main data-grid-area="main">
-            <div className="dod-media-grid dod-stack-15" >
-            {this.state.posts.slice(0).reverse().map(post => {
-                    return (
-                        <>
-                      <div href="/dogs/frieda/" className="dod-card"> 
-                             <p className="dod-heading-3 dod-stack-16" key={post.id}>{post.title}</p>
-                         </div>
-                    </>
-                    )
-                })}
-            </div>
+        <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2>
+           
+            { this.state.showMessage ? (
+                <>
+                    <div className="dod-media-grid dod-stack-15" >
+                    {this.state.posts.slice(0).reverse().map(post => {
+                            return(
+                                <>
+                            <div href="/dogs/frieda/" className="dod-card" id={`${post.category}`}> 
+                                    <p className="dod-heading-3 dod-stack-16" key={post.id}>{post.title}</p>
+                            </div>
+                            </>
+                            )
+                    })}
+                    </div>
+                </> 
+            ) : (
+                <>
+                    <div className="dod-media-grid dod-stack-15" >
+                    {this.state.posts.slice(0, 8).reverse().map(post => {
+                            return(
+                                <>
+                            <div href="/dogs/frieda/" className="dod-card" id={`${post.category}`}> 
+                                    <p className="dod-heading-3 dod-stack-16" key={post.id}>{post.title}</p>
+                            </div>
+                            </>
+                            )
+                    })}
+                    </div>
+                </>
+            )}
+            <br/><a onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
         </main>
         <main data-grid-area="main" style={{marginTop: "15px"}}>
         
@@ -292,7 +265,7 @@ export default class HomeMainComponent extends React.Component {
             </p>
             <form name="Submit a Dog" action="/success" className="dod-flow" method="post"><input type="hidden" name="form-name" defaultValue="Submit a Dog" />
               <div>
-                <label htmlFor="name" className="dod-label  dod-stack-4" >Event Title (40 characters max)</label>
+                <label htmlFor="name" className="dod-label dod-stack-4" >Event Title (40 characters max)</label>
                 
                 <input type="text" maxLength={40} name="name" placeholder="" className="dod-input" onChange={this.handleTitleLimit} required />  
               </div>
@@ -313,12 +286,6 @@ export default class HomeMainComponent extends React.Component {
                 <input type="text" maxLength={128} name="url" placeholder="https://us00web.zoom.us/s/0123456789" onChange={this.handleZoomLink} className="dod-input" required />
               </div>
               <div>
-              <input name="est" id="est" type="checkbox" onChange={this.handleEst} autoFocus checked={! this.state.chkbox}/>
-            <label htmlFor="est">EST</label>
-            {'\u00A0'}{'\u00A0'}
-            <input name="pst" id="pst" type="checkbox" onChange={this.handlePst} autoFocus checked={this.state.chkbox}/>
-            <label htmlFor="pst" >PST</label>
-            <br/><br/>
                 <label htmlFor="bio" className="dod-label  dod-stack-4">Event Description (500 characters max)</label>
                 <textarea maxLength={500} name="bio" placeholder="Briefly describe the event!" className="dod-input dod-stack-4" onChange={this.handleDescriptionLimit}  defaultValue={""} />
             {this.state.descriptionLimit > 0 ? (
@@ -327,21 +294,27 @@ export default class HomeMainComponent extends React.Component {
                 <label>Characters left: {this.state.descriptionLimit} - No more characters allowed!</label>
             )}
               </div>
-              <label htmlFor="bio" className="dod-label  dod-stack-4">Event Categorization (3 max)</label>
-              <input type="checkbox" id="science" name="science" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="science">Science</label>{'\u00A0'}{'\u00A0'}
-            <input  type="checkbox" disabled={this.state.disabled} id="technology" name="technology" onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="technology">Technology</label>{'\u00A0'}{'\u00A0'}
-            <input  type="checkbox" disabled={this.state.disabled} id="engineering" name="engineering" onClick={this.handleCategoryCount}autoFocus/>
-            <label htmlFor="engineering">Engineering</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" disabled={this.state.disabled} id="math" name="math" onClick={this.handleCategoryCount}autoFocus/>
-            <label htmlFor="math">Math</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" disabled={this.state.disabled}  id="humanities" name="humanities" onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="humanities">Humanities</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox"  disabled={this.state.disabled} id="other" name="other" onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="other">Other</label>
+              <label htmlFor="bio" className="dod-label  dod-stack-4">Event Categorization</label>
+              <input type="checkbox" disabled={this.state.disabled} id="mathButton" name="mathButton" onClick={this.handleCategoryCount}autoFocus/>
+            <label htmlFor="mathButton">Math</label>{'\u00A0'}{'\u00A0'}
+             <input type="checkbox" id="physicsButton" name="physicsButton" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="physicsButton">Physics</label>{'\u00A0'}{'\u00A0'}
+            <input type="checkbox" id="chemistryButton" name="chemistryButton" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="chemistryButton">Chemistry</label>{'\u00A0'}{'\u00A0'}
+            <input type="checkbox" id="biologyButton" name="biologyButton" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="biologyButton">Biology</label>{'\u00A0'}{'\u00A0'}
+            <input  type="checkbox" disabled={this.state.disabled} id="computerscienceButton" name="computerscienceButton" onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="computerscienceButton">Computer Science</label>{'\u00A0'}{'\u00A0'}
+            <input  type="checkbox" disabled={this.state.disabled} id="engineeringButton" name="engineeringButton" onClick={this.handleCategoryCount}autoFocus/>
+            <label htmlFor="engineeringButton">Engineering</label>{'\u00A0'}{'\u00A0'}
+            <input type="checkbox" disabled={this.state.disabled}  id="humanitiesButton" name="humanitiesButton" onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="humanitiesButton">Humanities</label>{'\u00A0'}{'\u00A0'}
+            <input type="checkbox" disabled={this.state.disabled}  id="musicsButton" name="musicsButton" onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="musicsButton">Music</label>{'\u00A0'}{'\u00A0'}
+            <input type="checkbox"  disabled={this.state.disabled} id="otherButton" name="otherButton" onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="otherButton">Other</label>
            { this.state.alert == true ? (
-              <label htmlFor="name"><b><br></br>You can only select up to three categories</b></label>
+              <label htmlFor="name"><b><br></br>You can only select up to two categories</b></label>
             ) : (
                 <label htmlFor="name"></label>
             )}

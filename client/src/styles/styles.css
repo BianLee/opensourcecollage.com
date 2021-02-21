@@ -158,12 +158,12 @@ line-height: 1.5rem;
 }
 }
 [class*=dod-button] {
-font-family: "Dotties Chocolate", sans-serif;
+  font-family: 'Lancelot', cursive;
 display: inline-block;
 background-color: #ffd700;
 color: #262626;
 border-radius: 0.25rem;
-font-size: inherit;
+font-size: 1.4rem;
 padding: 0.75rem 1.25rem;
 box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 text-decoration: none;
@@ -186,7 +186,7 @@ background-color: #D100D1;
 }
 
 .dod-label {
-font-weight: 600;
+font-weight: 100;
 display: block;
 }
 
@@ -210,7 +210,27 @@ text-decoration: none;
 color: inherit;
 max-height: 75px;
 padding: 14px;
+}
 
+
+#math {
+  background-color: #f5e9dc !important; 
+}
+
+#physics {
+  background-color: #f5f5dc !important; 
+  
+}
+#chemistry {
+  background-color: #dcdef5 !important;
+}
+
+#music {
+  background-color: #f5dce6 !important; 
+}
+
+#other {
+  background-color: #e8e8e8 !important; 
 }
 
 .dod-card p {
@@ -218,8 +238,8 @@ padding: 14px;
 }
 
 .dod-card:hover {
-color: #1a472a;
-background-color: #f5f5dc
+    color: #1a472a;
+
 }
 
 .dod-layout-default {
