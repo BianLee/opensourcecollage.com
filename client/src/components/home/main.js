@@ -30,7 +30,7 @@ export default class HomeMainComponent extends React.Component {
     }
 
     getPost = () => {
-        axios.get('/api/getMessage')
+        axios.get('https://bianbackend.herokuapp.com/api/getMessage')
             .then((response) => {
                 const data = response.data;
                 this.setState({ posts: data});
@@ -135,7 +135,7 @@ export default class HomeMainComponent extends React.Component {
         }
         console.log(message); 
         //  const path = '/api/postMessage'; 
-         axios.post('/api/postMessage', message)
+         axios.post('https://bianbackend.herokuapp.com/api/postMessage', message)
            .then(res => console.log(res.data)) 
            .catch(error => {
                console.log("Error!") 
