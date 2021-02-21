@@ -9,5 +9,14 @@
     "react-datepicker": "^3.4.1",
     "react-time-picker": "^4.1.2",
     "style-loader": "^2.0.0"
-  }
+  }, 
+    "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
+  },
 }
