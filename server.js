@@ -25,5 +25,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use('/api', apiRouter);
 
+// test
 //d test
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
