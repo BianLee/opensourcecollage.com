@@ -23,7 +23,8 @@ export default class HomeMainComponent extends React.Component {
             alert: false, 
             posts: [],
             showMessage: false,
-            message: "View all events"
+            message: "View all events",
+            selectedID: ""
         }
     }
 
@@ -67,7 +68,12 @@ export default class HomeMainComponent extends React.Component {
     }
 
 
-
+   handleSelectItem = (e) => {
+     console.log(e.target.dataset.tag)
+    this.setState({
+        selectedID: e.target.dataset.tag
+    })
+   }
 
     onChangeDate(date) {
         this.setState({
@@ -125,14 +131,14 @@ export default class HomeMainComponent extends React.Component {
             }
             else {
                 this.setState({categoryCount: this.state.categoryCount + 1})
-                this.setState({ category: [...this.state.category, e.target.id] }, function () {
+                this.setState({ category: [...this.state.category, e.target.dataset.name] }, function () {
                     console.log(this.state.category);
                 });
             }
         }
         else {
             this.setState({categoryCount: this.state.categoryCount - 1})
-            this.setState({category: this.state.category.filter(item => item !== e.target.id)}, function() {
+            this.setState({category: this.state.category.filter(item => item !== e.target.dataset.name)}, function() {
                 console.log(this.state.category); 
             })
 
@@ -173,7 +179,7 @@ export default class HomeMainComponent extends React.Component {
         
 
        e.preventDefault(); 
-        
+        console.log(this.state.category)
         const message = { 
             title: this.state.titleText,
             date: this.state.date,
@@ -230,8 +236,8 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0).reverse().map(post => {
                             return(
                                 <>
-                            <div href="/dogs/frieda/" className="dod-card" id={`${post.category}`}> 
-                                    <p className="dod-heading-3 dod-stack-16" key={post.id}>{post.title}</p>
+                            <div href="/dogs/frieda/" key={post._id} data-tag={post._id} className="dod-card" id={`${post.category}`} onClick={this.handleSelectItem}> 
+                                    <p className="dod-heading-3 dod-stack-16">{post.title}</p>
                             </div>
                             </>
                             )
@@ -244,9 +250,10 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0, 8).reverse().map(post => {
                             return(
                                 <>
-                            <div href="/dogs/frieda/" className="dod-card" id={`${post.category}`}> 
-                                    <p className="dod-heading-3 dod-stack-16" key={post.id}>{post.title}</p>
+                            <div href="/dogs/frieda/" key={post._id} data-tag={post._id} className="dod-card" id={`${post.category}`} onClick={this.handleSelectItem}> 
+                                    <p className="dod-heading-3 dod-stack-16" data-tag={post._id} onClick={this.handleSelectItem}>{post.title}</p>
                             </div>
+                            
                             </>
                             )
                     })}
@@ -255,6 +262,19 @@ export default class HomeMainComponent extends React.Component {
             )}
             <br/><a onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
         </main>
+
+        <main data-grid-area="main" style={{marginTop: "15px"}}>
+            <p>{this.state.selectedID}</p>
+            {/*
+                {this.state.posts.map(post => {
+                    return post.id == this.state.selectedID ?
+                        <p key={post.id}>{post.description}</p>
+                        :
+                        <p></p>
+                })}   
+                */}
+            </main>
+
         <main data-grid-area="main" style={{marginTop: "15px"}}>
         
           <h2 className="dod-heading-2 dod-stack-24">Promote your virtual event!</h2>
@@ -295,23 +315,26 @@ export default class HomeMainComponent extends React.Component {
             )}
               </div>
               <label htmlFor="bio" className="dod-label  dod-stack-4">Event Categorization</label>
-              <input type="checkbox" disabled={this.state.disabled} id="mathButton" name="mathButton" onClick={this.handleCategoryCount}autoFocus/>
-            <label htmlFor="mathButton">Math</label>{'\u00A0'}{'\u00A0'}
-             <input type="checkbox" id="physicsButton" name="physicsButton" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="physicsButton">Physics</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" id="chemistryButton" name="chemistryButton" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
-            <label htmlFor="chemistryButton">Chemistry</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" id="biologyButton" name="biologyButton" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
+            <input type="checkbox" disabled={this.state.disabled} id="mathsButton" data-name="math" onClick={this.handleCategoryCount}autoFocus/>
+            <label htmlFor="mathsButton">Math</label>{'\u00A0'}{'\u00A0'}
+
+             <input type="checkbox" id="physicssButton" data-name="physics" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="physicssButton">Physics</label>{'\u00A0'}{'\u00A0'}
+
+            <input type="checkbox" id="chemistrysButton" data-name="chemistry" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
+            <label htmlFor="chemistrysButton">Chemistry</label>{'\u00A0'}{'\u00A0'}
+
+            <input type="checkbox" id="biologyButton" data-name="biology" disabled={this.state.disabled} onClick={this.handleCategoryCount} autoFocus/>
             <label htmlFor="biologyButton">Biology</label>{'\u00A0'}{'\u00A0'}
-            <input  type="checkbox" disabled={this.state.disabled} id="computerscienceButton" name="computerscienceButton" onClick={this.handleCategoryCount} autoFocus/>
+            <input  type="checkbox" disabled={this.state.disabled} id="computerscienceButton" data-name="computerscience" onClick={this.handleCategoryCount} autoFocus/>
             <label htmlFor="computerscienceButton">Computer Science</label>{'\u00A0'}{'\u00A0'}
-            <input  type="checkbox" disabled={this.state.disabled} id="engineeringButton" name="engineeringButton" onClick={this.handleCategoryCount}autoFocus/>
+            <input  type="checkbox" disabled={this.state.disabled} id="engineeringButton" data-name="engineering" onClick={this.handleCategoryCount}autoFocus/>
             <label htmlFor="engineeringButton">Engineering</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" disabled={this.state.disabled}  id="humanitiesButton" name="humanitiesButton" onClick={this.handleCategoryCount} autoFocus/>
+            <input type="checkbox" disabled={this.state.disabled}  id="humanitiesButton" data-name="humanities" onClick={this.handleCategoryCount} autoFocus/>
             <label htmlFor="humanitiesButton">Humanities</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" disabled={this.state.disabled}  id="musicsButton" name="musicsButton" onClick={this.handleCategoryCount} autoFocus/>
+            <input type="checkbox" disabled={this.state.disabled}  id="musicsButton" data-name="musics" onClick={this.handleCategoryCount} autoFocus/>
             <label htmlFor="musicsButton">Music</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox"  disabled={this.state.disabled} id="otherButton" name="otherButton" onClick={this.handleCategoryCount} autoFocus/>
+            <input type="checkbox"  disabled={this.state.disabled} id="otherButton" data-name="other" onClick={this.handleCategoryCount} autoFocus/>
             <label htmlFor="otherButton">Other</label>
            { this.state.alert == true ? (
               <label htmlFor="name"><b><br></br>You can only select up to two categories</b></label>

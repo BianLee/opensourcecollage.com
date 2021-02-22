@@ -239,7 +239,9 @@ padding: 14px;
 
 .dod-card:hover {
     color: #1a472a;
-
+    cursor: pointer;
+    filter: brightness(0.95);
+    border-style: solid;
 }
 
 .dod-layout-default {
