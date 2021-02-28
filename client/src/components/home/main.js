@@ -214,7 +214,7 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4"><a href="/">🌿Caga</a></h1>
+            <h1 className="dod-heading-1 dod-stack-4"><a href="/">Caga</a></h1>
             <p className="dod-heading-3 dod-stack-16">A platform for higher learning</p>
           </div>
           <a href="/submit" className="dod-button">Login</a>
