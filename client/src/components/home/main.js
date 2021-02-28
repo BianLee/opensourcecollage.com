@@ -24,7 +24,10 @@ export default class HomeMainComponent extends React.Component {
             posts: [],
             showMessage: false,
             message: "View all events",
-            selectedID: ""
+            
+            
+            selectedDescription: "", 
+            selectedTitle: ""
         }
     }
 
@@ -71,9 +74,11 @@ export default class HomeMainComponent extends React.Component {
 
 
    handleSelectItem = (e) => {
-     console.log(e.target.dataset.tag)
+     console.log(e.target.dataset.description)
+     console.log(e.target.dataset.title)
     this.setState({
-        selectedID: e.target.dataset.tag
+        selectedDescription: e.target.dataset.description, 
+        selectedTitle: e.target.dataset.title
     })
    }
 
@@ -120,6 +125,12 @@ export default class HomeMainComponent extends React.Component {
         else {
             this.setState({chkbox: false, timeZone: "PST"})
         }
+    }
+    handleDiscardItem = (e) => {
+        this.setState({
+            selectedDescription: "", 
+            selectedTitle: ""
+        })
     }
     handleCategoryCount = (e) => {
         console.log(this.state.category); 
@@ -239,9 +250,10 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0).reverse().map(post => {
                             return(
                                 <>
-                            <div href="/dogs/frieda/" key={post._id} data-tag={post._id} className="dod-card" id={`${post.category}`} onClick={this.handleSelectItem}> 
-                                    <p className="dod-heading-3 dod-stack-16">{post.title}</p>
+                            <div href="/dogs/frieda/" key={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem}> 
+                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description}  data-title={post.title}>{post.title}</p>
                             </div>
+                            
                             </>
                             )
                     })}
@@ -253,8 +265,8 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0, 8).reverse().map(post => {
                             return(
                                 <>
-                            <div href="/dogs/frieda/" key={post._id} data-tag={post._id} className="dod-card" id={`${post.category}`} onClick={this.handleSelectItem}> 
-                                    <p className="dod-heading-3 dod-stack-16" data-tag={post._id} onClick={this.handleSelectItem}>{post.title}</p>
+                            <div href="/dogs/frieda/" key={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem}> 
+                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description}  data-title={post.title}>{post.title}</p>
                             </div>
                             
                             </>
@@ -266,9 +278,12 @@ export default class HomeMainComponent extends React.Component {
             <br/><a onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
         </main>
 
-        <main data-grid-area="main" style={{marginTop: "15px"}}>
-            <p>{this.state.selectedID}</p>
-            {/*
+
+        <main data-grid-area="main" style={{marginTop: "15px", display: "inline-block", wordBreak: "break-word", height: "200px"}}>
+            <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.selectedTitle}</p></b>
+            <br></br><p>{this.state.selectedDescription}</p>
+          
+          {/* 
                 {this.state.posts.map(post => {
                     return post.id == this.state.selectedID ?
                         <p key={post.id}>{post.description}</p>
@@ -276,7 +291,7 @@ export default class HomeMainComponent extends React.Component {
                         <p></p>
                 })}   
                 */}
-            </main>
+            </main>  
 
         <main data-grid-area="main" style={{marginTop: "15px"}}>
         

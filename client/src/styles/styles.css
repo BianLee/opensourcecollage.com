@@ -199,8 +199,9 @@ padding: 0.5rem;
 }
 
 .dod-card:hover img {
+  
 transform: scale(1.05);
-transition: transform 0.2s ease-in-out;
+transition: transform 0.2s ease-in-out; 
 }
 
 .dod-card {
@@ -210,6 +211,7 @@ text-decoration: none;
 color: inherit;
 max-height: 75px;
 padding: 14px;
+word-wrap: break-word;
 }
 
 
@@ -263,6 +265,7 @@ text-align: center;
 background-color: #ffffff;
 color: #262626;
 padding: 1rem;
+word-wrap: "break-word";
 }
 
 .dod-layout-default [data-grid-area=footer] {
