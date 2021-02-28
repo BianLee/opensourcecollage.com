@@ -55,7 +55,9 @@ export default class HomeMainComponent extends React.Component {
     }
 
     getPost = () => {
-        axios.get('https://bianbackend.herokuapp.com/api/getMessage')
+
+		// https://bianbackend.herokuapp.com/api/getMessage
+        axios.get('https://server-r8ug5ernl-bianlee.vercel.app/api/getMessage')
             .then((response) => {
                 const data = response.data;
                 this.setState({ posts: data});
@@ -192,7 +194,8 @@ export default class HomeMainComponent extends React.Component {
         }
         console.log(message); 
         //  const path = '/api/postMessage'; 
-         axios.post('https://bianbackend.herokuapp.com/api/postMessage', message)
+        // https://bianbackend.herokuapp.com/api/postMessage
+         axios.post('https://server-r8ug5ernl-bianlee.vercel.app/api/postMessage', message)
            .then(res => console.log(res.data)) 
            .catch(error => {
                console.log("Error!") 
