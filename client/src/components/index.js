@@ -1,1 +1,1 @@
-export { default as HomeMainComponent } from "./main"
+export { default as LoginElement } from "./loginElement"

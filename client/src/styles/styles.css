@@ -26,9 +26,6 @@ padding: 0;
 list-style: none;
 }
 
-html:focus-within {
-scroll-behavior: smooth;
-}
 
 body {
 min-height: 100vh;
@@ -54,9 +51,6 @@ font: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {
-html:focus-within {
-  scroll-behavior: auto;
-}
 
 *,
 *::before,
@@ -64,7 +58,6 @@ html:focus-within {
   animation-duration: 0.01ms !important;
   animation-iteration-count: 1 !important;
   transition-duration: 0.01ms !important;
-  scroll-behavior: auto !important;
 }
 }
 body {
@@ -193,6 +186,14 @@ display: block;
 .dod-input {
 -webkit-appearance: none;
 width: 100%;
+border: 1px solid #E8E8E8;
+border-radius: 0.25rem;
+padding: 0.5rem;
+}
+
+.acc-input {
+  -webkit-appearance: none;
+width: 60%;
 border: 1px solid #E8E8E8;
 border-radius: 0.25rem;
 padding: 0.5rem;
