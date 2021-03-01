@@ -3,6 +3,7 @@ import axios from "axios";
 import DatePicker from "react-datepicker"
 import "../styles/styles.css"
 import { BrowserRouter as Router, Route, Link} from "react-router-dom" 
+import firebase from "firebase" 
 export default class HomeMainComponent extends React.Component {
     constructor() {
         super();
@@ -36,6 +37,8 @@ export default class HomeMainComponent extends React.Component {
             permID: ""
         }
     }
+
+
 
 
     _showMessage = (bool, e) => {
@@ -257,10 +260,10 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4"><Link to="/"><i>BACC</i></Link></h1>
-            <p className="dod-heading-3 dod-stack-16">A platform for higher learning</p>
+            <h1 className="dod-heading-1 dod-stack-4"><Link to="/"><i>ECSLIB</i></Link></h1>
+            <p className="dod-heading-3 dod-stack-16">All about high school extracurriculars.</p>
           </div>
-          <Link to="/login" className="dod-button">Login</Link>
+          <Link to="/post" className="dod-button">Post</Link>
 
                   
         </header>
@@ -293,7 +296,7 @@ export default class HomeMainComponent extends React.Component {
             ) : (
                 <>
                     <div className="dod-media-grid dod-stack-15" >
-                    {this.state.posts.slice(0, 8).reverse().map(post => {
+                    {this.state.posts.slice(0, 12).reverse().map(post => {
                             return(
                                 <>
                             <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'solid': '', borderWidth: this.state.permID == post._id ? '2px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>

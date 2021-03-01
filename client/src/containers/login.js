@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker"
 import "../styles/styles.css"
 import { LoginSetupContainer } from "./loginsetup"
 import { BrowserRouter as Router, Route, Link} from "react-router-dom" 
+import firebase from "firebase" 
 export default class LoginFirstFrame extends React.Component {
     constructor() {
         super();
@@ -34,7 +35,9 @@ export default class LoginFirstFrame extends React.Component {
             permDate: "", 
             permDescription: "",
             permTitle: "",
-            permID: ""
+            permID: "",
+
+            loggedIn: ""
         }
     }
 
@@ -62,6 +65,14 @@ export default class LoginFirstFrame extends React.Component {
 
     componentDidMount = () => {
         this.getPost() 
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+            console.log('hwhat is going on'); 
+              this.setState({loggedIn: 'yes'})
+            } else {
+                this.setState({loggedIn: 'no'})
+            }
+          }.bind(this));
     }
 
     getPost = () => {
@@ -257,22 +268,18 @@ export default class LoginFirstFrame extends React.Component {
         <link rel="stylesheet" href="styles.css" />
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
-          <div>
-            <h1 className="dod-heading-1 dod-stack-4"><Link to="/"><i>BACC</i></Link></h1>
-            <p className="dod-heading-3 dod-stack-16">A platform for higher learning</p>
+        <div>
+            <h1 className="dod-heading-1 dod-stack-4"><Link to="/"><i>ECSLIB</i></Link></h1>
+            <p className="dod-heading-3 dod-stack-16">All about high school extracurriculars.</p>
           </div>
-          <Link to="/login" className="dod-button">Login</Link>
+          <Link to="/post" className="dod-button">Post</Link>
 
                   
         </header>
         <main data-grid-area="main">
-            <center>
-             <LoginSetupContainer/>
-            </center>
-        </main>
-
-        <main data-grid-area="main" style={{marginTop: "15px"}}>        
-          <h2 className="dod-heading-2 dod-stack-24">Promote your virtual event!</h2>
+            {this.state.loggedIn == 'yes' ? 
+                <>
+                <h2 className="dod-heading-2 dod-stack-24">Promote your virtual event!</h2>
           <article className="dod-article dod-flow">
             <p>_____ is a platform for high school students, for sharing and browsing online events -- 
                 In this community, discover the next online lecture to attend for the weekend, find a competition 
@@ -340,6 +347,17 @@ export default class LoginFirstFrame extends React.Component {
               <button type="submit" className="dod-button-secondary" onClick={this.onSubmit}>Post!</button>
             </form>
           </article>
+                </>
+            : ( 
+                <>
+                <p>You must be logged in to access the content.</p>
+                </> 
+            )}
+        </main>
+        <main data-grid-area="main" style={{marginTop: "15px"}}> 
+            <center>
+             <LoginSetupContainer/>
+            </center>
         </main>
         <footer data-grid-area="footer">
         </footer>
