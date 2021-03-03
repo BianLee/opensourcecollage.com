@@ -50,13 +50,13 @@ export default class LoginFirstFrame extends React.Component {
         if (bool) {
             this.setState({
                 message: "Collapse all events" 
-              
+                
               });
         }
         else {
             this.setState({
                 message: "View all events" 
-              
+                
               });
         }
       }

@@ -25,7 +25,9 @@ export default class HomeMainComponent extends React.Component {
             alert: false, 
             posts: [],
             showMessage: false,
+            showMessageTwo: false, 
             message: "View all events",
+            messageTwo: "Apply filter", 
             
             selectedDate: "", 
             selectedDescription: "", 
@@ -34,7 +36,10 @@ export default class HomeMainComponent extends React.Component {
             permDate: "", 
             permDescription: "",
             permTitle: "",
-            permID: ""
+            permID: "",
+
+            guide: "" 
+
         }
     }
 
@@ -49,15 +54,29 @@ export default class HomeMainComponent extends React.Component {
         if (bool) {
             this.setState({
                 message: "Collapse all events" 
-              
               });
         }
         else {
             this.setState({
                 message: "View all events" 
-              
               });
         }
+      }
+
+      _showMessageTwo = (boolTwo, e) => {
+        this.setState({
+            showMessageTwo: boolTwo,
+          });
+          if (boolTwo) {
+              this.setState({
+                  messageTwo: "Close" 
+                });
+          }
+          else {
+              this.setState({
+                  messageTwo: "Apply filter" 
+                });
+          }
       }
 
 
@@ -87,6 +106,7 @@ export default class HomeMainComponent extends React.Component {
      //console.log(e.target.dataset.title)
      console.log(e.target.dataset.date)
     this.setState({
+        guide: "", 
         selectedDescription: e.target.dataset.description, 
         selectedTitle: e.target.dataset.title,
         selectedDate: e.target.dataset.date
@@ -102,6 +122,7 @@ export default class HomeMainComponent extends React.Component {
     handlePerm = (e) => {
         if (this.state.permTitle != "" && e.target.dataset.id == this.state.permID) {
             this.setState({
+                guide: "", 
                 permDescription: "", 
                 permTitle: "",
                 permID: "",
@@ -160,6 +181,7 @@ export default class HomeMainComponent extends React.Component {
     }
     handleDiscardItem = (e) => {
         this.setState({
+            guide: "Hello", 
             selectedDescription: "", 
             selectedTitle: "",
             selectedDate: ""
@@ -249,6 +271,9 @@ export default class HomeMainComponent extends React.Component {
         console.log("page update?")
     }
     render() {
+
+
+
         return (
             <>
       <div>
@@ -260,7 +285,7 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4"><Link to="/"><i>ECSLIB</i></Link></h1>
+            <h1 className="dod-heading-1 dod-stack-4"><Link to="/">openEC.net</Link></h1>
             <p className="dod-heading-3 dod-stack-16">All about high school extracurriculars.</p>
           </div>
           <Link to="/post" className="dod-button">Post</Link>
@@ -284,7 +309,7 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0).reverse().map(post => {
                             return(
                                 <>
-                             <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'solid': '', borderWidth: this.state.permID == post._id ? '2px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
+                             <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
                                     <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date} data-id={post._id} data-title={post.title}>{post.title}</p>
                             </div>
                             
@@ -299,7 +324,7 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0, 12).reverse().map(post => {
                             return(
                                 <>
-                            <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'solid': '', borderWidth: this.state.permID == post._id ? '2px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
+                            <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
                                     <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title}>{post.title}</p>
                             </div>
                             
@@ -310,11 +335,18 @@ export default class HomeMainComponent extends React.Component {
                 </>
             )}
             <br/><a style={{cursor: "pointer"}} onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
+            <a style={{cursor: "pointer", marginLeft: "20px"}} onClick={this._showMessageTwo.bind(null, ! this.state.showMessageTwo)}>{this.state.messageTwo}</a>     
+            {this.state.showMessageTwo && (
+                <>
+                   <br/><br/><p>Applying filter here</p>
+                </>
+            )}
         </main>
 
 
         <main data-grid-area="main" style={{marginTop: "15px", display: "inline-block", wordBreak: "break-word", height: "200px"}}>
-           
+
+
            {this.state.permTitle != "" ? (
                <>
                <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.permTitle}</p></b>
@@ -323,6 +355,7 @@ export default class HomeMainComponent extends React.Component {
                </>
            ) : (
                <>
+               <p>{this.state.guide}</p>
                   <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.selectedTitle}</p></b>
                   <br></br><p>{this.state.selectedDate}</p>
             <br></br><p>{this.state.selectedDescription}</p>

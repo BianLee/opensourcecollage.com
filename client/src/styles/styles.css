@@ -114,8 +114,8 @@ body {
 }
 }
 [class*=dod-heading] {
-  font-family: 'Lancelot', cursive;
-font-weight: 100;
+  font-family: 'Montserrat';
+font-weight: bolder;
 text-decoration: none;
 }
 
@@ -151,7 +151,7 @@ line-height: 1.5rem;
 }
 }
 [class*=dod-button] {
-  font-family: 'Lancelot', cursive;
+  font-family: 'Newsreader', serif; 
 display: inline-block;
 background-color: #ffd700;
 color: #262626;
@@ -207,36 +207,41 @@ transition: transform 0.2s ease-in-out;
 
 .dod-card {
 /* border-style: dotted; */ 
-border-width: 2px; 
+border-width: 3px; 
 text-decoration: none;
 color: inherit;
-max-height: 75px;
+max-height: 80px;
 padding: 14px;
 word-wrap: break-word;
 box-sizing: border-box;
 background: #eee;
-border: 2px solid transparent;
+border: 3px dotted transparent;
 }
 
 
 #math {
-  background-color: #f5e9dc !important; 
+  background-color: #f3e6d8 !important; 
 }
-
 #physics {
-  background-color: #f5f5dc !important; 
-  
+  background-color: #eeeecf !important; 
+}
+#computerscience{
+  background-color: #bad0e6 !important; 
+}
+#engineering {
+  background-color: #dbd0e4 !important; 
 }
 #chemistry {
-  background-color: #dcdef5 !important;
+  background-color: #cccddf !important;
 }
-
-#music {
-  background-color: #f5dce6 !important; 
+#biology {
+  background-color: #c0e4c4 !important; 
 }
-
+#musics {
+  background-color: #e6cbd6 !important; 
+}
 #other {
-  background-color: #e8e8e8 !important; 
+  background-color: #e4dddd !important; 
 }
 
 .dod-card p {
