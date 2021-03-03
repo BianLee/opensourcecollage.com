@@ -32,10 +32,12 @@ export default class HomeMainComponent extends React.Component {
             selectedDate: "", 
             selectedDescription: "", 
             selectedTitle: "",
+            selectedCategory: "", 
 
             permDate: "", 
             permDescription: "",
             permTitle: "",
+            permCategory: "",
             permID: "",
 
             guide: "" 
@@ -109,6 +111,7 @@ export default class HomeMainComponent extends React.Component {
         guide: "", 
         selectedDescription: e.target.dataset.description, 
         selectedTitle: e.target.dataset.title,
+        selectedCategory: e.target.dataset.category, 
         selectedDate: e.target.dataset.date
     })
    }
@@ -126,7 +129,8 @@ export default class HomeMainComponent extends React.Component {
                 permDescription: "", 
                 permTitle: "",
                 permID: "",
-                permDate: ""
+                permDate: "",
+                permCategory: "" 
             })
         }
         else {
@@ -134,7 +138,8 @@ export default class HomeMainComponent extends React.Component {
                 permDescription: e.target.dataset.description, 
                 permTitle: e.target.dataset.title,
                 permID: e.target.dataset.id,
-                permDate: e.target.dataset.date
+                permDate: e.target.dataset.date, 
+                permCategory: e.target.dataset.category 
             })
         }
     }
@@ -184,6 +189,7 @@ export default class HomeMainComponent extends React.Component {
             guide: "Hello", 
             selectedDescription: "", 
             selectedTitle: "",
+            selectedCategory: "",
             selectedDate: ""
         })
     }
@@ -285,7 +291,7 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4"><Link to="/">openEC.net</Link></h1>
+            <h1 className="dod-heading-1 dod-stack-4"><Link to="/">lobstergang</Link></h1>
             <p className="dod-heading-3 dod-stack-16">All about high school extracurriculars.</p>
           </div>
           <Link to="/post" className="dod-button">Post</Link>
@@ -309,8 +315,8 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0).reverse().map(post => {
                             return(
                                 <>
-                             <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
-                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date} data-id={post._id} data-title={post.title}>{post.title}</p>
+                             <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
+                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date} data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
                             </div>
                             
                             </>
@@ -324,8 +330,8 @@ export default class HomeMainComponent extends React.Component {
                     {this.state.posts.slice(0, 12).reverse().map(post => {
                             return(
                                 <>
-                            <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
-                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title}>{post.title}</p>
+                            <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
+                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
                             </div>
                             
                             </>
@@ -349,14 +355,20 @@ export default class HomeMainComponent extends React.Component {
 
            {this.state.permTitle != "" ? (
                <>
-               <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.permTitle}</p></b>
+               <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.permTitle}{'\u00A0'}
+               <span style={{fontSize: "20px", background: "purple", color: "white"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
+               </p></b>
+               
                <br></br><p>{this.state.permDate}</p>
                 <br></br><p>{this.state.permDescription}</p> 
                </>
            ) : (
                <>
                <p>{this.state.guide}</p>
-                  <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.selectedTitle}</p></b>
+                  <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
+                  <span style={{fontSize: "20px", background: "purple", color: "white"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
+                  </p></b>
+                  
                   <br></br><p>{this.state.selectedDate}</p>
             <br></br><p>{this.state.selectedDescription}</p>
                </> 

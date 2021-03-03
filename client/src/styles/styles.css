@@ -70,7 +70,7 @@ border: 0;
 }
 
 body {
-font-family: 'Newsreader', serif;
+  font-family: 'Fira Sans', sans-serif;
 font-size: 1rem;
 line-height: 1.5rem;
 font-weight: 300;
@@ -114,8 +114,8 @@ body {
 }
 }
 [class*=dod-heading] {
-  font-family: 'Montserrat';
-font-weight: bolder;
+  font-family: 'Fira Sans', sans-serif;
+font-weight: 900;
 text-decoration: none;
 }
 
@@ -151,7 +151,7 @@ line-height: 1.5rem;
 }
 }
 [class*=dod-button] {
-  font-family: 'Newsreader', serif; 
+  font-family: 'Fira Sans', sans-serif;
 display: inline-block;
 background-color: #ffd700;
 color: #262626;
@@ -245,7 +245,7 @@ border: 3px dotted transparent;
 }
 
 .dod-card p {
-  font-family: 'Newsreader', serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .dod-card:hover {
