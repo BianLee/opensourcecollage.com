@@ -328,13 +328,13 @@ export default class LoginFirstFrame extends React.Component {
 
             <input type="checkbox" id="biologyButton" data-name="biology" disabled={this.state.disabled} onClick={this.handleCategoryCount}/>
             <label htmlFor="biologyButton">Biology</label>{'\u00A0'}{'\u00A0'}
-            <input  type="checkbox" disabled={this.state.disabled} id="computerscienceButton" data-name="computerscience" onClick={this.handleCategoryCount}/>
-            <label htmlFor="computerscienceButton">Computer Science</label>{'\u00A0'}{'\u00A0'}
+            <input  type="checkbox" disabled={this.state.disabled} id="computerscienceButton" data-name="cs" onClick={this.handleCategoryCount}/>
+            <label htmlFor="computerscienceButton">CS</label>{'\u00A0'}{'\u00A0'}
             <input  type="checkbox" disabled={this.state.disabled} id="engineeringButton" data-name="engineering" onClick={this.handleCategoryCount}/>
             <label htmlFor="engineeringButton">Engineering</label>{'\u00A0'}{'\u00A0'}
             <input type="checkbox" disabled={this.state.disabled}  id="humanitiesButton" data-name="humanities" onClick={this.handleCategoryCount} />
             <label htmlFor="humanitiesButton">Humanities</label>{'\u00A0'}{'\u00A0'}
-            <input type="checkbox" disabled={this.state.disabled}  id="musicsButton" data-name="musics" onClick={this.handleCategoryCount}/>
+            <input type="checkbox" disabled={this.state.disabled}  id="musicsButton" data-name="music" onClick={this.handleCategoryCount}/>
             <label htmlFor="musicsButton">Music</label>{'\u00A0'}{'\u00A0'}
             <input type="checkbox"  disabled={this.state.disabled} id="otherButton" data-name="other" onClick={this.handleCategoryCount}/>
             <label htmlFor="otherButton">Other</label>

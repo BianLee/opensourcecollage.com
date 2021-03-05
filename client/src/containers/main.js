@@ -40,45 +40,48 @@ export default class HomeMainComponent extends React.Component {
             permCategory: "",
             permID: "",
 
-            guide: "" 
+            guide: "", 
+            startPage: 0, 
+            amountOfPages: 0,
+            currentAmount: 6, 
+            currentPlace: 1
 
         }
     }
 
 
 
+    _showMessageTwo = (boolTwo, e) => {
+
+ 
+        console.log("do")
+        this.setState({
+         currentAmount: this.state.currentAmount - 6, 
+         currentPlace: this.state.currentPlace - 1, 
+         startPage: this.state.currentAmount, 
+         showMessage: boolTwo
+        })
+        console.log("current place: " + this.state.currentPlace)
+        console.log("from " + this.state.startPage)
+        console.log("to " + this.state.currentAmount)
+     
+   }
 
     _showMessage = (bool, e) => {
-        this.setState({
-          showMessage: bool,
         
-        });
-        if (bool) {
-            this.setState({
-                message: "Collapse all events" 
-              });
-        }
-        else {
-            this.setState({
-                message: "View all events" 
-              });
-        }
-      }
 
-      _showMessageTwo = (boolTwo, e) => {
-        this.setState({
-            showMessageTwo: boolTwo,
-          });
-          if (boolTwo) {
-              this.setState({
-                  messageTwo: "Close" 
-                });
-          }
-          else {
-              this.setState({
-                  messageTwo: "Apply filter" 
-                });
-          }
+        if (this.state.currentPlace < this.state.amountOfPages) {
+            this.setState({
+                showMessage: bool, 
+                startPage: this.state.currentAmount, 
+                currentAmount: this.state.currentAmount + 6, 
+                currentPlace: this.state.currentPlace + 1
+              });
+              console.log("went through")
+        }
+        console.log("current place: " + this.state.currentPlace)
+        console.log("from " + this.state.startPage)
+        console.log("to " + this.state.currentAmount)
       }
 
 
@@ -95,6 +98,10 @@ export default class HomeMainComponent extends React.Component {
                 const data = response.data;
                 this.setState({ posts: data});
                 console.log("data has been received"); 
+                const n = Math.ceil(this.state.posts.length / 6)
+                this.setState({
+                    amountOfPages: n
+                })  
                 //console.log(JSON.stringify(this.state.posts))
             })
             .catch(() => {
@@ -186,7 +193,7 @@ export default class HomeMainComponent extends React.Component {
     }
     handleDiscardItem = (e) => {
         this.setState({
-            guide: "Hello", 
+            guide: "What is opensoup?", 
             selectedDescription: "", 
             selectedTitle: "",
             selectedCategory: "",
@@ -278,6 +285,7 @@ export default class HomeMainComponent extends React.Component {
     }
     render() {
 
+        
 
 
         return (
@@ -307,44 +315,30 @@ export default class HomeMainComponent extends React.Component {
         <main data-grid-area="main">
         {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
            
-            { this.state.showMessage ? (
-                <>
-                    <div className="dod-media-grid dod-stack-15" >
-                    {this.state.posts.slice(0).reverse().map(post => {
-                            return(
-                                <>
-                             <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
-                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date} data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
-                            </div>
-                            
-                            </>
-                            )
-                    })}
+        <>
+                <div className="dod-media-grid dod-stack-15" >
+                {this.state.posts.slice(this.state.startPage, this.state.currentAmount).reverse().map(post => {
+                    return(
+                        <>
+                        <p>{this.state.startPage}</p>
+                        <p>{this.state.currentAmount}</p>
+                    <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
+                            <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
                     </div>
-                </> 
-            ) : (
-                <>
-                    <div className="dod-media-grid dod-stack-15" >
-                    {this.state.posts.slice(0, 12).reverse().map(post => {
-                            return(
-                                <>
-                            <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
-                                    <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
-                            </div>
-                            
-                            </>
-                            )
-                    })}
-                    </div>
+                    
+                    </>
+                    )
+                })}
+                </div>
                 </>
-            )}
-            <br/><a style={{cursor: "pointer"}} onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
-            <a style={{cursor: "pointer", marginLeft: "20px"}} onClick={this._showMessageTwo.bind(null, ! this.state.showMessageTwo)}>{this.state.messageTwo}</a>     
-            {this.state.showMessageTwo && (
-                <>
-                   <br/><br/><p>Applying filter here</p>
-                </>
-            )}
+
+            
+            {/* Pagination here*/}
+
+            <br/>
+            <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this._showMessageTwo.bind(null, ! this.state.showMessageTwo)}>Prev</a>
+            <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this._showMessage.bind(null, ! this.state.showMessage)}>Next</a>
+            
         </main>
 
 
