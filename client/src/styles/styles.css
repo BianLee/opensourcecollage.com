@@ -115,13 +115,27 @@ body {
 }
 [class*=dod-heading] {
   font-family: 'Fira Sans', sans-serif;
-font-weight: 900;
 text-decoration: none;
+}
+
+.logo {
+  font-family: 'Spartan', sans-serif;
+  font-weight: 600 !important; 
+  user-select: none;
+}
+.logoDesc {
+  margin-top: 10px; 
+  user-select: none;
+  text-decoration: cursive;
+  font-style: italic;
+  text-align: center;
+  font-size: 17px !important;
 }
 
 .dod-heading-1 {
 font-size: 5.4rem !important;
 line-height: 5rem !important;
+font-weight: 900 !important;
 }
 
 .dod-heading-2 {
@@ -212,6 +226,7 @@ text-decoration: none;
 color: inherit;
 max-height: 80px;
 padding: 14px;
+font-weight: 700; 
 word-wrap: break-word;
 box-sizing: border-box;
 background: #eee;

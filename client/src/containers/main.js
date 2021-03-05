@@ -291,12 +291,10 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4"><Link to="/">lobstergang</Link></h1>
-            <p className="dod-heading-3 dod-stack-16">All about high school extracurriculars.</p>
+            <h1 className="dod-heading-1 dod-stack-4 logo"><Link to="/">opensoup</Link></h1>
+            <p className="dod-heading-3 dod-stack-16 logoDesc">All about high school extracurriculars</p>
           </div>
           <Link to="/post" className="dod-button">Post</Link>
-
-                  
         </header>
                 {/* 
                 {this.state.posts.slice(0).reverse().map(post => {
