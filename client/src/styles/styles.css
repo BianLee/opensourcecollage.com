@@ -167,20 +167,17 @@ line-height: 1.5rem;
 [class*=dod-button] {
   font-family: 'Fira Sans', sans-serif;
 display: inline-block;
-background-color: #ffd700;
-color: #262626;
+background-color: #041e42;
+color: white;
 border-radius: 0.25rem;
 font-size: 1.4rem;
 padding: 0.75rem 1.25rem;
-box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 text-decoration: none;
 font-weight: 600;
 cursor: pointer;
+justify-content: flex-end
 }
 
-[class*=dod-button]:hover {
-background-color: yellow;
-}
 
 .dod-button-secondary {
 box-shadow: none;
@@ -434,7 +431,6 @@ flex-direction: column;
 .dod-space-between-responsive {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .dod-space-between-responsive > :not(:last-child) {
@@ -446,7 +442,7 @@ flex-direction: column;
 }
 
 .dod-flex-row-responsive > :not(:last-child) {
-  margin-right: 2rem;
+  margin-right: 1rem;  
 }
 
 .dod-flex-item {

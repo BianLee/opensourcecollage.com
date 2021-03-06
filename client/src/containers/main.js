@@ -41,48 +41,32 @@ export default class HomeMainComponent extends React.Component {
             permID: "",
 
             guide: "", 
-            startPage: 0, 
             amountOfPages: 0,
-            currentAmount: 6, 
+            currentAmount: 12, 
             currentPlace: 1
 
         }
     }
 
 
+    scrollPrev = (e) => {
+        console.log("Hello")
+        if (this.state.currentPlace > 1) {
+            this.setState({
+                currentAmount: this.state.currentAmount - 12, 
+                currentPlace: this.state.currentPlace - 1,
+            });
+        }
+    }
 
-    _showMessageTwo = (boolTwo, e) => {
-
- 
-        console.log("do")
-        this.setState({
-         currentAmount: this.state.currentAmount - 6, 
-         currentPlace: this.state.currentPlace - 1, 
-         startPage: this.state.currentAmount, 
-         showMessage: boolTwo
-        })
-        console.log("current place: " + this.state.currentPlace)
-        console.log("from " + this.state.startPage)
-        console.log("to " + this.state.currentAmount)
-     
-   }
-
-    _showMessage = (bool, e) => {
-        
-
+    scrollNext = (e) => {
         if (this.state.currentPlace < this.state.amountOfPages) {
             this.setState({
-                showMessage: bool, 
-                startPage: this.state.currentAmount, 
-                currentAmount: this.state.currentAmount + 6, 
-                currentPlace: this.state.currentPlace + 1
+                currentAmount: this.state.currentAmount + 12, 
+                currentPlace: this.state.currentPlace + 1,
               });
-              console.log("went through")
         }
-        console.log("current place: " + this.state.currentPlace)
-        console.log("from " + this.state.startPage)
-        console.log("to " + this.state.currentAmount)
-      }
+    }
 
 
 
@@ -95,10 +79,10 @@ export default class HomeMainComponent extends React.Component {
 		// https://bianbackend.herokuapp.com/api/getMessage
         axios.get('https://server-r8ug5ernl-bianlee.vercel.app/api/getMessage')
             .then((response) => {
-                const data = response.data;
+                const data = response.data.reverse();
                 this.setState({ posts: data});
                 console.log("data has been received"); 
-                const n = Math.ceil(this.state.posts.length / 6)
+                const n = Math.ceil(this.state.posts.length / 12)
                 this.setState({
                     amountOfPages: n
                 })  
@@ -299,10 +283,13 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4 logo"><Link to="/">opensoup</Link></h1>
-            <p className="dod-heading-3 dod-stack-16 logoDesc">All about high school extracurriculars</p>
+            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecx+</Link></h1>
+            <p className="dod-heading-3 dod-stack-16 logoDesc">Events, Conferences, and Extracurriculars</p>
           </div>
-          <Link to="/post" className="dod-button">Post</Link>
+          <p></p>
+          <Link to="/post" style={{marginLeft: "18px"}}>About</Link>
+          <Link to="/post"  style={{marginLeft: "10px"}}>Apply</Link>
+          <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
         </header>
                 {/* 
                 {this.state.posts.slice(0).reverse().map(post => {
@@ -317,11 +304,10 @@ export default class HomeMainComponent extends React.Component {
            
         <>
                 <div className="dod-media-grid dod-stack-15" >
-                {this.state.posts.slice(this.state.startPage, this.state.currentAmount).reverse().map(post => {
+                {this.state.posts.slice(this.state.currentAmount - 12, this.state.currentAmount).map(post => {
                     return(
                         <>
-                        <p>{this.state.startPage}</p>
-                        <p>{this.state.currentAmount}</p>
+                        
                     <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
                             <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
                     </div>
@@ -336,9 +322,8 @@ export default class HomeMainComponent extends React.Component {
             {/* Pagination here*/}
 
             <br/>
-            <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this._showMessageTwo.bind(null, ! this.state.showMessageTwo)}>Prev</a>
-            <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this._showMessage.bind(null, ! this.state.showMessage)}>Next</a>
-            
+            <a style={{cursor: "pointer"}} onClick={this.scrollPrev}>Prev</a>
+            <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this.scrollNext}>Next</a>
         </main>
 
 
