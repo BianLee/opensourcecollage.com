@@ -269,24 +269,19 @@ export default class LoginFirstFrame extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
         <div>
-            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecx+</Link></h1>
-            <p className="dod-heading-3 dod-stack-16 logoDesc">Events, Conferences, and Extracurriculars</p>
+            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecw+</Link></h1>
+            <p className="dod-heading-3 dod-stack-16 logoDesc">High school events, conferences, and workshops</p>
           </div>
-          <Link to="/post" style={{marginLeft: "18px"}}>About</Link>
-          <Link to="/post"  style={{marginLeft: "10px"}}>Apply</Link>
+          <p></p>
+          <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
+          <Link to="/apply"  style={{marginLeft: "10px"}}>Apply</Link>
           <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
-
-                  
         </header>
         <main data-grid-area="main">
             {this.state.loggedIn == 'yes' ? 
                 <>
                 <h2 className="dod-heading-2 dod-stack-24">Promote your virtual event!</h2>
           <article className="dod-article dod-flow">
-            <p>_____ is a platform for high school students, for sharing and browsing online events -- 
-                In this community, discover the next online lecture to attend for the weekend, find a competition 
-                on a subject you are passionate about, or promote your zoom meeting you have worked hard to organize!
-            </p>
             <form name="Submit a Dog" action="/success" className="dod-flow" method="post"><input type="hidden" name="form-name" defaultValue="Submit a Dog" />
               <div>
                 <label htmlFor="name" className="dod-label dod-stack-4" >Event Title (40 characters max)</label>

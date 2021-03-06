@@ -33,12 +33,14 @@ export default class HomeMainComponent extends React.Component {
             selectedDescription: "", 
             selectedTitle: "",
             selectedCategory: "", 
+            selectedZoomLink: "", 
 
             permDate: "", 
             permDescription: "",
             permTitle: "",
             permCategory: "",
             permID: "",
+            permZoomLink: "", 
 
             guide: "", 
             amountOfPages: 0,
@@ -98,12 +100,15 @@ export default class HomeMainComponent extends React.Component {
      //console.log(e.target.dataset.description)
      //console.log(e.target.dataset.title)
      console.log(e.target.dataset.date)
+     console.log(e.target.dataset.zoom)
+     
     this.setState({
         guide: "", 
         selectedDescription: e.target.dataset.description, 
         selectedTitle: e.target.dataset.title,
         selectedCategory: e.target.dataset.category, 
-        selectedDate: e.target.dataset.date
+        selectedDate: e.target.dataset.date,
+        selectedZoom: e.target.dataset.zoom
     })
    }
 
@@ -121,16 +126,19 @@ export default class HomeMainComponent extends React.Component {
                 permTitle: "",
                 permID: "",
                 permDate: "",
-                permCategory: "" 
+                permCategory: "" ,
+                permZoom: ""
             })
         }
         else {
+           // console.log(e.target.dataset.zoomLink)
             this.setState({
                 permDescription: e.target.dataset.description, 
                 permTitle: e.target.dataset.title,
                 permID: e.target.dataset.id,
                 permDate: e.target.dataset.date, 
-                permCategory: e.target.dataset.category 
+                permCategory: e.target.dataset.category,
+                permZoom: e.target.dataset.zoom
             })
         }
     }
@@ -181,7 +189,8 @@ export default class HomeMainComponent extends React.Component {
             selectedDescription: "", 
             selectedTitle: "",
             selectedCategory: "",
-            selectedDate: ""
+            selectedDate: "",
+            selectedZoomLink: ""
         })
     }
     handleCategoryCount = (e) => {
@@ -243,6 +252,7 @@ export default class HomeMainComponent extends React.Component {
     onSubmit(e) {
         
 
+
        e.preventDefault(); 
         // console.log(this.state.category)
         const message = { 
@@ -283,12 +293,12 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecx+</Link></h1>
-            <p className="dod-heading-3 dod-stack-16 logoDesc">Events, Conferences, and Extracurriculars</p>
+            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecw+</Link></h1>
+            <p className="dod-heading-3 dod-stack-16 logoDesc">High school events, conferences, and workshops</p>
           </div>
           <p></p>
-          <Link to="/post" style={{marginLeft: "18px"}}>About</Link>
-          <Link to="/post"  style={{marginLeft: "10px"}}>Apply</Link>
+          <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
+          <Link to="/apply"  style={{marginLeft: "10px"}}>Apply</Link>
           <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
         </header>
                 {/* 
@@ -308,8 +318,13 @@ export default class HomeMainComponent extends React.Component {
                     return(
                         <>
                         
-                    <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} className="dod-card" id={`${post.category}`} onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} onClick={this.handlePerm}>
-                            <p className="dod-heading-3 dod-stack-16" data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
+                    <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', 
+                    borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} 
+                    data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} 
+                    data-zoom={post.zoomLink} className="dod-card" id={`${post.category}`}
+                    onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} 
+                    onClick={this.handlePerm}>
+                            <p className="dod-heading-3 dod-stack-16"  data-zoomLink={post.zoomLink} data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
                     </div>
                     
                     </>
@@ -334,8 +349,9 @@ export default class HomeMainComponent extends React.Component {
                <>
                <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.permTitle}{'\u00A0'}
                <span style={{fontSize: "20px", background: "purple", color: "white"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
-               </p></b>
-               
+               </p></b> 
+                
+                <br></br><p>{this.state.permZoom}</p>
                <br></br><p>{this.state.permDate}</p>
                 <br></br><p>{this.state.permDescription}</p> 
                </>
@@ -346,6 +362,7 @@ export default class HomeMainComponent extends React.Component {
                   <span style={{fontSize: "20px", background: "purple", color: "white"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
                   </p></b>
                   
+                  <br></br><p>{this.state.selectedZoom}</p>
                   <br></br><p>{this.state.selectedDate}</p>
             <br></br><p>{this.state.selectedDescription}</p>
                </> 
