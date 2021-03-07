@@ -32,7 +32,8 @@ export default class ApplyComponent extends React.Component {
                 <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
               </header>
               <main data-grid-area="main">
-                 
+              <p>This page is currently under construction. 
+            </p>
               </main>
               <footer data-grid-area="footer">
               </footer>

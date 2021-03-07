@@ -33,7 +33,8 @@ export default class FRQComponent extends React.Component {
 
                 </header>
               <main data-grid-area="main">
-                 
+              <p>This page is currently under construction. 
+            </p>
               </main>
               <footer data-grid-area="footer">
               </footer>

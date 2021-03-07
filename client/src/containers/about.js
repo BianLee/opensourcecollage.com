@@ -33,12 +33,7 @@ export default class AboutComponent extends React.Component {
                 <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
               </header>
               <main data-grid-area="main">
-              <p>ECW+ is a platform for high school students, for sharing and browsing high school virtual events, conferences.
-                Discover the next online lecture to attend for the weekend, find a competition 
-                on a subject you are passionate about, or promote your own online meeting you have worked hard to organize!
-                
-
-
+              <p>This page is currently under construction. 
             </p>
               </main>
               <footer data-grid-area="footer">
