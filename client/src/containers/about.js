@@ -21,9 +21,10 @@ export default class AboutComponent extends React.Component {
               <section className="dod-layout-default">
               <header data-grid-area="header" className="dod-space-between-responsive">
               <div>
-                  <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecw+</Link></h1>
-                  <p className="dod-heading-3 dod-stack-16 logoDesc">High school events, conferences, and workshops</p>
-                </div>
+            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">osc+</Link></h1>
+            <p className="dod-heading-3 dod-stack-16 logoDesc">open source collage: assemblage of opportunities
+            and resources for high school students</p>
+          </div>
                 <p></p>
                 <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
                 <Link to="/apply"  style={{marginLeft: "10px"}}>Apply</Link>

@@ -33,18 +33,17 @@ export default class HomeMainComponent extends React.Component {
             selectedDescription: "", 
             selectedTitle: "",
             selectedCategory: "", 
-            selectedZoomLink: "", 
+            selectedZoom: "", 
 
             permDate: "", 
             permDescription: "",
             permTitle: "",
             permCategory: "",
             permID: "",
-            permZoomLink: "", 
+            permZoom: "", 
 
-            guide: "", 
             amountOfPages: 0,
-            currentAmount: 12, 
+            currentAmount: 16, 
             currentPlace: 1
 
         }
@@ -55,7 +54,7 @@ export default class HomeMainComponent extends React.Component {
         console.log("Hello")
         if (this.state.currentPlace > 1) {
             this.setState({
-                currentAmount: this.state.currentAmount - 12, 
+                currentAmount: this.state.currentAmount - 16, 
                 currentPlace: this.state.currentPlace - 1,
             });
         }
@@ -64,7 +63,7 @@ export default class HomeMainComponent extends React.Component {
     scrollNext = (e) => {
         if (this.state.currentPlace < this.state.amountOfPages) {
             this.setState({
-                currentAmount: this.state.currentAmount + 12, 
+                currentAmount: this.state.currentAmount + 16, 
                 currentPlace: this.state.currentPlace + 1,
               });
         }
@@ -84,7 +83,7 @@ export default class HomeMainComponent extends React.Component {
                 const data = response.data.reverse();
                 this.setState({ posts: data});
                 console.log("data has been received"); 
-                const n = Math.ceil(this.state.posts.length / 12)
+                const n = Math.ceil(this.state.posts.length / 16)
                 this.setState({
                     amountOfPages: n
                 })  
@@ -103,7 +102,6 @@ export default class HomeMainComponent extends React.Component {
      console.log(e.target.dataset.zoom)
      
     this.setState({
-        guide: "", 
         selectedDescription: e.target.dataset.description, 
         selectedTitle: e.target.dataset.title,
         selectedCategory: e.target.dataset.category, 
@@ -121,12 +119,11 @@ export default class HomeMainComponent extends React.Component {
     handlePerm = (e) => {
         if (this.state.permTitle != "" && e.target.dataset.id == this.state.permID) {
             this.setState({
-                guide: "", 
                 permDescription: "", 
                 permTitle: "",
                 permID: "",
                 permDate: "",
-                permCategory: "" ,
+                permCategory: "",
                 permZoom: ""
             })
         }
@@ -185,12 +182,11 @@ export default class HomeMainComponent extends React.Component {
     }
     handleDiscardItem = (e) => {
         this.setState({
-            guide: "What is opensoup?", 
             selectedDescription: "", 
             selectedTitle: "",
             selectedCategory: "",
             selectedDate: "",
-            selectedZoomLink: ""
+            selectedZoom: ""
         })
     }
     handleCategoryCount = (e) => {
@@ -278,10 +274,6 @@ export default class HomeMainComponent extends React.Component {
         console.log("page update?")
     }
     render() {
-
-        
-
-
         return (
             <>
       <div>
@@ -293,8 +285,9 @@ export default class HomeMainComponent extends React.Component {
         <section className="dod-layout-default">
         <header data-grid-area="header" className="dod-space-between-responsive">
           <div>
-            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">ecw+</Link></h1>
-            <p className="dod-heading-3 dod-stack-16 logoDesc">High school events, conferences, and workshops</p>
+            <h1 className="dod-heading-1 dod-stack-4 logo" style={{justifyContent: "trie"}}><Link to="/">osc+</Link></h1>
+            <p className="dod-heading-3 dod-stack-16 logoDesc">open source collage: assemblage of opportunities
+            and resources for high school students</p>
           </div>
           <p></p>
           <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
@@ -309,60 +302,67 @@ export default class HomeMainComponent extends React.Component {
                     <p>Hello</p>
                 })}
                 */}
-        <main data-grid-area="main">
-        {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
-           
-        <>
-                <div className="dod-media-grid dod-stack-15" >
-                {this.state.posts.slice(this.state.currentAmount - 12, this.state.currentAmount).map(post => {
-                    return(
-                        <>
+                {this.state.posts != "" ? (
+                    <main data-grid-area="main" >
+                    {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
                         
-                    <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', 
-                    borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} 
-                    data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} 
-                    data-zoom={post.zoomLink} className="dod-card" id={`${post.category}`}
-                    onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} 
-                    onClick={this.handlePerm}>
-                            <p className="dod-heading-3 dod-stack-16"  data-zoomLink={post.zoomLink} data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
-                    </div>
-                    
-                    </>
-                    )
-                })}
-                </div>
-                </>
-
+                    <>
+                            <div className="dod-media-grid dod-stack-15" >
+                            {this.state.posts.slice(this.state.currentAmount - 16, this.state.currentAmount).map(post => {
+                                return(
+                                    <>
+                                <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', 
+                                borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} 
+                                data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} 
+                                data-zoom={post.zoomLink} className="dod-card" id={`${post.category}`}
+                                onMouseLeave={this.handleDiscardItem} onMouseEnter={this.handleSelectItem} 
+                                onClick={this.handlePerm}>
+                                        <p className="dod-heading-3 dod-stack-16"  data-zoom={post.zoomLink} data-description={post.description} data-date={post.date}  data-id={post._id} data-title={post.title} data-category={post.category}>{post.title}</p>
+                                </div>
+                                </>
+                                )
+                            })}
+                            </div>
+                            </>
             
-            {/* Pagination here*/}
+                        
+                        {/* Pagination here*/}
+            
+                        <br/>
+                        <a style={{cursor: "pointer"}} onClick={this.scrollPrev}>Prev</a>
+                        <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this.scrollNext}>Next</a>
+                    </main>
+                ) : (
+                    <>
+                        <main data-grid-area="main" >
+                            <div className="dod-media-grid dod-stack-15" >
+                                <p>Loading...</p>
+                            </div>
+                        </main>
+                    </>
+                )}
 
-            <br/>
-            <a style={{cursor: "pointer"}} onClick={this.scrollPrev}>Prev</a>
-            <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this.scrollNext}>Next</a>
-        </main>
+
+        <main className="eventdesc" data-grid-area="main">
 
 
-        <main data-grid-area="main" style={{marginTop: "15px", display: "inline-block", wordBreak: "break-word", height: "200px"}}>
-
-
-           {this.state.permTitle != "" ? (
+           {this.state.permTitle != "" && this.state.permCategory != "" ? (
                <>
                <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.permTitle}{'\u00A0'}
-               <span style={{fontSize: "20px", background: "purple", color: "white"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
+               <span id={this.state.permCategory} style={{fontSize: "20px", color: "black"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
                </p></b> 
                 
-                <br></br><p>{this.state.permZoom}</p>
+                <br></br><a href={this.state.permZoom} target="_blank">{this.state.permZoom}</a>
                <br></br><p>{this.state.permDate}</p>
                 <br></br><p>{this.state.permDescription}</p> 
                </>
            ) : (
                <>
-               <p>{this.state.guide}</p>
                   <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
-                  <span style={{fontSize: "20px", background: "purple", color: "white"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
+                  <span id={this.state.selectedCategory} style={{fontSize: "20px", color: "black"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
                   </p></b>
                   
-                  <br></br><p>{this.state.selectedZoom}</p>
+                  <br></br><a href={this.state.permZoom} target="_blank">{this.state.selectedZoom}</a>
                   <br></br><p>{this.state.selectedDate}</p>
             <br></br><p>{this.state.selectedDescription}</p>
                </> 

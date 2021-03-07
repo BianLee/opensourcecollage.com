@@ -128,10 +128,8 @@ text-decoration: none;
   user-select: none;
   text-decoration: cursive;
   font-style: italic;
-  text-align: center;
   font-size: 17px !important;
 }
-
 .dod-heading-1 {
 font-size: 5.4rem !important;
 line-height: 5rem !important;
@@ -230,6 +228,12 @@ background: #eee;
 border: 3px dotted transparent;
 }
 
+.eventdesc {
+  margin-top: 15px !important; 
+  display: inline-block;
+  word-break: break-word;
+  height: 250px;
+}
 
 #math {
   background-color: #f3e6d8 !important; 
@@ -253,6 +257,9 @@ border: 3px dotted transparent;
   background-color: #e6cbd6 !important; 
 }
 #other {
+  background-color: #eee !important; 
+}
+#humanities {
   background-color: #e4dddd !important; 
 }
 
