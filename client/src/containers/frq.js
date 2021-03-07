@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/styles.css"
 import { BrowserRouter as Router, Route, Link} from "react-router-dom" 
-export default class AboutComponent extends React.Component {
+export default class FRQComponent extends React.Component {
     constructor() {
         super()
         this.state = {
@@ -10,7 +10,6 @@ export default class AboutComponent extends React.Component {
     }
     render() {
         return (
-            
             <>
             <div>
               <meta charSet="UTF-8" />
@@ -31,15 +30,10 @@ export default class AboutComponent extends React.Component {
                 <a href="https://discord.gg/zPyjsCJ5Sn" target="_blank" style={{marginLeft: "10px"}}>Discord</a> 
                 <Link to="/frq"  style={{marginLeft: "10px"}}>FRQ</Link>
                 <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
-              </header>
+
+                </header>
               <main data-grid-area="main">
-              <p>ECW+ is a platform for high school students, for sharing and browsing high school virtual events, conferences.
-                Discover the next online lecture to attend for the weekend, find a competition 
-                on a subject you are passionate about, or promote your own online meeting you have worked hard to organize!
-                
-
-
-            </p>
+                 
               </main>
               <footer data-grid-area="footer">
               </footer>
@@ -47,7 +41,6 @@ export default class AboutComponent extends React.Component {
             </div>
           
                   </> 
-
         )
     }
 }

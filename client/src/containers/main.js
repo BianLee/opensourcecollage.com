@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker"
 import "../styles/styles.css"
 import { BrowserRouter as Router, Route, Link} from "react-router-dom" 
 import firebase from "firebase" 
+import ReactLoading from 'react-loading';
 export default class HomeMainComponent extends React.Component {
     constructor() {
         super();
@@ -292,8 +293,10 @@ export default class HomeMainComponent extends React.Component {
           <p></p>
           <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
           <Link to="/apply"  style={{marginLeft: "10px"}}>Apply</Link>
-          <Link to="/apply"  style={{marginLeft: "10px"}}>Donate</Link>
+          <a href="https://discord.gg/zPyjsCJ5Sn" target="_blank" style={{marginLeft: "10px"}}>Discord</a> 
+          <Link to="/frq"  style={{marginLeft: "10px"}}>FRQ</Link>
           <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
+        
         </header>
                 {/* 
                 {this.state.posts.slice(0).reverse().map(post => {
@@ -335,9 +338,9 @@ export default class HomeMainComponent extends React.Component {
                     </main>
                 ) : (
                     <>
-                        <main data-grid-area="main" >
-                            <div className="dod-media-grid dod-stack-15" >
-                                <p>Loading...</p>
+                        <main data-grid-area="main">
+                            <div className="dod-media-grid dod-stack-15">
+                                <ReactLoading type={"spin"} color={"gray"} height={70} width={70} />
                             </div>
                         </main>
                     </>
@@ -353,7 +356,7 @@ export default class HomeMainComponent extends React.Component {
                <span id={this.state.permCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
                </p></b> 
                 
-                <br></br><a href={this.state.permZoom} target="_blank">{this.state.permZoom}</a>
+                <br></br><a href={this.state.permZoom} target="_blank" style={{color: "purple"}}>{this.state.permZoom}</a>
                <br></br><p>{this.state.permDate}</p>
                 <br></br><p>{this.state.permDescription}</p> 
                </>
@@ -363,7 +366,7 @@ export default class HomeMainComponent extends React.Component {
                   <span id={this.state.selectedCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
                   </p></b>
                   
-                  <br></br><a href={this.state.permZoom} target="_blank">{this.state.selectedZoom}</a>
+                  <br></br><a href={this.state.permZoom} target="_blank" style={{color: "purple"}}>{this.state.selectedZoom}</a>
                   <br></br><p>{this.state.selectedDate}</p>
             <br></br><p>{this.state.selectedDescription}</p>
                </> 

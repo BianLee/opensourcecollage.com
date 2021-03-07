@@ -6,6 +6,7 @@ import HomeMainComponent from "./containers/main"
 import LoginMainComponent from "./containers/login"
 import AboutComponent from "./containers/about"
 import ApplyComponent from "./containers/apply"
+import FRQComponent from "./containers/frq"
  // import "bootstrap/dist/css/bootstrap.min.css";
  // comment
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' exact component={HomeMainComponent}/> 
       <Route path='/about' exact component={AboutComponent}/>
       <Route path='/apply' exact component={ApplyComponent}/>
+	  <Route path='/frq' exact component={FRQComponent}/>
       <Route path='/post' exact component={LoginMainComponent}/>
     </Router>
   )

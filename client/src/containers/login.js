@@ -276,6 +276,8 @@ export default class LoginFirstFrame extends React.Component {
           <p></p>
           <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
           <Link to="/apply"  style={{marginLeft: "10px"}}>Apply</Link>
+          <a href="https://discord.gg/zPyjsCJ5Sn" target="_blank" style={{marginLeft: "10px"}}>Discord</a> 
+          <Link to="/frq"  style={{marginLeft: "10px"}}>FRQ</Link>
           <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
         </header>
         <main data-grid-area="main">
@@ -348,7 +350,7 @@ export default class LoginFirstFrame extends React.Component {
                 </>
             : ( 
                 <>
-                <p>You must be logged in to access the content.</p>
+                <p>You must be logged in to make a post.</p>
                 </> 
             )}
         </main>

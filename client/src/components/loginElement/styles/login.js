@@ -55,7 +55,7 @@ export const Label = styled.div`
     display: block;
     font-size: 1.25rem;
     line-height: 1;
-    font-family: 'Newsreader', serif;;
+    font-family: 'Fira Sans', sans-serif;
 `; 
 
 export const Info = styled.div`
