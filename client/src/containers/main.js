@@ -333,8 +333,9 @@ export default class HomeMainComponent extends React.Component {
                         {/* Pagination here*/}
             
                         <br/>
-                        <a style={{cursor: "pointer"}} onClick={this.scrollPrev}>Prev</a>
-                        <a style={{marginLeft: "20px", cursor: "pointer"}} onClick={this.scrollNext}>Next</a>
+                        <a style={{cursor: "pointer",  color:"purple"}} onClick={this.scrollPrev}><b>← Prev</b></a>
+                        <a style={{marginLeft: "20px", cursor: "pointer", color:"purple"}} onClick={this.scrollNext}><b>Next →</b></a>
+                        <p style={{marginLeft: "20px", display: "inline"}}>(Click to select) ↑</p>
                     </main>
                 ) : (
                     <>
