@@ -292,6 +292,7 @@ export default class HomeMainComponent extends React.Component {
           <p></p>
           <Link to="/about" style={{marginLeft: "18px"}}>About</Link>
           <Link to="/apply"  style={{marginLeft: "10px"}}>Apply</Link>
+          <Link to="/apply"  style={{marginLeft: "10px"}}>Donate</Link>
           <Link to="/post" className="dod-button" style={{marginLeft: "10px"}}>Post</Link>
         </header>
                 {/* 
@@ -311,7 +312,7 @@ export default class HomeMainComponent extends React.Component {
                             {this.state.posts.slice(this.state.currentAmount - 16, this.state.currentAmount).map(post => {
                                 return(
                                     <>
-                                <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '3px': '', 
+                                <div href="/dogs/frieda/" style={{ borderStyle: this.state.permID == post._id ? 'dotted': '', borderWidth: this.state.permID == post._id ? '2.5px': '', 
                                 borderColor: this.state.permID == post._id ? 'black': ''}} key={post._id} data-category={post.category} 
                                 data-date={post.date} data-id={post._id} data-description={post.description}  data-title={post.title} 
                                 data-zoom={post.zoomLink} className="dod-card" id={`${post.category}`}
@@ -348,8 +349,8 @@ export default class HomeMainComponent extends React.Component {
 
            {this.state.permTitle != "" && this.state.permCategory != "" ? (
                <>
-               <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.permTitle}{'\u00A0'}
-               <span id={this.state.permCategory} style={{fontSize: "20px", color: "black"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
+               <b><p style={{fontSize: "2rem", fontWeight: "lighter", lineHeight: "40px"}}>{this.state.permTitle}{'\u00A0'}
+               <span id={this.state.permCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
                </p></b> 
                 
                 <br></br><a href={this.state.permZoom} target="_blank">{this.state.permZoom}</a>
@@ -358,8 +359,8 @@ export default class HomeMainComponent extends React.Component {
                </>
            ) : (
                <>
-                  <b><p style={{fontSize: "2rem", fontWeight: "900", lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
-                  <span id={this.state.selectedCategory} style={{fontSize: "20px", color: "black"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
+                  <b><p style={{fontSize: "2rem", fontWeight: "lighter",  lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
+                  <span id={this.state.selectedCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
                   </p></b>
                   
                   <br></br><a href={this.state.permZoom} target="_blank">{this.state.selectedZoom}</a>

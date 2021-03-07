@@ -69,6 +69,13 @@ button {
 border: 0;
 }
 
+span {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
 body {
   font-family: 'Fira Sans', sans-serif;
 font-size: 1rem;
@@ -133,7 +140,7 @@ text-decoration: none;
 .dod-heading-1 {
 font-size: 5.4rem !important;
 line-height: 5rem !important;
-font-weight: 900 !important;
+
 }
 
 .dod-heading-2 {
@@ -221,11 +228,11 @@ text-decoration: none;
 color: inherit;
 max-height: 80px;
 padding: 14px;
-font-weight: 700; 
+font-weight: 500;  
 word-wrap: break-word;
 box-sizing: border-box;
 background: #eee;
-border: 3px dotted transparent;
+border: 2.5px dotted transparent;
 }
 
 .eventdesc {
