@@ -114,6 +114,34 @@ strong {
 font-weight: 600;
 }
 
+.sponsor {
+  float: left; 
+}
+.sponsorDesc {
+  float: right; 
+}
+.sponsor img {
+  width: 20vw;
+  height: auto;
+  padding: 20px;
+}
+.sponsorSection {
+
+}
+
+@media (max-width: 700px) {
+  .sponsorSection {
+    text-align: center;
+  }
+  .sponsor {
+    float: center; 
+  }
+  .sponsorDesc {
+    float: center; 
+  }
+
+}
+
 @media (min-width: 700px) {
 body {
   font-size: 1.25rem;
@@ -170,7 +198,7 @@ line-height: 1.5rem;
 }
 }
 [class*=dod-button] {
-      font-family: 'Fira Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     display: inline-block;
     background-color: #041e42;
     color: white;
@@ -241,6 +269,41 @@ border: 2.5px dotted transparent;
   word-break: break-word;
   height: 250px;
 }
+@media (max-width: 1000px) {
+  .eventdesc {
+    margin-top: 15px !important; 
+    display: inline-block;
+    word-break: break-word;
+    height: 360px;
+  }
+}
+
+@media (max-width: 700px) { 
+  .eventdesc {
+    margin-top: 15px !important; 
+    display: inline-block;
+    word-break: break-word;
+    height: 380px;
+  }
+  .dod-card p {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px; 
+    line-height: 1.7rem;
+  }
+  [class*=dod-button] {
+    font-family: 'Fira Sans', sans-serif;
+    display: inline-block;
+    background-color: #041e42;
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 1.00rem;
+    padding: 0.35rem 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    justify-content: flex-end
+}
+}
 
 #math {
   background-color: #f3e6d8 !important; 
@@ -270,9 +333,7 @@ border: 2.5px dotted transparent;
   background-color: #e4dddd !important; 
 }
 
-.dod-card p {
-  font-family: 'Fira Sans', sans-serif;
-}
+
 
 .dod-card:hover {
     color: #1a472a;

@@ -5,6 +5,7 @@ import "../styles/styles.css"
 import { BrowserRouter as Router, Route, Link} from "react-router-dom" 
 import firebase from "firebase" 
 import ReactLoading from 'react-loading';
+import github from "../images/github.png"
 export default class HomeMainComponent extends React.Component {
     constructor() {
         super();
@@ -348,11 +349,10 @@ export default class HomeMainComponent extends React.Component {
                 )}
 
 
-        <main className="eventdesc" data-grid-area="main">
-
-
+     
            {this.state.permTitle != "" && this.state.permCategory != "" ? (
                <>
+               <main className="eventdesc" data-grid-area="main">
                <b><p style={{fontSize: "2rem", fontWeight: "lighter", lineHeight: "40px"}}>{this.state.permTitle}{'\u00A0'}
                <span id={this.state.permCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.permCategory}{'\u00A0'}</span>
                </p></b> 
@@ -360,8 +360,23 @@ export default class HomeMainComponent extends React.Component {
                 <br></br><a href={this.state.permZoom} target="_blank" style={{color: "purple"}}>{this.state.permZoom}</a>
                <br></br><p>{this.state.permDate}</p>
                 <br></br><p>{this.state.permDescription}</p> 
+                </main>
                </>
+              
            ) : (
+            <main className="eventdesc" data-grid-area="main">
+            <p style={{fontSize: "1.4rem", fontWeight: "lighter", lineHeight: "30px", marginBottom: "10px"}}>What is <i>Open Source Collage</i> and how do I use this platform?</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+                dicta sunt explicabo. Nemo enim ipsam veritatis o inventore. Et harum quidem rerum facilis est et expedita distinctio.
+             Nam libero tempore soluta nobis est eligendi optio cumque nihil impedit quo minus id quod m
+                <br></br><br></br>quae ab illo inventore veritatis et quasi architecto beatae vitae 
+                dicta sunt explicabo. Nemo enim ipsam voluptatem qu et quasi architecto beatae vitae. quae ab illo inventore veritatis et quasi ar.</p>
+
+        </main>
+        
+           )}
+                          {/* 
                <>
                   <b><p style={{fontSize: "2rem", fontWeight: "lighter",  lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
                   <span id={this.state.selectedCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
@@ -370,11 +385,7 @@ export default class HomeMainComponent extends React.Component {
                   <br></br><a href={this.state.permZoom} target="_blank" style={{color: "purple"}}>{this.state.selectedZoom}</a>
                   <br></br><p>{this.state.selectedDate}</p>
             <br></br><p>{this.state.selectedDescription}</p>
-               </> 
-           )}
-                    
-          
-          
+               </> */}
           {/* 
                 {this.state.posts.map(post => {
                     return post.id == this.state.selectedID ?
@@ -383,8 +394,22 @@ export default class HomeMainComponent extends React.Component {
                         <p></p>
                 })}   
                 */}
-        </main>  
+   
+        <main data-grid-area="main" style={{marginTop: "15px"}}> 
+              
+               <br></br>
+               <div className="sponsor">
+                    <img src={github}></img>
+               </div>
+               <p style={{fontSize: "1.4rem", fontWeight: "lighter", lineHeight: "30px", marginBottom: "10px"}}>Featured Organization</p>
+               <p>GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. 
+                   It offers the distributed version control and source code management (SCM) functionality of Git, plus 
+                   its own features. It provides access control and several collaboration features such as bug tracking, 
+                   feature requests, task management, continuous integration and wikis for every project.[3] Headquartered 
+                   in California, it has been a subsidiary of Microsoft since 2018</p>
+       </main>
         <footer data-grid-area="footer">
+            
         </footer>
         </section>
       </div>
