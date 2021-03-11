@@ -1,0 +1,3 @@
+# Prettier should ignore node_modules by default, but we can just put this
+# here just to be sure
+node_modules
