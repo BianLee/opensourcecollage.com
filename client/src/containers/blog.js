@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/styles.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-export default class ApplyComponent extends React.Component {
+export default class BlogComponent extends React.Component {
     constructor() {
         super();
         this.state = {};
@@ -40,8 +40,8 @@ export default class ApplyComponent extends React.Component {
                             <Link to="/about" style={{ marginLeft: "18px" }}>
                                 About
                             </Link>
-                            <Link to="/apply" style={{ marginLeft: "10px" }}>
-                                Apply
+                            <Link to="/blog" style={{ marginLeft: "10px" }}>
+                                Blog
                             </Link>
                             <a
                                 href="https://discord.gg/zPyjsCJ5Sn"

@@ -315,8 +315,8 @@ export default class HomeMainComponent extends React.Component {
                             <Link to="/about" style={{ marginLeft: "18px" }}>
                                 About
                             </Link>
-                            <Link to="/apply" style={{ marginLeft: "10px" }}>
-                                Apply
+                            <Link to="/blog" style={{ marginLeft: "10px" }}>
+                                Blog
                             </Link>
                             <a
                                 href="https://discord.gg/zPyjsCJ5Sn"
@@ -495,13 +495,14 @@ export default class HomeMainComponent extends React.Component {
                                     data-grid-area="main"
                                 >
                                     <b>
-                                        <p
-                                            style={{
-                                                fontSize: "2rem",
-                                                fontWeight: "lighter",
-                                                lineHeight: "40px",
-                                            }}
-                                        >
+                                    <p
+                                    style={{
+                                        fontSize: "1.5rem",
+                                        fontWeight: "lighter",
+                                        lineHeight: "30px",
+                                        fontFamiliy: "Giga Sans Light"
+                                    }}
+                                >
                                             {this.state.permTitle}
                                             {"\u00A0"}
                                             <span
@@ -517,32 +518,62 @@ export default class HomeMainComponent extends React.Component {
 
                                     <br></br>
                                     <a
+                                         style={{
+                                            fontSize: "1rem",
+                                            fontWeight: "lighter",
+                                            lineHeight: "25px",
+                                            marginBottom: "10px",
+                                            fontFamiliy: "Giga Sans Light"
+                                        }}
                                         href={this.state.permZoom}
                                         target="_blank"
                                         style={{ color: "purple" }}
                                     >
                                         {this.state.permZoom}
                                     </a>
-                                    <br></br>
-                                    <p>{this.state.permDate}</p>
-                                    <br></br>
-                                    <p>{this.state.permDescription}</p>
+                                    <p
+                                    style={{
+                                        fontSize: "1rem",
+                                        fontWeight: "lighter",
+                                        lineHeight: "25px",
+                                        marginBottom: "10px",
+                                        fontFamiliy: "Giga Sans Light"
+                                    }}
+                                >{this.state.permDate}</p>
+                                    <p
+                                    style={{
+                                        fontSize: "1rem",
+                                        fontWeight: "lighter",
+                                        lineHeight: "25px",
+                                        marginBottom: "10px",
+                                        fontFamiliy: "Giga Sans Light"
+                                    }}
+                                >{this.state.permDescription}</p>
                                 </main>
                             </>
                         ) : (
                             <main className="eventdesc" data-grid-area="main">
                                 <p
                                     style={{
-                                        fontSize: "1.4rem",
+                                        fontSize: "1.5rem",
                                         fontWeight: "lighter",
                                         lineHeight: "30px",
                                         marginBottom: "10px",
+                                        fontFamiliy: "Giga Sans Light"
                                     }}
                                 >
                                     What is <i>Open Source Collage</i> and how
                                     do I use this platform?
                                 </p>
-                                <p>
+                                <p
+                                    style={{
+                                        fontSize: "1rem",
+                                        fontWeight: "lighter",
+                                        lineHeight: "25px",
+                                        marginBottom: "10px",
+                                        fontFamiliy: "Giga Sans Light"
+                                    }}
+                                >
                                     Sed ut perspiciatis unde omnis iste natus
                                     error sit voluptatem accusantium doloremque
                                     laudantium, totam rem aperiam, eaque ipsa
@@ -557,7 +588,8 @@ export default class HomeMainComponent extends React.Component {
                                     quasi architecto beatae vitae dicta sunt
                                     explicabo. Nemo enim ipsam voluptatem qu et
                                     quasi architecto beatae vitae. quae ab illo
-                                    inventore veritatis et quasi ar.
+                                    inventore veritatis et quasi ar. beatae vitae
+                                    dicta sunt explicabo. Nemo enim ipsam. 
                                 </p>
                             </main>
                         )}
@@ -581,24 +613,34 @@ export default class HomeMainComponent extends React.Component {
                 */}
 
                         <main
+                            className="featuredOrg"
                             data-grid-area="main"
-                            style={{ marginTop: "15px" }}
+                            style={{ marginTop: "18px" }}
                         >
                             <br></br>
                             <div className="sponsor">
                                 <img src={github}></img>
                             </div>
                             <p
-                                style={{
-                                    fontSize: "1.4rem",
-                                    fontWeight: "lighter",
-                                    lineHeight: "30px",
-                                    marginBottom: "10px",
-                                }}
-                            >
-                                Featured Organization
+                                    style={{
+                                        fontSize: "1.5rem",
+                                        fontWeight: "lighter",
+                                        lineHeight: "30px",
+                                        marginBottom: "10px",
+                                        fontFamiliy: "Giga Sans Light"
+                                    }}
+                                >
+                                GitHub - Featured Organization of The Month
                             </p>
-                            <p>
+                            <p
+                                    style={{
+                                        fontSize: "1rem",
+                                        fontWeight: "lighter",
+                                        lineHeight: "25px",
+                                        marginBottom: "10px",
+                                        fontFamiliy: "Giga Sans Light"
+                                    }}
+                                >
                                 GitHub, Inc. is a provider of Internet hosting
                                 for software development and version control
                                 using Git. It offers the distributed version
@@ -610,6 +652,12 @@ export default class HomeMainComponent extends React.Component {
                                 integration and wikis for every project.[3]
                                 Headquartered in California, it has been a
                                 subsidiary of Microsoft since 2018
+                                <br></br><br></br>
+                                The GitHub service was developed by Chris Wanstrath,
+                                P. J. Hyett, Tom Preston-Werner and Scott Chacon using
+                                Ruby on Rails, and started in February 2008.
+                                The company, GitHub, Inc., has existed since 2007
+                                and is located in San Francisco.[14]
                             </p>
                         </main>
                         <footer data-grid-area="footer"></footer>

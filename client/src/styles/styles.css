@@ -121,11 +121,20 @@ strong {
     float: right;
 }
 .sponsor img {
-    width: 20vw;
+    width: 15vw;
     height: auto;
     padding: 20px;
 }
 .sponsorSection {
+}
+
+@media (min-width: 980px) {
+    .featuredOrg:hover, 
+    .eventdesc:hover {
+        cursor: pointer;
+        transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transition: transform 0.5s; 
+    }
 }
 
 @media (max-width: 700px) {
@@ -259,14 +268,15 @@ strong {
 }
 
 .eventdesc {
-    margin-top: 15px !important;
+    margin-top: 18px !important;
     display: inline-block;
     word-break: break-word;
-    height: 250px;
+    height: 205px;
+    font-style: 'Montserrat' !important;
 }
 @media (max-width: 1000px) {
     .eventdesc {
-        margin-top: 15px !important;
+        margin-top: 18px !important;
         display: inline-block;
         word-break: break-word;
         height: 360px;
@@ -275,10 +285,10 @@ strong {
 
 @media (max-width: 700px) {
     .eventdesc {
-        margin-top: 15px !important;
+        margin-top: 18px !important;
         display: inline-block;
         word-break: break-word;
-        height: 380px;
+        height: 425px;
     }
     .dod-card p {
         font-family: "Fira Sans", sans-serif;
