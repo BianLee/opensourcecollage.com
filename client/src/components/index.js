@@ -1,1 +1,1 @@
-export { default as LoginElement } from "./loginElement"
+export { default as LoginElement } from "./loginElement";

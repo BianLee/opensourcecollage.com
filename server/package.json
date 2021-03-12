@@ -1,17 +1,20 @@
 {
-  "dependencies": {
-    "axios": "^0.21.1",
-    "cors": "^2.8.5",
-    "css-loader": "^5.0.2",
-    "express": "^4.17.1",
-    "moment": "^2.29.1",
-    "mongoose": "^5.11.13",
-    "react-datepicker": "^3.4.1",
-    "react-time-picker": "^4.1.2",
-    "style-loader": "^2.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  }
+    "dependencies": {
+        "axios": "^0.21.1",
+        "cors": "^2.8.5",
+        "css-loader": "^5.0.2",
+        "express": "^4.17.1",
+        "moment": "^2.29.1",
+        "mongoose": "^5.11.13",
+        "react-datepicker": "^3.4.1",
+        "react-time-picker": "^4.1.2",
+        "style-loader": "^2.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "devDependencies": {
+        "prettier": "2.2.1"
+    }
 }
