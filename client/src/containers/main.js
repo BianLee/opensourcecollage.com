@@ -29,12 +29,6 @@ export default class HomeMainComponent extends React.Component {
             showMessage: false,
             message: "Apply filter",
 
-            selectedDate: "",
-            selectedDescription: "",
-            selectedTitle: "",
-            selectedCategory: "",
-            selectedZoom: "",
-
             permDate: "",
             permDescription: "",
             permTitle: "",
@@ -103,21 +97,6 @@ export default class HomeMainComponent extends React.Component {
             .catch(() => {
                 alert("error retreving data!!");
             });
-    };
-
-    handleSelectItem = (e) => {
-        //console.log(e.target.dataset.description)
-        //console.log(e.target.dataset.title)
-        console.log(e.target.dataset.date);
-        console.log(e.target.dataset.zoom);
-
-        this.setState({
-            selectedDescription: e.target.dataset.description,
-            selectedTitle: e.target.dataset.title,
-            selectedCategory: e.target.dataset.category,
-            selectedDate: e.target.dataset.date,
-            selectedZoom: e.target.dataset.zoom,
-        });
     };
 
     onChangeDate(date) {
@@ -189,15 +168,6 @@ export default class HomeMainComponent extends React.Component {
         } else {
             this.setState({ chkbox: false, timeZone: "PST" });
         }
-    };
-    handleDiscardItem = (e) => {
-        this.setState({
-            selectedDescription: "",
-            selectedTitle: "",
-            selectedCategory: "",
-            selectedDate: "",
-            selectedZoom: "",
-        });
     };
     handleCategoryCount = (e) => {
         // console.log(this.state.category);
