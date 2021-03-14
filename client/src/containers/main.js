@@ -27,9 +27,7 @@ export default class HomeMainComponent extends React.Component {
             alert: false,
             posts: [],
             showMessage: false,
-            showMessageTwo: false,
-            message: "View all events",
-            messageTwo: "Apply filter",
+            message: "Apply filter",
 
             selectedDate: "",
             selectedDescription: "",
@@ -49,6 +47,26 @@ export default class HomeMainComponent extends React.Component {
             currentPlace: 1,
         };
     }
+
+    _showMessage = (bool, e) => {
+        this.setState({
+          showMessage: bool,
+        
+        });
+        if (bool) {
+            this.setState({
+                message: "Collapse filter" 
+              
+              });
+        }
+        else {
+            this.setState({
+                message: "Apply filter" 
+              
+              });
+        }
+      }
+
 
     scrollPrev = (e) => {
         console.log("Hello");
@@ -469,8 +487,70 @@ export default class HomeMainComponent extends React.Component {
                                         display: "inline",
                                     }}
                                 >
-                                    (Click to select) ↑
+                                
                                 </p>
+                                <a style={{cursor: "pointer", display: "inline"}} onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
+                                {this.state.showMessage ? (
+                                    <>
+                                        <br></br><br></br>
+                                        <input id ="mathButton" type="checkbox"/>
+                                        <label htmlFor="mathButton">
+                                                Math
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="physicsButton" type="checkbox"/>
+                                        <label htmlFor="physicssButton">
+                                                Physics
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="chemistryButton" type="checkbox"/>
+                                        <label htmlFor="chemistryButton">
+                                                Chemistry
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="biologyButton" type="checkbox"/>
+                                        <label htmlFor="biologyButton">
+                                                Biology
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="csButton" type="checkbox"/>
+                                        <label htmlFor="csButton">
+                                                CS
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="engineeringButton" type="checkbox"/>
+                                        <label htmlFor="engineeringButton">
+                                                Engineering
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="humanitiesButton" type="checkbox"/>
+                                        <label htmlFor="humanitiesButton">
+                                                Humanities
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input  id="musicButton" type="checkbox"/>
+                                        <label htmlFor="musicButton">
+                                                Music
+                                        </label>
+                                        {"\u00A0"}
+                                        {"\u00A0"}
+                                        <input id="otherButton" type="checkbox"/>
+                                        <label htmlFor="otherButton">
+                                                Other
+                                        </label>
+                                    </> 
+                                ) : (
+                                    <>
+                                        <p></p>
+                                    </>
+                                )}
                             </main>
                         ) : (
                             <>
