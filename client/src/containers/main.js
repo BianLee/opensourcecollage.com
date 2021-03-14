@@ -50,23 +50,18 @@ export default class HomeMainComponent extends React.Component {
 
     _showMessage = (bool, e) => {
         this.setState({
-          showMessage: bool,
-        
+            showMessage: bool,
         });
         if (bool) {
             this.setState({
-                message: "Collapse filter" 
-              
-              });
-        }
-        else {
+                message: "Collapse filter",
+            });
+        } else {
             this.setState({
-                message: "Apply filter" 
-              
-              });
+                message: "Apply filter",
+            });
         }
-      }
-
+    };
 
     scrollPrev = (e) => {
         console.log("Hello");
@@ -575,14 +570,14 @@ export default class HomeMainComponent extends React.Component {
                                     data-grid-area="main"
                                 >
                                     <b>
-                                    <p
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "30px",
-                                        fontFamiliy: "Giga Sans Light"
-                                    }}
-                                >
+                                        <p
+                                            style={{
+                                                fontSize: "1.5rem",
+                                                fontWeight: "lighter",
+                                                lineHeight: "30px",
+                                                fontFamiliy: "Giga Sans Light",
+                                            }}
+                                        >
                                             {this.state.permTitle}
                                             {"\u00A0"}
                                             <span
@@ -598,12 +593,12 @@ export default class HomeMainComponent extends React.Component {
 
                                     <br></br>
                                     <a
-                                         style={{
+                                        style={{
                                             fontSize: "1rem",
                                             fontWeight: "lighter",
                                             lineHeight: "25px",
                                             marginBottom: "10px",
-                                            fontFamiliy: "Giga Sans Light"
+                                            fontFamiliy: "Giga Sans Light",
                                         }}
                                         href={this.state.permZoom}
                                         target="_blank"
@@ -612,23 +607,27 @@ export default class HomeMainComponent extends React.Component {
                                         {this.state.permZoom}
                                     </a>
                                     <p
-                                    style={{
-                                        fontSize: "1rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "25px",
-                                        marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light"
-                                    }}
-                                >{this.state.permDate}</p>
+                                        style={{
+                                            fontSize: "1rem",
+                                            fontWeight: "lighter",
+                                            lineHeight: "25px",
+                                            marginBottom: "10px",
+                                            fontFamiliy: "Giga Sans Light",
+                                        }}
+                                    >
+                                        {this.state.permDate}
+                                    </p>
                                     <p
-                                    style={{
-                                        fontSize: "1rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "25px",
-                                        marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light"
-                                    }}
-                                >{this.state.permDescription}</p>
+                                        style={{
+                                            fontSize: "1rem",
+                                            fontWeight: "lighter",
+                                            lineHeight: "25px",
+                                            marginBottom: "10px",
+                                            fontFamiliy: "Giga Sans Light",
+                                        }}
+                                    >
+                                        {this.state.permDescription}
+                                    </p>
                                 </main>
                             </>
                         ) : (
@@ -639,7 +638,7 @@ export default class HomeMainComponent extends React.Component {
                                         fontWeight: "lighter",
                                         lineHeight: "30px",
                                         marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light"
+                                        fontFamiliy: "Giga Sans Light",
                                     }}
                                 >
                                     What is <i>Open Source Collage</i> and how
@@ -651,7 +650,7 @@ export default class HomeMainComponent extends React.Component {
                                         fontWeight: "lighter",
                                         lineHeight: "25px",
                                         marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light"
+                                        fontFamiliy: "Giga Sans Light",
                                     }}
                                 >
                                     Sed ut perspiciatis unde omnis iste natus
@@ -668,8 +667,8 @@ export default class HomeMainComponent extends React.Component {
                                     quasi architecto beatae vitae dicta sunt
                                     explicabo. Nemo enim ipsam voluptatem qu et
                                     quasi architecto beatae vitae. quae ab illo
-                                    inventore veritatis et quasi ar. beatae vitae
-                                    dicta sunt explicabo. Nemo enim ipsam. 
+                                    inventore veritatis et quasi ar. beatae
+                                    vitae dicta sunt explicabo. Nemo enim ipsam.
                                 </p>
                             </main>
                         )}
@@ -702,25 +701,25 @@ export default class HomeMainComponent extends React.Component {
                                 <img src={github}></img>
                             </div>
                             <p
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "30px",
-                                        marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light"
-                                    }}
-                                >
+                                style={{
+                                    fontSize: "1.5rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "30px",
+                                    marginBottom: "10px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
                                 GitHub - Featured Organization of The Month
                             </p>
                             <p
-                                    style={{
-                                        fontSize: "1rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "25px",
-                                        marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light"
-                                    }}
-                                >
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "25px",
+                                    marginBottom: "10px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
                                 GitHub, Inc. is a provider of Internet hosting
                                 for software development and version control
                                 using Git. It offers the distributed version
@@ -732,12 +731,14 @@ export default class HomeMainComponent extends React.Component {
                                 integration and wikis for every project.[3]
                                 Headquartered in California, it has been a
                                 subsidiary of Microsoft since 2018
-                                <br></br><br></br>
-                                The GitHub service was developed by Chris Wanstrath,
-                                P. J. Hyett, Tom Preston-Werner and Scott Chacon using
-                                Ruby on Rails, and started in February 2008.
-                                The company, GitHub, Inc., has existed since 2007
-                                and is located in San Francisco.[14]
+                                <br></br>
+                                <br></br>
+                                The GitHub service was developed by Chris
+                                Wanstrath, P. J. Hyett, Tom Preston-Werner and
+                                Scott Chacon using Ruby on Rails, and started in
+                                February 2008. The company, GitHub, Inc., has
+                                existed since 2007 and is located in San
+                                Francisco.[14]
                             </p>
                         </main>
                         <footer data-grid-area="footer"></footer>
