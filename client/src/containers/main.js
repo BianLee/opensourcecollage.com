@@ -37,44 +37,12 @@ export default class HomeMainComponent extends React.Component {
             permZoom: "",
 
             amountOfPages: 0,
+            // amount of posts per page
             currentAmount: 16,
+            // current page number (1 = first page)
             currentPlace: 1,
         };
     }
-
-    _showMessage = (bool, e) => {
-        this.setState({
-            showMessage: bool,
-        });
-        if (bool) {
-            this.setState({
-                message: "Collapse filter",
-            });
-        } else {
-            this.setState({
-                message: "Apply filter",
-            });
-        }
-    };
-
-    scrollPrev = (e) => {
-        console.log("Hello");
-        if (this.state.currentPlace > 1) {
-            this.setState({
-                currentAmount: this.state.currentAmount - 16,
-                currentPlace: this.state.currentPlace - 1,
-            });
-        }
-    };
-
-    scrollNext = (e) => {
-        if (this.state.currentPlace < this.state.amountOfPages) {
-            this.setState({
-                currentAmount: this.state.currentAmount + 16,
-                currentPlace: this.state.currentPlace + 1,
-            });
-        }
-    };
 
     componentDidMount = () => {
         this.getPost();
@@ -105,6 +73,11 @@ export default class HomeMainComponent extends React.Component {
         });
     }
 
+    /**
+     * Modify the perm* variables to make the selected event either show a black dotted border
+     * or to clear the border if it had been previously selected
+     * @param e The event that happened
+     */
     handlePerm = (e) => {
         if (
             this.state.permTitle != "" &&
@@ -235,6 +208,28 @@ export default class HomeMainComponent extends React.Component {
         }
     };
 
+    onUnselected = () => {
+        this.setState({
+            permDescription: "",
+            permTitle: "",
+            permID: "",
+            permDate: "",
+            permCategory: "",
+            permZoom: "",
+        });
+    };
+    onSelected = (id, title, category, date, link, description) => {
+        // console.log(e.target.dataset.zoomLink)
+        this.setState({
+            permDescription: description,
+            permTitle: title,
+            permDate: date,
+            permId: id,
+            permCategory: category,
+            permZoom: link,
+        });
+    };
+
     onSubmit(e) {
         e.preventDefault();
         // console.log(this.state.category)
@@ -324,188 +319,87 @@ function NavBar(props) {
                     Post
                 </Link>
             </header>
-                                                    </>
-                                                );
-                                            })}
-                                    </div>
-                                </>
+        </>
+    );
+}
 
-                                {/* Pagination here*/}
+/**
+ * The extra info about a specific post at the bottom of the page
+ * @param {{
+ *  title: string,
+ *  category: string,
+ *  link: string,
+ *  date: string,
+ *  description: string
+ * }} props the info about the post, including the title of the event, the category that
+ * the event is in, the link to the event, the date of the event, and the description of the
+ * event
+ */
+function PostExtraInfo(props) {
+    return (
+        <>
+            <main className="eventdesc" data-grid-area="main">
+                <b>
+                    <p
+                        style={{
+                            fontSize: "1.5rem",
+                            fontWeight: "lighter",
+                            lineHeight: "30px",
+                            fontFamiliy: "Giga Sans Light",
+                        }}
+                    >
+                        {props.title}
+                        {"\u00A0"}
+                        <span id={props.category} style={{ fontSize: "20px" }}>
+                            {"\u00A0"}
+                            {props.category}
+                            {"\u00A0"}
+                        </span>
+                    </p>
+                </b>
 
-                                <br />
-                                <a
-                                    style={{
-                                        cursor: "pointer",
-                                        color: "purple",
-                                    }}
-                                    onClick={this.scrollPrev}
-                                >
-                                    <b>← Prev</b>
-                                </a>
-                                <a
-                                    style={{
-                                        marginLeft: "20px",
-                                        cursor: "pointer",
-                                        color: "purple",
-                                    }}
-                                    onClick={this.scrollNext}
-                                >
-                                    <b>Next →</b>
-                                </a>
-                                <p
-                                    style={{
-                                        marginLeft: "20px",
-                                        display: "inline",
-                                    }}
-                                >
-                                
-                                </p>
-                                <a style={{cursor: "pointer", display: "inline"}} onClick={this._showMessage.bind(null, ! this.state.showMessage)}>{this.state.message}</a>
-                                {this.state.showMessage ? (
-                                    <>
-                                        <br></br><br></br>
-                                        <input id ="mathButton" type="checkbox"/>
-                                        <label htmlFor="mathButton">
-                                                Math
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="physicsButton" type="checkbox"/>
-                                        <label htmlFor="physicssButton">
-                                                Physics
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="chemistryButton" type="checkbox"/>
-                                        <label htmlFor="chemistryButton">
-                                                Chemistry
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="biologyButton" type="checkbox"/>
-                                        <label htmlFor="biologyButton">
-                                                Biology
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="csButton" type="checkbox"/>
-                                        <label htmlFor="csButton">
-                                                CS
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="engineeringButton" type="checkbox"/>
-                                        <label htmlFor="engineeringButton">
-                                                Engineering
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="humanitiesButton" type="checkbox"/>
-                                        <label htmlFor="humanitiesButton">
-                                                Humanities
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input  id="musicButton" type="checkbox"/>
-                                        <label htmlFor="musicButton">
-                                                Music
-                                        </label>
-                                        {"\u00A0"}
-                                        {"\u00A0"}
-                                        <input id="otherButton" type="checkbox"/>
-                                        <label htmlFor="otherButton">
-                                                Other
-                                        </label>
-                                    </> 
-                                ) : (
-                                    <>
-                                        <p></p>
-                                    </>
-                                )}
-                            </main>
-                        ) : (
-                            <>
-                                <main data-grid-area="main">
-                                    <div className="dod-media-grid dod-stack-15">
-                                        <ReactLoading
-                                            type={"spin"}
-                                            color={"gray"}
-                                            height={70}
-                                            width={70}
-                                        />
-                                    </div>
-                                </main>
-                            </>
-                        )}
+                <br></br>
+                <a
+                    style={{
+                        fontSize: "1rem",
+                        fontWeight: "lighter",
+                        lineHeight: "25px",
+                        marginBottom: "10px",
+                        fontFamiliy: "Giga Sans Light",
+                    }}
+                    href={props.link}
+                    target="_blank"
+                    style={{ color: "purple" }}
+                >
+                    {props.link}
+                </a>
+                <p
+                    style={{
+                        fontSize: "1rem",
+                        fontWeight: "lighter",
+                        lineHeight: "25px",
+                        marginBottom: "10px",
+                        fontFamiliy: "Giga Sans Light",
+                    }}
+                >
+                    {props.date}
+                </p>
+                <p
+                    style={{
+                        fontSize: "1rem",
+                        fontWeight: "lighter",
+                        lineHeight: "25px",
+                        marginBottom: "10px",
+                        fontFamiliy: "Giga Sans Light",
+                    }}
+                >
+                    {props.description}
+                </p>
+            </main>
+        </>
+    );
+}
 
-                        {this.state.permTitle != "" &&
-                        this.state.permCategory != "" ? (
-                            <>
-                                <main
-                                    className="eventdesc"
-                                    data-grid-area="main"
-                                >
-                                    <b>
-                                        <p
-                                            style={{
-                                                fontSize: "1.5rem",
-                                                fontWeight: "lighter",
-                                                lineHeight: "30px",
-                                                fontFamiliy: "Giga Sans Light",
-                                            }}
-                                        >
-                                            {this.state.permTitle}
-                                            {"\u00A0"}
-                                            <span
-                                                id={this.state.permCategory}
-                                                style={{ fontSize: "20px" }}
-                                            >
-                                                {"\u00A0"}
-                                                {this.state.permCategory}
-                                                {"\u00A0"}
-                                            </span>
-                                        </p>
-                                    </b>
-
-                                    <br></br>
-                                    <a
-                                        style={{
-                                            fontSize: "1rem",
-                                            fontWeight: "lighter",
-                                            lineHeight: "25px",
-                                            marginBottom: "10px",
-                                            fontFamiliy: "Giga Sans Light",
-                                        }}
-                                        href={this.state.permZoom}
-                                        target="_blank"
-                                        style={{ color: "purple" }}
-                                    >
-                                        {this.state.permZoom}
-                                    </a>
-                                    <p
-                                        style={{
-                                            fontSize: "1rem",
-                                            fontWeight: "lighter",
-                                            lineHeight: "25px",
-                                            marginBottom: "10px",
-                                            fontFamiliy: "Giga Sans Light",
-                                        }}
-                                    >
-                                        {this.state.permDate}
-                                    </p>
-                                    <p
-                                        style={{
-                                            fontSize: "1rem",
-                                            fontWeight: "lighter",
-                                            lineHeight: "25px",
-                                            marginBottom: "10px",
-                                            fontFamiliy: "Giga Sans Light",
-                                        }}
-                                    >
-                                        {this.state.permDescription}
-                                    </p>
-                                </main>
-                            </>
 /**
  * The box at the bottom of the page with information about the organization
  * that shows up when no event is selected
@@ -603,9 +497,242 @@ function FeaturedOrg(props) {
         </main>
     );
 }
+
+/**
+ * The grid of posts at the top of the page, without the Prev or Next buttons or the filtering
+ * @param props the props passed to this element, with the field `posts` representing
+ * the list of posts to display, `selectedId` representing the id of the selected post,
+ * and `onClick`, a function called whenever a post is clicked
+ */
+function PostGrid({ posts, selectedId, onClick }) {
+    return (
+        <>
+            <div className="dod-media-grid dod-stack-15">
+                {posts.map((post) => (
+                    <Post
+                        post={post}
+                        selected={selectedId == post._id}
+                        onClick={onClick}
+                    />
+                ))}
+            </div>
+        </>
+    );
+}
+
+/**
+ * The display for all the posts, including the grid of posts, the Next and Prev buttons, and
+ * the filtering logic
+ *
+ * takes the functions `onUnselected` and `onPostSelected` in props
+ * `onUnselected()` is called when the user unselects any event, leaving no events selected
+ * `onSelected(id, title, category, date, link, description)` is called when the user selects on
+ * a new post
+ */
+class PostDisplay extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            showMessage: false,
+            message: "Apply filter",
+
+            permId: "",
+
+            amountOfPages: 0,
+            currentAmount: 16,
+            // current page number (1 = first page)
+            currentPlace: 1,
+        };
+    }
+    scrollPrev = (e) => {
+        if (this.state.currentPlace > 1) {
+            this.setState({
+                currentAmount: this.state.currentAmount - 16,
+                currentPlace: this.state.currentPlace - 1,
+            });
+        }
+    };
+
+    scrollNext = (e) => {
+        const amountOfPages = Math.ceil(this.props.posts.length / 16);
+        if (this.state.currentPlace < amountOfPages) {
+            this.setState({
+                currentAmount: this.state.currentAmount + 16,
+                currentPlace: this.state.currentPlace + 1,
+            });
+        }
+    };
+    _showMessage = (bool, e) => {
+        this.setState({
+            showMessage: bool,
+        });
+        if (bool) {
+            this.setState({
+                message: "Collapse filter",
+            });
+        } else {
+            this.setState({
+                message: "Apply filter",
+            });
+        }
+    };
+    /**
+     * Modify the perm* variables to make the selected event either show a black dotted border
+     * or to clear the border if it had been previously selected
+     * @param e The event that happened
+     */
+    handlePerm = (e) => {
+        if (
+            this.state.permTitle != "" &&
+            e.target.dataset.id == this.state.permID
+        ) {
+            this.props.onUnselected();
+            this.setState({
+                permID: "",
+            });
+            // this.setState({
+            //     permDescription: "",
+            //     permTitle: "",
+            //     permID: "",
+            //     permDate: "",
+            //     permCategory: "",
+            //     permZoom: "",
+            // });
+        } else {
+            // console.log(e.target.dataset.zoomLink)
+            const postInfo = e.target.dataset;
+            this.props.onSelected(
+                postInfo.id,
+                postInfo.title,
+                postInfo.category,
+                postInfo.date,
+                postInfo.link,
+                postInfo.description
+            );
+            this.setState({ permID: postInfo.id });
+            // this.setState({
+            //     permDescription: e.target.dataset.description,
+            //     permTitle: e.target.dataset.title,
+            //     permID: e.target.dataset.id,
+            //     permDate: e.target.dataset.date,
+            //     permCategory: e.target.dataset.category,
+            //     permZoom: e.target.dataset.zoom,
+            // });
+        }
+    };
+    render() {
+        // TODO: get this to work
+        return this.props.posts != "" ? (
+            <main data-grid-area="main">
+                {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
+
+                <PostGrid
+                    posts={this.props.posts.slice(
+                        this.state.currentAmount - 16,
+                        this.state.currentAmount
+                    )}
+                    selectedId={this.state.permID}
+                    onClick={this.handlePerm}
+                />
+
+                {/* Pagination here*/}
+
+                <br />
+                <a
+                    style={{
+                        cursor: "pointer",
+                        color: "purple",
+                    }}
+                    onClick={this.scrollPrev}
+                >
+                    <b>← Prev</b>
+                </a>
+                <a
+                    style={{
+                        marginLeft: "20px",
+                        cursor: "pointer",
+                        color: "purple",
+                    }}
+                    onClick={this.scrollNext}
+                >
+                    <b>Next →</b>
+                </a>
+                <p
+                    style={{
+                        marginLeft: "20px",
+                        display: "inline",
+                    }}
+                ></p>
+                <a
+                    style={{
+                        cursor: "pointer",
+                        display: "inline",
+                    }}
+                    onClick={this._showMessage.bind(
+                        null,
+                        !this.state.showMessage
+                    )}
+                >
+                    {this.state.message}
+                </a>
+                {this.state.showMessage ? (
+                    <>
+                        <br></br>
+                        <br></br>
+                        <FilterCheckbox id="mathButton" text="Math" />
+                        <FilterCheckbox id="physicsButton" text="Physics" />
+                        <FilterCheckbox id="chemistryButton" text="Chemistry" />
+                        <FilterCheckbox id="biologyButton" text="Biology" />
+                        <FilterCheckbox id="csButton" text="CS" />
+                        <FilterCheckbox
+                            id="engineeringButton"
+                            text="Engineering"
+                        />
+                        <FilterCheckbox
+                            id="humanitiesButton"
+                            text="Humanities"
+                        />
+                        <FilterCheckbox id="musicButton" text="Music" />
+                        <FilterCheckbox id="otherButton" text="Other" />
+                    </>
+                ) : (
+                    <>
+                        <p></p>
+                    </>
+                )}
+            </main>
+        ) : (
+            <>
+                <main data-grid-area="main">
+                    <div className="dod-media-grid dod-stack-15">
+                        <ReactLoading
+                            type={"spin"}
+                            color={"gray"}
+                            height={70}
+                            width={70}
+                        />
+                    </div>
+                </main>
             </>
         );
     }
+}
+/**
+ * Display a checkbox with text next to it, which is used in the filter UI
+ * @param  props the properties `id`, which is the id of the checkbox, and `text`,
+ * which is the text displayed for the checkbox
+ */
+function FilterCheckbox(props) {
+    return (
+        <>
+            <input id={props.id} type="checkbox" />
+            <label htmlFor={props.id}>{props.text}</label>
+            {"\u00A0"}
+            {"\u00A0"}
+        </>
+    );
+}
+
 /**
  * A box representing a post in the grid at the top of the page
  * @param props The properties passed to the element, which are:
