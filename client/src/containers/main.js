@@ -277,147 +277,53 @@ export default class HomeMainComponent extends React.Component {
                     <link rel="alternate icon" href="/favicon.ico" />
                     <link rel="stylesheet" href="styles.css" />
                     <section className="dod-layout-default">
-                        <header
-                            data-grid-area="header"
-                            className="dod-space-between-responsive"
-                        >
-                            <div>
-                                <h1
-                                    className="dod-heading-1 dod-stack-4 logo"
-                                    style={{ justifyContent: "trie" }}
-                                >
-                                    <Link to="/">osc+</Link>
-                                </h1>
-                                <p className="dod-heading-3 dod-stack-16 logoDesc">
-                                    open source collage: assemblage of
-                                    opportunities and resources for high school
-                                    students
-                                </p>
-                            </div>
-                            <p></p>
-                            <Link to="/about" style={{ marginLeft: "18px" }}>
-                                About
-                            </Link>
-                            <Link to="/blog" style={{ marginLeft: "10px" }}>
-                                Blog
-                            </Link>
-                            <a
-                                href="https://discord.gg/zPyjsCJ5Sn"
-                                target="_blank"
-                                style={{ marginLeft: "10px" }}
-                            >
-                                Discord
-                            </a>
-                            <Link to="/frq" style={{ marginLeft: "10px" }}>
-                                FRQ
-                            </Link>
-                            <Link
-                                to="/post"
-                                className="dod-button"
-                                style={{ marginLeft: "10px" }}
-                            >
-                                Post
-                            </Link>
-                        </header>
-                        {/* 
-                {this.state.posts.slice(0).reverse().map(post => {
-                   return post.category.includes("science") ?
-                        <p key={post.id}>science</p>
-                    :
-                    <p>Hello</p>
-                })}
-                */}
-                        {this.state.posts != "" ? (
-                            <main data-grid-area="main">
-                                {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
-
-                                <>
-                                    <div className="dod-media-grid dod-stack-15">
-                                        {this.state.posts
-                                            .slice(
-                                                this.state.currentAmount - 16,
-                                                this.state.currentAmount
-                                            )
-                                            .map((post) => {
-                                                return (
-                                                    <>
-                                                        <div
-                                                            href="/dogs/frieda/"
-                                                            style={{
-                                                                borderStyle:
-                                                                    this.state
-                                                                        .permID ==
-                                                                    post._id
-                                                                        ? "dotted"
-                                                                        : "",
-                                                                borderWidth:
-                                                                    this.state
-                                                                        .permID ==
-                                                                    post._id
-                                                                        ? "2.5px"
-                                                                        : "",
-                                                                borderColor:
-                                                                    this.state
-                                                                        .permID ==
-                                                                    post._id
-                                                                        ? "black"
-                                                                        : "",
-                                                            }}
-                                                            key={post._id}
-                                                            data-category={
-                                                                post.category
-                                                            }
-                                                            data-date={
-                                                                post.date
-                                                            }
-                                                            data-id={post._id}
-                                                            data-description={
-                                                                post.description
-                                                            }
-                                                            data-title={
-                                                                post.title
-                                                            }
-                                                            data-zoom={
-                                                                post.zoomLink
-                                                            }
-                                                            className="dod-card"
-                                                            id={`${post.category}`}
-                                                            onMouseLeave={
-                                                                this
-                                                                    .handleDiscardItem
-                                                            }
-                                                            onMouseEnter={
-                                                                this
-                                                                    .handleSelectItem
-                                                            }
-                                                            onClick={
-                                                                this.handlePerm
-                                                            }
-                                                        >
-                                                            <p
-                                                                className="dod-heading-3 dod-stack-16"
-                                                                data-zoom={
-                                                                    post.zoomLink
-                                                                }
-                                                                data-description={
-                                                                    post.description
-                                                                }
-                                                                data-date={
-                                                                    post.date
-                                                                }
-                                                                data-id={
-                                                                    post._id
-                                                                }
-                                                                data-title={
-                                                                    post.title
-                                                                }
-                                                                data-category={
-                                                                    post.category
-                                                                }
-                                                            >
-                                                                {post.title}
-                                                            </p>
-                                                        </div>
+/**
+ * The navigation bar and logo at the top of the page
+ */
+function NavBar(props) {
+    return (
+        <>
+            <header
+                data-grid-area="header"
+                className="dod-space-between-responsive"
+            >
+                <div>
+                    <h1
+                        className="dod-heading-1 dod-stack-4 logo"
+                        style={{ justifyContent: "trie" }}
+                    >
+                        <Link to="/">osc+</Link>
+                    </h1>
+                    <p className="dod-heading-3 dod-stack-16 logoDesc">
+                        open source collage: assemblage of opportunities and
+                        resources for high school students
+                    </p>
+                </div>
+                <p></p>
+                <Link to="/about" style={{ marginLeft: "18px" }}>
+                    About
+                </Link>
+                <Link to="/blog" style={{ marginLeft: "10px" }}>
+                    Blog
+                </Link>
+                <a
+                    href="https://discord.gg/zPyjsCJ5Sn"
+                    target="_blank"
+                    style={{ marginLeft: "10px" }}
+                >
+                    Discord
+                </a>
+                <Link to="/frq" style={{ marginLeft: "10px" }}>
+                    FRQ
+                </Link>
+                <Link
+                    to="/post"
+                    className="dod-button"
+                    style={{ marginLeft: "10px" }}
+                >
+                    Post
+                </Link>
+            </header>
                                                     </>
                                                 );
                                             })}
