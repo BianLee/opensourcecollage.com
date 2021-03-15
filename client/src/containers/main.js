@@ -272,6 +272,59 @@ export default class HomeMainComponent extends React.Component {
                     <link rel="alternate icon" href="/favicon.ico" />
                     <link rel="stylesheet" href="styles.css" />
                     <section className="dod-layout-default">
+                        <NavBar />
+                        {/* 
+                {this.state.posts.slice(0).reverse().map(post => {
+                   return post.category.includes("science") ?
+                        <p key={post.id}>science</p>
+                    :
+                    <p>Hello</p>
+                })}
+                */}
+
+                        <PostDisplay
+                            posts={this.state.posts}
+                            onSelected={this.onSelected}
+                            onUnselected={this.onUnselected}
+                        />
+                        {this.state.permTitle != "" &&
+                        this.state.permCategory != "" ? (
+                            <PostExtraInfo
+                                title={this.state.permTitle}
+                                category={this.state.permCategory}
+                                link={this.state.permZoom}
+                                date={this.state.permDate}
+                                description={this.state.permDescription}
+                            />
+                        ) : (
+                            <AboutUsBox />
+                        )}
+                        {/* 
+               <>
+                  <b><p style={{fontSize: "2rem", fontWeight: "lighter",  lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
+                  <span id={this.state.selectedCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
+                  </p></b>
+                  
+                  <br></br><a href={this.state.permZoom} target="_blank" style={{color: "purple"}}>{this.state.selectedZoom}</a>
+                  <br></br><p>{this.state.selectedDate}</p>
+            <br></br><p>{this.state.selectedDescription}</p>
+               </> */}
+                        {/* 
+                {this.state.posts.map(post => {
+                    return post.id == this.state.selectedID ?
+                        <p key={post.id}>{post.description}</p>
+                        :
+                        <p></p>
+                })}   
+                */}
+                        <FeaturedOrg />
+                        <footer data-grid-area="footer"></footer>
+                    </section>
+                </div>
+            </>
+        );
+    }
+}
 /**
  * The navigation bar and logo at the top of the page
  */
