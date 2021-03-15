@@ -600,121 +600,150 @@ export default class HomeMainComponent extends React.Component {
                                     </p>
                                 </main>
                             </>
-                        ) : (
-                            <main className="eventdesc" data-grid-area="main">
-                                <p
-                                    style={{
-                                        fontSize: "1.5rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "30px",
-                                        marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light",
-                                    }}
-                                >
-                                    What is <i>Open Source Collage</i> and how
-                                    do I use this platform?
-                                </p>
-                                <p
-                                    style={{
-                                        fontSize: "1rem",
-                                        fontWeight: "lighter",
-                                        lineHeight: "25px",
-                                        marginBottom: "10px",
-                                        fontFamiliy: "Giga Sans Light",
-                                    }}
-                                >
-                                    Sed ut perspiciatis unde omnis iste natus
-                                    error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa
-                                    quae ab illo inventore veritatis et quasi
-                                    architecto beatae vitae dicta sunt
-                                    explicabo. Nemo enim ipsam veritatis o
-                                    inventore. Et harum quidem rerum facilis est
-                                    et expedita distinctio. Nam libero tempore
-                                    soluta nobis est eligendi optio cumque nihil
-                                    impedit quo minus id quod m<br></br>
-                                    <br></br>quae ab illo inventore veritatis et
-                                    quasi architecto beatae vitae dicta sunt
-                                    explicabo. Nemo enim ipsam voluptatem qu et
-                                    quasi architecto beatae vitae. quae ab illo
-                                    inventore veritatis et quasi ar. beatae
-                                    vitae dicta sunt explicabo. Nemo enim ipsam.
-                                </p>
-                            </main>
-                        )}
-                        {/* 
-               <>
-                  <b><p style={{fontSize: "2rem", fontWeight: "lighter",  lineHeight: "40px"}}>{this.state.selectedTitle}{'\u00A0'}
-                  <span id={this.state.selectedCategory} style={{fontSize: "20px"}}>{'\u00A0'}{this.state.selectedCategory}{'\u00A0'}</span>
-                  </p></b>
-                  
-                  <br></br><a href={this.state.permZoom} target="_blank" style={{color: "purple"}}>{this.state.selectedZoom}</a>
-                  <br></br><p>{this.state.selectedDate}</p>
-            <br></br><p>{this.state.selectedDescription}</p>
-               </> */}
-                        {/* 
-                {this.state.posts.map(post => {
-                    return post.id == this.state.selectedID ?
-                        <p key={post.id}>{post.description}</p>
-                        :
-                        <p></p>
-                })}   
-                */}
+/**
+ * The box at the bottom of the page with information about the organization
+ * that shows up when no event is selected
+ */
+function AboutUsBox(props) {
+    return (
+        <main className="eventdesc" data-grid-area="main">
+            <p
+                style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "lighter",
+                    lineHeight: "30px",
+                    marginBottom: "10px",
+                    fontFamiliy: "Giga Sans Light",
+                }}
+            >
+                What is <i>Open Source Collage</i> and how do I use this
+                platform?
+            </p>
+            <p
+                style={{
+                    fontSize: "1rem",
+                    fontWeight: "lighter",
+                    lineHeight: "25px",
+                    marginBottom: "10px",
+                    fontFamiliy: "Giga Sans Light",
+                }}
+            >
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo. Nemo enim ipsam veritatis o
+                inventore. Et harum quidem rerum facilis est et expedita
+                distinctio. Nam libero tempore soluta nobis est eligendi optio
+                cumque nihil impedit quo minus id quod m<br></br>
+                <br></br>quae ab illo inventore veritatis et quasi architecto
+                beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem qu
+                et quasi architecto beatae vitae. quae ab illo inventore
+                veritatis et quasi ar. beatae vitae dicta sunt explicabo. Nemo
+                enim ipsam.
+            </p>
+        </main>
+    );
+}
 
-                        <main
-                            className="featuredOrg"
-                            data-grid-area="main"
-                            style={{ marginTop: "18px" }}
-                        >
-                            <br></br>
-                            <div className="sponsor">
-                                <img src={github}></img>
-                            </div>
-                            <p
-                                style={{
-                                    fontSize: "1.5rem",
-                                    fontWeight: "lighter",
-                                    lineHeight: "30px",
-                                    marginBottom: "10px",
-                                    fontFamiliy: "Giga Sans Light",
-                                }}
-                            >
-                                GitHub - Featured Organization of The Month
-                            </p>
-                            <p
-                                style={{
-                                    fontSize: "1rem",
-                                    fontWeight: "lighter",
-                                    lineHeight: "25px",
-                                    marginBottom: "10px",
-                                    fontFamiliy: "Giga Sans Light",
-                                }}
-                            >
-                                GitHub, Inc. is a provider of Internet hosting
-                                for software development and version control
-                                using Git. It offers the distributed version
-                                control and source code management (SCM)
-                                functionality of Git, plus its own features. It
-                                provides access control and several
-                                collaboration features such as bug tracking,
-                                feature requests, task management, continuous
-                                integration and wikis for every project.[3]
-                                Headquartered in California, it has been a
-                                subsidiary of Microsoft since 2018
-                                <br></br>
-                                <br></br>
-                                The GitHub service was developed by Chris
-                                Wanstrath, P. J. Hyett, Tom Preston-Werner and
-                                Scott Chacon using Ruby on Rails, and started in
-                                February 2008. The company, GitHub, Inc., has
-                                existed since 2007 and is located in San
-                                Francisco.[14]
-                            </p>
-                        </main>
-                        <footer data-grid-area="footer"></footer>
-                    </section>
-                </div>
+/**
+ * The Featured Organization box at the bottom of the page
+ */
+function FeaturedOrg(props) {
+    return (
+        <main
+            className="featuredOrg"
+            data-grid-area="main"
+            style={{ marginTop: "18px" }}
+        >
+            <br></br>
+            <div className="sponsor">
+                <img src={github}></img>
+            </div>
+            <p
+                style={{
+                    fontSize: "1.5rem",
+                    fontWeight: "lighter",
+                    lineHeight: "30px",
+                    marginBottom: "10px",
+                    fontFamiliy: "Giga Sans Light",
+                }}
+            >
+                GitHub - Featured Organization of The Month
+            </p>
+            <p
+                style={{
+                    fontSize: "1rem",
+                    fontWeight: "lighter",
+                    lineHeight: "25px",
+                    marginBottom: "10px",
+                    fontFamiliy: "Giga Sans Light",
+                }}
+            >
+                GitHub, Inc. is a provider of Internet hosting for software
+                development and version control using Git. It offers the
+                distributed version control and source code management (SCM)
+                functionality of Git, plus its own features. It provides access
+                control and several collaboration features such as bug tracking,
+                feature requests, task management, continuous integration and
+                wikis for every project.[3] Headquartered in California, it has
+                been a subsidiary of Microsoft since 2018
+                <br></br>
+                <br></br>
+                The GitHub service was developed by Chris Wanstrath, P. J.
+                Hyett, Tom Preston-Werner and Scott Chacon using Ruby on Rails,
+                and started in February 2008. The company, GitHub, Inc., has
+                existed since 2007 and is located in San Francisco.[14]
+            </p>
+        </main>
+    );
+}
             </>
         );
     }
+/**
+ * A box representing a post in the grid at the top of the page
+ * @param props The properties passed to the element, which are:
+ *  post: the information about the post
+ *  selected: whether the post has been selected by the user
+ * onClick: a function called when a post is clicked
+ */
+function Post({ post, selected, onClick }) {
+    let style = {};
+    if (selected) {
+        style = {
+            borderStyle: "dotted",
+            borderWidth: "2.5px",
+            borderColor: "black",
+        };
+    }
+    return (
+        <>
+            <div
+                href="/dogs/frieda/"
+                style={style}
+                key={post._id}
+                data-category={post.category}
+                data-date={post.date}
+                data-id={post._id}
+                data-description={post.description}
+                data-title={post.title}
+                data-zoom={post.zoomLink}
+                className="dod-card"
+                id={`${post.category}`}
+                onClick={onClick}
+            >
+                <p
+                    className="dod-heading-3 dod-stack-16"
+                    data-zoom={post.zoomLink}
+                    data-description={post.description}
+                    data-date={post.date}
+                    data-id={post._id}
+                    data-title={post.title}
+                    data-category={post.category}
+                >
+                    {post.title}
+                </p>
+            </div>
+        </>
+    );
 }
