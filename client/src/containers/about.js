@@ -85,13 +85,14 @@ export default class AboutComponent extends React.Component {
                                 passionate about computer engineering and
                                 information technology. He believes in the
                                 importance of general education, and developed
-                                this platform for high school students to access
-                                resources and opportunities of various fields of
-                                study. He aims to help students find their
-                                passion and connect them with numerous
-                                non-profits and other student organizations. He
-                                enjoys listening to music, watching musicals,
-                                and holds strong political beliefs. <br />
+                                this platform for high school students to more
+                                easily access resources and opportunities in
+                                various fields of study. He aims to help
+                                students find their passion and connect them
+                                with numerous non-profits and other student
+                                organizations. He enjoys listening to music,
+                                watching musicals, and holds strong political
+                                beliefs. <br />
                                 <br />
                             </p>
 
@@ -113,18 +114,16 @@ export default class AboutComponent extends React.Component {
                                     fontFamiliy: "Giga Sans Light",
                                 }}
                             >
-                                Ian is a Junior at Northwood High school. Lorem
-                                ipsum dolor sit amet, consectetur adipiscing
-                                elit, sed do eiusmod tempor incididunt ut labore
-                                et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud ullamco laboris nisi ut aliquip ex
-                                ea commodo consequat. Duis aute irure dolor in
-                                reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur. Excepteur sint
-                                occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum.{" "}
-                                <br />
-                                <br />
+                                Ian is a Junior at Northwood High school who
+                                aspires to be a logical and an independent
+                                thinker. He engages in various activities such
+                                as playing cello and participating in MUN
+                                conferences, and hopes to make it easier for
+                                students to explore and further their passions
+                                through this platform. In his free time, Ian
+                                enjoys reading well-written books, as well as
+                                watching all types of Youtube videos. <br />
+                                <br /> <br />
                             </p>
 
                             <div className="bio">
