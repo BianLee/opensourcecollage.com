@@ -114,6 +114,22 @@ strong {
     font-weight: 600;
 }
 
+.bio {
+    float: left; 
+    padding: 28px;
+    width: 200px; 
+}
+
+@media (max-width: 600px) {
+    .bio {
+        float: none; 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
+
 .sponsor {
     float: left;
 }
@@ -160,6 +176,20 @@ strong {
     text-decoration: none;
 }
 
+@media (max-width: 700px) {
+    .bio-heading {
+        margin-top: 10px !important; 
+    }
+}
+.bio-heading {
+    font-family: "Spartan", sans-serif;
+    font-weight: 600 !important;
+    user-select: none;
+    font-size: 22px; 
+    line-height: 42px;
+    margin-top: 28px; 
+}
+
 .logo {
     font-family: "Spartan", sans-serif;
     font-weight: 600 !important;
@@ -176,7 +206,6 @@ strong {
     font-size: 5.4rem !important;
     line-height: 5rem !important;
 }
-
 .dod-heading-2 {
     font-size: 1.25rem;
     line-height: 1.5rem;

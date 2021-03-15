@@ -1,11 +1,15 @@
 import React from "react";
 import "../styles/styles.css";
+import BianLee from "../images/bianlee.jpeg";
+import AnthonyFoo from "../images/anthonyfoo.png";
+import NoPic from "../images/no.jpg";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 export default class AboutComponent extends React.Component {
     constructor() {
         super();
         this.state = {};
     }
+
     render() {
         return (
             <>
@@ -62,8 +66,168 @@ export default class AboutComponent extends React.Component {
                             </Link>
                         </header>
                         <main data-grid-area="main">
-                            <p>This page is currently under construction.</p>
+                            <div className="bio">
+                                <img src={BianLee}></img>
+                            </div>
+                            <h1 className="bio-heading">
+                                Bian Lee - Chief Executive Officer
+                            </h1>
+                            <p
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "25px",
+                                    marginBottom: "40px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
+                                Bian is a Junior at Northwood High school. He is
+                                passionate about computer engineering and
+                                information technology. He believes in the
+                                importance of general education, and developed
+                                this platform for high school students to access
+                                resources and opportunities of various fields of
+                                study. He aims to help students find their
+                                passion and connect them with numerous
+                                non-profits and other student organizations. He
+                                enjoys listening to music, watching musicals,
+                                and holds strong political beliefs. <br />
+                                <br />
+                            </p>
+
+                            <div className="bio">
+                                <img src={NoPic}></img>
+                            </div>
+                            <h1
+                                className="bio-heading"
+                                style={{ marginTop: "70px" }}
+                            >
+                                Ian Lee - Chief Operating Officer
+                            </h1>
+                            <p
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "25px",
+                                    marginBottom: "40px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
+                                Ian is a Junior at Northwood High school. Lorem
+                                ipsum dolor sit amet, consectetur adipiscing
+                                elit, sed do eiusmod tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud ullamco laboris nisi ut aliquip ex
+                                ea commodo consequat. Duis aute irure dolor in
+                                reprehenderit in voluptate velit esse cillum
+                                dolore eu fugiat nulla pariatur. Excepteur sint
+                                occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim id est laborum.{" "}
+                                <br />
+                                <br />
+                            </p>
+
+                            <div className="bio">
+                                <img src={NoPic}></img>
+                            </div>
+                            <h1
+                                className="bio-heading"
+                                style={{ marginTop: "70px" }}
+                            >
+                                Pranav Rajpal - Chief Technology Officer
+                            </h1>
+                            <p
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "25px",
+                                    marginBottom: "40px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
+                                Pranav is a Senior at Northwood High school.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.{" "}
+                                <br />
+                                <br />
+                            </p>
+
+                            <div className="bio">
+                                <img src={NoPic}></img>
+                            </div>
+                            <h1
+                                className="bio-heading"
+                                style={{ marginTop: "70px" }}
+                            >
+                                Rutvij Holay - Chief Business Development
+                                Officer
+                            </h1>
+                            <p
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "25px",
+                                    marginBottom: "40px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
+                                Rutvij is a sophomore at Northwood High school.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.{" "}
+                                <br />
+                                <br />
+                            </p>
+
+                            <div className="bio">
+                                <img src={AnthonyFoo}></img>
+                            </div>
+                            <h1
+                                className="bio-heading"
+                                style={{ marginTop: "70px" }}
+                            >
+                                Anthony Foo - Chief Marketing Officer
+                            </h1>
+                            <p
+                                style={{
+                                    fontSize: "1rem",
+                                    fontWeight: "lighter",
+                                    lineHeight: "25px",
+                                    marginBottom: "40px",
+                                    fontFamiliy: "Giga Sans Light",
+                                }}
+                            >
+                                Anthony is a sophomore at Northwood High school.
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui
+                                officia deserunt mollit anim id est laborum.{" "}
+                                <br />
+                                <br />
+                            </p>
                         </main>
+
                         <footer data-grid-area="footer"></footer>
                     </section>
                 </div>
