@@ -558,6 +558,7 @@ function FeaturedOrg(props) {
  * and `onClick`, a function called whenever a post is clicked
  */
 function PostGrid({ posts, selectedId, onClick }) {
+    // TODO: fix unique key property console error
     return (
         <>
             <div className="dod-media-grid dod-stack-15">
@@ -643,38 +644,20 @@ class PostDisplay extends React.Component {
             this.setState({
                 permID: "",
             });
-            // this.setState({
-            //     permDescription: "",
-            //     permTitle: "",
-            //     permID: "",
-            //     permDate: "",
-            //     permCategory: "",
-            //     permZoom: "",
-            // });
         } else {
-            // console.log(e.target.dataset.zoomLink)
             const postInfo = e.target.dataset;
             this.props.onSelected(
                 postInfo.id,
                 postInfo.title,
                 postInfo.category,
                 postInfo.date,
-                postInfo.link,
+                postInfo.zoom,
                 postInfo.description
             );
             this.setState({ permID: postInfo.id });
-            // this.setState({
-            //     permDescription: e.target.dataset.description,
-            //     permTitle: e.target.dataset.title,
-            //     permID: e.target.dataset.id,
-            //     permDate: e.target.dataset.date,
-            //     permCategory: e.target.dataset.category,
-            //     permZoom: e.target.dataset.zoom,
-            // });
         }
     };
     render() {
-        // TODO: get this to work
         return this.props.posts != "" ? (
             <main data-grid-area="main">
                 {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
