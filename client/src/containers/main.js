@@ -596,6 +596,11 @@ class PostDisplay extends React.Component {
             currentAmount: 16,
             // current page number (1 = first page)
             currentPlace: 1,
+
+            // categories selected in the filtering
+            categories: [],
+            // if any filter checkboxes are currently selected
+            filteringEnabled: false,
         };
     }
     scrollPrev = (e) => {
@@ -662,16 +667,60 @@ class PostDisplay extends React.Component {
             this.setState({ permID: postInfo.id });
         }
     };
+
+    filterChanged = (e) => {
+        // don't keep posts selected after filters change because then a post might
+        // be selected that isn't being shown
+        this.unselectPost();
+
+        const id = e.target.id;
+        const category = id.replace("Button", "");
+        if (document.getElementById(id).checked) {
+            // someone checks a new category
+            this.setState({
+                categories: this.state.categories.concat([category]),
+                filteringEnabled: true,
+            });
+        } else {
+            if (this.state.categories.length === 1) {
+                // categories is about to become empty
+                this.setState({
+                    filteringEnabled: false,
+                });
+            }
+            this.setState({
+                categories: this.state.categories.filter(
+                    (item) => item !== category
+                ),
+            });
+        }
+    };
+
+    /**
+     * Whether to show the given post
+     */
+    shouldInclude = (post) => {
+        if (!this.state.filteringEnabled) {
+            // if filtering is enabled, include everything
+            return true;
+        }
+        return this.state.categories.some((category) =>
+            post.category.includes(category)
+        );
+    };
+
     render() {
         return this.props.posts != "" ? (
             <main data-grid-area="main">
                 {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
 
                 <PostGrid
-                    posts={this.props.posts.slice(
-                        this.state.currentAmount - 16,
-                        this.state.currentAmount
-                    )}
+                    posts={this.props.posts
+                        .filter(this.shouldInclude)
+                        .slice(
+                            this.state.currentAmount - 16,
+                            this.state.currentAmount
+                        )}
                     selectedId={this.state.permID}
                     onClick={this.handlePerm}
                 />
