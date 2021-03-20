@@ -715,21 +715,7 @@ class PostDisplay extends React.Component {
                     <>
                         <br></br>
                         <br></br>
-                        <FilterCheckbox id="mathButton" text="Math" />
-                        <FilterCheckbox id="physicsButton" text="Physics" />
-                        <FilterCheckbox id="chemistryButton" text="Chemistry" />
-                        <FilterCheckbox id="biologyButton" text="Biology" />
-                        <FilterCheckbox id="csButton" text="CS" />
-                        <FilterCheckbox
-                            id="engineeringButton"
-                            text="Engineering"
-                        />
-                        <FilterCheckbox
-                            id="humanitiesButton"
-                            text="Humanities"
-                        />
-                        <FilterCheckbox id="musicButton" text="Music" />
-                        <FilterCheckbox id="otherButton" text="Other" />
+                        <FilterBoxes onChange={this.filterChanged} />
                     </>
                 ) : (
                     <>
@@ -753,15 +739,77 @@ class PostDisplay extends React.Component {
         );
     }
 }
+
+/**
+ * The list of checkboxes that control what is being filtered
+ */
+class FilterBoxes extends React.Component {
+    render() {
+        return (
+            <>
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="mathButton"
+                    text="Math"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="physicsButton"
+                    text="Physics"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="chemistryButton"
+                    text="Chemistry"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="biologyButton"
+                    text="Biology"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="csButton"
+                    text="CS"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="engineeringButton"
+                    text="Engineering"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="humanitiesButton"
+                    text="Humanities"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="musicButton"
+                    text="Music"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="otherButton"
+                    text="Other"
+                />
+            </>
+        );
+    }
+}
+
 /**
  * Display a checkbox with text next to it, which is used in the filter UI
- * @param  props the properties `id`, which is the id of the checkbox, and `text`,
+ * @param {{
+ *  id: string,
+ *  text: string
+ *  onChange: any
+ * }} props the properties `id`, which is the id of the checkbox, and `text`,
  * which is the text displayed for the checkbox
  */
 function FilterCheckbox(props) {
     return (
         <>
-            <input id={props.id} type="checkbox" />
+            <input id={props.id} type="checkbox" onChange={props.onChange} />
             <label htmlFor={props.id}>{props.text}</label>
             {"\u00A0"}
             {"\u00A0"}
