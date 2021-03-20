@@ -630,6 +630,14 @@ class PostDisplay extends React.Component {
             });
         }
     };
+
+    unselectPost() {
+        this.props.onUnselected();
+        this.setState({
+            permID: "",
+        });
+    }
+
     /**
      * Modify the perm* variables to make the selected event either show a black dotted border
      * or to clear the border if it had been previously selected
@@ -640,10 +648,7 @@ class PostDisplay extends React.Component {
             this.state.permTitle != "" &&
             e.target.dataset.id == this.state.permID
         ) {
-            this.props.onUnselected();
-            this.setState({
-                permID: "",
-            });
+            this.unselectPost();
         } else {
             const postInfo = e.target.dataset;
             this.props.onSelected(
