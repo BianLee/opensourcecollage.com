@@ -596,6 +596,11 @@ class PostDisplay extends React.Component {
             currentAmount: 16,
             // current page number (1 = first page)
             currentPlace: 1,
+
+            // categories selected in the filtering
+            categories: [],
+            // if any filter checkboxes are currently selected
+            filteringEnabled: false,
         };
     }
     scrollPrev = (e) => {
@@ -630,6 +635,14 @@ class PostDisplay extends React.Component {
             });
         }
     };
+
+    unselectPost() {
+        this.props.onUnselected();
+        this.setState({
+            permID: "",
+        });
+    }
+
     /**
      * Modify the perm* variables to make the selected event either show a black dotted border
      * or to clear the border if it had been previously selected
@@ -640,10 +653,7 @@ class PostDisplay extends React.Component {
             this.state.permTitle != "" &&
             e.target.dataset.id == this.state.permID
         ) {
-            this.props.onUnselected();
-            this.setState({
-                permID: "",
-            });
+            this.unselectPost();
         } else {
             const postInfo = e.target.dataset;
             this.props.onSelected(
@@ -657,16 +667,60 @@ class PostDisplay extends React.Component {
             this.setState({ permID: postInfo.id });
         }
     };
+
+    filterChanged = (e) => {
+        // don't keep posts selected after filters change because then a post might
+        // be selected that isn't being shown
+        this.unselectPost();
+
+        const id = e.target.id;
+        const category = id.replace("Button", "");
+        if (document.getElementById(id).checked) {
+            // someone checks a new category
+            this.setState({
+                categories: this.state.categories.concat([category]),
+                filteringEnabled: true,
+            });
+        } else {
+            if (this.state.categories.length === 1) {
+                // categories is about to become empty
+                this.setState({
+                    filteringEnabled: false,
+                });
+            }
+            this.setState({
+                categories: this.state.categories.filter(
+                    (item) => item !== category
+                ),
+            });
+        }
+    };
+
+    /**
+     * Whether to show the given post
+     */
+    shouldInclude = (post) => {
+        if (!this.state.filteringEnabled) {
+            // if filtering is enabled, include everything
+            return true;
+        }
+        return this.state.categories.some((category) =>
+            post.category.includes(category)
+        );
+    };
+
     render() {
         return this.props.posts != "" ? (
             <main data-grid-area="main">
                 {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
 
                 <PostGrid
-                    posts={this.props.posts.slice(
-                        this.state.currentAmount - 16,
-                        this.state.currentAmount
-                    )}
+                    posts={this.props.posts
+                        .filter(this.shouldInclude)
+                        .slice(
+                            this.state.currentAmount - 16,
+                            this.state.currentAmount
+                        )}
                     selectedId={this.state.permID}
                     onClick={this.handlePerm}
                 />
@@ -715,21 +769,7 @@ class PostDisplay extends React.Component {
                     <>
                         <br></br>
                         <br></br>
-                        <FilterCheckbox id="mathButton" text="Math" />
-                        <FilterCheckbox id="physicsButton" text="Physics" />
-                        <FilterCheckbox id="chemistryButton" text="Chemistry" />
-                        <FilterCheckbox id="biologyButton" text="Biology" />
-                        <FilterCheckbox id="csButton" text="CS" />
-                        <FilterCheckbox
-                            id="engineeringButton"
-                            text="Engineering"
-                        />
-                        <FilterCheckbox
-                            id="humanitiesButton"
-                            text="Humanities"
-                        />
-                        <FilterCheckbox id="musicButton" text="Music" />
-                        <FilterCheckbox id="otherButton" text="Other" />
+                        <FilterBoxes onChange={this.filterChanged} />
                     </>
                 ) : (
                     <>
@@ -753,15 +793,77 @@ class PostDisplay extends React.Component {
         );
     }
 }
+
+/**
+ * The list of checkboxes that control what is being filtered
+ */
+class FilterBoxes extends React.Component {
+    render() {
+        return (
+            <>
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="mathButton"
+                    text="Math"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="physicsButton"
+                    text="Physics"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="chemistryButton"
+                    text="Chemistry"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="biologyButton"
+                    text="Biology"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="csButton"
+                    text="CS"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="engineeringButton"
+                    text="Engineering"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="humanitiesButton"
+                    text="Humanities"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="musicButton"
+                    text="Music"
+                />
+                <FilterCheckbox
+                    onChange={this.props.onChange}
+                    id="otherButton"
+                    text="Other"
+                />
+            </>
+        );
+    }
+}
+
 /**
  * Display a checkbox with text next to it, which is used in the filter UI
- * @param  props the properties `id`, which is the id of the checkbox, and `text`,
+ * @param {{
+ *  id: string,
+ *  text: string
+ *  onChange: any
+ * }} props the properties `id`, which is the id of the checkbox, and `text`,
  * which is the text displayed for the checkbox
  */
 function FilterCheckbox(props) {
     return (
         <>
-            <input id={props.id} type="checkbox" />
+            <input id={props.id} type="checkbox" onChange={props.onChange} />
             <label htmlFor={props.id}>{props.text}</label>
             {"\u00A0"}
             {"\u00A0"}
