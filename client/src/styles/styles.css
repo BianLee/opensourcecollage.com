@@ -115,14 +115,27 @@ strong {
 }
 
 .bio {
-    float: left; 
+    float: left;
     padding: 28px;
-    width: 200px; 
+    width: 200px;
+}
+
+#logo {
+    width: 110px;
+}
+@media (max-width: 800px) {
+    #logo {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
 }
 
 @media (max-width: 600px) {
     .bio {
-        float: none; 
+        float: none;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -145,11 +158,13 @@ strong {
 }
 
 @media (min-width: 980px) {
-    .featuredOrg:hover, 
+    .featuredOrg:hover,
     .eventdesc:hover {
         cursor: pointer;
-        transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-        transition: transform 0.5s; 
+        transform: scale(
+            1.03
+        ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transition: transform 0.5s;
     }
 }
 
@@ -178,16 +193,16 @@ strong {
 
 @media (max-width: 700px) {
     .bio-heading {
-        margin-top: 10px !important; 
+        margin-top: 10px !important;
     }
 }
 .bio-heading {
     font-family: "Spartan", sans-serif;
     font-weight: 600 !important;
     user-select: none;
-    font-size: 22px; 
+    font-size: 22px;
     line-height: 42px;
-    margin-top: 28px; 
+    margin-top: 28px;
 }
 
 .logo {
@@ -301,7 +316,7 @@ strong {
     display: inline-block;
     word-break: break-word;
     height: 205px;
-    font-style: 'Montserrat' !important;
+    font-style: "Montserrat" !important;
 }
 @media (max-width: 1000px) {
     .eventdesc {
