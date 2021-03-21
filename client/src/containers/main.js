@@ -765,17 +765,17 @@ class PostDisplay extends React.Component {
                 >
                     {this.state.message}
                 </a>
-                {this.state.showMessage ? (
-                    <>
+                <>
+                    <div
+                        style={{
+                            display: this.state.showMessage ? "inline" : "none",
+                        }}
+                    >
                         <br></br>
                         <br></br>
                         <FilterBoxes onChange={this.filterChanged} />
-                    </>
-                ) : (
-                    <>
-                        <p></p>
-                    </>
-                )}
+                    </div>
+                </>
             </main>
         ) : (
             <>
