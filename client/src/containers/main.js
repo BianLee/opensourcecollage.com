@@ -552,26 +552,86 @@ function FeaturedOrg(props) {
 }
 
 /**
- * The grid of posts at the top of the page, without the Prev or Next buttons or the filtering
- * @param props the props passed to this element, with the field `posts` representing
- * the list of posts to display, `selectedId` representing the id of the selected post,
- * and `onClick`, a function called whenever a post is clicked
+ * The grid of posts at the top of the page, including the Prev and Next buttons, but not the filtering
+ * props passed in are:
+ *  posts: the list of posts to display
+ *  selectedId: id of the selected post
+ *  onClick: a function called whenever a post is clicked
  */
-function PostGrid({ posts, selectedId, onClick }) {
+class PostGrid extends React.Component {
+    constructor() {
+        super();
+        console.log("constructor", this.props);
+        this.state = {
+            currentAmount: 16,
+            // current page number (1 = first page)
+            currentPlace: 1,
+        };
+    }
+
+    scrollPrev = (e) => {
+        if (this.state.currentPlace > 1) {
+            this.setState({
+                currentAmount: this.state.currentAmount - 16,
+                currentPlace: this.state.currentPlace - 1,
+            });
+        }
+    };
+
+    scrollNext = (e) => {
+        const amountOfPages = Math.ceil(this.props.posts.length / 16);
+        if (this.state.currentPlace < amountOfPages) {
+            this.setState({
+                currentAmount: this.state.currentAmount + 16,
+                currentPlace: this.state.currentPlace + 1,
+            });
+        }
+    };
     // TODO: fix unique key property console error
-    return (
-        <>
-            <div className="dod-media-grid dod-stack-15">
-                {posts.map((post) => (
-                    <Post
-                        post={post}
-                        selected={selectedId == post._id}
-                        onClick={onClick}
-                    />
-                ))}
-            </div>
-        </>
-    );
+    render() {
+        const { posts, selectedId, onClick } = this.props;
+        console.log(this.state, this.props);
+        return (
+            <>
+                <div className="dod-media-grid dod-stack-15">
+                    {posts
+                        .slice(
+                            this.state.currentAmount - 16,
+                            this.state.currentAmount
+                        )
+                        .map((post) => (
+                            <Post
+                                post={post}
+                                selected={selectedId == post._id}
+                                onClick={onClick}
+                            />
+                        ))}
+                </div>
+                {/* Pagination here*/}
+
+                <br />
+                <a
+                    style={{
+                        cursor: "pointer",
+                        color: "purple",
+                    }}
+                    onClick={this.scrollPrev}
+                >
+                    <b>← Prev</b>
+                </a>
+                <a
+                    style={{
+                        marginLeft: "20px",
+                        cursor: "pointer",
+                        color: "purple",
+                    }}
+                    onClick={this.scrollNext}
+                >
+                    <b>Next →</b>
+                </a>
+            </>
+        );
+    }
 }
 
 /**
@@ -592,35 +652,12 @@ class PostDisplay extends React.Component {
 
             permId: "",
 
-            amountOfPages: 0,
-            currentAmount: 16,
-            // current page number (1 = first page)
-            currentPlace: 1,
-
             // categories selected in the filtering
             categories: [],
             // if any filter checkboxes are currently selected
             filteringEnabled: false,
         };
     }
-    scrollPrev = (e) => {
-        if (this.state.currentPlace > 1) {
-            this.setState({
-                currentAmount: this.state.currentAmount - 16,
-                currentPlace: this.state.currentPlace - 1,
-            });
-        }
-    };
-
-    scrollNext = (e) => {
-        const amountOfPages = Math.ceil(this.props.posts.length / 16);
-        if (this.state.currentPlace < amountOfPages) {
-            this.setState({
-                currentAmount: this.state.currentAmount + 16,
-                currentPlace: this.state.currentPlace + 1,
-            });
-        }
-    };
     _showMessage = (bool, e) => {
         this.setState({
             showMessage: bool,
@@ -722,38 +759,11 @@ class PostDisplay extends React.Component {
                 {/* <h2 className="dod-heading-2 dod-stack-24">Upcoming events!</h2> */}
 
                 <PostGrid
-                    posts={this.props.posts
-                        .filter(this.shouldInclude)
-                        .slice(
-                            this.state.currentAmount - 16,
-                            this.state.currentAmount
-                        )}
+                    posts={this.props.posts.filter(this.shouldInclude)}
                     selectedId={this.state.permID}
                     onClick={this.handlePerm}
                 />
 
-                {/* Pagination here*/}
-
-                <br />
-                <a
-                    style={{
-                        cursor: "pointer",
-                        color: "purple",
-                    }}
-                    onClick={this.scrollPrev}
-                >
-                    <b>← Prev</b>
-                </a>
-                <a
-                    style={{
-                        marginLeft: "20px",
-                        cursor: "pointer",
-                        color: "purple",
-                    }}
-                    onClick={this.scrollNext}
-                >
-                    <b>Next →</b>
-                </a>
                 <p
                     style={{
                         marginLeft: "20px",
