@@ -256,13 +256,14 @@ export default class LoginFirstFrame extends React.Component {
                 "https://server-r8ug5ernl-bianlee.vercel.app/api/postMessage",
                 message
             )
-            .then((res) => console.log(res.data))
+            .then((res) => this.getPost())
             .catch((error) => {
                 console.log("Error!");
             });
-
         this.getPost();
         console.log("page update?");
+        this.props.history.push("/");
+        this.componentDidMount();
     }
     render() {
         return (
@@ -589,6 +590,13 @@ export default class LoginFirstFrame extends React.Component {
                                                 <label htmlFor="name"></label>
                                             )}
                                             <br></br>
+                                            <p>
+                                                Please wait a moment before your
+                                                post is updated. Spammy or
+                                                inappropriate will be removed,
+                                                and your account will result in
+                                                permanent ban.
+                                            </p>
                                             <button
                                                 type="submit"
                                                 className="dod-button-secondary"
