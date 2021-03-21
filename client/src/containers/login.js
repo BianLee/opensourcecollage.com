@@ -5,6 +5,7 @@ import "../styles/styles.css";
 import { LoginSetupContainer } from "./loginsetup";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import firebase from "firebase";
+import logo from "../images/logo.png";
 export default class LoginFirstFrame extends React.Component {
     constructor() {
         super();
@@ -285,13 +286,18 @@ export default class LoginFirstFrame extends React.Component {
                                     className="dod-heading-1 dod-stack-4 logo"
                                     style={{ justifyContent: "trie" }}
                                 >
-                                    <Link to="/">osc+</Link>
+                                    <Link to="/">
+                                        <div className="sponsor">
+                                            <img id="logo" src={logo}></img>
+                                        </div>
+                                    </Link>
+                                    <p className="dod-heading-3 dod-stack-16 logoDesc">
+                                        <br />
+                                        <br />
+                                        Open Source Collage - gain free access
+                                        to high school student resources
+                                    </p>
                                 </h1>
-                                <p className="dod-heading-3 dod-stack-16 logoDesc">
-                                    open source collage: assemblage of
-                                    opportunities and resources for high school
-                                    students
-                                </p>
                             </div>
                             <p></p>
                             <Link to="/about" style={{ marginLeft: "18px" }}>
