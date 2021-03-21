@@ -701,7 +701,7 @@ class PostDisplay extends React.Component {
      */
     shouldInclude = (post) => {
         if (!this.state.filteringEnabled) {
-            // if filtering is enabled, include everything
+            // if filtering is not enabled, include everything
             return true;
         }
         return this.state.categories.some((category) =>
@@ -857,8 +857,8 @@ class FilterBoxes extends React.Component {
  *  id: string,
  *  text: string
  *  onChange: any
- * }} props the properties `id`, which is the id of the checkbox, and `text`,
- * which is the text displayed for the checkbox
+ * }} props `id` is the id of the checkbox, `text` is the text displayed for the checkbox,
+ * and `onChange` is called whenever the checkbox's state changes
  */
 function FilterCheckbox(props) {
     return (
