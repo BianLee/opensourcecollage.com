@@ -673,6 +673,13 @@ class PostDisplay extends React.Component {
         // be selected that isn't being shown
         this.unselectPost();
 
+        // go back to the first page - if we don't do this, people might see just a blank
+        // screen after changing the filters if they weren't originally on the first page
+        this.setState({
+            currentAmount: 16,
+            currentPlace: 1,
+        });
+
         const id = e.target.id;
         const category = id.replace("Button", "");
         if (document.getElementById(id).checked) {
