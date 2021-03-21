@@ -568,6 +568,17 @@ class PostGrid extends React.Component {
             currentPlace: 1,
         };
     }
+    componentDidUpdate(prevProps) {
+        if (this.props.posts.length !== prevProps.posts.length) {
+            // number of posts changed, probably because one of the filters changed, so we should
+            // move back to the first page
+
+            this.setState({
+                currentAmount: 16,
+                currentPlace: 1,
+            });
+        }
+    }
 
     scrollPrev = (e) => {
         if (this.state.currentPlace > 1) {
