@@ -1,0 +1,35 @@
+[
+  {
+     "id":1,
+     "title":"Water is a critical component of life due to its unique structural and chemical properties. Which of the following does not describe a way that the exceptional characteristics of water are used in nature to sustain life?",
+     "choices":[
+        "The high heat capacity of water prevents lakes and streams from rapidly changing temperature and freezing completely solid in the winter.",
+        "The high surface tension and cohesiveness of water facilitates capillary action in plants",
+        "The low polarity of water prevents dissolution of cells and compounds",
+        "The high intermolecular forces of water, such as hydrogen bonding, result in a boiling point which exceeds the tolerance of most life on planet"
+     ],
+     "correct":"c"
+  },
+  {
+     "id":2,
+     "title":"Which of the following is not a monosaccharide?",
+     "choices":[
+        "maltose",
+        "glucose",
+        "fructose",
+        "galactose"
+     ],
+     "correct":"a"
+  },
+  {
+     "id":3,
+     "title":"Which of the following contain both hydrophilic and hydrophobic properties and are often found in cell plasma memranes?",
+     "choices":[
+        "Nucleotides",
+        "Phospholipids",
+        "Water",
+        "Amino acids"
+     ],
+     "correct":"b"
+  }
+]

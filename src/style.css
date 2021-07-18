@@ -1,0 +1,45 @@
+.questionBox {
+  width: 70%;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding: 2rem;
+  border: 2px solid black;
+}
+
+.questionBoxInner,
+.questionTitleInner {
+  text-align: left !important;
+  width: 90%;
+  font-weight: 500;
+}
+
+.questionBoxInner:hover {
+  background-color: #ffebee;
+  cursor: pointer;
+}
+
+.optionText {
+  cursor: pointer;
+}
+
+hr {
+  width: 90%;
+  font-weight: lighter !important;
+}
+
+#questionTitle {
+  color: black;
+}
+
+#nextButton {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+* {
+  font-size: 1.2rem;
+  font-family: sans-serif;
+}

@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "title": "What was one of the contributions to astronomy made by Nicolaus Copernicus?",
+      "choices": ["He discovered that the planets orbit the Sun in elliptical orbits.", 
+      "He discovered that the planets orbit the Sun in elliptical orbits.", 
+      "He created a theory of gravity to explain orbital motion in detail.",
+    "He theorized that the Sun is the center of the universe.",
+    " He was the first person to use a telescope."], 
+      "correct": "d"
+    },
+    {
+        "id": 2,
+        "title": "Which object exerts the stronger gravitational force onto the other, the Milky Way galaxy or the Andromeda galaxy? Why?",
+        "choices": ["Both galaxies exert equal gravitational forces onto each other.",
+        "The Andromeda galaxy due to it being more massive than the Milky Way galaxy.",
+        "The Milky Way galaxy due to it being larger in size than the Andromeda galaxy.",
+        "The Andromeda galaxy due to its shape being perfectly circular, while the Milky Way galaxy is more elliptical in shape."], 
+        "correct": "a"
+    }
+]
