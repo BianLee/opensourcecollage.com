@@ -7,14 +7,31 @@ class App extends Component {
     this.state = {
       questionNum: 0,
       isEnd: false,
+      isShowingAnswer: false,
       chosenAnswer: "",
       answersArray: [],
       statusArray: [],
+      difficultyArray: [],
       score: 0,
     };
   }
 
   answerLetters = ["a", "b", "c", "d", "e"];
+
+  exitQuiz = () => {};
+
+  reviewQuestions = () => {
+    this.setState({
+      questionNum: 0,
+      isEnd: false,
+      isShowingAnswer: false,
+      chosenAnswer: "",
+      answersArray: [],
+      statusArray: [],
+      difficultyArray: [],
+      score: 0,
+    });
+  };
 
   setAnswer(event) {
     console.log(event.target.value);
@@ -24,16 +41,34 @@ class App extends Component {
     });
   }
 
+  showSolution() {
+    console.log(PostData[this.state.questionNum].correct);
+    this.setState({
+      isShowingAnswer: true,
+    });
+  }
+
   nextQuestion = () => {
-    if (this.state.chosenAnswer === PostData[this.state.questionNum].correct) {
+    this.setState({
+      isShowingAnswer: false,
+    });
+    if (this.state.isShowingAnswer) {
       this.setState({
-        score: this.state.score + 1,
-        statusArray: [...this.state.statusArray, "Correct"],
+        statusArray: [...this.state.statusArray, "✕"],
       });
     } else {
-      this.setState({
-        statusArray: [...this.state.statusArray, "Incorrect"],
-      });
+      if (
+        this.state.chosenAnswer === PostData[this.state.questionNum].correct
+      ) {
+        this.setState({
+          score: this.state.score + 1,
+          statusArray: [...this.state.statusArray, "✓"],
+        });
+      } else {
+        this.setState({
+          statusArray: [...this.state.statusArray, "✕"],
+        });
+      }
     }
     this.setState({
       answersArray: [...this.state.answersArray, this.state.chosenAnswer],
@@ -55,7 +90,7 @@ class App extends Component {
     return (
       <>
         <center>
-          <h1>General Astronomy</h1>
+          <h2>General Astronomy</h2>
           {this.state.isEnd ? (
             <>
               <div className="questionBox">
@@ -71,12 +106,22 @@ class App extends Component {
                 </p>
                 {this.state.statusArray.map((answer, index) => {
                   return (
-                    <p>
-                      {index + 1}. {answer}
-                    </p>
+                    <span>
+                      {index + 1}. {answer} &nbsp;&nbsp;
+                    </span>
                   );
                 })}
+                <br />
+                <br />
               </div>
+              <span
+                span
+                id="buttonDesign"
+                style={{ position: "relative", top: "40px" }}
+                onClick={(e) => this.reviewQuestions()}
+              >
+                Take quiz again
+              </span>
               <p></p>
             </>
           ) : (
@@ -99,11 +144,15 @@ class App extends Component {
                           <div
                             className="questionBoxInner"
                             style={{
-                              backgroundColor:
-                                this.state.chosenAnswer ===
-                                this.answerLetters[index]
-                                  ? "pink"
-                                  : "",
+                              backgroundColor: this.state.isShowingAnswer
+                                ? this.answerLetters[index] ===
+                                  PostData[this.state.questionNum].correct
+                                  ? "#00ff00"
+                                  : ""
+                                : this.state.chosenAnswer ===
+                                  this.answerLetters[index]
+                                ? "pink"
+                                : "",
                               padding: "15px",
                             }}
                             htmlFor={this.answerLetters[index]}
@@ -111,7 +160,16 @@ class App extends Component {
                             {/* {this.answerLetters[index]}. */}
                             <label
                               className="optionText"
-                              style={{ display: "flex" }}
+                              style={{
+                                textDecorationLine:
+                                  this.state.isShowingAnswer &&
+                                  this.answerLetters[index] !==
+                                    PostData[this.state.questionNum].correct
+                                    ? "line-through"
+                                    : "none",
+                                display: "flex",
+                                textDecorationThickness: "1.5px",
+                              }}
                             >
                               <input
                                 style={{
@@ -124,8 +182,9 @@ class App extends Component {
                                 value={this.answerLetters[index]}
                                 name="options"
                                 checked={
+                                  !this.state.isShowingAnswer &&
                                   this.state.chosenAnswer ===
-                                  this.answerLetters[index]
+                                    this.answerLetters[index]
                                 }
                               />
                               {option}
@@ -136,25 +195,28 @@ class App extends Component {
                     );
                   }
                 )}
+
                 <p></p>
               </div>
-              <span
-                id="buttonDesign"
-                style={{position: "relative", top: "40px" }}
-              >
-                Learn Material
+              <span id="exitButton" onClick={(e) => this.exitQuiz()}>
+                ← Exit
               </span>
               &nbsp;&nbsp;
               <span
-                id="buttonDesign"
-                style={{ position: "relative", top: "40px" }}
-                onClick={(e) => this.nextQuestion()}
+                id="revealAnswerButton"
+                onClick={(e) => this.showSolution()}
               >
-                Next
+                Reveal Answer
+              </span>
+              &nbsp;&nbsp;
+              <span id="nextButton" onClick={(e) => this.nextQuestion()}>
+                Next →
               </span>
             </>
           )}
         </center>
+        <br /> <br />
+        <br /> <br />
       </>
     );
   }

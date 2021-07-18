@@ -6,6 +6,14 @@
   border: 2px solid black;
 }
 
+.instructions {
+  width: 72%;
+  text-align: left !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  padding: 2rem;
+}
+
 .questionBoxInner,
 .questionTitleInner {
   text-align: left !important;
@@ -33,13 +41,63 @@ hr {
 
 #buttonDesign {
   cursor: pointer;
-  background-color: black; 
-  padding-top: 15px;
-  padding-bottom: 15px;
+  background-color: black;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-left: 22px;
-  padding-right: 22px; 
-  border-radius: 11px; 
+  padding-right: 22px;
+  border-radius: 11px;
   color: white;
+}
+
+#exitButton,
+#nextButton,
+#revealAnswerButton {
+  cursor: pointer;
+  background-color: black;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: 11px;
+  color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  #nextButton,
+  #revealAnswerButton,
+  #exitButton {
+    position: relative;
+    top: 40px !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #exitButton {
+    display: block;
+    width: 75%;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  #exitButton {
+    position: fixed !important;
+    bottom: 40px !important;
+    left: 50px !important;
+  }
+
+  #nextButton {
+    position: fixed !important;
+    bottom: 40px !important;
+    right: 50px !important;
+  }
+
+  #revealAnswerButton {
+    position: fixed !important;
+    bottom: 40px !important;
+    right: 190px !important;
+  }
 }
 
 h1 {
@@ -48,5 +106,6 @@ h1 {
 
 * {
   font-size: 1.2rem;
-  /* font-family: sans-serif; */
+  font-family: sans-serif;
+  line-height: 2rem;
 }

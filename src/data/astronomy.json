@@ -1,21 +1,77 @@
 [
-    {
-      "id": 1,
-      "title": "What was one of the contributions to astronomy made by Nicolaus Copernicus?",
-      "choices": ["He discovered that the planets orbit the Sun in elliptical orbits.", 
-      "He discovered that the planets orbit the Sun in elliptical orbits.", 
-      "He created a theory of gravity to explain orbital motion in detail.",
-    "He theorized that the Sun is the center of the universe.",
-    " He was the first person to use a telescope."], 
-      "correct": "d"
-    },
-    {
-        "id": 2,
-        "title": "Which object exerts the stronger gravitational force onto the other, the Milky Way galaxy or the Andromeda galaxy? Why?",
-        "choices": ["Both galaxies exert equal gravitational forces onto each other.",
+  {
+     "id":1,
+     "title":"What was one of the contributions to astronomy made by Nicolaus Copernicus?",
+     "choices":[
+        "He discovered that the planets orbit the Sun in elliptical orbits.",
+        "He discovered that the planets orbit the Sun in elliptical orbits.",
+        "He created a theory of gravity to explain orbital motion in detail.",
+        "He theorized that the Sun is the center of the universe.",
+        " He was the first person to use a telescope."
+     ],
+     "correct":"d",
+     "difficulty":"Easy"
+  },
+  {
+     "id":2,
+     "title":" __________ used the extensive records of planetary positions, as measured by __________, to discover that the orbit of the planets is __________ in shape.",
+     "choices":[
+        "Isaac Newton, Galileo Galilei, circular",
+        "Albert Einstein, Isaac Newton, parabolic",
+        "Aristotle, Plato, hyperbolic",
+        "Johannes Kepler, Tycho Brahe, elliptical"
+     ],
+     "correct":"d",
+     "difficulty":"Easy"
+  },
+  {
+     "id":3,
+     "title":"According to Kepler's __________ Law of Planetary Motion, the planet Mars takes longer to complete one revolution around the Sun when compared to the Earth.",
+     "choices":[
+        "Second",
+        "Third",
+        "First",
+        "Fourth"
+     ],
+     "correct":"b",
+     "difficulty":"Easy"
+  },
+  {
+     "id":4,
+     "title":"What was one of the contributions to astronomy made by Isaac Newton?",
+     "choices":[
+        "He discovered that Jupiter has several moons.",
+        " He theorized that the Sun is at the center of the universe.",
+        "He created a theory of gravity to explain orbital motion in detail.",
+        " He was the first person to use a telescope.",
+        "He discovered that the planets orbit the Sun in elliptical orbits."
+     ],
+     "correct":"c",
+     "difficulty":"Easy"
+  },
+  {
+     "id":5,
+     "title":"Which object exerts the stronger gravitational force onto the other, the Milky Way galaxy or the Andromeda galaxy? Why?",
+     "choices":[
+        "Both galaxies exert equal gravitational forces onto each other.",
         "The Andromeda galaxy due to it being more massive than the Milky Way galaxy.",
         "The Milky Way galaxy due to it being larger in size than the Andromeda galaxy.",
-        "The Andromeda galaxy due to its shape being perfectly circular, while the Milky Way galaxy is more elliptical in shape."], 
-        "correct": "a"
-    }
+        "The Andromeda galaxy due to its shape being perfectly circular, while the Milky Way galaxy is more elliptical in shape."
+     ],
+     "correct":"a",
+     "difficulty":"Hard"
+  },
+  {
+    "id": 6,
+    "title": "Considering Earth's orbit, where is the Sun located?",
+    "choices":[
+      "At the vertex of its parabolic orbit.",
+      " At a focus point in its elliptical orbit. ",
+      " At the center of its circular orbit. ",
+      " At the vertex of its hyperbolic orbit. ",
+      " At an arbitrary point along its major axis. "
+    ],
+    "correct": "b",
+    "difficulty": "Easy"
+  }
 ]
