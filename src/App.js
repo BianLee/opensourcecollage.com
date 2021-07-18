@@ -139,11 +139,18 @@ class App extends Component {
                 <p></p>
               </div>
               <span
-                id="nextButton"
-                style={{ position: "relative", top: "20px" }}
+                id="buttonDesign"
+                style={{position: "relative", top: "40px" }}
+              >
+                Learn Material
+              </span>
+              &nbsp;&nbsp;
+              <span
+                id="buttonDesign"
+                style={{ position: "relative", top: "40px" }}
                 onClick={(e) => this.nextQuestion()}
               >
-                NEXT
+                Next
               </span>
             </>
           )}
