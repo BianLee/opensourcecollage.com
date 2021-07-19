@@ -28,11 +28,11 @@
 }
 
 .instructions {
-  width: 72%;
-  text-align: left !important;
+  width: 80%;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
-  padding: 2rem;
+  padding: 1rem;
+  background-color: transparent !important;
 }
 
 .questionBoxInner,

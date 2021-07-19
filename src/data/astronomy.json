@@ -4,13 +4,13 @@
      "title":"What was one of the contributions to astronomy made by Nicolaus Copernicus?",
      "choices":[
         "He discovered that the planets orbit the Sun in elliptical orbits.",
-        "He discovered that the planets orbit the Sun in elliptical orbits.",
         "He created a theory of gravity to explain orbital motion in detail.",
         "He theorized that the Sun is the center of the universe.",
         " He was the first person to use a telescope."
      ],
-     "correct":"d",
-     "difficulty":"Easy"
+     "correct":"c",
+     "difficulty":"Easy",
+     "solution": "• Nicolaus Copernicus (1473–1543) was a mathematician and astronomer who proposed that the sun was stationary in the center of the universe and the earth revolved around it."
   },
   {
      "id":2,
@@ -22,7 +22,8 @@
         "Johannes Kepler, Tycho Brahe, elliptical"
      ],
      "correct":"d",
-     "difficulty":"Easy"
+     "difficulty":"Easy",
+     "solution":""
   },
   {
      "id":3,
@@ -34,7 +35,8 @@
         "Fourth"
      ],
      "correct":"b",
-     "difficulty":"Easy"
+     "difficulty":"Easy",
+     "solution":""
   },
   {
      "id":4,
@@ -47,7 +49,8 @@
         "He discovered that the planets orbit the Sun in elliptical orbits."
      ],
      "correct":"c",
-     "difficulty":"Easy"
+     "difficulty":"Easy",
+     "solution":""
   },
   {
      "id":5,
@@ -59,7 +62,8 @@
         "The Andromeda galaxy due to its shape being perfectly circular, while the Milky Way galaxy is more elliptical in shape."
      ],
      "correct":"a",
-     "difficulty":"Hard"
+     "difficulty":"Hard",
+     "solution":""
   },
   {
     "id": 6,
@@ -72,6 +76,7 @@
       " At an arbitrary point along its major axis. "
     ],
     "correct": "b",
-    "difficulty": "Easy"
+    "difficulty": "Easy",
+    "solution":""
   }
 ]

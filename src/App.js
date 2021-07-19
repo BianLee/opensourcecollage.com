@@ -129,7 +129,7 @@ class App extends Component {
       return (
         <>
           <center>
-            <h1>Educational Platform</h1>
+            <h2>BOSTONLOBSTER ACADEMY</h2>
             <div className="dashboardTopics">
               <button
                 value="Astronomy"
@@ -138,7 +138,13 @@ class App extends Component {
               >
                 Astronomy
               </button>
-
+              <button
+                value="Business"
+                className="subjectButton"
+                onClick={this.chooseTopic.bind(this)}
+              >
+                Business
+              </button>
               <button
                 value="Biology"
                 className="subjectButton"
@@ -147,40 +153,25 @@ class App extends Component {
                 Biology
               </button>
               <button
-                value="AP Biology"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Chemistry
-              </button>
-              <button
-                value="AP Biology"
+                value="Cryptography"
                 className="subjectButton"
                 onClick={this.chooseTopic.bind(this)}
               >
                 Cryptography
               </button>
-
               <button
-                value="AP Biology"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Linux
-              </button>
-              <button
-                value="AP Biology"
+                value="Economics"
                 className="subjectButton"
                 onClick={this.chooseTopic.bind(this)}
               >
                 Economics
               </button>
               <button
-                value="AP Biology"
+                value="Linux"
                 className="subjectButton"
                 onClick={this.chooseTopic.bind(this)}
               >
-                Business
+                Linux
               </button>
             </div>
 
@@ -192,38 +183,22 @@ class App extends Component {
               >
                 This platform aims to educate students on various subjects
                 through problem solving. It features core academic disciplines,
-                as well as topics students wouldn't normally encounter
-                throughout high school. What started out as a weekend project
-                has now expanded to become its own indepedent platform with over
-                10 subjects and 150 unique problems. With thorough explanations
-                and detailed score report, students can recognize their
-                strengths, and better understand areas on which they need to
-                improve.
-                <br />
-                <br />
-                To begin, select a subject of your interest. You may then start
-                solving problems. Select an answer choice and click "next" to
-                move on to the next question. If you wish to see the answer,
-                click "reveal answer" (Note that you will not get that question
-                correct if you do so). Click "exit" if you wish to exit the
-                subject, and you'll be brought back to this page.
-                <br />
-                <br />
-                Like all my other projects, this app is open-sourced on{" "}
+                as well as topics students normally wouldn't encounter in
+                typical class settings. With thorough explanations and detailed
+                score report, students can recognize their strengths, and better
+                understand areas on which they need to improve. If you wish to
+                contribute, please visit{" "}
                 <a
                   href="https://github.com/BianLee/edu"
-                  style={{ textDecoration: "none", fontSize: "1.1rem" }}
                   target="_blank"
+                  style={{ textDecoration: "none", fontSize: "1.1rem" }}
                 >
                   GitHub
                 </a>
-                . If you are interested in contributing (whether through writing
-                code or questions), please message me on Instagram (@bian.lee)
-                or Discord (bostonlobstergang#6098).
+                &nbsp;page and refer to the README.
                 <br />
               </p>
             </div>
-            <h4>Developed by Bian Lee</h4>
           </center>
         </>
       );
@@ -344,6 +319,22 @@ class App extends Component {
 
                   <p></p>
                 </div>
+                {this.state.isShowingAnswer &&
+                this.state.Data[this.state.questionNum].solution.length != 0 ? (
+                  <>
+                    <div className="instructions">
+                      <p
+                        className="questionTitleInner"
+                        id="questionTitle"
+                        style={{ fontSize: "18px", lineHeight: "2rem" }}
+                      >
+                        {this.state.Data[this.state.questionNum].solution}
+                      </p>
+                    </div>
+                  </>
+                ) : (
+                  <></>
+                )}
                 <span id="exitButton" onClick={(e) => this.exitQuiz()}>
                   ← Exit
                 </span>
