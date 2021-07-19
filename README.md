@@ -2,6 +2,8 @@
 
 ## Introduction
 
+![alt text](src/images/ss.png)
+
 This platform aims to educate students on various subjects through problem solving. It features core academic disciplines, as well as topics students normally wouldn't encounter in typical class settings. With thorough explanations and detailed score report, students can recognize their strengths, and better understand areas on which they need to improve.
 
 This was my first weekend project (7/17/2021).
@@ -13,9 +15,3 @@ This app is front-end only at the moment, although I could choose to easily add 
 ## Contribute
 
 Although this started as a simple weekend project, I am pretty happy with how it turned out, and I plan to continue working on it. If you wish to contribute (whether through writing code or writing questions for any specific subjects), please reach out to me at bianlee2004@gmail.com or message me on discord (bostonlobstergang#6098).
-
-## Screenshot
-
-As of 7/19/2021. (Expect drastic changes to the interface)
-
-![alt text](src/images/ss.png)
