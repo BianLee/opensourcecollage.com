@@ -13,3 +13,9 @@ This app is front-end only at the moment, although I could choose to easily add 
 ## Contribute
 
 Although this started as a simple weekend project, I am pretty happy with how it turned out, and I plan to continue working on it. If you wish to contribute (whether through writing code or writing questions for any specific subjects), please reach out to me at bianlee2004@gmail.com or message me on discord (bostonlobstergang#6098).
+
+## Screenshot
+
+As of 7/19/2021. (Expect drastic changes to the interface)
+
+(/images/ss.png)
