@@ -18,4 +18,4 @@ Although this started as a simple weekend project, I am pretty happy with how it
 
 As of 7/19/2021. (Expect drastic changes to the interface)
 
-![alt text](/images/ss.png)
+![alt text](src/images/ss.png)
