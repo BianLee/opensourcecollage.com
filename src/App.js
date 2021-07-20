@@ -12,6 +12,7 @@ class App extends Component {
       isEnd: false,
       isShowingAnswer: false,
       chosenAnswer: "",
+      finalChosenAnswer: "",
       answersArray: [],
       statusArray: [],
       difficultyArray: [],
@@ -30,6 +31,7 @@ class App extends Component {
       isEnd: false,
       isShowingAnswer: false,
       chosenAnswer: "",
+      finalChosenAnswer: "",
       answersArray: [],
       statusArray: [],
       difficultyArray: [],
@@ -46,6 +48,7 @@ class App extends Component {
       isEnd: false,
       isShowingAnswer: false,
       chosenAnswer: "",
+      finalChosenAnswer: "",
       answersArray: [],
       statusArray: [],
       difficultyArray: [],
@@ -59,13 +62,13 @@ class App extends Component {
       chosenAnswer: event.target.value,
       checkStatus: true,
     });
-    
   }
 
   showSolution() {
     console.log(this.state.Data[this.state.questionNum].correct);
     this.setState({
       isShowingAnswer: true,
+      finalChosenAnswer: this.state.chosenAnswer,
     });
     if (
       this.state.chosenAnswer ===
@@ -103,7 +106,7 @@ class App extends Component {
   nextQuestion = () => {
     this.setState({
       isShowingAnswer: false,
-      chosenAnswer: ""
+      chosenAnswer: "",
     });
 
     this.setState({
@@ -126,7 +129,7 @@ class App extends Component {
       return (
         <>
           <center>
-            <h2>Lobster Institute of Technology (LIT)</h2>
+            <h3>Lobster Institute of Technology (LIT)</h3>
             <div className="dashboardTopics">
               <button
                 value="Astronomy"
@@ -141,20 +144,6 @@ class App extends Component {
                 onClick={this.chooseTopic.bind(this)}
               >
                 Biology
-              </button>
-              <button
-                value="Biology"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Business
-              </button>
-              <button
-                value="Chemistry"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Chemistry
               </button>
               <button
                 value="Cryptography"
@@ -184,27 +173,6 @@ class App extends Component {
               >
                 Javascript
               </button>
-              <button
-                value="Linux"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Linux
-              </button>
-              <button
-                value="Linux"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Networking
-              </button>
-              <button
-                value="Linux"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Psychology
-              </button>
             </div>
 
             <div className="dashboard">
@@ -213,21 +181,29 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                This platform aims to educate students on various subjects
-                through problem solving. It features core academic disciplines,
-                as well as topics students normally wouldn't encounter in
-                typical class settings. With thorough explanations and detailed
-                score report, students can recognize their strengths, and better
-                understand areas on which they need to improve. If you wish to
-                contribute, please visit{" "}
-                <a
-                  href="https://github.com/BianLee/edu"
-                  target="_blank"
-                  style={{ textDecoration: "none", fontSize: "1.1rem" }}
-                >
-                  GitHub
-                </a>
-                &nbsp;page and refer to the README.
+                Welcome to Lobster Institute of Technology (LIT)!
+                <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                blanditiis praesentium voluptatum deleniti atque corrupti quos
+                dolores et quas molestias excepturi sint occaecati cupiditate
+                non provident, similique sunt in culpa qui officia deserunt
+                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+                rerum facilis est et expedita distinctio. Nam libero tempore,
+                cum soluta nobis est eligendi optio cumque nihil impedit quo
+                minus id quod maxime placeat facere possimus, omnis voluptas
+                assumenda est, omnis dolor repellendus. Temporibus autem
+                quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                eveniet ut et voluptates repudiandae sint et molestiae non
+                recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+                ut aut reiciendis voluptatibus maiores alias consequatur aut
+                perferendis doloribus.
                 <br />
               </p>
             </div>
@@ -300,10 +276,13 @@ class App extends Component {
                                     this.state.Data[this.state.questionNum]
                                       .correct
                                     ? "#00ff00"
+                                    : this.state.finalChosenAnswer ===
+                                      this.answerLetters[index]
+                                    ? "#ffebee"
                                     : ""
                                   : this.state.chosenAnswer ===
                                     this.answerLetters[index]
-                                  ? "pink"
+                                  ? "#ffebee"
                                   : "",
                                 padding: "15px",
                               }}
@@ -313,13 +292,14 @@ class App extends Component {
                               <label
                                 className="optionText"
                                 style={{
+                                  /* }
                                   textDecorationLine:
                                     this.state.isShowingAnswer &&
                                     this.answerLetters[index] !==
                                       this.state.Data[this.state.questionNum]
                                         .correct
                                       ? "line-through"
-                                      : "none",
+                                : "none", */
                                   display: "flex",
                                   textDecorationThickness: "1.5px",
                                 }}
@@ -358,7 +338,7 @@ class App extends Component {
                       <p
                         className="questionTitleInner"
                         id="questionTitle"
-                        style={{ fontSize: "18px", lineHeight: "2rem" }}
+                        style={{ fontSize: "1.1rem", lineHeight: "2rem" }}
                       >
                         {/* • Difficulty:{" "}
                         {this.state.Data[this.state.questionNum].difficulty}
@@ -375,8 +355,21 @@ class App extends Component {
                             );
                           }
                         )}
-                        <br />➞ Explanation:{" "} */} 
-                        • {this.state.Data[this.state.questionNum].solution}
+                        <br />➞ Explanation:{" "} */}
+                        {this.state.statusArray[this.state.questionNum] ===
+                        "✓" ? (
+                          <span
+                            style={{ color: "#04d904", fontWeight: "bold" }}
+                          >
+                            ✓ Correct
+                          </span>
+                        ) : (
+                          <span style={{ color: "red", fontWeight: "bold" }}>
+                            ✕ Incorrect
+                          </span>
+                        )}
+                        <br />•{" "}
+                        {this.state.Data[this.state.questionNum].solution}
                       </p>
                     </div>
                   </>
@@ -386,26 +379,20 @@ class App extends Component {
                 <span id="exitButton" onClick={(e) => this.exitQuiz()}>
                   ← Exit
                 </span>
-                &nbsp;&nbsp;
-
-                &nbsp;&nbsp;
-                {this.state.isShowingAnswer ? 
-                <>
-                 <span id="nextButton" onClick={(e) => this.nextQuestion()}>
-                 Next →
-               </span>
-               </>
-              : ( 
-                <>
-                                  <span
-                  id="nextButton"
-                  onClick={(e) => this.showSolution()}
-                >
-                  Check
-                </span>
-                </>
-              )} 
-               
+                &nbsp;&nbsp; &nbsp;&nbsp;
+                {this.state.isShowingAnswer ? (
+                  <>
+                    <span id="nextButton" onClick={(e) => this.nextQuestion()}>
+                      Next →
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span id="nextButton" onClick={(e) => this.showSolution()}>
+                      Check
+                    </span>
+                  </>
+                )}
               </>
             )}
           </center>

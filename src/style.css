@@ -41,7 +41,8 @@
 }
 
 .questionBoxInner:hover {
-  background-color: #ffebee;
+  /*  background-color: #ffebee; */
+  background-color: #fff0de;
   cursor: pointer;
 }
 
@@ -73,8 +74,8 @@ hr {
 #revealAnswerButton {
   cursor: pointer;
   background-color: black;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   padding-left: 18px;
   padding-right: 18px;
 
