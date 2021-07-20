@@ -328,6 +328,22 @@ class App extends Component {
                         id="questionTitle"
                         style={{ fontSize: "18px", lineHeight: "2rem" }}
                       >
+                        • Difficulty:{" "}
+                        {this.state.Data[this.state.questionNum].difficulty}
+                        <br />• Topics:&nbsp;
+                        {this.state.Data[this.state.questionNum].category.map(
+                          (cat, index) => {
+                            return (
+                              <span
+                                style={{ fontSize: "18px", lineHeight: "2rem" }}
+                              >
+                                {index ? ", " : ""}
+                                {cat}
+                              </span>
+                            );
+                          }
+                        )}
+                        <br />➞ Explanation:{" "}
                         {this.state.Data[this.state.questionNum].solution}
                       </p>
                     </div>
@@ -352,7 +368,6 @@ class App extends Component {
               </>
             )}
           </center>
-          <br /> <br />
           <br /> <br />
         </>
       );

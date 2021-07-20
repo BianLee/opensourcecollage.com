@@ -10,8 +10,9 @@
      ],
      "correct":"c",
      "difficulty":"Easy",
-     "solution": "• Nicolaus Copernicus (1473–1543) was a mathematician and astronomer who proposed that the sun was stationary in the center of the universe and the earth revolved around it."
-  },
+     "solution": "Nicolaus Copernicus (1473–1543) was a mathematician and astronomer who proposed that the sun was stationary in the center of the universe and the earth revolved around it.", 
+     "category": ["Astronomers", "Orbit"]
+   },
   {
      "id":2,
      "title":" __________ used the extensive records of planetary positions, as measured by __________, to discover that the orbit of the planets is __________ in shape.",
@@ -23,7 +24,7 @@
      ],
      "correct":"d",
      "difficulty":"Easy",
-     "solution":""
+     "solution":"Tycho Brahe was a Danish astronomer who is best known for making the most accurate celestial observations of his time without the aid of a telescope. Johannes Kepler was a German astronomer, mathematician and an assistant of Brahe, who discovered three major laws of planetary motion."
   },
   {
      "id":3,
@@ -36,7 +37,7 @@
      ],
      "correct":"b",
      "difficulty":"Easy",
-     "solution":""
+     "solution":"Kepler’s First Law of Planetary Motion explains that planets move around the Sun in elliptical orbits. The second law states that a planet moves in its ellipse so that the line between the planet and the Sun placed at a focus sweeps out equal areas over equal time. The third law explains how the time it takes for a planet to revolve around the Sun increases with the radius of its orbit. Fourth law does not exist."
   },
   {
      "id":4,
