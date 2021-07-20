@@ -59,6 +59,7 @@ class App extends Component {
       chosenAnswer: event.target.value,
       checkStatus: true,
     });
+    
   }
 
   showSolution() {
@@ -66,6 +67,19 @@ class App extends Component {
     this.setState({
       isShowingAnswer: true,
     });
+    if (
+      this.state.chosenAnswer ===
+      this.state.Data[this.state.questionNum].correct
+    ) {
+      this.setState({
+        score: this.state.score + 1,
+        statusArray: [...this.state.statusArray, "✓"],
+      });
+    } else {
+      this.setState({
+        statusArray: [...this.state.statusArray, "✕"],
+      });
+    }
   }
 
   chooseTopic(event) {
@@ -89,26 +103,9 @@ class App extends Component {
   nextQuestion = () => {
     this.setState({
       isShowingAnswer: false,
+      chosenAnswer: ""
     });
-    if (this.state.isShowingAnswer) {
-      this.setState({
-        statusArray: [...this.state.statusArray, "✕"],
-      });
-    } else {
-      if (
-        this.state.chosenAnswer ===
-        this.state.Data[this.state.questionNum].correct
-      ) {
-        this.setState({
-          score: this.state.score + 1,
-          statusArray: [...this.state.statusArray, "✓"],
-        });
-      } else {
-        this.setState({
-          statusArray: [...this.state.statusArray, "✕"],
-        });
-      }
-    }
+
     this.setState({
       answersArray: [...this.state.answersArray, this.state.chosenAnswer],
       chosenAnswer: "",
@@ -129,7 +126,7 @@ class App extends Component {
       return (
         <>
           <center>
-            <h2>BOSTONLOBSTER ACADEMY</h2>
+            <h2>Lobster Institute of Technology (LIT)</h2>
             <div className="dashboardTopics">
               <button
                 value="Astronomy"
@@ -139,18 +136,25 @@ class App extends Component {
                 Astronomy
               </button>
               <button
-                value="Business"
+                value="Biology"
                 className="subjectButton"
                 onClick={this.chooseTopic.bind(this)}
               >
-                Business
+                Biology
               </button>
               <button
                 value="Biology"
                 className="subjectButton"
                 onClick={this.chooseTopic.bind(this)}
               >
-                Biology
+                Business
+              </button>
+              <button
+                value="Chemistry"
+                className="subjectButton"
+                onClick={this.chooseTopic.bind(this)}
+              >
+                Chemistry
               </button>
               <button
                 value="Cryptography"
@@ -171,7 +175,35 @@ class App extends Component {
                 className="subjectButton"
                 onClick={this.chooseTopic.bind(this)}
               >
+                Java
+              </button>
+              <button
+                value="Linux"
+                className="subjectButton"
+                onClick={this.chooseTopic.bind(this)}
+              >
+                Javascript
+              </button>
+              <button
+                value="Linux"
+                className="subjectButton"
+                onClick={this.chooseTopic.bind(this)}
+              >
                 Linux
+              </button>
+              <button
+                value="Linux"
+                className="subjectButton"
+                onClick={this.chooseTopic.bind(this)}
+              >
+                Networking
+              </button>
+              <button
+                value="Linux"
+                className="subjectButton"
+                onClick={this.chooseTopic.bind(this)}
+              >
+                Psychology
               </button>
             </div>
 
@@ -328,7 +360,7 @@ class App extends Component {
                         id="questionTitle"
                         style={{ fontSize: "18px", lineHeight: "2rem" }}
                       >
-                        • Difficulty:{" "}
+                        {/* • Difficulty:{" "}
                         {this.state.Data[this.state.questionNum].difficulty}
                         <br />• Topics:&nbsp;
                         {this.state.Data[this.state.questionNum].category.map(
@@ -343,8 +375,8 @@ class App extends Component {
                             );
                           }
                         )}
-                        <br />➞ Explanation:{" "}
-                        {this.state.Data[this.state.questionNum].solution}
+                        <br />➞ Explanation:{" "} */} 
+                        • {this.state.Data[this.state.questionNum].solution}
                       </p>
                     </div>
                   </>
@@ -355,16 +387,25 @@ class App extends Component {
                   ← Exit
                 </span>
                 &nbsp;&nbsp;
-                <span
-                  id="revealAnswerButton"
+
+                &nbsp;&nbsp;
+                {this.state.isShowingAnswer ? 
+                <>
+                 <span id="nextButton" onClick={(e) => this.nextQuestion()}>
+                 Next →
+               </span>
+               </>
+              : ( 
+                <>
+                                  <span
+                  id="nextButton"
                   onClick={(e) => this.showSolution()}
                 >
-                  Reveal Answer
+                  Check
                 </span>
-                &nbsp;&nbsp;
-                <span id="nextButton" onClick={(e) => this.nextQuestion()}>
-                  Next →
-                </span>
+                </>
+              )} 
+               
               </>
             )}
           </center>

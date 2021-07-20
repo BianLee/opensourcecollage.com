@@ -73,10 +73,10 @@ hr {
 #revealAnswerButton {
   cursor: pointer;
   background-color: black;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 22px;
-  padding-right: 22px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px;
 
   color: white;
 }
@@ -114,7 +114,7 @@ hr {
   #revealAnswerButton {
     position: fixed !important;
     bottom: 40px !important;
-    right: 190px !important;
+    right: 170px !important;
   }
 }
 
