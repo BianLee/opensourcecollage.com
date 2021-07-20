@@ -368,7 +368,6 @@ class App extends Component {
               </>
             )}
           </center>
-          <br /> <br />
         </>
       );
     }

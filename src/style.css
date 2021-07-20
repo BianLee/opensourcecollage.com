@@ -128,9 +128,15 @@ h1 {
 }
 
 * {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: Verdana;
   line-height: 2rem;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 .subjectButton {
