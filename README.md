@@ -1,4 +1,4 @@
-# OSC Question Feature
+# Open Source Collage Question Feature
 
 ## Introduction
 
