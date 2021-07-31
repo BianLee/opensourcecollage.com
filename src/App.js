@@ -135,6 +135,7 @@ class App extends Component {
           <center>
             <div className="dashboard">
               {" "}
+              <br />
               <h1>Open Source Collage</h1>
               <p
                 className="questionTitleInner"
@@ -288,6 +289,7 @@ class App extends Component {
       return (
         <>
           <center>
+            <br />
             <h2>{this.state.topic}</h2>
             {this.state.isEnd ? (
               <>
@@ -335,6 +337,7 @@ class App extends Component {
                     {this.state.questionNum + 1}.&nbsp;
                     {this.state.Data[this.state.questionNum].title}
                   </p>
+                  <br />
                   <hr></hr>
 
                   {this.state.Data[this.state.questionNum].choices.map(
@@ -374,7 +377,7 @@ class App extends Component {
                                         .correct
                                       ? "line-through"
                                 : "none", */
-                                  display: "flex",
+                                  display: "inline",
                                   textDecorationThickness: "1.5px",
                                 }}
                               >
@@ -383,6 +386,7 @@ class App extends Component {
                                     marginRight: "12px",
                                     flexShrink: "0",
                                   }}
+                                  className="optionInput"
                                   onChange={this.setAnswer.bind(this)}
                                   type="radio"
                                   id={this.answerLetters[index]}
