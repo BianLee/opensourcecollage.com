@@ -7,6 +7,7 @@ import ocbiology from "./images/ocbiology.png";
 import modulus from "./images/modulus.png";
 import osc from "./images/osc.png";
 import "./style.css";
+import { lowerCase, uniqBy } from "lodash";
 class App extends Component {
   constructor() {
     super();
@@ -28,6 +29,15 @@ class App extends Component {
   }
   //  PostData = Astronomy;
   answerLetters = ["a", "b", "c", "d", "e"];
+  subjects = [
+    "Astronomy",
+    "Biology",
+    "Computer Science",
+    "Cybersecurity",
+    "Economics",
+    "Java",
+    "Javascript",
+  ];
 
   exitQuiz = () => {
     this.setState({
@@ -170,48 +180,18 @@ class App extends Component {
                 <b>Quizzes</b> - Test your knowledge and prepare for tests!
               </center>
               <br />
-              <button
-                value="Astronomy"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Astronomy
-              </button>
-              <button
-                value="Biology"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Biology
-              </button>
-              <button
-                value="Cryptography"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Cryptography
-              </button>
-              <button
-                value="Economics"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Economics
-              </button>
-              <button
-                value="Linux"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Java
-              </button>
-              <button
-                value="Linux"
-                className="subjectButton"
-                onClick={this.chooseTopic.bind(this)}
-              >
-                Javascript
-              </button>
+              {this.subjects.map((sub) => {
+                return (
+                  <button
+                    value={sub}
+                    className="subjectButton"
+                    id={lowerCase(sub) + "Button"}
+                    onClick={this.chooseTopic.bind(this)}
+                  >
+                    {sub}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="dashboard">
