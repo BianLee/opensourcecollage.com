@@ -157,8 +157,6 @@ class App extends Component {
                     of others in all parts of the country. OSC leads an effort
                     on its own to bring useful resources to students through
                     facilitating new connections between students and
-                    organizations, and through the “featured organization” page,
-                    which is reserved for most highly valuable opportunities and
                     organizations.
                   </span>
                 </div>
