@@ -16,7 +16,7 @@ h1 {
   padding: 2rem;
   background-color: transparent !important;
   padding-bottom: 40px !important;
-  max-width: 2000px !important; 
+  max-width: 1500px !important;
 }
 
 .dashboardTopics {
@@ -92,7 +92,7 @@ hr {
   }
   .dashboard {
     width: 95%;
-    max-width: 2000px !important
+    max-width: 2000px !important;
   }
   .questionBox {
     width: 95%;
@@ -102,11 +102,10 @@ hr {
 @media only screen and (max-width: 1800px) {
   .dashboard {
     width: 90%;
-    max-width: 2000px !important; 
+    max-width: 4000px !important;
   }
   .questionBox {
     width: 90%;
-
   }
 }
 
