@@ -3,16 +3,15 @@ h1 {
 }
 
 .questionBox {
-  width: 70%;
+  width: 72%;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
-  padding: 2rem;
-
+  padding: 2rem !important;
   background-color: transparent !important;
 }
 
 .dashboard {
-  width: 70%;
+  width: 72%;
   padding-top: 1rem !important;
   padding: 2rem;
   background-color: transparent !important;
@@ -47,6 +46,7 @@ h1 {
 }
 
 .optionText {
+  text-align: left !important;
   cursor: pointer;
 }
 
@@ -92,13 +92,14 @@ hr {
   .dashboard {
     width: 95%;
   }
+  .questionBox {
+    width: 95%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   #exitButton {
-    display: block;
-    width: 75%;
-    margin-bottom: 20px;
+    display: none;
   }
 }
 
@@ -137,7 +138,6 @@ h1 {
   line-height: 2rem;
   box-sizing: border-box;
   max-width: 2000px;
-  position: center;
   margin: auto;
   /* 
   -webkit-touch-callout: none;
