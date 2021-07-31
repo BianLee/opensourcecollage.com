@@ -97,6 +97,17 @@ hr {
   }
 }
 
+@media only screen and (max-width: 1400px) {
+  .aligned {
+    display: flex;
+    flex-direction: column;
+  }
+  #logo {
+    margin: auto !important;
+    margin-bottom: 20px !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #exitButton {
     display: none;
@@ -204,6 +215,7 @@ h1 {
   display: inline-block;
   margin: 5px;
 }
+
 img {
   max-width: 100%;
   max-height: 100%;
@@ -216,15 +228,14 @@ img {
   */
 }
 
-.leftBox {
-  width: 50%;
-  float: left;
-  padding: 15px;
-  border: 1px solid black;
+#logo {
+  height: 200px;
+  width: 200px;
+  margin-right: 36px;
+  border-radius: 17px;
 }
-.rightBox {
-  width: 50%;
-  float: left;
-  padding: 15px;
-  border: 1px solid black;
+
+.aligned {
+  display: flex;
+  align-items: center;
 }

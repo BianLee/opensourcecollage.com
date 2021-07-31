@@ -143,19 +143,26 @@ class App extends Component {
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
                 <br />
-                Open Source Collage is a user-friendly platform designed to help
-                students develop their passion and discover new opportunities
-                through providing a search mechanism for events, lectures,
-                scholarships, competitions, and organizations you can get
-                involved with. It also allows you to share your own events upon
-                creating an account, which will help you and your organization
-                connect with thousands of others in all parts of the country.
-                OSC leads an effort on its own to bring useful resources to
-                students through facilitating new connections between students
-                and organizations, and through the “featured organization” page,
-                which is reserved for most highly valuable opportunities and
-                organizations.
-                <br />
+                <div className="aligned">
+                  <img src={osc} id="logo"></img>
+
+                  <span style={{ fontSize: "17px", lineHeight: "1.9rem" }}>
+                    Open Source Collage is a user-friendly platform designed to
+                    help students develop their passion and discover new
+                    opportunities through providing a search mechanism for
+                    events, lectures, scholarships, competitions, and
+                    organizations you can get involved with. It also allows you
+                    to share your own events upon creating an account, which
+                    will help you and your organization connect with thousands
+                    of others in all parts of the country. OSC leads an effort
+                    on its own to bring useful resources to students through
+                    facilitating new connections between students and
+                    organizations, and through the “featured organization” page,
+                    which is reserved for most highly valuable opportunities and
+                    organizations.
+                  </span>
+                </div>
+
                 <br />
               </p>
             </div>
@@ -416,7 +423,7 @@ class App extends Component {
                       <p
                         className="questionTitleInner"
                         id="questionTitle"
-                        style={{ fontSize: "1.1rem", lineHeight: "2rem" }}
+                        style={{ fontSize: "18px", lineHeight: "2rem" }}
                       >
                         {/* • Difficulty:{" "}
                         {this.state.Data[this.state.questionNum].difficulty}
