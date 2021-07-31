@@ -2,6 +2,7 @@ import { everyLimit } from "async";
 import React, { Component } from "react";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
+import sponsorpic from "./images/interstem.png";
 import "./style.css";
 class App extends Component {
   constructor() {
@@ -129,8 +130,37 @@ class App extends Component {
       return (
         <>
           <center>
-            <h3>Lobster Institute of Technology (LIT)</h3>
-            <div className="dashboardTopics">
+            <div className="dashboard">
+              {" "}
+              <h1>Open Source Collage</h1>
+              <p
+                className="questionTitleInner"
+                id="questionTitle"
+                style={{ fontSize: "18px", lineHeight: "2rem" }}
+              >
+                <br />
+                Open Source Collage is a user-friendly platform designed to help
+                students develop their passion and discover new opportunities
+                through providing a search mechanism for events, lectures,
+                scholarships, competitions, and organizations you can get
+                involved with. It also allows you to share your own events upon
+                creating an account, which will help you and your organization
+                connect with thousands of others in all parts of the country.
+                OSC+ leads an effort on its own to bring useful resources to
+                students through facilitating new connections between students
+                and organizations, and through the “featured organization” page,
+                which is reserved for most highly valuable opportunities and
+                organizations.
+                <br />
+                <br />
+              </p>
+            </div>
+
+            <div className="dashboard">
+              <center>
+                <b>Quizzes</b> - Test your knowledge and prepare for tests!
+              </center>
+              <br />
               <button
                 value="Astronomy"
                 className="subjectButton"
@@ -181,30 +211,82 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                Welcome to Lobster Institute of Technology (LIT)!
                 <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti atque corrupti quos
-                dolores et quas molestias excepturi sint occaecati cupiditate
-                non provident, similique sunt in culpa qui officia deserunt
-                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                rerum facilis est et expedita distinctio. Nam libero tempore,
-                cum soluta nobis est eligendi optio cumque nihil impedit quo
-                minus id quod maxime placeat facere possimus, omnis voluptas
-                assumenda est, omnis dolor repellendus. Temporibus autem
-                quibusdam et aut officiis debitis aut rerum necessitatibus saepe
-                eveniet ut et voluptates repudiandae sint et molestiae non
-                recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
-                ut aut reiciendis voluptatibus maiores alias consequatur aut
-                perferendis doloribus.
+                <center>
+                  <b>Opportunities</b> - Events & Extracurriculars!
+                </center>
                 <br />
+                <div className="subject" id="math">
+                  <center>Mathematics & Computer Science</center>
+                </div>
+                <div className="subject" id="physics">
+                  <center>Sciences (Physics, Chemistry, Biology)</center>
+                </div>
+                <div className="subject" id="biology">
+                  <center>Engineering</center>
+                </div>
+                <br />
+                <div className="subject" id="music">
+                  <center>Humanities (English, History)</center>
+                </div>
+                <div className="subject" id="engineering">
+                  <center>Social Sciences (Economics, Psychology, etc)</center>
+                </div>
+                <div className="subject" id="other">
+                  <center>Art (Design, Music)</center>
+                </div>
+              </p>
+            </div>
+
+            <div className="dashboard" style={{ marginTop: -10 }}>
+              <p
+                className="questionTitleInner"
+                id="questionTitle"
+                style={{ fontSize: "18px", lineHeight: "2rem" }}
+              >
+                <center>
+                  <br />
+                  <b>Student Organizations</b> - Nonprofits and businesses!
+                  <br />
+                  <br />
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                  <div className="featured">
+                    <img src={sponsorpic}></img>
+                  </div>
+                </center>
+              </p>
+            </div>
+            <br />
+            <div className="dashboard">
+              <hr></hr>
+
+              <p
+                className="questionTitleInner"
+                id="questionTitle"
+                style={{ fontSize: "18px", lineHeight: "2rem" }}
+              >
+                <br />
+                <center>Open Source Collage 2021</center>
               </p>
             </div>
           </center>
