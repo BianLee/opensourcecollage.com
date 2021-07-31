@@ -1,3 +1,7 @@
+h1 {
+  line-height: 3rem;
+}
+
 .questionBox {
   width: 70%;
   padding-top: 1rem !important;
@@ -85,6 +89,9 @@ hr {
     position: relative;
     top: 40px !important;
   }
+  .dashboard {
+    width: 95%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -129,6 +136,9 @@ h1 {
   font-family: Verdana;
   line-height: 2rem;
   box-sizing: border-box;
+  max-width: 2000px;
+  position: center;
+  margin: auto;
   /* 
   -webkit-touch-callout: none;
   -webkit-user-select: none; 
@@ -150,8 +160,8 @@ h1 {
 
 .subject {
   padding: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
   margin-bottom: 10px;
   margin-top: 10px;
   margin-right: 5px;
