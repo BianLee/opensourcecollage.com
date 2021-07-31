@@ -2,7 +2,10 @@ import { everyLimit } from "async";
 import React, { Component } from "react";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
-import sponsorpic from "./images/interstem.png";
+import interstem from "./images/interstem.png";
+import ocbiology from "./images/ocbiology.png";
+import modulus from "./images/modulus.png";
+import osc from "./images/osc.png";
 import "./style.css";
 class App extends Component {
   constructor() {
@@ -146,7 +149,7 @@ class App extends Component {
                 involved with. It also allows you to share your own events upon
                 creating an account, which will help you and your organization
                 connect with thousands of others in all parts of the country.
-                OSC+ leads an effort on its own to bring useful resources to
+                OSC leads an effort on its own to bring useful resources to
                 students through facilitating new connections between students
                 and organizations, and through the “featured organization” page,
                 which is reserved for most highly valuable opportunities and
@@ -246,36 +249,25 @@ class App extends Component {
               >
                 <center>
                   <br />
-                  <b>Student Organizations</b> - Nonprofits and businesses!
+                  <b>Organizations</b> - Student-run Nonprofits!
                   <br />
                   <br />
                   <div className="featured">
-                    <img src={sponsorpic}></img>
+                    <img src={osc}></img>
                   </div>
                   <div className="featured">
-                    <img src={sponsorpic}></img>
+                    <img src={interstem}></img>
                   </div>
                   <div className="featured">
-                    <img src={sponsorpic}></img>
+                    <img src={modulus}></img>
                   </div>
                   <div className="featured">
-                    <img src={sponsorpic}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={sponsorpic}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={sponsorpic}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={sponsorpic}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={sponsorpic}></img>
+                    <img src={ocbiology}></img>
                   </div>
                 </center>
               </p>
             </div>
+
             <br />
             <div className="dashboard">
               <hr></hr>
