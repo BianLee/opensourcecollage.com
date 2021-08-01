@@ -3,7 +3,7 @@ h1 {
 }
 
 .questionBox {
-  width: 72%;
+  width: 80% !important;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
   padding: 2rem !important;
@@ -293,17 +293,18 @@ img {
   border: 2px solid black;
   background-color: #e7e7e7;
   color: black;
-  padding: 8px 16px;
+  padding: 6px 14px;
   font-size: 16px;
   cursor: pointer;
   border-color: #e7e7e7;
   color: black;
-  width: 110px;
+  width: 90px;
   position: fixed !important;
-  top: 110px !important;
+  top: 40px !important;
   right: 50px !important;
 }
 
+/* 
 .signupButton {
   border: 2px solid black;
   background-color: #e7e7e7;
@@ -318,3 +319,4 @@ img {
   top: 40px !important;
   right: 50px !important;
 }
+*/ 

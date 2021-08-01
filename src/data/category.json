@@ -1,0 +1,33 @@
+[
+    {
+        "id":1,
+        "title": "Mathematics & Computer Science",
+        "colorcode": "math"
+     },
+     {
+        "id":2,
+        "title": "Sciences (Physics, Chemistry, Biology)",
+        "colorcode": "physics"
+     },
+     {
+        "id":3,
+        "title": "Engineering",
+        "colorcode": "biology"
+     },
+     {
+        "id":4,
+        "title": "Humanities (English, History)",
+        "colorcode": "music"
+     },
+     {
+        "id":5,
+        "title": "Social Sciences (Economics, Psychology, etc)",
+        "colorcode": "engineering"
+     },
+     {
+        "id":5,
+        "title": "Art (Design, Music)",
+        "colorcode": "other"
+     }
+     
+]

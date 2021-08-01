@@ -8,6 +8,7 @@ import modulus from "./images/modulus.png";
 import osc from "./images/osc.png";
 import leftBlog from "./data/leftBlog.json";
 import rightBlog from "./data/rightBlog.json";
+import category from "./data/category.json";
 import "./style.css";
 import { lowerCase, uniqBy } from "lodash";
 class App extends Component {
@@ -40,6 +41,13 @@ class App extends Component {
     "Java",
     "Javascript",
   ];
+  opportunityCategories = ["Mathematics & Computer Science", 
+  "Sciences (Physics, Chemistry, Biology)", "Engineering",
+"Humanities (English, History)", "Social Sciences (Economics, Psychology, etc)",
+"Art (Design, Music)"];
+
+  opportunityColors = ["math", "physics", "biology", "music", "engineering", "other"]; 
+
 
   exitQuiz = () => {
     this.setState({
@@ -149,7 +157,7 @@ class App extends Component {
               {" "}
               <br />
               <h1>Open Source Collage</h1>
-              <button className="signupButton">Sign Up</button>
+            
               <button className="loginButton">Login</button>
               <p
                 className="questionTitleInner"
@@ -210,25 +218,15 @@ class App extends Component {
                   <b>Opportunities</b> - Events & Extracurriculars!
                 </center>
                 <br />
-                <div className="subject" id="math">
-                  <center>Mathematics & Computer Science</center>
+              {category.map((opp) => {
+                return (
+                  <>
+                  <div id={opp.id} className="subject" id={opp.colorcode}>
+                  <center>{opp.title}</center>
                 </div>
-                <div className="subject" id="physics">
-                  <center>Sciences (Physics, Chemistry, Biology)</center>
-                </div>
-                <div className="subject" id="biology">
-                  <center>Engineering</center>
-                </div>
-                <br />
-                <div className="subject" id="music">
-                  <center>Humanities (English, History)</center>
-                </div>
-                <div className="subject" id="engineering">
-                  <center>Social Sciences (Economics, Psychology, etc)</center>
-                </div>
-                <div className="subject" id="other">
-                  <center>Art (Design, Music)</center>
-                </div>
+                </>
+                )
+              })}
               </p>
             </div>
 
@@ -332,8 +330,8 @@ class App extends Component {
       return (
         <>
           <center>
-            <br />
-            <h2>{this.state.topic}</h2>
+           
+            <h3 style={{marginTop: "15px"}}>Quiz - {this.state.topic}</h3>
             {this.state.isEnd ? (
               <>
                 <div className="questionBox">
@@ -376,11 +374,11 @@ class App extends Component {
                   {/* {PostData.map((postDetail, index) => {
                 return <p>{postDetail.title}</p>;
               })}  */}
-                  <p className="questionTitleInner" id="questionTitle">
+                  <p className="questionTitleInner" id="questionTitle" style={{marginBottom: "20px"}}>
                     {this.state.questionNum + 1}.&nbsp;
                     {this.state.Data[this.state.questionNum].title}
                   </p>
-                  <br />
+                 
                   <hr></hr>
 
                   {this.state.Data[this.state.questionNum].choices.map(
@@ -455,7 +453,7 @@ class App extends Component {
                 {this.state.isShowingAnswer &&
                 this.state.Data[this.state.questionNum].solution.length != 0 ? (
                   <>
-                    <div className="instructions">
+                    <div className="instructions" style={{marginTop: "-24px"}}>
                       <p
                         className="questionTitleInner"
                         id="questionTitle"
