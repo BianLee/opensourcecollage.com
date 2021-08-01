@@ -3,12 +3,15 @@ h1 {
 }
 
 .questionBox {
-  width: 80% !important;
+  width: 70% !important;
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
   padding: 2rem !important;
   background-color: transparent !important;
   max-width: 1500px !important;
+  background-color: #fffaf5 !important;
+  margin-top: 20px;
+  border: 2px solid #e7e7e7;
 }
 
 .dashboard {
@@ -29,9 +32,10 @@ h1 {
 }
 
 .instructions {
-  width: 80%;
+  width: 70%;
   padding: 1rem;
   background-color: transparent !important;
+  max-width: 1500px !important;
 }
 
 .questionBoxInner,
@@ -43,13 +47,13 @@ h1 {
 
 .questionBoxInner:hover {
   /*  background-color: #ffebee; */
-  background-color: #fff0de;
+  background-color: #f7f0e8;
   cursor: pointer;
 }
 
 .optionText {
-  text-align: left !important;
   cursor: pointer;
+  align-items: flex-start !important;
 }
 
 hr {
@@ -90,6 +94,16 @@ hr {
   #exitButton {
     position: relative;
     top: 40px !important;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  #exitButton {
+    margin-right: 10px;
+  }
+  #nextButton {
+    margin-left: 10px;
   }
   .dashboard {
     width: 95%;
@@ -127,6 +141,9 @@ hr {
 @media only screen and (max-width: 600px) {
   #exitButton {
     display: none;
+  }
+  #nextButton {
+    margin-left: 0px;
   }
 }
 
@@ -319,4 +336,4 @@ img {
   top: 40px !important;
   right: 50px !important;
 }
-*/ 
+*/

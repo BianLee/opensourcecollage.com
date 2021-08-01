@@ -41,13 +41,8 @@ class App extends Component {
     "Java",
     "Javascript",
   ];
-  opportunityCategories = ["Mathematics & Computer Science", 
-  "Sciences (Physics, Chemistry, Biology)", "Engineering",
-"Humanities (English, History)", "Social Sciences (Economics, Psychology, etc)",
-"Art (Design, Music)"];
 
-  opportunityColors = ["math", "physics", "biology", "music", "engineering", "other"]; 
-
+  organizations = [osc, interstem, modulus, ocbiology];
 
   exitQuiz = () => {
     this.setState({
@@ -157,7 +152,6 @@ class App extends Component {
               {" "}
               <br />
               <h1>Open Source Collage</h1>
-            
               <button className="loginButton">Login</button>
               <p
                 className="questionTitleInner"
@@ -189,8 +183,7 @@ class App extends Component {
 
             <div className="dashboard">
               <center>
-                <b>Quizzes</b> - Test your knowledge and develop problem solving
-                skills!
+                <b>Quizzes</b> - Test your knowledge
               </center>
               <br />
               {this.subjects.map((sub) => {
@@ -215,18 +208,28 @@ class App extends Component {
               >
                 <br />
                 <center>
-                  <b>Opportunities</b> - Events & Extracurriculars!
+                  <b>Opportunities</b> - Browse events & extracurriculars
                 </center>
                 <br />
-              {category.map((opp) => {
-                return (
-                  <>
-                  <div id={opp.id} className="subject" id={opp.colorcode}>
-                  <center>{opp.title}</center>
-                </div>
-                </>
-                )
-              })}
+                {category.map((opp, index) => {
+                  if (index == 3) {
+                    return (
+                      <>
+                        <br />
+                        <div id={opp.id} className="subject" id={opp.colorcode}>
+                          <center>{opp.title}</center>
+                        </div>
+                      </>
+                    );
+                  }
+                  return (
+                    <>
+                      <div id={opp.id} className="subject" id={opp.colorcode}>
+                        <center>{opp.title}</center>
+                      </div>
+                    </>
+                  );
+                })}
               </p>
             </div>
 
@@ -238,21 +241,18 @@ class App extends Component {
               >
                 <center>
                   <br />
-                  <b>Organizations</b> - Student-run Nonprofits!
+                  <b>Organizations</b> - Find student-run nonprofits
                   <br />
                   <br />
-                  <div className="featured">
-                    <img src={osc}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={interstem}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={modulus}></img>
-                  </div>
-                  <div className="featured">
-                    <img src={ocbiology}></img>
-                  </div>
+                  {this.organizations.map((org) => {
+                    return (
+                      <>
+                        <div className="featured">
+                          <img src={org}></img>
+                        </div>
+                      </>
+                    );
+                  })}
                 </center>
               </p>
             </div>
@@ -265,11 +265,10 @@ class App extends Component {
               >
                 <center>
                   <br />
-                  <b>Blog</b> - Everything education related!
+                  <b>Blog</b> - Everything education related
                 </center>
-                
 
-                <div className="row" style={{marginTop: "20px"}}>
+                <div className="row" style={{ marginTop: "20px" }}>
                   <div className="column">
                     {leftBlog.map((entry) => {
                       return (
@@ -330,8 +329,7 @@ class App extends Component {
       return (
         <>
           <center>
-           
-            <h3 style={{marginTop: "15px"}}>Quiz - {this.state.topic}</h3>
+            <h3 style={{ marginTop: "25px" }}>Quiz - {this.state.topic}</h3>
             {this.state.isEnd ? (
               <>
                 <div className="questionBox">
@@ -374,12 +372,18 @@ class App extends Component {
                   {/* {PostData.map((postDetail, index) => {
                 return <p>{postDetail.title}</p>;
               })}  */}
-                  <p className="questionTitleInner" id="questionTitle" style={{marginBottom: "20px"}}>
+                  <p
+                    className="questionTitleInner"
+                    id="questionTitle"
+                    style={{
+                      marginBottom: "20px",
+                      fontFamily: "Source Sans Pro",
+                      fontSize: "1.2rem",
+                    }}
+                  >
                     {this.state.questionNum + 1}.&nbsp;
                     {this.state.Data[this.state.questionNum].title}
                   </p>
-                 
-                  <hr></hr>
 
                   {this.state.Data[this.state.questionNum].choices.map(
                     (option, index) => {
@@ -396,11 +400,11 @@ class App extends Component {
                                     ? "#00ff00"
                                     : this.state.finalChosenAnswer ===
                                       this.answerLetters[index]
-                                    ? "#ffebee"
+                                    ? "#fff0de"
                                     : ""
                                   : this.state.chosenAnswer ===
                                     this.answerLetters[index]
-                                  ? "#ffebee"
+                                  ? "#fff0de"
                                   : "",
                                 padding: "15px",
                               }}
@@ -418,13 +422,14 @@ class App extends Component {
                                         .correct
                                       ? "line-through"
                                 : "none", */
-                                  display: "inline",
+                                  display: "flex",
                                   textDecorationThickness: "1.5px",
+                                  fontFamily: "Source Sans Pro",
                                 }}
                               >
                                 <input
                                   style={{
-                                    marginRight: "12px",
+                                    margin: "12px",
                                     flexShrink: "0",
                                   }}
                                   className="optionInput"
@@ -453,11 +458,15 @@ class App extends Component {
                 {this.state.isShowingAnswer &&
                 this.state.Data[this.state.questionNum].solution.length != 0 ? (
                   <>
-                    <div className="instructions" style={{marginTop: "-24px"}}>
+                    <div className="instructions" style={{ marginTop: "15px" }}>
                       <p
                         className="questionTitleInner"
                         id="questionTitle"
-                        style={{ fontSize: "18px", lineHeight: "2rem" }}
+                        style={{
+                          fontSize: "1.1rem",
+                          lineHeight: "2rem",
+                          fontFamily: "Source Sans Pro",
+                        }}
                       >
                         {/* • Difficulty:{" "}
                         {this.state.Data[this.state.questionNum].difficulty}
@@ -478,12 +487,22 @@ class App extends Component {
                         {this.state.statusArray[this.state.questionNum] ===
                         "✓" ? (
                           <span
-                            style={{ color: "#04d904", fontWeight: "bold" }}
+                            style={{
+                              color: "#04d904",
+                              fontWeight: "bold",
+                              fontFamily: "Source Sans Pro",
+                            }}
                           >
                             ✓ Correct
                           </span>
                         ) : (
-                          <span style={{ color: "red", fontWeight: "bold" }}>
+                          <span
+                            style={{
+                              color: "red",
+                              fontWeight: "bold",
+                              fontFamily: "Source Sans Pro",
+                            }}
+                          >
                             ✕ Incorrect
                           </span>
                         )}
@@ -498,7 +517,7 @@ class App extends Component {
                 <span id="exitButton" onClick={(e) => this.exitQuiz()}>
                   ← Exit
                 </span>
-                &nbsp;&nbsp; &nbsp;&nbsp;
+
                 {this.state.isShowingAnswer ? (
                   <>
                     <span id="nextButton" onClick={(e) => this.nextQuestion()}>
@@ -512,9 +531,13 @@ class App extends Component {
                     </span>
                   </>
                 )}
+                <br />
               </>
             )}
           </center>
+          <br />
+          <br />
+          <br />
         </>
       );
     }
