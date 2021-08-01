@@ -6,6 +6,8 @@ import interstem from "./images/interstem.png";
 import ocbiology from "./images/ocbiology.png";
 import modulus from "./images/modulus.png";
 import osc from "./images/osc.png";
+import leftBlog from "./data/leftBlog.json";
+import rightBlog from "./data/rightBlog.json";
 import "./style.css";
 import { lowerCase, uniqBy } from "lodash";
 class App extends Component {
@@ -177,7 +179,8 @@ class App extends Component {
 
             <div className="dashboard">
               <center>
-                <b>Quizzes</b> - Test your knowledge and prepare for tests!
+                <b>Quizzes</b> - Test your knowledge and develop problem solving
+                skills!
               </center>
               <br />
               {this.subjects.map((sub) => {
@@ -251,6 +254,58 @@ class App extends Component {
                     <img src={ocbiology}></img>
                   </div>
                 </center>
+              </p>
+            </div>
+
+            <div className="dashboard" style={{ marginTop: -10 }}>
+              <p
+                className="questionTitleInner"
+                id="questionTitle"
+                style={{ fontSize: "18px", lineHeight: "2rem" }}
+              >
+                <center>
+                  <br />
+                  <b>Blog</b> - Everything education related!
+                </center>
+
+                <div className="row">
+                  <div className="column">
+                    {leftBlog.map((entry) => {
+                      return (
+                        <>
+                          <div
+                            id={entry.key}
+                            className="blogText"
+                            style={{
+                              fontFamily: "Source Sans Pro",
+                              marginTop: "12px",
+                            }}
+                          >
+                            • {entry.title} - {entry.author}
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                  <div className="column">
+                    {rightBlog.map((entry) => {
+                      return (
+                        <>
+                          <div
+                            id={entry.key}
+                            className="blogText"
+                            style={{
+                              fontFamily: "Source Sans Pro",
+                              marginTop: "12px",
+                            }}
+                          >
+                            • {entry.title} - {entry.author}
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                </div>
               </p>
             </div>
 
