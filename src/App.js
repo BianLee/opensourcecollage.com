@@ -149,6 +149,8 @@ class App extends Component {
               {" "}
               <br />
               <h1>Open Source Collage</h1>
+              <button className="signupButton">Sign Up</button>
+              <button className="loginButton">Login</button>
               <p
                 className="questionTitleInner"
                 id="questionTitle"
