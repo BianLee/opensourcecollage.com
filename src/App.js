@@ -267,8 +267,9 @@ class App extends Component {
                   <br />
                   <b>Blog</b> - Everything education related!
                 </center>
+                
 
-                <div className="row">
+                <div className="row" style={{marginTop: "20px"}}>
                   <div className="column">
                     {leftBlog.map((entry) => {
                       return (
