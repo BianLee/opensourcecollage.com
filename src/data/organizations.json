@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "title": "Open Source Collage",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "link": "https://opensourcecollage.com",
+        "img": "images/osc.png"
+     },
+     {
+        "id":2,
+        "title": "InterSTEM",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "link": "https://interstem.us",
+        "img": "images/interstem.png"
+     },
+     {
+        "id":3,
+        "title": "Modulus",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "link": "https://modulusedu.com/",
+        "img": "images/modulus.png"
+     },
+     {
+        "id":4,
+        "title": "OC Biology",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "link": "https://www.ocbiology.org/",
+        "img": "images/ocbiology.png"
+     }
+]

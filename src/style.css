@@ -210,13 +210,12 @@ h1 {
 }
 
 .subject {
-  padding: 1rem;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
   margin-bottom: 10px;
+  /* 
   margin-top: 10px;
   margin-right: 5px;
   margin-left: 5px;
+  */
 }
 #math {
   background-color: #f3e6d8 !important;
@@ -255,6 +254,7 @@ h1 {
   display: inline-block;
   margin-right: 5px;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 img {
@@ -337,3 +337,34 @@ img {
   right: 50px !important;
 }
 */
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.description {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: "Source Sans Pro";
+  margin-top: 10px;
+  margin-bottom: 25px;
+}

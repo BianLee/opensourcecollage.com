@@ -9,12 +9,14 @@ import osc from "./images/osc.png";
 import leftBlog from "./data/leftBlog.json";
 import rightBlog from "./data/rightBlog.json";
 import category from "./data/category.json";
+import organizations from "./data/organizations.json";
 import "./style.css";
 import { lowerCase, uniqBy } from "lodash";
 class App extends Component {
   constructor() {
     super();
     // PostData = Astronomy;
+    this.handleOrg = this.handleOrg.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -28,6 +30,7 @@ class App extends Component {
       isSpecificTopicChosen: false,
       topic: "",
       Data: "",
+      accordion: "",
     };
   }
   //  PostData = Astronomy;
@@ -41,8 +44,6 @@ class App extends Component {
     "Java",
     "Javascript",
   ];
-
-  organizations = [osc, interstem, modulus, ocbiology];
 
   exitQuiz = () => {
     this.setState({
@@ -143,6 +144,30 @@ class App extends Component {
       });
     }
   };
+
+  accordion(e) {
+    console.log(e.target.parentNode.id);
+    if (this.state.accordion !== e.target.parentNode.id) {
+      this.setState({
+        accordion: e.target.parentNode.id,
+      });
+    } else {
+      if (this.state.accordion.length == 0) {
+        this.setState({
+          accordion: e.target.parentNode.id,
+        });
+      } else {
+        this.setState({
+          accordion: "",
+        });
+      }
+    }
+  }
+
+  handleOrg(e) {
+    console.log(e.target.parentNode.id);
+  }
+
   render() {
     if (!this.state.isSpecificTopicChosen) {
       return (
@@ -208,24 +233,48 @@ class App extends Component {
               >
                 <br />
                 <center>
-                  <b>Opportunities</b> - Browse events & extracurriculars
+                  <b>Opportunities</b> - Browse extracurriculars based on your
+                  interests
                 </center>
                 <br />
                 {category.map((opp, index) => {
-                  if (index == 3) {
-                    return (
-                      <>
-                        <br />
-                        <div id={opp.id} className="subject" id={opp.colorcode}>
-                          <center>{opp.title}</center>
-                        </div>
-                      </>
-                    );
+                  if (opp.colorcode === this.state.accordion) {
                   }
+                  /* 
+                  let element;
+                  if (index == 3) {
+                    element = <br />;
+                  } */
                   return (
                     <>
-                      <div id={opp.id} className="subject" id={opp.colorcode}>
-                        <center>{opp.title}</center>
+                      {/* {element} */}
+                      <div
+                        className="subject"
+                        id={opp.colorcode}
+                        value="asdf"
+                        onClick={(e) => this.accordion(e)}
+                      >
+                        <div
+                          className="descriptionContainer"
+                          style={{
+                            cursor: "pointer",
+                            padding: "15px",
+                          }}
+                          id={opp.colorcode}
+                          onClick={(e) => this.accordion(e)}
+                        >
+                          <center>{opp.title}</center>
+                          <div
+                            style={{
+                              display:
+                                opp.colorcode === this.state.accordion
+                                  ? "inline"
+                                  : "none",
+                            }}
+                          >
+                            <div className="description">{opp.description}</div>
+                          </div>
+                        </div>
                       </div>
                     </>
                   );
@@ -241,14 +290,19 @@ class App extends Component {
               >
                 <center>
                   <br />
-                  <b>Organizations</b> - Find student-run nonprofits
+                  <b>Organizations</b> - Find student-run organizations
                   <br />
                   <br />
-                  {this.organizations.map((org) => {
+                  {organizations.map((org) => {
                     return (
                       <>
-                        <div className="featured">
-                          <img src={org}></img>
+                        <div
+                          className="featured"
+                          id={org.title}
+                          value={org.title}
+                          onClick={this.handleOrg}
+                        >
+                          <img src={org.img}></img>
                         </div>
                       </>
                     );
@@ -329,7 +383,9 @@ class App extends Component {
       return (
         <>
           <center>
-            <h3 style={{ marginTop: "25px", fontFamily: "Source Sans Pro" }}>Quiz - {this.state.topic}</h3>
+            <h3 style={{ marginTop: "25px", fontFamily: "Source Sans Pro" }}>
+              Quiz - {this.state.topic}
+            </h3>
             {this.state.isEnd ? (
               <>
                 <div className="questionBox">
@@ -535,8 +591,6 @@ class App extends Component {
               </>
             )}
           </center>
-          
-
         </>
       );
     }
