@@ -2,28 +2,28 @@
     {
         "id":1,
         "title": "Open Source Collage",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "description": "You are on this platform at this very moment. ", 
         "link": "https://opensourcecollage.com",
         "img": "images/osc.png"
      },
      {
         "id":2,
         "title": "InterSTEM",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "description": "InterSTEM is a non-profit organization that hopes to raise awareness about the relevance of STEM-related topics to the world. Functioning mainly online, this platform offers a tutoring service for students, updates readers about current news in STEM through articles and blog posts, and plans collaborative projects between high school and elementary students. Through the integration of science, technology, engineering, and mathematics, InterSTEM provides students of all backgrounds the opportunity to explore and dive deeper into the world of STEM.", 
         "link": "https://interstem.us",
         "img": "images/interstem.png"
      },
      {
         "id":3,
         "title": "Modulus",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.", 
         "link": "https://modulusedu.com/",
         "img": "images/modulus.png"
      },
      {
         "id":4,
         "title": "OC Biology",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud", 
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.", 
         "link": "https://www.ocbiology.org/",
         "img": "images/ocbiology.png"
      }

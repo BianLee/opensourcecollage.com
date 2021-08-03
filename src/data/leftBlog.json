@@ -1,21 +1,21 @@
 [
     {
         "id":1,
-        "title":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uta sit voluptatem acc",
+        "title":"How and why I created Open Source Collage: The development journey of this web app",
         "author": "Bian Lee",
         "date": "2012-04-23T18:25:43.511Z",
         "path": "./blog/one.md" 
      },
      {
       "id":2,
-      "title":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uta sit voluptatem acc",
+      "title":"My experience with community colleges and classes",
       "author": "Bian Lee",
       "date": "2012-04-23T18:25:43.511Z",
       "path": "./blog/two.md" 
      },
      {
         "id":2,
-        "title":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uta sit voluptatem acc",
+        "title":"Student organizations that make me cringe: The so-called \"nonprofits\" with nothing but fancy titles",
         "author": "Bian Lee",
         "date": "2012-04-23T18:25:43.511Z",
         "path": "./blog/three.md" 

@@ -31,6 +31,8 @@ class App extends Component {
       topic: "",
       Data: "",
       accordion: "",
+      selectedOrg: "",
+      doubleClicked: false,
     };
   }
   //  PostData = Astronomy;
@@ -165,7 +167,17 @@ class App extends Component {
   }
 
   handleOrg(e) {
-    console.log(e.target.parentNode.id);
+    if (this.state.selectedOrg === e.target.parentNode.id) {
+      console.log("same same");
+      this.setState({
+        selectedOrg: "",
+      });
+    } else {
+      // console.log(e.target.parentNode.id);
+      this.setState({
+        selectedOrg: e.target.parentNode.id,
+      });
+    }
   }
 
   render() {
@@ -301,12 +313,50 @@ class App extends Component {
                           id={org.title}
                           value={org.title}
                           onClick={this.handleOrg}
+                          style={{
+                            border:
+                              this.state.selectedOrg == org.title
+                                ? "solid 2px #e3d6c8 "
+                                : "",
+                            filter:
+                              this.state.selectedOrg != ""
+                                ? this.state.selectedOrg == org.title
+                                  ? ""
+                                  : "opacity(30%)"
+                                : "",
+                          }}
                         >
                           <img src={org.img}></img>
                         </div>
                       </>
                     );
                   })}
+                  <div>
+                    {organizations.map((org) => {
+                      return (
+                        <>
+                          <div
+                            style={{
+                              display:
+                                this.state.selectedOrg == org.title
+                                  ? "inline"
+                                  : "none",
+
+                              fontFamily: "Source Sans Pro",
+                            }}
+                          >
+                            <br />
+                            <b>{org.title}</b> •{" "}
+                            <a href={org.link} target="_blank">
+                              {org.link}
+                            </a>
+                            <br />
+                            {org.description}
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
                 </center>
               </p>
             </div>

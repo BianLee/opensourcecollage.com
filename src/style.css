@@ -1,3 +1,7 @@
+a {
+  color: blue;
+}
+
 h1 {
   line-height: 3rem;
 }
@@ -248,13 +252,16 @@ h1 {
   height: 120px;
   width: 120px;
   overflow: hidden;
-  border: 2px solid #f3e6d8;
+  border: 2px solid transparent;
   border-radius: 17px;
   position: relative;
   display: inline-block;
   margin-right: 5px;
   margin-left: 5px;
   cursor: pointer;
+}
+.featured:hover {
+  border: 2px solid #e3d6c8;
 }
 
 img {
