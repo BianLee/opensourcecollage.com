@@ -1,23 +1,20 @@
 [
-    {
-        "id":1,
-        "title":"Scaling things to the MOON: Improvements and new features on Open Source Collage 2.0",
-        "author": "Bian Lee",
-        "date": "2012-04-23T18:25:43.511Z",
-        "path": "./blog/one.md" 
-     },
-     {
-        "id":2,
-        "title":"Is web development programming? ",
-        "author": "Bian Lee",
-        "date": "2012-04-23T18:25:43.511Z",
-        "path": "./blog/two.md" 
-     },
-     {
-        "id":2,
-        "title":"Canadian vs US education system. Which wins?",
-        "author": "Bian Lee",
-        "date": "2012-04-23T18:25:43.511Z",
-        "path": "./blog/three.md" 
-    }
+  {
+    "id": 2,
+    "title": "Scaling things to the MOON: Improvements and new features on Open Source Collage 2.0",
+    "author": "Bian Lee",
+    "date": "2012-04-23T18:25:43.511Z"
+  },
+  {
+    "id": 4,
+    "title": "Is web development programming? ",
+    "author": "Bian Lee",
+    "date": "2012-04-23T18:25:43.511Z"
+  },
+  {
+    "id": 6,
+    "title": "Canadian vs US education system. Which wins?",
+    "author": "Bian Lee",
+    "date": "2012-04-23T18:25:43.511Z"
+  }
 ]

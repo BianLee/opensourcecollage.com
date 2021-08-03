@@ -11,12 +11,24 @@ import rightBlog from "./data/rightBlog.json";
 import category from "./data/category.json";
 import organizations from "./data/organizations.json";
 import "./style.css";
+import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
+import ReactMarkdown from "react-markdown";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
+
 class App extends Component {
   constructor() {
     super();
     // PostData = Astronomy;
     this.handleOrg = this.handleOrg.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -167,6 +179,7 @@ class App extends Component {
   }
 
   handleOrg(e) {
+    console.log(e.target.parentNode.id);
     if (this.state.selectedOrg === e.target.parentNode.id) {
       console.log("same same");
       this.setState({
@@ -180,7 +193,22 @@ class App extends Component {
     }
   }
 
+  handleClick(e) {
+    console.log(e.target.parentNode.id);
+    this.props.history.push("/blog/" + e.target.parentNode.id);
+  }
+
   render() {
+    const markdown = `
+  # Header 1
+  ## Header 2
+
+  _ italic _
+
+  ** bold **
+
+  <b> bold Html </b>
+  `;
     if (!this.state.isSpecificTopicChosen) {
       return (
         <>
@@ -378,14 +406,18 @@ class App extends Component {
                       return (
                         <>
                           <div
-                            id={entry.key}
+                            key={entry.id}
+                            id={entry.id}
                             className="blogText"
                             style={{
                               fontFamily: "Source Sans Pro",
                               marginTop: "12px",
                             }}
+                            onClick={this.handleClick}
                           >
-                            • {entry.title} - {entry.author}
+                            <div style={{ fontFamily: "Source Sans Pro" }}>
+                              • {entry.title} - {entry.author}
+                            </div>
                           </div>
                         </>
                       );
@@ -396,14 +428,18 @@ class App extends Component {
                       return (
                         <>
                           <div
-                            id={entry.key}
+                            key={entry.id}
+                            id={entry.id}
                             className="blogText"
                             style={{
                               fontFamily: "Source Sans Pro",
                               marginTop: "12px",
                             }}
+                            onClick={this.handleClick}
                           >
-                            • {entry.title} - {entry.author}
+                            <div style={{ fontFamily: "Source Sans Pro" }}>
+                              • {entry.title} - {entry.author}
+                            </div>
                           </div>
                         </>
                       );
@@ -412,7 +448,6 @@ class App extends Component {
                 </div>
               </p>
             </div>
-
             <br />
             <div className="dashboard">
               <hr></hr>
