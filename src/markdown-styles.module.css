@@ -1,0 +1,27 @@
+.reactMarkDown ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  list-style: disc outside none;
+}
+
+.reactMarkDown ul li {
+  margin-left: 2em;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.reactMarkDown * {
+  font-family: "Source Sans Pro";
+  text-align: left !important;
+  width: 90%;
+  font-weight: 500;
+}
+
+.reactMarkDown h1 {
+  line-height: 2.8rem;
+
+  font-family: Verdana;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: auto;
+}
