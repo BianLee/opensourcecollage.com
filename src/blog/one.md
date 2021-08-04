@@ -1,4 +1,5 @@
-# React & Markdown App
+## What has the world gotten to?
 
-- Benefits of using React... but...
-- Write layout in Markdown!
+Right now, as you read this, a 1.6 million-square-kilometer expanse of trash is sailing in the Pacific Ocean, off the coast of Hawai’i. The word ‘patch’ is a misnomer; that immense stretch of filth sailing amongst the thunderous waves of the Pacific Ocean isn’t a ‘patch’ in any sense of the word. It’s a collection of 1.8 trillion pieces of plastic – 250 for every human being alive, weighing about 80,000 tonnes. That’s about as heavy as 250 jumbo jets and spread over an area three times the size of France. This garbage, orbiting around 32°N and 145°W, is the world’s largest collection of ocean debris. Let’s dive deeper and learn more about the GPGP.
+
+These metric tonnes of garbage weren’t in the ocean since time immemorial. We humans are solely responsible for this nasty turn of events. Plastic items thrown in the ocean catch the flow of water currents, sail across thousands of kilometers, and end up in the patch. The area in the center of a gyre tends to be very calm and stable. Additionally, the circular motion of the gyre draws debris into this center, where it gets trapped for what seems like an eternity.

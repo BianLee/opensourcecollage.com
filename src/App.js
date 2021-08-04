@@ -13,7 +13,7 @@ import organizations from "./data/organizations.json";
 import "./style.css";
 import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 
 import {
   BrowserRouter as Router,
