@@ -71,6 +71,7 @@ export default class Blog extends React.Component {
                       fontSize: "16px",
                       lineHeight: "2rem",
                       cursor: "pointer",
+                      textDecoration: "underline",
                     }}
                     onClick={this.goHome}
                   >
