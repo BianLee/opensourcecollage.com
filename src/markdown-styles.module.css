@@ -25,3 +25,9 @@
   max-width: 100%;
   margin: auto;
 }
+
+.reactMarkDown img {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
