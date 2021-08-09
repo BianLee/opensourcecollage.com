@@ -37,7 +37,6 @@ class App extends Component {
       finalChosenAnswer: "",
       answersArray: [],
       statusArray: [],
-      difficultyArray: [],
       score: 0,
       isSpecificTopicChosen: false,
       topic: "",
@@ -68,7 +67,6 @@ class App extends Component {
       finalChosenAnswer: "",
       answersArray: [],
       statusArray: [],
-      difficultyArray: [],
       score: 0,
       isSpecificTopicChosen: false,
       topic: "",
@@ -85,7 +83,6 @@ class App extends Component {
       finalChosenAnswer: "",
       answersArray: [],
       statusArray: [],
-      difficultyArray: [],
       score: 0,
     });
   };
@@ -217,7 +214,7 @@ class App extends Component {
               {" "}
               <br />
               <h1>Open Source Collage</h1>
-              <button className="loginButton">Login</button>
+              {/* <button className="loginButton">Login</button> */}
               <p
                 className="questionTitleInner"
                 id="questionTitle"
@@ -397,7 +394,7 @@ class App extends Component {
               >
                 <center>
                   <br />
-                  <b>Blog</b> - Everything education related
+                  <b>Blog</b> - All things students can relate to!
                 </center>
 
                 <div className="row" style={{ marginTop: "20px" }}>
@@ -416,7 +413,7 @@ class App extends Component {
                             onClick={this.handleClick}
                           >
                             <div style={{ fontFamily: "Source Sans Pro" }}>
-                              • {entry.title} - {entry.author}
+                              • {entry.title}
                             </div>
                           </div>
                         </>
@@ -438,7 +435,7 @@ class App extends Component {
                             onClick={this.handleClick}
                           >
                             <div style={{ fontFamily: "Source Sans Pro" }}>
-                              • {entry.title} - {entry.author}
+                              • {entry.title}
                             </div>
                           </div>
                         </>
