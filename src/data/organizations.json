@@ -1,30 +1,122 @@
 [
-    {
-        "id":1,
-        "title": "Open Source Collage",
-        "description": "You are on this platform at this very moment. ", 
-        "link": "https://opensourcecollage.com",
-        "img": "images/osc.png"
-     },
-     {
-        "id":2,
-        "title": "InterSTEM",
-        "description": "InterSTEM is a non-profit organization that hopes to raise awareness about the relevance of STEM-related topics to the world. Functioning mainly online, this platform offers a tutoring service for students, updates readers about current news in STEM through articles and blog posts, and plans collaborative projects between high school and elementary students. Through the integration of science, technology, engineering, and mathematics, InterSTEM provides students of all backgrounds the opportunity to explore and dive deeper into the world of STEM.", 
-        "link": "https://interstem.us",
-        "img": "images/interstem.png"
-     },
-     {
-        "id":3,
-        "title": "Modulus",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.", 
-        "link": "https://modulusedu.com/",
-        "img": "images/modulus.png"
-     },
-     {
-        "id":4,
-        "title": "OC Biology",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.", 
-        "link": "https://www.ocbiology.org/",
-        "img": "images/ocbiology.png"
-     }
+   {
+      "id":1,
+      "title":"Open Source Collage",
+      "description":"You are on this platform at this very moment. ",
+      "link":"https://opensourcecollage.com",
+      "img":"images/osc.png"
+   },
+   {
+      "id":2,
+      "title":"InterSTEM",
+      "description":"InterSTEM is a non-profit organization that hopes to raise awareness about the relevance of STEM-related topics to the world. Functioning mainly online, this platform offers a tutoring service for students, updates readers about current news in STEM through articles and blog posts, and plans collaborative projects between high school and elementary students. Through the integration of science, technology, engineering, and mathematics, InterSTEM provides students of all backgrounds the opportunity to explore and dive deeper into the world of STEM.",
+      "link":"https://interstem.us",
+      "img":"images/interstem.png"
+   },
+   {
+      "id":7,
+      "title":"Interverse",
+      "description":"InterSTEM is a non-profit organization that hopes to raise awareness about the relevance of STEM-related topics to the world. Functioning mainly online, this platform offers a tutoring service for students, updates readers about current news in STEM through articles and blog posts, and plans collaborative projects between high school and elementary students. Through the integration of science, technology, engineering, and mathematics, InterSTEM provides students of all backgrounds the opportunity to explore and dive deeper into the world of STEM.",
+      "link":"https://interstem.us",
+      "img":"images/interverse.jpeg"
+   },
+   {
+      "id":3,
+      "title":"Modulus",
+      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.",
+      "link":"https://modulusedu.com/",
+      "img":"images/modulus.png"
+   },
+   {
+      "id":4,
+      "title":"OC Biology",
+      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.",
+      "link":"https://www.ocbiology.org/",
+      "img":"images/ocbiology.png"
+   },
+   {
+      "id":5,
+      "title":"Irvine LIGHTS",
+      "description":"We are a 501(c)(3) organization aiming to empower the next generation of leaders with essential STEAM skills thorugh interactive activities.",
+      "link":"https://www.irvinelights.org/",
+      "img":"images/irvinelights.png"
+   },
+   {
+      "id":6,
+      "title":"Hearts to Heroes",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://www.hearts2heroes.org/",
+      "img":"images/hearts2heroes.png"
+   },
+   {
+      "id":6,
+      "title":"Irvine STEMSESH",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://www.hearts2heroes.org/",
+      "img":"images/stemsesh.png"
+   },
+   {
+      "id":6,
+      "title":"Asian Youth Act",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/asianyouthact.png"
+   },
+   {
+      "id":6,
+      "title":"ObjectiveCode",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/objectivecode.png"
+   },
+   {
+      "id":6,
+      "title":"Beyond The Five",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/beyondthefive.png"
+   },
+   {
+      "id":6,
+      "title":"Dear Asian Youth",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/dearasianyouth.png"
+   },
+
+   {
+      "id":6,
+      "title":"Helyx Initiative",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/helyxinitiative.png"
+   },
+   {
+      "id":6,
+      "title":"Korean American Young Leaders",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/kayl.png"
+   },
+   {
+      "id":6,
+      "title":"Writer's Ink",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/writersink.jpg"
+   },
+   {
+      "id":6,
+      "title":"United Under Arts",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/unitedunderarts.png"
+   },
+   {
+      "id":6,
+      "title":"Medixly",
+      "description":"Hearts to Heroes provides volunteers with a multitude of opportunities including supply and item donations, care packages, and PPE in order to give back to society’s essential workers. Through involvement in Hearts to Heroes, volunteers develop adaptive leadership and effective communication skills that channel into community outreach efforts.",
+      "link":"https://asianyouthact.org/",
+      "img":"images/medixly.png"
+   }
 ]
