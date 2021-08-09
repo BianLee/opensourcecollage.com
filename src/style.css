@@ -140,6 +140,11 @@ hr {
   .column {
     width: 100% !important;
   }
+
+  .featured {
+    height: 100px !important;
+    width: 100px !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -249,8 +254,8 @@ h1 {
   background-color: #e4dddd !important;
 }
 .featured {
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   overflow: hidden;
   border: 2px solid transparent;
   border-radius: 17px;
