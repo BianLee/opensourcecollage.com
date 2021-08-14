@@ -217,6 +217,18 @@ h1 {
 .subjectButton:hover {
   background-color: #e7e7e7;
 }
+.noteButton {
+  padding: 6px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  /* 
+  color: white;
+  background-color: #eeeecf */
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
 
 .subject {
   margin-bottom: 10px;

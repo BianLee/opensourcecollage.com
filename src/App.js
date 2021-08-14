@@ -242,10 +242,51 @@ class App extends Component {
                 <br />
               </p>
             </div>
-
             <div className="dashboard">
               <center>
-                <b>Quizzes</b> - Test your knowledge
+                <b>Notes</b> - Why waste time taking notes when these exist?
+              </center>
+              <br />
+              <button
+                className="noteButton"
+                style={{ backgroundColor: "#eee" }}
+              >
+                Intro to Architecture
+              </button>
+              <button
+                className="noteButton"
+                style={{ backgroundColor: "#eeeecf" }}
+              >
+                General Astronomy
+              </button>
+              <button
+                className="noteButton"
+                style={{ backgroundColor: "#eeeecf" }}
+              >
+                Life Sciences
+              </button>
+              <button
+                className="noteButton"
+                style={{ backgroundColor: "#dbd0e4" }}
+              >
+                Business Economics
+              </button>
+              <button
+                className="noteButton"
+                style={{ backgroundColor: "#dbd0e4" }}
+              >
+                Intro to Psychology
+              </button>
+              <button
+                className="noteButton"
+                style={{ backgroundColor: "#e6cbd6" }}
+              >
+                World History
+              </button>
+            </div>
+            <div className="dashboard">
+              <center>
+                <b>Quizzes</b> - Don't fail your next quiz
               </center>
               <br />
               {this.subjects.map((sub) => {
