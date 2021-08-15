@@ -395,7 +395,7 @@ class App extends Component {
                     {organizations.map((org) => {
                       return (
                         <>
-                          <div
+                          <p
                             style={{
                               display:
                                 this.state.selectedOrg == org.title
@@ -406,13 +406,23 @@ class App extends Component {
                             }}
                           >
                             <br />
-                            <b>{org.title}</b> •{" "}
-                            <a href={org.link} target="_blank">
+                            <span style={{ fontWeight: "bold" }}>
+                              {org.title}
+                            </span>{" "}
+                            •{" "}
+                            <a
+                              href={org.link}
+                              target="_blank"
+                              style={{
+                                fontFamily: "Source Sans Pro",
+                                fontWeight: "bold",
+                              }}
+                            >
                               {org.link}
                             </a>
                             <br />
                             {org.description}
-                          </div>
+                          </p>
                         </>
                       );
                     })}
