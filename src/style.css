@@ -120,11 +120,11 @@ hr {
 
 @media only screen and (max-width: 1800px) {
   .dashboard {
-    width: 100%;
+    width: 90%;
     max-width: 4000px !important;
   }
   .questionBox {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -391,4 +391,11 @@ img {
   font-family: "Source Sans Pro";
   margin-top: 10px;
   margin-bottom: 25px;
+}
+
+#social {
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
 }

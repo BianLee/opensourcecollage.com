@@ -315,12 +315,19 @@ class App extends Component {
                           className="descriptionContainer"
                           style={{
                             cursor: "pointer",
-                            padding: "15px",
+                            padding: "12px",
                           }}
                           id={opp.colorcode}
                           onClick={(e) => this.accordion(e)}
                         >
-                          <center>{opp.title}</center>
+                          <center
+                            style={{
+                              fontSize: "18px",
+                              fontFamily: "Source Sans Pro",
+                            }}
+                          >
+                            {opp.title}
+                          </center>
                           <div
                             style={{
                               display:
@@ -329,7 +336,15 @@ class App extends Component {
                                   : "none",
                             }}
                           >
-                            <div className="description">{opp.description}</div>
+                            <div
+                              className="description"
+                              style={{
+                                fontSize: "16px",
+                                fontFamily: "Source Sans Pro",
+                              }}
+                            >
+                              {opp.description}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -465,7 +480,7 @@ class App extends Component {
                 </div>
               </p>
             </div>
-            <br />
+
             <div className="dashboard">
               <hr></hr>
 
@@ -475,7 +490,20 @@ class App extends Component {
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
                 <br />
-                <center>Open Source Collage 2021</center>
+                <center>
+                  <a
+                    href="https://instagram.com/opensourcecollage"
+                    target="_blank"
+                  >
+                    <ion-icon name="logo-instagram" id="social"></ion-icon>
+                  </a>
+                  <a href="https://facebook.com" target="_blank">
+                    <ion-icon name="logo-facebook" id="social"></ion-icon>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank">
+                    <ion-icon name="logo-linkedin" id="social"></ion-icon>
+                  </a>
+                </center>
               </p>
             </div>
           </center>
