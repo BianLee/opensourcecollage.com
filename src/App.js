@@ -2,14 +2,13 @@ import { everyLimit } from "async";
 import React, { Component } from "react";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
-import interstem from "./images/interstem.png";
-import ocbiology from "./images/ocbiology.png";
-import modulus from "./images/modulus.png";
 import osc from "./images/osc.png";
 import leftBlog from "./data/leftBlog.json";
 import rightBlog from "./data/rightBlog.json";
 import category from "./data/category.json";
 import organizations from "./data/organizations.json";
+import LifeSciences from "./notes/LifeSciences.pdf";
+import Notes from "./data/notes.json";
 import "./style.css";
 import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
@@ -242,51 +241,31 @@ class App extends Component {
                 <br />
               </p>
             </div>
+
             <div className="dashboard">
               <center>
                 <b>Notes</b> - Why waste time taking notes when these exist?
               </center>
               <br />
-              <button
-                className="noteButton"
-                style={{ backgroundColor: "#eee" }}
-              >
-                Intro to Architecture
-              </button>
-              <button
-                className="noteButton"
-                style={{ backgroundColor: "#eeeecf" }}
-              >
-                General Astronomy
-              </button>
-              <button
-                className="noteButton"
-                style={{ backgroundColor: "#eeeecf" }}
-              >
-                Life Sciences
-              </button>
-              <button
-                className="noteButton"
-                style={{ backgroundColor: "#dbd0e4" }}
-              >
-                Business Economics
-              </button>
-              <button
-                className="noteButton"
-                style={{ backgroundColor: "#dbd0e4" }}
-              >
-                Intro to Psychology
-              </button>
-              <button
-                className="noteButton"
-                style={{ backgroundColor: "#e6cbd6" }}
-              >
-                World History
-              </button>
+              {Notes.map((sub) => {
+                return (
+                  <>
+                    <a href={sub.url} target="_blank">
+                      <button
+                        key={sub.id}
+                        className="noteButton"
+                        id={sub.colorcode}
+                      >
+                        {sub.title}
+                      </button>
+                    </a>
+                  </>
+                );
+              })}
             </div>
             <div className="dashboard">
               <center>
-                <b>Quizzes</b> - Don't fail your next quiz
+                <b>Quizzes</b> - Test your knowledge!
               </center>
               <br />
               {this.subjects.map((sub) => {

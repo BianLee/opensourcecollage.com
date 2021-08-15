@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Blog from "./Blog";
+import LifeSciences from "./notes/LifeSciences.pdf";
 
 const input = "# This is a header\n\nAnd this is a paragraph";
 

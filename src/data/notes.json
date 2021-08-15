@@ -1,0 +1,86 @@
+[
+  {
+    "id": 2,
+    "title": "Computer Science I",
+    "colorcode": "math",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 1,
+    "title": "Intro to Architecture",
+    "colorcode": "other",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 2,
+    "title": "Linux",
+    "colorcode": "biology",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 2,
+    "title": "Networking",
+    "colorcode": "biology",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 2,
+    "title": "ITF+",
+    "colorcode": "biology",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 2,
+    "title": "General Astronomy",
+    "colorcode": "physics",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 3,
+    "title": "Life Sciences",
+    "colorcode": "physics",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 3,
+    "title": "Humans and Biology",
+    "colorcode": "physics",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 6,
+    "title": "Environmental Science",
+    "colorcode": "physics",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 4,
+    "title": "Business Economics",
+    "colorcode": "engineering",
+    "url": "https://docs.google.com/document/d/1hPmup8xzWkQg4b92glyJ7Q6LozBj-InoGbA3CI2nUTU/edit?usp=sharing"
+  },
+  {
+    "id": 4,
+    "title": "Business Principles",
+    "colorcode": "engineering",
+    "url": "https://docs.google.com/document/d/1LwAbxgY9oVGCein8xF8oKbUf0CQZJtuwDHJANPBbhEA/edit?usp=sharing"
+  },
+  {
+    "id": 6,
+    "title": "Intro to Psychology",
+    "colorcode": "engineering",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 7,
+    "title": "World History",
+    "colorcode": "music",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  },
+  {
+    "id": 7,
+    "title": "US Government and Politics",
+    "colorcode": "music",
+    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+  }
+]
