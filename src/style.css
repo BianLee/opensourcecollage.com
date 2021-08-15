@@ -110,21 +110,21 @@ hr {
     margin-left: 10px;
   }
   .dashboard {
-    width: 95%;
+    width: 100%;
     max-width: 2000px !important;
   }
   .questionBox {
-    width: 95%;
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 1800px) {
   .dashboard {
-    width: 90%;
+    width: 100%;
     max-width: 4000px !important;
   }
   .questionBox {
-    width: 90%;
+    width: 100%;
   }
 }
 
