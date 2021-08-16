@@ -154,6 +154,10 @@ hr {
   #nextButton {
     margin-left: 0px;
   }
+  .dod-input {
+    float: center !important;
+    width: 100% !important;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -398,4 +402,32 @@ img {
   margin-left: 10px;
   margin-right: 10px;
   color: black;
+}
+
+.dod-input {
+  -webkit-appearance: none;
+  border: 1px solid #e8e8e8;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+  float: right;
+  width: 35%;
+  font-size: 17px;
+  margin-top: -10px;
+  padding-left: 0.6rem;
+}
+
+.dod-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 1rem;
+}
+
+.oppPost {
+  background-color: #eee;
+  width: 100%;
+  height: 112px;
+  padding-left: 10px;
+  font-family: Source Sans Pro;
+  padding: 20px;
+  font-size: 17px;
 }

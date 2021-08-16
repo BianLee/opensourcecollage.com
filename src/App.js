@@ -28,6 +28,9 @@ class App extends Component {
     // PostData = Astronomy;
     this.handleOrg = this.handleOrg.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleOrgSearch = this.handleOrgSearch.bind(this);
+    this.nextOrg = this.nextOrg.bind(this);
+    this.prevOrg = this.prevOrg.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -43,6 +46,8 @@ class App extends Component {
       accordion: "",
       selectedOrg: "",
       doubleClicked: false,
+      orgSearch: "",
+      startOrgIndex: 0,
     };
   }
   //  PostData = Astronomy;
@@ -70,6 +75,7 @@ class App extends Component {
       isSpecificTopicChosen: false,
       topic: "",
       Data: "",
+      orgSearch: "",
     });
   };
 
@@ -83,6 +89,7 @@ class App extends Component {
       answersArray: [],
       statusArray: [],
       score: 0,
+      orgSearch: "",
     });
   };
 
@@ -194,6 +201,40 @@ class App extends Component {
     this.props.history.push("/blog/" + e.target.parentNode.id);
   }
 
+  handleOrgSearch(e) {
+    var temp = e.target.value.toLowerCase();
+    this.setState({
+      orgSearch: temp,
+      selectedOrg: "",
+    });
+  }
+  handleOpportunitiesSearch(e) {
+    console.log(e.target.value);
+  }
+  nextOrg(e) {
+    this.setState({
+      selectedOrg: "",
+    });
+    console.log("clicked");
+    if (this.state.startOrgIndex + 8 >= organizations.length) {
+    } else {
+      this.setState({
+        startOrgIndex: this.state.startOrgIndex + 8,
+      });
+    }
+  }
+  prevOrg(e) {
+    this.setState({
+      selectedOrg: "",
+    });
+    if (this.state.startOrgIndex - 8 < 0) {
+    } else {
+      this.setState({
+        startOrgIndex: this.state.startOrgIndex - 8,
+      });
+    }
+  }
+
   render() {
     const markdown = `
   # Header 1
@@ -294,17 +335,14 @@ class App extends Component {
                   interests
                 </center>
                 <br />
+
+                {/*
                 {category.map((opp, index) => {
                   if (opp.colorcode === this.state.accordion) {
                   }
-                  /* 
-                  let element;
-                  if (index == 3) {
-                    element = <br />;
-                  } */
+  
                   return (
                     <>
-                      {/* {element} */}
                       <div
                         className="subject"
                         id={opp.colorcode}
@@ -322,7 +360,7 @@ class App extends Component {
                         >
                           <center
                             style={{
-                              fontSize: "18px",
+                              fontSize: "20px",
                               fontFamily: "Source Sans Pro",
                             }}
                           >
@@ -350,7 +388,34 @@ class App extends Component {
                       </div>
                     </>
                   );
-                })}
+                })} */}
+
+                <div className="dod-media-grid dod-stack-15">
+                  <div className="oppPost">
+                    Astrophysics Lecture at Harvard University
+                  </div>
+                  <div className="oppPost">
+                    InterSTEM Speaker Series with Former President Donald Trump
+                  </div>
+                  <div className="oppPost">
+                    Free Class: Discrete Mathematics and Boolean Algebra
+                  </div>
+                  <div className="oppPost">
+                    Volunteering opportunity at Open Source Collage
+                  </div>
+                </div>
+                <br />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Search Opportunities"
+                  className="dod-input"
+                  style={{
+                    outline: "currentcolor none medium",
+                  }}
+                  autoComplete="off"
+                  onChange={this.handleOpportunitiesSearch}
+                />
               </p>
             </div>
 
@@ -365,36 +430,92 @@ class App extends Component {
                   <b>Organizations</b> - Find student-run organizations
                   <br />
                   <br />
+                  {this.state.orgSearch.length != 0 ? (
+                    <>
+                      {organizations.map((org) => {
+                        return (
+                          <>
+                            <div
+                              className="featured"
+                              id={org.title}
+                              value={org.title}
+                              onClick={this.handleOrg}
+                              style={{
+                                display: org.title
+                                  .toLowerCase()
+                                  .includes(this.state.orgSearch)
+                                  ? "inline-block"
+                                  : "none",
+                                border:
+                                  this.state.selectedOrg == org.title
+                                    ? "solid 2px #e3d6c8 "
+                                    : "",
+                                filter:
+                                  this.state.selectedOrg != ""
+                                    ? this.state.selectedOrg == org.title
+                                      ? ""
+                                      : "opacity(30%)"
+                                    : "",
+                              }}
+                            >
+                              <img src={org.img}></img>
+                            </div>
+                          </>
+                        );
+                      })}
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      {organizations
+                        .slice(
+                          this.state.startOrgIndex,
+                          this.state.startOrgIndex + 8
+                        )
+                        .map((org) => {
+                          return (
+                            <>
+                              <div
+                                className="featured"
+                                id={org.title}
+                                value={org.title}
+                                onClick={this.handleOrg}
+                                style={{
+                                  border:
+                                    this.state.selectedOrg == org.title
+                                      ? "solid 2px #e3d6c8 "
+                                      : "",
+                                  filter:
+                                    this.state.selectedOrg != ""
+                                      ? this.state.selectedOrg == org.title
+                                        ? ""
+                                        : "opacity(30%)"
+                                      : "",
+                                }}
+                              >
+                                <img src={org.img}></img>
+                              </div>
+                            </>
+                          );
+                        })}
+                    </>
+                  )}
+                </center>
+                <br />
+
+                <>
+                  {" "}
                   {organizations.map((org) => {
                     return (
                       <>
+                        {" "}
                         <div
-                          className="featured"
-                          id={org.title}
-                          value={org.title}
-                          onClick={this.handleOrg}
                           style={{
-                            border:
-                              this.state.selectedOrg == org.title
-                                ? "solid 2px #e3d6c8 "
-                                : "",
-                            filter:
-                              this.state.selectedOrg != ""
-                                ? this.state.selectedOrg == org.title
-                                  ? ""
-                                  : "opacity(30%)"
-                                : "",
+                            backgroundColor: "#f7f7f7",
+                            paddingLeft: "45px",
+                            paddingRight: "40px",
                           }}
                         >
-                          <img src={org.img}></img>
-                        </div>
-                      </>
-                    );
-                  })}
-                  <div>
-                    {organizations.map((org) => {
-                      return (
-                        <>
                           <p
                             style={{
                               display:
@@ -405,8 +526,8 @@ class App extends Component {
                               fontFamily: "Source Sans Pro",
                             }}
                           >
-                            <br />
                             <span style={{ fontWeight: "bold" }}>
+                              <br />
                               {org.title}
                             </span>{" "}
                             •{" "}
@@ -415,22 +536,77 @@ class App extends Component {
                               target="_blank"
                               style={{
                                 fontFamily: "Source Sans Pro",
-                                fontWeight: "bold",
                               }}
                             >
                               {org.link}
                             </a>
                             <br />
                             {org.description}
+                            <br />
+                            <br />
                           </p>
-                        </>
-                      );
-                    })}
-                  </div>
-                </center>
+                        </div>
+                      </>
+                    );
+                  })}
+                  <>
+                    <center style={{ marginTop: "20px" }}>
+                      <span
+                        onClick={this.prevOrg}
+                        style={{
+                          fontFamily: "Source Sans Pro",
+                          marginRight: "20px",
+                          cursor: "pointer",
+                          display:
+                            this.state.orgSearch.length == 0
+                              ? "inline"
+                              : "none",
+                        }}
+                      >
+                        ← Prev
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: "Source Sans Pro",
+                          display:
+                            this.state.orgSearch.length == 0
+                              ? "inline"
+                              : "none",
+                        }}
+                      >
+                        {this.state.startOrgIndex / 8 + 1}
+                      </span>
+                      <span
+                        onClick={this.nextOrg}
+                        style={{
+                          fontFamily: "Source Sans Pro",
+                          marginLeft: "20px",
+                          cursor: "pointer",
+                          display:
+                            this.state.orgSearch.length == 0
+                              ? "inline"
+                              : "none",
+                        }}
+                      >
+                        Next →
+                      </span>
+                    </center>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Search Organization"
+                      className="dod-input"
+                      style={{
+                        outline: "currentcolor none medium",
+                      }}
+                      autoComplete="off"
+                      onChange={this.handleOrgSearch}
+                    />
+                    <br />
+                  </>
+                </>
               </p>
             </div>
-
             <div className="dashboard" style={{ marginTop: -10 }}>
               <p
                 className="questionTitleInner"
@@ -512,6 +688,9 @@ class App extends Component {
                   </a>
                   <a href="https://linkedin.com" target="_blank">
                     <ion-icon name="logo-linkedin" id="social"></ion-icon>
+                  </a>
+                  <a href="https://github.com" target="_blank">
+                    <ion-icon name="logo-github" id="social"></ion-icon>
                   </a>
                 </center>
               </p>
