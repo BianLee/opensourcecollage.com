@@ -9,6 +9,8 @@ import category from "./data/category.json";
 import organizations from "./data/organizations.json";
 import LifeSciences from "./notes/LifeSciences.pdf";
 import Notes from "./data/notes.json";
+import Opportunities from "./data/opportunities.json";
+import OpportunitiesCategory from "./data/opportunitiesCategory.json";
 import "./style.css";
 import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
@@ -391,20 +393,55 @@ class App extends Component {
                 })} */}
 
                 <div className="dod-media-grid dod-stack-15">
-                  <div className="oppPost">
-                    Astrophysics Lecture at Harvard University
-                  </div>
-                  <div className="oppPost">
-                    InterSTEM Speaker Series with Former President Donald Trump
-                  </div>
-                  <div className="oppPost">
-                    Free Class: Discrete Mathematics and Boolean Algebra
-                  </div>
-                  <div className="oppPost">
-                    Volunteering opportunity at Open Source Collage
-                  </div>
+                  {Opportunities.map((opp) => {
+                    return (
+                      <>
+                        <a
+                          href={opp.link}
+                          target="_blank"
+                          style={{ textDecoration: "none", color: "black" }}
+                        >
+                          <div className="oppPost" id={opp.colorcode}>
+                            {opp.organization}: {opp.title}
+                          </div>
+                        </a>
+                      </>
+                    );
+                  })}
                 </div>
                 <br />
+                {OpportunitiesCategory.map((cat) => {
+                  return (
+                    <>
+                      <div
+                        style={{
+                          display: "inline-block",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        <input
+                          key={cat.id}
+                          style={{
+                            flexShrink: "0",
+                            padding: "0.2rem",
+                            marginLeft: "20px",
+                          }}
+                          type="radio"
+                        />{" "}
+                        <label
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            fontSize: "17px",
+                            display: "inline-block",
+                            marginTop: "5px",
+                          }}
+                        >
+                          {cat.title}
+                        </label>
+                      </div>
+                    </>
+                  );
+                })}
                 <input
                   type="text"
                   name="name"

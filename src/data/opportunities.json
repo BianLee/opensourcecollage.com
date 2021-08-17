@@ -1,0 +1,16 @@
+[
+    {
+       "id":1,
+       "title":"Speaker Series with Math Professor at UCI",
+       "organization":"InterSTEM Nonprofit",
+       "link":"https://opensourcecollage.com",
+       "colorcode": "math"
+    },
+    {
+        "id":1,
+        "title":"Apply to become a volunteer",
+        "organization":"Open Source Collage",
+        "link":"https://opensourcecollage.com",
+        "colorcode": "other"
+     }
+ ]

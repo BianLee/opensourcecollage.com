@@ -1,0 +1,26 @@
+[
+    {
+       "id":1,
+       "title":"Math & CS"
+    },
+    {
+        "id":2,
+        "title":"Sciences"
+     },
+     {
+        "id":3,
+        "title":"IT & Tech"
+     },
+     {
+        "id":4,
+        "title":"Humanities"
+     },
+     {
+        "id":5,
+        "title":"Social Sciences"
+     },
+     {
+        "id":6,
+        "title":"Art & Music"
+     }
+ ]
