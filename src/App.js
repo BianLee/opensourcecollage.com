@@ -66,6 +66,9 @@ class App extends Component {
       oppSearch: "",
       oppLength: Opportunities.length,
       startOppIndex: 0,
+      renderedPosts: Opportunities,
+      renderedSearchPosts: [],
+      renderedSearchOrganizations: [],
     };
   }
 
@@ -222,10 +225,21 @@ class App extends Component {
 
   handleOrgSearch(e) {
     var temp = e.target.value.toLowerCase();
-    this.setState({
-      orgSearch: temp,
-      selectedOrg: "",
-    });
+    this.setState(
+      {
+        orgSearch: temp,
+        selectedOrg: "",
+      },
+      () => {
+        this.setState({
+          renderedSearchOrganizations: organizations.filter((org) => {
+            return org.title
+              .toLowerCase()
+              .includes(this.state.orgSearch.toLowerCase());
+          }),
+        });
+      }
+    );
   }
   handleOpportunitiesSearch(e) {
     var temp = e.target.value.toLowerCase();
@@ -245,9 +259,20 @@ class App extends Component {
         ],
       });
     }
-    this.setState({
-      oppSearch: temp,
-    });
+    this.setState(
+      {
+        oppSearch: temp,
+      },
+      () => {
+        this.setState({
+          renderedSearchPosts: Opportunities.filter((opp) => {
+            return opp.title
+              .toLowerCase()
+              .includes(this.state.oppSearch.toLowerCase());
+          }),
+        });
+      }
+    );
     var counter = 0;
     Opportunities.filter((opp) => {
       if (opp.title.toLowerCase().includes(temp.toLowerCase())) {
@@ -264,10 +289,10 @@ class App extends Component {
       selectedOrg: "",
     });
     console.log("clicked");
-    if (this.state.startOrgIndex + 8 >= organizations.length) {
+    if (this.state.startOrgIndex + 17 >= organizations.length) {
     } else {
       this.setState({
-        startOrgIndex: this.state.startOrgIndex + 8,
+        startOrgIndex: this.state.startOrgIndex + 17,
       });
     }
   }
@@ -275,19 +300,16 @@ class App extends Component {
     this.setState({
       selectedOrg: "",
     });
-    if (this.state.startOrgIndex - 8 < 0) {
+    if (this.state.startOrgIndex - 17 < 0) {
     } else {
       this.setState({
-        startOrgIndex: this.state.startOrgIndex - 8,
+        startOrgIndex: this.state.startOrgIndex - 17,
       });
     }
   }
   handleOppCat(e) {
     var cc;
-
-    console.log("stephanie");
     cc = e.target.id;
-
     if (this.state.oppCat.includes(cc)) {
       this.setState(
         {
@@ -296,6 +318,12 @@ class App extends Component {
           }),
         },
         () => {
+          this.setState({
+            renderedPosts: Opportunities.filter((opp) => {
+              return this.state.oppCat.includes(opp.category);
+            }),
+          });
+
           var counter = 0;
           Opportunities.filter((opp) => {
             if (this.state.oppCat.includes(opp.category)) {
@@ -313,30 +341,51 @@ class App extends Component {
           oppCat: [...this.state.oppCat, cc],
         },
         () => {
+          this.setState({
+            renderedPosts: Opportunities.filter((opp) => {
+              return this.state.oppCat.includes(opp.category);
+            }),
+          });
+
           var counter = 0;
+          var elseCounter = 0;
           Opportunities.filter((opp) => {
             if (this.state.oppCat.includes(opp.category)) {
               counter++;
             }
           });
+          console.log("elsecounter");
+          console.log(counter);
           this.setState({
             oppLength: counter,
           });
         }
       );
     }
+    console.log(this.state.startOppIndex);
   }
   nextOpp(e) {
     if (this.state.startOppIndex + 16 >= this.state.oppLength) {
     } else {
-      this.setState({
-        startOppIndex: this.state.startOppIndex + 16,
-      });
+      if (this.state.startOppIndex < 16) {
+        this.setState({
+          startOppIndex: this.state.startOppIndex + 16,
+        });
+      } else {
+        this.setState({
+          startOppIndex: this.state.startOppIndex + 16,
+        });
+      }
     }
   }
   prevOpp(e) {
     if (this.state.startOppIndex - 16 < 0) {
     } else {
+      if (this.state.startOppIndex < 32) {
+        this.setState({
+          startOppIndex: this.state.startOppIndex - 16,
+        });
+      }
       this.setState({
         startOppIndex: this.state.startOppIndex - 16,
       });
@@ -441,40 +490,73 @@ class App extends Component {
                 <center>
                   <b>Opportunities</b> - Browse extracurriculars based on your
                   interests
-                  <br />
                 </center>
                 <br />
                 <div className="dod-media-grid dod-stack-15">
-                  {Opportunities.slice(
-                    this.state.startOppIndex,
-                    this.state.startOppIndex + 16
-                  ).map((opp) => {
-                    return (
-                      <>
-                        <a
-                          href={opp.link}
-                          target="_blank"
-                          style={{
-                            textDecoration: "none",
-                            color: "black",
-                            display:
-                              this.state.oppSearch.length != 0 &&
-                              opp.title
-                                .toLowerCase()
-                                .includes(this.state.oppSearch)
-                                ? "inline-block"
-                                : this.state.oppCat.includes(opp.category)
-                                ? "inline-block"
-                                : "none",
-                          }}
-                        >
-                          <div className="oppPost" id={opp.colorcode}>
-                            {opp.organization}: {opp.title}
-                          </div>
-                        </a>
-                      </>
-                    );
-                  })}
+                  {this.state.oppSearch == 0 ? (
+                    <>
+                      {" "}
+                      {this.state.renderedPosts
+                        .slice(
+                          this.state.startOppIndex,
+                          this.state.startOppIndex + 16
+                        )
+                        .map((opp) => {
+                          return (
+                            <>
+                              <a
+                                href={opp.link}
+                                target="_blank"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "black",
+                                  display:
+                                    this.state.oppSearch.length != 0 &&
+                                    opp.title
+                                      .toLowerCase()
+                                      .includes(this.state.oppSearch)
+                                      ? "inline-block"
+                                      : this.state.oppCat.includes(opp.category)
+                                      ? "inline-block"
+                                      : "none",
+                                }}
+                              >
+                                <div className="oppPost" id={opp.colorcode}>
+                                  {opp.organization}: {opp.title}
+                                </div>
+                              </a>
+                            </>
+                          );
+                        })}
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      {this.state.renderedSearchPosts
+                        .slice(
+                          this.state.startOppIndex,
+                          this.state.startOppIndex + 16
+                        )
+                        .map((opp) => {
+                          return (
+                            <>
+                              <a
+                                href={opp.link}
+                                target="_blank"
+                                style={{
+                                  textDecoration: "none",
+                                  color: "black",
+                                }}
+                              >
+                                <div className="oppPost" id={opp.colorcode}>
+                                  {opp.organization}: {opp.title}
+                                </div>
+                              </a>
+                            </>
+                          );
+                        })}
+                    </>
+                  )}
                 </div>
                 <center style={{ marginTop: "40px" }}>
                   <span
@@ -582,37 +664,37 @@ class App extends Component {
                   <br />
                   {this.state.orgSearch.length != 0 ? (
                     <>
-                      {organizations.map((org) => {
-                        return (
-                          <>
-                            <div
-                              className="featured"
-                              id={org.title}
-                              value={org.title}
-                              onClick={this.handleOrg}
-                              style={{
-                                display: org.title
-                                  .toLowerCase()
-                                  .includes(this.state.orgSearch)
-                                  ? "inline-block"
-                                  : "none",
-                                border:
-                                  this.state.selectedOrg == org.title
-                                    ? "solid 2px #e3d6c8 "
-                                    : "",
-                                filter:
-                                  this.state.selectedOrg != ""
-                                    ? this.state.selectedOrg == org.title
-                                      ? ""
-                                      : "opacity(30%)"
-                                    : "",
-                              }}
-                            >
-                              <img src={org.img}></img>
-                            </div>
-                          </>
-                        );
-                      })}
+                      {this.state.renderedSearchOrganizations
+                        .slice(
+                          this.state.startOrgIndex,
+                          this.state.startOrgIndex + 17
+                        )
+                        .map((org) => {
+                          return (
+                            <>
+                              <div
+                                className="featured"
+                                id={org.title}
+                                value={org.title}
+                                onClick={this.handleOrg}
+                                style={{
+                                  border:
+                                    this.state.selectedOrg == org.title
+                                      ? "solid 2px #e3d6c8 "
+                                      : "",
+                                  filter:
+                                    this.state.selectedOrg != ""
+                                      ? this.state.selectedOrg == org.title
+                                        ? ""
+                                        : "opacity(30%)"
+                                      : "",
+                                }}
+                              >
+                                <img src={org.img}></img>
+                              </div>
+                            </>
+                          );
+                        })}
                     </>
                   ) : (
                     <>
@@ -620,7 +702,7 @@ class App extends Component {
                       {organizations
                         .slice(
                           this.state.startOrgIndex,
-                          this.state.startOrgIndex + 8
+                          this.state.startOrgIndex + 17
                         )
                         .map((org) => {
                           return (
@@ -707,10 +789,6 @@ class App extends Component {
                           fontFamily: "Source Sans Pro",
                           marginRight: "20px",
                           cursor: "pointer",
-                          display:
-                            this.state.orgSearch.length == 0
-                              ? "inline"
-                              : "none",
                         }}
                       >
                         ← Prev
@@ -718,13 +796,21 @@ class App extends Component {
                       <span
                         style={{
                           fontFamily: "Source Sans Pro",
-                          display:
-                            this.state.orgSearch.length == 0
-                              ? "inline"
-                              : "none",
                         }}
                       >
-                        {this.state.startOrgIndex / 8 + 1}
+                        {this.state.startOrgIndex / 17 + 1} of{" "}
+                        {this.state.orgSearch != 0
+                          ? Math.ceil(
+                              this.state.renderedSearchOrganizations.length / 17
+                            ) == 0
+                            ? 1
+                            : Math.ceil(
+                                this.state.renderedSearchOrganizations.length /
+                                  17
+                              )
+                          : Math.ceil(organizations.length / 17) == 0
+                          ? 1
+                          : Math.ceil(organizations.length / 17)}
                       </span>
                       <span
                         onClick={this.nextOrg}
@@ -732,10 +818,6 @@ class App extends Component {
                           fontFamily: "Source Sans Pro",
                           marginLeft: "20px",
                           cursor: "pointer",
-                          display:
-                            this.state.orgSearch.length == 0
-                              ? "inline"
-                              : "none",
                         }}
                       >
                         Next →
