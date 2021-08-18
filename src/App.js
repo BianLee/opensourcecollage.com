@@ -11,6 +11,7 @@ import LifeSciences from "./notes/LifeSciences.pdf";
 import Notes from "./data/notes.json";
 import Opportunities from "./data/opportunities.json";
 import OpportunitiesCategory from "./data/opportunitiesCategory.json";
+import Checkbox from "react-three-state-checkbox";
 import "./style.css";
 import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
@@ -33,6 +34,10 @@ class App extends Component {
     this.handleOrgSearch = this.handleOrgSearch.bind(this);
     this.nextOrg = this.nextOrg.bind(this);
     this.prevOrg = this.prevOrg.bind(this);
+    this.handleOppCat = this.handleOppCat.bind(this);
+    this.nextOpp = this.nextOpp.bind(this);
+    this.prevOpp = this.prevOpp.bind(this);
+    this.handleOpportunitiesSearch = this.handleOpportunitiesSearch.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -50,8 +55,20 @@ class App extends Component {
       doubleClicked: false,
       orgSearch: "",
       startOrgIndex: 0,
+      oppCat: [
+        "Math & CS",
+        "Sciences",
+        "IT & Tech",
+        "Humanities",
+        "Social Sciences",
+        "Art & Music",
+      ],
+      oppSearch: "",
+      oppLength: Opportunities.length,
+      startOppIndex: 0,
     };
   }
+
   //  PostData = Astronomy;
   answerLetters = ["a", "b", "c", "d", "e"];
   subjects = [
@@ -211,6 +228,35 @@ class App extends Component {
     });
   }
   handleOpportunitiesSearch(e) {
+    var temp = e.target.value.toLowerCase();
+    if (temp.length != 0) {
+      this.setState({
+        oppCat: [],
+      });
+    } else {
+      this.setState({
+        oppCat: [
+          "Math & CS",
+          "Sciences",
+          "IT & Tech",
+          "Humanities",
+          "Social Sciences",
+          "Art & Music",
+        ],
+      });
+    }
+    this.setState({
+      oppSearch: temp,
+    });
+    var counter = 0;
+    Opportunities.filter((opp) => {
+      if (opp.title.toLowerCase().includes(temp.toLowerCase())) {
+        counter++;
+      }
+    });
+    this.setState({
+      oppLength: counter,
+    });
     console.log(e.target.value);
   }
   nextOrg(e) {
@@ -233,6 +279,66 @@ class App extends Component {
     } else {
       this.setState({
         startOrgIndex: this.state.startOrgIndex - 8,
+      });
+    }
+  }
+  handleOppCat(e) {
+    var cc;
+
+    console.log("stephanie");
+    cc = e.target.id;
+
+    if (this.state.oppCat.includes(cc)) {
+      this.setState(
+        {
+          oppCat: this.state.oppCat.filter(function (opp) {
+            return opp !== cc;
+          }),
+        },
+        () => {
+          var counter = 0;
+          Opportunities.filter((opp) => {
+            if (this.state.oppCat.includes(opp.category)) {
+              counter++;
+            }
+          });
+          this.setState({
+            oppLength: counter,
+          });
+        }
+      );
+    } else {
+      this.setState(
+        {
+          oppCat: [...this.state.oppCat, cc],
+        },
+        () => {
+          var counter = 0;
+          Opportunities.filter((opp) => {
+            if (this.state.oppCat.includes(opp.category)) {
+              counter++;
+            }
+          });
+          this.setState({
+            oppLength: counter,
+          });
+        }
+      );
+    }
+  }
+  nextOpp(e) {
+    if (this.state.startOppIndex + 16 >= this.state.oppLength) {
+    } else {
+      this.setState({
+        startOppIndex: this.state.startOppIndex + 16,
+      });
+    }
+  }
+  prevOpp(e) {
+    if (this.state.startOppIndex - 16 < 0) {
+    } else {
+      this.setState({
+        startOppIndex: this.state.startOppIndex - 16,
       });
     }
   }
@@ -335,71 +441,32 @@ class App extends Component {
                 <center>
                   <b>Opportunities</b> - Browse extracurriculars based on your
                   interests
+                  <br />
                 </center>
                 <br />
-
-                {/*
-                {category.map((opp, index) => {
-                  if (opp.colorcode === this.state.accordion) {
-                  }
-  
-                  return (
-                    <>
-                      <div
-                        className="subject"
-                        id={opp.colorcode}
-                        value="asdf"
-                        onClick={(e) => this.accordion(e)}
-                      >
-                        <div
-                          className="descriptionContainer"
-                          style={{
-                            cursor: "pointer",
-                            padding: "12px",
-                          }}
-                          id={opp.colorcode}
-                          onClick={(e) => this.accordion(e)}
-                        >
-                          <center
-                            style={{
-                              fontSize: "20px",
-                              fontFamily: "Source Sans Pro",
-                            }}
-                          >
-                            {opp.title}
-                          </center>
-                          <div
-                            style={{
-                              display:
-                                opp.colorcode === this.state.accordion
-                                  ? "inline"
-                                  : "none",
-                            }}
-                          >
-                            <div
-                              className="description"
-                              style={{
-                                fontSize: "16px",
-                                fontFamily: "Source Sans Pro",
-                              }}
-                            >
-                              {opp.description}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  );
-                })} */}
-
                 <div className="dod-media-grid dod-stack-15">
-                  {Opportunities.map((opp) => {
+                  {Opportunities.slice(
+                    this.state.startOppIndex,
+                    this.state.startOppIndex + 16
+                  ).map((opp) => {
                     return (
                       <>
                         <a
                           href={opp.link}
                           target="_blank"
-                          style={{ textDecoration: "none", color: "black" }}
+                          style={{
+                            textDecoration: "none",
+                            color: "black",
+                            display:
+                              this.state.oppSearch.length != 0 &&
+                              opp.title
+                                .toLowerCase()
+                                .includes(this.state.oppSearch)
+                                ? "inline-block"
+                                : this.state.oppCat.includes(opp.category)
+                                ? "inline-block"
+                                : "none",
+                          }}
                         >
                           <div className="oppPost" id={opp.colorcode}>
                             {opp.organization}: {opp.title}
@@ -409,15 +476,57 @@ class App extends Component {
                     );
                   })}
                 </div>
+                <center style={{ marginTop: "40px" }}>
+                  <span
+                    onClick={this.prevOpp}
+                    style={{
+                      fontFamily: "Source Sans Pro",
+                      marginRight: "20px",
+                      cursor: "pointer",
+                      display:
+                        this.state.orgSearch.length == 0 ? "inline" : "none",
+                    }}
+                  >
+                    ← Prev
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "Source Sans Pro",
+                      display:
+                        this.state.orgSearch.length == 0 ? "inline" : "none",
+                    }}
+                  >
+                    {this.state.startOppIndex / 16 + 1} of{" "}
+                    {Math.ceil(this.state.oppLength / 16) == 0
+                      ? 1
+                      : Math.ceil(this.state.oppLength / 16)}
+                  </span>
+                  <span
+                    onClick={this.nextOpp}
+                    style={{
+                      fontFamily: "Source Sans Pro",
+                      marginLeft: "20px",
+                      cursor: "pointer",
+                      display:
+                        this.state.orgSearch.length == 0 ? "inline" : "none",
+                    }}
+                  >
+                    Next →
+                  </span>
+                </center>
                 <br />
                 {OpportunitiesCategory.map((cat) => {
                   return (
                     <>
                       <div
                         style={{
-                          display: "inline-block",
+                          display:
+                            this.state.oppSearch.length != 0
+                              ? "none"
+                              : "inline-block",
                           marginBottom: "20px",
                         }}
+                        onClick={this.handleOppCat}
                       >
                         <input
                           key={cat.id}
@@ -426,7 +535,9 @@ class App extends Component {
                             padding: "0.2rem",
                             marginLeft: "20px",
                           }}
-                          type="radio"
+                          type="checkbox"
+                          defaultChecked="true"
+                          id={cat.title}
                         />{" "}
                         <label
                           style={{
@@ -435,6 +546,7 @@ class App extends Component {
                             display: "inline-block",
                             marginTop: "5px",
                           }}
+                          for={cat.title}
                         >
                           {cat.title}
                         </label>
@@ -442,6 +554,7 @@ class App extends Component {
                     </>
                   );
                 })}
+
                 <input
                   type="text"
                   name="name"
