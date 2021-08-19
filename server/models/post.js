@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 const PostSchema = new Schema(
   {
     title: { type: String, required: true },
-    url: { type: Date, required: true },
-    selectedCat: { type: String, required: true },
-    colorCode: { type: String, required: true },
+    link: { type: String, required: true },
+    category: { type: String, required: true },
+    colorcode: { type: String, required: true },
   },
   {
     timestamps: true,

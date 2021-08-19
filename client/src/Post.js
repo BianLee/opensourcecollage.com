@@ -3,6 +3,7 @@ import "./style.css";
 import style from "./markdown-styles.module.css";
 import axios from "axios";
 import OpportunitiesCategory from "./data/opportunitiesCategory.json";
+import firebase from "firebase";
 
 export default class Post extends React.Component {
   constructor(props) {
@@ -12,12 +13,42 @@ export default class Post extends React.Component {
     this.handleURL = this.handleURL.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
-      selectedCat: "",
+      category: "",
       title: "",
-      url: "",
-      colorCode: "",
+      link: "",
+      colorcode: "",
+
+      posts: [],
     };
   }
+
+  componentDidMount = () => {
+    this.getPost();
+    firebase.auth().onAuthStateChanged(
+      function (user) {
+        if (user) {
+          console.log("what is going on");
+          this.setState({ loggedIn: "yes" });
+        } else {
+          this.setState({ loggedIn: "no" });
+        }
+      }.bind(this)
+    );
+  };
+  getPost = () => {
+    // https://bianbackend.herokuapp.com/api/getMessage
+    axios
+      .get("https://server-bianlee.vercel.app/api/getPost")
+      .then((response) => {
+        const data = response.data;
+        this.setState({ posts: data });
+        console.log("data has been received");
+        //console.log(JSON.stringify(this.state.posts))
+      })
+      .catch(() => {
+        alert("error retreving data!!");
+      });
+  };
 
   handleCat(e) {
     var temp = "";
@@ -35,8 +66,8 @@ export default class Post extends React.Component {
       temp = "other";
     }
     this.setState({
-      selectedCat: e.target.id,
-      colorCode: temp,
+      category: e.target.id,
+      colorcode: temp,
     });
   }
   handleTitle(e) {
@@ -46,24 +77,33 @@ export default class Post extends React.Component {
   }
   handleURL(e) {
     this.setState({
-      url: e.target.value,
+      link: e.target.value,
     });
   }
   onSubmit(e) {
-    e.preventDefault();
     const post = {
-      selectedCat: this.state.selectedCat,
+      category: this.state.category,
       title: this.state.title,
-      url: this.state.url,
-      colorCode: this.state.colorCode,
+      link: this.state.link,
+      colorcode: this.state.colorcode,
     };
     if (
-      this.state.selectedCat.length > 0 &&
+      this.state.category.length > 0 &&
       this.state.title.length > 0 &&
-      this.state.url.length > 0 &&
-      this.state.colorCode.length > 0
+      this.state.link.length > 0 &&
+      this.state.colorcode.length > 0
     ) {
-      axios.post("");
+      axios
+        .post("https://server-bianlee.vercel.app/api/postPost", post)
+        .then(
+          (res) => this.props.history.push("/"),
+          console.log("page update?"),
+          this.getPost(),
+          this.componentDidMount()
+        )
+        .catch((error) => {
+          console.log("Error!");
+        });
     } else {
       console.log("missing something");
     }

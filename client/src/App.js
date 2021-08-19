@@ -9,12 +9,13 @@ import category from "./data/category.json";
 import organizations from "./data/organizations.json";
 import LifeSciences from "./notes/LifeSciences.pdf";
 import Notes from "./data/notes.json";
-import Opportunities from "./data/opportunities.json";
+// import Opportunities from "./data/opportunities.json";
 import OpportunitiesCategory from "./data/opportunitiesCategory.json";
 import Checkbox from "react-three-state-checkbox";
 import "./style.css";
 import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
+import axios from "axios";
 // import ReactMarkdown from "react-markdown";
 
 import {
@@ -65,9 +66,10 @@ class App extends Component {
         "Art & Music",
       ],
       oppSearch: "",
-      oppLength: Opportunities.length,
+      Opportunities: [],
+      oppLength: 0,
       startOppIndex: 0,
-      renderedPosts: Opportunities,
+      renderedPosts: [],
       renderedSearchPosts: [],
       renderedSearchOrganizations: [],
     };
@@ -84,6 +86,43 @@ class App extends Component {
     "Java",
     "Javascript",
   ];
+
+  componentDidMount = () => {
+    axios
+      .get("https://server-bianlee.vercel.app/api/getPost")
+      .then((response) => {
+        const data = response.data;
+        this.setState({
+          Opportunities: data,
+          renderedPosts: data,
+          oppLength: data.length,
+        });
+        console.log("data has been received");
+        //console.log(JSON.stringify(this.state.posts))
+      })
+      .catch(() => {
+        alert("error retreving data!!");
+      });
+  };
+
+  getPost = () => {
+    // https://bianbackend.herokuapp.com/api/getMessage
+    axios
+      .get("https://server-bianlee.vercel.app/api/getPost")
+      .then((response) => {
+        const data = response.data;
+        this.setState({
+          Opportunities: data,
+          renderedPosts: data,
+          oppLength: data.length,
+        });
+        console.log("data has been received");
+        //console.log(JSON.stringify(this.state.posts))
+      })
+      .catch(() => {
+        alert("error retreving data!!");
+      });
+  };
 
   exitQuiz = () => {
     this.setState({
@@ -266,7 +305,7 @@ class App extends Component {
       },
       () => {
         this.setState({
-          renderedSearchPosts: Opportunities.filter((opp) => {
+          renderedSearchPosts: this.state.Opportunities.filter((opp) => {
             return opp.title
               .toLowerCase()
               .includes(this.state.oppSearch.toLowerCase());
@@ -275,7 +314,7 @@ class App extends Component {
       }
     );
     var counter = 0;
-    Opportunities.filter((opp) => {
+    this.state.Opportunities.filter((opp) => {
       if (opp.title.toLowerCase().includes(temp.toLowerCase())) {
         counter++;
       }
@@ -320,13 +359,13 @@ class App extends Component {
         },
         () => {
           this.setState({
-            renderedPosts: Opportunities.filter((opp) => {
+            renderedPosts: this.state.Opportunities.filter((opp) => {
               return this.state.oppCat.includes(opp.category);
             }),
           });
 
           var counter = 0;
-          Opportunities.filter((opp) => {
+          this.state.Opportunities.filter((opp) => {
             if (this.state.oppCat.includes(opp.category)) {
               counter++;
             }
@@ -343,14 +382,14 @@ class App extends Component {
         },
         () => {
           this.setState({
-            renderedPosts: Opportunities.filter((opp) => {
+            renderedPosts: this.state.Opportunities.filter((opp) => {
               return this.state.oppCat.includes(opp.category);
             }),
           });
 
           var counter = 0;
           var elseCounter = 0;
-          Opportunities.filter((opp) => {
+          this.state.Opportunities.filter((opp) => {
             if (this.state.oppCat.includes(opp.category)) {
               counter++;
             }

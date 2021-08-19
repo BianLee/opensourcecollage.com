@@ -14,12 +14,14 @@ router.route("/getPost").get((req, res) => {
 // POST http://localhost:5000/api/postMessage
 router.route("/postPost").post((req, res) => {
   const title = req.body.title;
-  const url = req.body.url;
-  const selectedCat = req.body.selectedCat;
+  const link = req.body.link;
+  const category = req.body.category;
+  const colorcode = req.body.colorcode;
   const newPost = new Post({
     title,
-    url,
-    selectedCat,
+    link,
+    category,
+    colorcode,
   });
   newPost
     .save()
