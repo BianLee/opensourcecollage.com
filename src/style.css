@@ -116,6 +116,9 @@ hr {
   .questionBox {
     width: 100%;
   }
+  .oppPost {
+    width: 500px !important;
+  }
 }
 
 @media only screen and (max-width: 1800px) {
@@ -145,6 +148,9 @@ hr {
     height: 100px !important;
     width: 100px !important;
   }
+  .oppPost {
+    width: 500px !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -157,6 +163,9 @@ hr {
   .dod-input {
     float: center !important;
     width: 100% !important;
+  }
+  .loginBox {
+    width: 80% !important;
   }
 }
 
@@ -430,4 +439,19 @@ img {
   font-family: Source Sans Pro;
   padding: 20px;
   font-size: 17px;
+  border: 2px white solid;
+}
+.oppPost:hover {
+  border: 2px gray solid;
+}
+
+.loginBox {
+  -webkit-appearance: none;
+  border: 1px solid #ccc5c5;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+  width: 50%;
+  font-size: 17px;
+  margin-top: -10px;
+  padding-left: 0.6rem;
 }

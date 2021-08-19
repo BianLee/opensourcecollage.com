@@ -38,6 +38,7 @@ class App extends Component {
     this.nextOpp = this.nextOpp.bind(this);
     this.prevOpp = this.prevOpp.bind(this);
     this.handleOpportunitiesSearch = this.handleOpportunitiesSearch.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -391,6 +392,9 @@ class App extends Component {
       });
     }
   }
+  handleLogin(e) {
+    this.props.history.push("/login");
+  }
 
   render() {
     const markdown = `
@@ -411,7 +415,9 @@ class App extends Component {
               {" "}
               <br />
               <h1>Open Source Collage</h1>
-              {/* <button className="loginButton">Login</button> */}
+              <button className="loginButton" onClick={this.handleLogin}>
+                Login
+              </button>
               <p
                 className="questionTitleInner"
                 id="questionTitle"
@@ -522,7 +528,7 @@ class App extends Component {
                                 }}
                               >
                                 <div className="oppPost" id={opp.colorcode}>
-                                  {opp.organization}: {opp.title}
+                                  {opp.title}
                                 </div>
                               </a>
                             </>
