@@ -4,6 +4,13 @@ import style from "./markdown-styles.module.css";
 import axios from "axios";
 import OpportunitiesCategory from "./data/opportunitiesCategory.json";
 import firebase from "firebase";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 
 export default class Post extends React.Component {
   constructor(props) {
@@ -96,12 +103,13 @@ export default class Post extends React.Component {
       axios
         .post("https://server-bianlee.vercel.app/api/postPost", post)
         .then(
-          (res) => this.props.history.push("/"),
-          console.log("page update?"),
+          (res) => console.log("page update?"),
+          this.props.history.push("/"),
           this.getPost(),
           this.componentDidMount()
         )
         .catch((error) => {
+          this.props.history.push("/");
           console.log("Error!");
         });
     } else {

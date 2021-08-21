@@ -142,7 +142,7 @@ export default function Login() {
             <br />
             <br />
             <br />
-            <Post />
+            <Post history={history} />
           </div>
         </center>
       </>

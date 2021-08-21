@@ -72,6 +72,7 @@ class App extends Component {
       renderedPosts: [],
       renderedSearchPosts: [],
       renderedSearchOrganizations: [],
+      emptyAnswerWarning: "",
     };
   }
 
@@ -93,7 +94,7 @@ class App extends Component {
       .then((response) => {
         const data = response.data;
         this.setState({
-          Opportunities: data,
+          Opportunities: data.reverse(),
           renderedPosts: data,
           oppLength: data.length,
         });
@@ -164,23 +165,31 @@ class App extends Component {
   }
 
   showSolution() {
-    console.log(this.state.Data[this.state.questionNum].correct);
-    this.setState({
-      isShowingAnswer: true,
-      finalChosenAnswer: this.state.chosenAnswer,
-    });
-    if (
-      this.state.chosenAnswer ===
-      this.state.Data[this.state.questionNum].correct
-    ) {
+    if (this.state.chosenAnswer.length == 0) {
+      console.log("empty answer");
       this.setState({
-        score: this.state.score + 1,
-        statusArray: [...this.state.statusArray, "✓"],
+        emptyAnswerWarning: "Please select an answer!",
       });
     } else {
+      console.log(this.state.Data[this.state.questionNum].correct);
       this.setState({
-        statusArray: [...this.state.statusArray, "✕"],
+        emptyAnswerWarning: "",
+        isShowingAnswer: true,
+        finalChosenAnswer: this.state.chosenAnswer,
       });
+      if (
+        this.state.chosenAnswer ===
+        this.state.Data[this.state.questionNum].correct
+      ) {
+        this.setState({
+          score: this.state.score + 1,
+          statusArray: [...this.state.statusArray, "✓"],
+        });
+      } else {
+        this.setState({
+          statusArray: [...this.state.statusArray, "✕"],
+        });
+      }
     }
   }
 
@@ -206,6 +215,7 @@ class App extends Component {
     this.setState({
       isShowingAnswer: false,
       chosenAnswer: "",
+      emptyAnswerWarning: "",
     });
 
     this.setState({
@@ -454,6 +464,9 @@ class App extends Component {
               {" "}
               <br />
               <h1>Open Source Collage</h1>
+              <button className="mobileLoginButton" onClick={this.handleLogin}>
+                Login
+              </button>
               <button className="loginButton" onClick={this.handleLogin}>
                 Login
               </button>
@@ -594,7 +607,7 @@ class App extends Component {
                                 }}
                               >
                                 <div className="oppPost" id={opp.colorcode}>
-                                  {opp.organization}: {opp.title}
+                                  {opp.title}
                                 </div>
                               </a>
                             </>
@@ -681,7 +694,7 @@ class App extends Component {
                     </>
                   );
                 })}
-
+                <br /> <br />
                 <input
                   type="text"
                   name="name"
@@ -868,6 +881,7 @@ class App extends Component {
                         Next →
                       </span>
                     </center>
+                    <br />
                     <input
                       type="text"
                       name="name"
@@ -894,7 +908,6 @@ class App extends Component {
                   <br />
                   <b>Blog</b> - All things students can relate to!
                 </center>
-
                 <div className="row" style={{ marginTop: "20px" }}>
                   <div className="column">
                     {leftBlog.map((entry) => {
@@ -910,7 +923,11 @@ class App extends Component {
                             }}
                             onClick={this.handleClick}
                           >
-                            <div style={{ fontFamily: "Source Sans Pro" }}>
+                            <div
+                              style={{
+                                fontFamily: "Source Sans Pro",
+                              }}
+                            >
                               • {entry.title}
                             </div>
                           </div>
@@ -918,7 +935,7 @@ class App extends Component {
                       );
                     })}
                   </div>
-                  <div className="column">
+                  <div className="column asdf">
                     {rightBlog.map((entry) => {
                       return (
                         <>
@@ -979,7 +996,13 @@ class App extends Component {
       return (
         <>
           <center>
-            <h3 style={{ marginTop: "25px", fontFamily: "Source Sans Pro" }}>
+            <h3
+              style={{
+                marginTop: "25px",
+                fontFamily: "Source Sans Pro",
+                fontSize: "1.0rem",
+              }}
+            >
               Quiz - {this.state.topic}
             </h3>
             {this.state.isEnd ? (
@@ -1030,7 +1053,7 @@ class App extends Component {
                     style={{
                       marginBottom: "20px",
                       fontFamily: "Source Sans Pro",
-                      fontSize: "1.2rem",
+                      fontSize: "1.1rem",
                     }}
                   >
                     {this.state.questionNum + 1}.&nbsp;
@@ -1104,7 +1127,6 @@ class App extends Component {
                       );
                     }
                   )}
-
                   <p></p>
                 </div>
                 {this.state.isShowingAnswer &&
@@ -1160,12 +1182,24 @@ class App extends Component {
                         )}
                         <br />•{" "}
                         {this.state.Data[this.state.questionNum].solution}
+                        <br />
                       </p>
                     </div>
                   </>
                 ) : (
                   <></>
                 )}
+                <br />
+                <center>
+                  <span
+                    style={{
+                      fonFamily: "Source Sans Pro",
+                      color: "red",
+                    }}
+                  >
+                    {this.state.emptyAnswerWarning}
+                  </span>
+                </center>
                 <span id="exitButton" onClick={(e) => this.exitQuiz()}>
                   ← Exit
                 </span>

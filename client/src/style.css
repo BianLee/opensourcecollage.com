@@ -92,6 +92,10 @@ hr {
   color: white;
 }
 
+.mobileLoginButton {
+  display: none;
+}
+
 @media only screen and (max-width: 1000px) {
   #nextButton,
   #revealAnswerButton,
@@ -119,6 +123,9 @@ hr {
   .oppPost {
     width: 500px !important;
   }
+  .mobileLoginButton {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 1800px) {
@@ -128,6 +135,9 @@ hr {
   }
   .questionBox {
     width: 90%;
+  }
+  .mobileLoginButton {
+    display: none;
   }
 }
 
@@ -150,6 +160,13 @@ hr {
   }
   .oppPost {
     width: 500px !important;
+    height: 160px !important;
+  }
+  .mobileLoginButton {
+    display: none;
+  }
+  .asdf {
+    margin-top: -20px;
   }
 }
 
@@ -166,6 +183,30 @@ hr {
   }
   .loginBox {
     width: 80% !important;
+  }
+  .loginButton {
+    display: none;
+  }
+  .mobileLoginButton {
+    margin-top: 20px;
+    border: 2px solid black;
+    background-color: #e7e7e7;
+    color: black;
+    padding: 6px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #e7e7e7;
+    color: black;
+    width: 90px;
+    display: block;
+  }
+  .oppPost {
+    width: 500px !important;
+    height: 120px !important;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: column !important;
   }
 }
 
@@ -434,7 +475,7 @@ img {
 .oppPost {
   background-color: #eee;
   width: 300px;
-  height: 112px;
+  height: 120px;
   padding-left: 10px;
   font-family: Source Sans Pro;
   padding: 20px;
@@ -454,4 +495,10 @@ img {
   font-size: 17px;
   margin-top: -10px;
   padding-left: 0.6rem;
+}
+
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  grid-gap: 1rem;
 }
