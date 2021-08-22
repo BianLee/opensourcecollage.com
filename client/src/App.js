@@ -996,6 +996,7 @@ class App extends Component {
       return (
         <>
           <center>
+            {/* 
             <h3
               style={{
                 marginTop: "25px",
@@ -1005,6 +1006,8 @@ class App extends Component {
             >
               Quiz - {this.state.topic}
             </h3>
+            */}
+            <br />
             {this.state.isEnd ? (
               <>
                 <div className="questionBox">
