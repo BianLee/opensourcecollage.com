@@ -1003,7 +1003,7 @@ class App extends Component {
                 fontFamily: "Source Sans Pro",
                 fontSize: "1.0rem",
               }}
-            >
+            > 
               Quiz - {this.state.topic}
             </h3>
             */}
