@@ -2,6 +2,7 @@ import { everyLimit } from "async";
 import React, { Component } from "react";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
+import ITF from "./data/itf.json";
 import osc from "./images/osc.png";
 import leftBlog from "./data/leftBlog.json";
 import rightBlog from "./data/rightBlog.json";
@@ -81,11 +82,10 @@ class App extends Component {
   subjects = [
     "Astronomy",
     "Biology",
-    "Computer Science",
-    "Cybersecurity",
     "Economics",
+    "IT Fundamentals",
+    "Networking",
     "Java",
-    "Javascript",
   ];
 
   componentDidMount = () => {
@@ -207,6 +207,10 @@ class App extends Component {
     } else if (event.target.value == "Biology") {
       this.setState({
         Data: Biology,
+      });
+    } else if (event.target.value == "IT Fundamentals") {
+      this.setState({
+        Data: ITF,
       });
     }
   }
@@ -498,7 +502,7 @@ class App extends Component {
               </p>
             </div>
 
-            <div className="dashboard">
+            <div className="dashboard" style={{ width: "60%" }}>
               <center>
                 <b>Notes</b> - Why waste time taking notes when these exist?
               </center>

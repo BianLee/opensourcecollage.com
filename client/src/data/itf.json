@@ -1,0 +1,107 @@
+[
+    {
+       "correct":"a",
+       "solution":"Database is suitable for keeping information and organizing this information for easy retrieval. It can also handle concurrent users. ",
+       "id":1,
+       "title":"The sales department needs to keep a customer list that contains names, contact information, and sales records. This list will need to be edited by multiple people at the same time. Which of the following applications should be used to create this list?",
+       "choices":[
+          "Database software",
+          "Word processing software",
+          "Conferencing software",
+          "Presentation software"
+       ],
+       "Timestamp":"2021-08-22 17:54:20"
+    },
+    {
+       "correct":"d",
+       "solution":"SMTP stands for Simple Mail Transfer Protocol. It is an internet standard communication protocol for email transmission. It uses TCP, on Port 25.",
+       "id":2,
+       "title":"Which of the following would be used to send messages using the SMTP protocol?",
+       "choices":[
+          "Document sharing software",
+          "Instant messaging software",
+          "Conferencing software",
+          "Email software"
+       ],
+       "Timestamp":"2021-08-22 17:56:55"
+    },
+    {
+       "correct":"d",
+       "solution":"DV stands for Digital Video. It is the mos appropriate option, since the question mentions display for a computer. USB is a commonly used device interface but not necessarily solely for display. NFC is Near Field Communication, used with close proximity communication such as mobile pay. DSL is digital subscriber line, which is a type of internet service. ",
+       "id":3,
+       "title":"A technician is called to replace a display for a workstation. Which of the following would Most likely be used to connect the display to the workstation?",
+       "choices":[
+          "USB",
+          "NFC",
+          "DSL",
+          "DV"
+       ],
+       "Timestamp":"2021-08-22 18:01:01"
+    },
+    {
+       "correct":"b",
+       "solution":"NFC is designed for close proximity communication between devices within only a few inches apart. While bluetooth is also a short range interface, it has greater range than 6 inches and can extend up to a few feet.",
+       "id":4,
+       "title":"Which of the following is a wireless communication that requires devices to be within 6 inches of each other to transfer information?",
+       "choices":[
+          "Infrared",
+          "NFC",
+          "Bluetooth",
+          "WiFi"
+       ],
+       "Timestamp":"2021-08-22 18:02:31"
+    },
+    {
+       "correct":"c",
+       "solution":"Ethernet cable is what provides internet connection to a connected device. ",
+       "id":5,
+       "title":"A user buys a new desktop computer and then connects a cable that allows the computer to connect to the web. Which of the following ports would most likely be used?",
+       "choices":[
+          "DVI",
+          "HDMI",
+          "Ethernet",
+          "Thunderbolt",
+          "Bluetooth"
+       ],
+       "Timestamp":"2021-08-22 18:04:18"
+    },
+    {
+       "correct":"d",
+       "solution":"",
+       "id":6,
+       "title":"Which of the following software licensing types is most likely to require the renewal of terms\/conditions agreements and has annual fees?",
+       "choices":[
+          "One-time purchase",
+          "Open source",
+          "Group license",
+          "Subscription"
+       ],
+       "Timestamp":"2021-08-22 18:04:46"
+    },
+    {
+       "correct":"b",
+       "solution":"Because Ann does not need to install any driver software to interact with the device, it is Plug-and-Play. ",
+       "id":7,
+       "title":"Ann, a user, connects a new mouse to a laptop, and the mouse works with no additional steps taken by Ann. Which of the following installation types does this best describe?",
+       "choices":[
+          "Driver Installation",
+          "Plug-and-Play",
+          "Web based",
+          "Manual"
+       ],
+       "Timestamp":"2021-08-22 18:06:03"
+    },
+    {
+       "correct":"b",
+       "solution":"HTTP stands for Hypertext Transfer Protocol, a protocol for web browsing. HTTPS has Secure Socket Layer, meaning all data transferred are encrypted. Letter S in HTTPS stands for Secure Socket Layer, and makes it more secure than HTTP. ",
+       "id":8,
+       "title":"Which of the following protocols is used for secure web browsing?",
+       "choices":[
+          "SFTP",
+          "HTTPS",
+          "L2TP",
+          "IMAP"
+       ],
+       "Timestamp":"2021-08-22 18:07:25"
+    }
+ ]

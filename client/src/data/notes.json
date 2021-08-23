@@ -1,11 +1,5 @@
 [
   {
-    "id": 2,
-    "title": "Computer Science I",
-    "colorcode": "math",
-    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
-  },
-  {
     "id": 1,
     "title": "Intro to Architecture",
     "colorcode": "other",
@@ -21,7 +15,7 @@
     "id": 2,
     "title": "ITF+",
     "colorcode": "biology",
-    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+    "url": "https://docs.google.com/document/d/1rC4fVAazCMjh2WNGEUEcSwMbNZbf4aiFakiouVmKDNw/edit?usp=sharing"
   },
   {
     "id": 2,
@@ -39,7 +33,7 @@
     "id": 3,
     "title": "Humans and Biology",
     "colorcode": "physics",
-    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
+    "url": "https://docs.google.com/document/d/1-gsc8LjVp47f5GFmML3F07xKH5eX7eDNMC8K0jAZgaY/edit?usp=sharing"
   },
   {
     "id": 6,
@@ -63,24 +57,6 @@
     "id": 6,
     "title": "Intro to Psychology",
     "colorcode": "engineering",
-    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
-  },
-  {
-    "id": 7,
-    "title": "World History",
-    "colorcode": "music",
-    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
-  },
-  {
-    "id": 7,
-    "title": "Korean I",
-    "colorcode": "music",
-    "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
-  },
-  {
-    "id": 7,
-    "title": "French III",
-    "colorcode": "music",
     "url": "https://docs.google.com/document/d/1_zR9cbnEuCx2r8jNRzEtqu7sHQDbCmEkRdrPL3HBm80/edit?usp=sharing"
   }
 ]
