@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
 import ITF from "./data/itf.json";
+import Economics from "./data/economics.json";
+import Business from "./data/business.json";
+import Networking from "./data/networking.json";
 import osc from "./images/osc.png";
 import leftBlog from "./data/leftBlog.json";
 import rightBlog from "./data/rightBlog.json";
@@ -82,10 +85,10 @@ class App extends Component {
   subjects = [
     "Astronomy",
     "Biology",
+    "Business",
     "Economics",
     "IT Fundamentals",
-    "Networking",
-    "Java",
+    "Computer Networking",
   ];
 
   componentDidMount = () => {
@@ -211,6 +214,18 @@ class App extends Component {
     } else if (event.target.value == "IT Fundamentals") {
       this.setState({
         Data: ITF,
+      });
+    } else if (event.target.value == "Economics") {
+      this.setState({
+        Data: Economics,
+      });
+    } else if (event.target.value == "Business") {
+      this.setState({
+        Data: Business,
+      });
+    } else if (event.target.value == "Computer Networking") {
+      this.setState({
+        Data: Networking,
       });
     }
   }
@@ -502,7 +517,7 @@ class App extends Component {
               </p>
             </div>
 
-            <div className="dashboard" style={{ width: "60%" }}>
+            <div className="dashboard">
               <center>
                 <b>Notes</b> - Why waste time taking notes when these exist?
               </center>
