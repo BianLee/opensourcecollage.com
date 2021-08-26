@@ -509,7 +509,7 @@ class App extends Component {
                     of others in all parts of the country. OSC leads an effort
                     on its own to bring useful resources to students through
                     facilitating new connections between students and
-                    organizations.
+                    organizations. - <i>Bian Lee, Founder</i>
                   </span>
                 </div>
 
@@ -1004,6 +1004,9 @@ class App extends Component {
                   </a>
                   <a href="https://github.com" target="_blank">
                     <ion-icon name="logo-github" id="social"></ion-icon>
+                  </a>
+                  <a href="https://discord.gg/tKfMtXBsPR" target="_blank">
+                    <ion-icon name="logo-discord" id="social"></ion-icon>
                   </a>
                 </center>
               </p>
