@@ -1037,6 +1037,7 @@ class App extends Component {
                     Score: {this.state.score} / {this.state.Data.length}
                   </p>
                   <p>
+                    <br />
                     Percentage:{" "}
                     {Math.round(
                       (
@@ -1046,6 +1047,7 @@ class App extends Component {
                     )}
                     %
                   </p>
+                  <br />
                   {this.state.statusArray.map((answer, index) => {
                     return (
                       <span>

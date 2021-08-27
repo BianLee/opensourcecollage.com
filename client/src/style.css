@@ -14,7 +14,7 @@ h1 {
   background-color: transparent !important;
   max-width: 1500px !important;
   background-color: #fffaf5 !important;
-  margin-top: 20px;
+  margin-top: 10px;
   border: 2px solid #e7e7e7;
 }
 
@@ -480,10 +480,10 @@ img {
   font-family: Source Sans Pro;
   padding: 20px;
   font-size: 17px;
-  border: 2px white solid;
+  border: 1px white solid;
 }
 .oppPost:hover {
-  border: 2px gray solid;
+  border: 1px gray solid;
 }
 
 .loginBox {
