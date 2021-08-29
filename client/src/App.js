@@ -1,5 +1,6 @@
 import { everyLimit } from "async";
 import React, { Component } from "react";
+import subjects from "./data/subjects.json";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
 import ITF from "./data/itf.json";
@@ -76,11 +77,15 @@ class App extends Component {
       renderedSearchPosts: [],
       renderedSearchOrganizations: [],
       emptyAnswerWarning: "",
+      quizSetting: "",
+      selectedSettingTopic: "",
     };
   }
 
   //  PostData = Astronomy;
   answerLetters = ["a", "b", "c", "d", "e"];
+
+  /* 
   subjects = [
     "Astronomy",
     "Biology",
@@ -89,6 +94,7 @@ class App extends Component {
     "IT Fundamentals",
     "Computer Networking",
   ];
+  */
 
   componentDidMount = () => {
     axios
@@ -201,6 +207,7 @@ class App extends Component {
       isSpecificTopicChosen: true,
       topic: event.target.value,
       Data: event.target.value,
+      selectedSettingTopic: subjects,
     });
     if (event.target.value == "Astronomy") {
       this.setState({
@@ -542,15 +549,15 @@ class App extends Component {
                 <b>Quizzes</b> - Test your knowledge!
               </center>
               <br />
-              {this.subjects.map((sub) => {
+              {subjects.map((sub) => {
                 return (
                   <button
-                    value={sub}
+                    value={sub.title}
                     className="subjectButton"
-                    id={lowerCase(sub) + "Button"}
+                    id={lowerCase(sub.title) + "Button"}
                     onClick={this.chooseTopic.bind(this)}
                   >
-                    {sub}
+                    {sub.title}
                   </button>
                 );
               })}
@@ -1032,93 +1039,95 @@ class App extends Component {
             </h3>
             */}
             <br />
-            {this.state.isEnd ? (
+            {this.state.quizSetting.length != 0 ? (
               <>
-                <div className="questionBox">
-                  <p>
-                    Score: {this.state.score} / {this.state.Data.length}
-                  </p>
-                  <p>
-                    <br />
-                    Percentage:{" "}
-                    {Math.round(
-                      (
-                        (this.state.score / this.state.Data.length) *
-                        100
-                      ).toFixed(2)
-                    )}
-                    %
-                  </p>
-                  <br />
-                  {this.state.statusArray.map((answer, index) => {
-                    return (
-                      <span>
-                        {index + 1}. {answer} &nbsp;&nbsp;
-                      </span>
-                    );
-                  })}
-                  <br />
-                  <br />
-                </div>
-                <span
-                  span
-                  id="buttonDesign"
-                  style={{ position: "relative", top: "40px" }}
-                  onClick={(e) => this.reviewQuestions()}
-                >
-                  Take quiz again
-                </span>
-                <p></p>
-              </>
-            ) : (
-              <>
-                <div className="questionBox">
-                  {/* {PostData.map((postDetail, index) => {
+                {this.state.isEnd ? (
+                  <>
+                    <div className="questionBox">
+                      <p>
+                        Score: {this.state.score} / {this.state.Data.length}
+                      </p>
+                      <p>
+                        <br />
+                        Percentage:{" "}
+                        {Math.round(
+                          (
+                            (this.state.score / this.state.Data.length) *
+                            100
+                          ).toFixed(2)
+                        )}
+                        %
+                      </p>
+                      <br />
+                      {this.state.statusArray.map((answer, index) => {
+                        return (
+                          <span>
+                            {index + 1}. {answer} &nbsp;&nbsp;
+                          </span>
+                        );
+                      })}
+                      <br />
+                      <br />
+                    </div>
+                    <span
+                      span
+                      id="buttonDesign"
+                      style={{ position: "relative", top: "40px" }}
+                      onClick={(e) => this.reviewQuestions()}
+                    >
+                      Take quiz again
+                    </span>
+                    <p></p>
+                  </>
+                ) : (
+                  <>
+                    <div className="questionBox">
+                      {/* {PostData.map((postDetail, index) => {
                 return <p>{postDetail.title}</p>;
               })}  */}
-                  <p
-                    className="questionTitleInner"
-                    id="questionTitle"
-                    style={{
-                      marginBottom: "20px",
-                      fontFamily: "Source Sans Pro",
-                      fontSize: "1.1rem",
-                    }}
-                  >
-                    {this.state.questionNum + 1}.&nbsp;
-                    {this.state.Data[this.state.questionNum].title}
-                  </p>
+                      <p
+                        className="questionTitleInner"
+                        id="questionTitle"
+                        style={{
+                          marginBottom: "20px",
+                          fontFamily: "Source Sans Pro",
+                          fontSize: "1.1rem",
+                        }}
+                      >
+                        {this.state.questionNum + 1}.&nbsp;
+                        {this.state.Data[this.state.questionNum].title}
+                      </p>
 
-                  {this.state.Data[this.state.questionNum].choices.map(
-                    (option, index) => {
-                      return (
-                        <div key={index}>
-                          <label>
-                            <div
-                              className="questionBoxInner"
-                              style={{
-                                backgroundColor: this.state.isShowingAnswer
-                                  ? this.answerLetters[index] ===
-                                    this.state.Data[this.state.questionNum]
-                                      .correct
-                                    ? "#00ff00"
-                                    : this.state.finalChosenAnswer ===
-                                      this.answerLetters[index]
-                                    ? "#fff0de"
-                                    : ""
-                                  : this.state.chosenAnswer ===
-                                    this.answerLetters[index]
-                                  ? "#fff0de"
-                                  : "",
-                                padding: "15px",
-                              }}
-                              htmlFor={this.answerLetters[index]}
-                            >
-                              {/* {this.answerLetters[index]}. */}
-                              <label
-                                className="optionText"
-                                style={{
-                                  /* }
+                      {this.state.Data[this.state.questionNum].choices.map(
+                        (option, index) => {
+                          return (
+                            <div key={index}>
+                              <label>
+                                <div
+                                  className="questionBoxInner"
+                                  style={{
+                                    backgroundColor: this.state.isShowingAnswer
+                                      ? this.answerLetters[index] ===
+                                        this.state.Data[this.state.questionNum]
+                                          .correct
+                                        ? "#00ff00"
+                                        : this.state.finalChosenAnswer ===
+                                          this.answerLetters[index]
+                                        ? "#fff0de"
+                                        : ""
+                                      : this.state.chosenAnswer ===
+                                        this.answerLetters[index]
+                                      ? "#fff0de"
+                                      : "",
+                                    padding: "15px",
+                                  }}
+                                  htmlFor={this.answerLetters[index]}
+                                >
+                                  {/* {this.answerLetters[index]}. */}
+                                  <label
+                                    className="optionText"
+                                    style={{
+                                      /* }
                                   textDecorationLine:
                                     this.state.isShowingAnswer &&
                                     this.answerLetters[index] !==
@@ -1126,52 +1135,56 @@ class App extends Component {
                                         .correct
                                       ? "line-through"
                                 : "none", */
-                                  display: "flex",
-                                  textDecorationThickness: "1.5px",
-                                  fontFamily: "Source Sans Pro",
-                                }}
-                              >
-                                <input
-                                  style={{
-                                    margin: "12px",
-                                    flexShrink: "0",
-                                  }}
-                                  className="optionInput"
-                                  onChange={this.setAnswer.bind(this)}
-                                  type="radio"
-                                  id={this.answerLetters[index]}
-                                  value={this.answerLetters[index]}
-                                  name="options"
-                                  checked={
-                                    !this.state.isShowingAnswer &&
-                                    this.state.chosenAnswer ===
-                                      this.answerLetters[index]
-                                  }
-                                />
-                                {option}
+                                      display: "flex",
+                                      textDecorationThickness: "1.5px",
+                                      fontFamily: "Source Sans Pro",
+                                    }}
+                                  >
+                                    <input
+                                      style={{
+                                        margin: "12px",
+                                        flexShrink: "0",
+                                      }}
+                                      className="optionInput"
+                                      onChange={this.setAnswer.bind(this)}
+                                      type="radio"
+                                      id={this.answerLetters[index]}
+                                      value={this.answerLetters[index]}
+                                      name="options"
+                                      checked={
+                                        !this.state.isShowingAnswer &&
+                                        this.state.chosenAnswer ===
+                                          this.answerLetters[index]
+                                      }
+                                    />
+                                    {option}
+                                  </label>
+                                </div>
                               </label>
                             </div>
-                          </label>
-                        </div>
-                      );
-                    }
-                  )}
-                  <p></p>
-                </div>
-                {this.state.isShowingAnswer &&
-                this.state.Data[this.state.questionNum].solution.length != 0 ? (
-                  <>
-                    <div className="instructions" style={{ marginTop: "15px" }}>
-                      <p
-                        className="questionTitleInner"
-                        id="questionTitle"
-                        style={{
-                          fontSize: "1.1rem",
-                          lineHeight: "2rem",
-                          fontFamily: "Source Sans Pro",
-                        }}
-                      >
-                        {/* • Difficulty:{" "}
+                          );
+                        }
+                      )}
+                      <p></p>
+                    </div>
+                    {this.state.isShowingAnswer &&
+                    this.state.Data[this.state.questionNum].solution.length !=
+                      0 ? (
+                      <>
+                        <div
+                          className="instructions"
+                          style={{ marginTop: "15px" }}
+                        >
+                          <p
+                            className="questionTitleInner"
+                            id="questionTitle"
+                            style={{
+                              fontSize: "1.1rem",
+                              lineHeight: "2rem",
+                              fontFamily: "Source Sans Pro",
+                            }}
+                          >
+                            {/* • Difficulty:{" "}
                         {this.state.Data[this.state.questionNum].difficulty}
                         <br />• Topics:&nbsp;
                         {this.state.Data[this.state.questionNum].category.map(
@@ -1187,65 +1200,132 @@ class App extends Component {
                           }
                         )}
                         <br />➞ Explanation:{" "} */}
-                        {this.state.statusArray[this.state.questionNum] ===
-                        "✓" ? (
-                          <span
-                            style={{
-                              color: "#04d904",
-                              fontWeight: "bold",
-                              fontFamily: "Source Sans Pro",
-                            }}
-                          >
-                            ✓ Correct
-                          </span>
-                        ) : (
-                          <span
-                            style={{
-                              color: "red",
-                              fontWeight: "bold",
-                              fontFamily: "Source Sans Pro",
-                            }}
-                          >
-                            ✕ Incorrect
-                          </span>
-                        )}{" "}
-                        <br />•{" "}
-                        {this.state.Data[this.state.questionNum].solution}
-                        <br />
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <></>
-                )}
-                <br />
-                <center>
-                  <span
-                    style={{
-                      fonFamily: "Source Sans Pro",
-                      color: "red",
-                    }}
-                  >
-                    {this.state.emptyAnswerWarning}
-                  </span>
-                </center>
-                <span id="exitButton" onClick={(e) => this.exitQuiz()}>
-                  ← Exit
-                </span>
+                            {this.state.statusArray[this.state.questionNum] ===
+                            "✓" ? (
+                              <span
+                                style={{
+                                  color: "#04d904",
+                                  fontWeight: "bold",
+                                  fontFamily: "Source Sans Pro",
+                                }}
+                              >
+                                ✓ Correct
+                              </span>
+                            ) : (
+                              <span
+                                style={{
+                                  color: "red",
+                                  fontWeight: "bold",
+                                  fontFamily: "Source Sans Pro",
+                                }}
+                              >
+                                ✕ Incorrect
+                              </span>
+                            )}{" "}
+                            <br />•{" "}
+                            {this.state.Data[this.state.questionNum].solution}
+                            <br />
+                          </p>
+                        </div>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                    <br />
+                    <center>
+                      <span
+                        style={{
+                          fonFamily: "Source Sans Pro",
+                          color: "red",
+                        }}
+                      >
+                        {this.state.emptyAnswerWarning}
+                      </span>
+                    </center>
+                    <span id="exitButton" onClick={(e) => this.exitQuiz()}>
+                      ← Exit
+                    </span>
 
-                {this.state.isShowingAnswer ? (
-                  <>
-                    <span id="nextButton" onClick={(e) => this.nextQuestion()}>
-                      Next →
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <span id="nextButton" onClick={(e) => this.showSolution()}>
-                      Check
-                    </span>
+                    {this.state.isShowingAnswer ? (
+                      <>
+                        <span
+                          id="nextButton"
+                          onClick={(e) => this.nextQuestion()}
+                        >
+                          Next →
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span
+                          id="nextButton"
+                          onClick={(e) => this.showSolution()}
+                        >
+                          Check
+                        </span>
+                      </>
+                    )}
                   </>
                 )}
+              </>
+            ) : (
+              <>
+                <h3>Quiz - {this.state.topic}</h3>
+                <div className="quizSettingDashboard">
+                  <span style={{ fontFamily: "Source Sans Pro" }}>
+                    {subjects.map((sub) => {
+                      return (
+                        <>
+                          <div className="aligned">
+                            <img
+                              src={sub.img}
+                              id="logo"
+                              style={{
+                                display:
+                                  sub.title == this.state.topic
+                                    ? "inline"
+                                    : "none",
+                              }}
+                            ></img>
+
+                            <span
+                              style={{
+                                display:
+                                  sub.title == this.state.topic
+                                    ? "inline"
+                                    : "none",
+                                fontFamily: "Source Sans Pro",
+                                textAlign: "left",
+                              }}
+                            >
+                              {sub.description}
+                            </span>
+                          </div>
+                        </>
+                      );
+                    })}
+                    <br />
+                    <br />
+                    <label
+                      style={{
+                        display: "flex",
+                        textDecorationThickness: "1.5px",
+                        fontFamily: "Source Sans Pro",
+                      }}
+                    >
+                      <input
+                        style={{
+                          margin: "12px",
+                          flexShrink: "0",
+                        }}
+                        onChange={this.setAnswer.bind(this)}
+                        type="radio"
+                        name="options"
+                      />
+                      Quick Practice - 12 Questions
+                    </label>
+                  </span>
+                </div>
               </>
             )}
           </center>
