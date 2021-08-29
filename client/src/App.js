@@ -84,6 +84,7 @@ class App extends Component {
       quizSetting: "",
       selectedSettingTopic: "",
       childTopic: "Astronomy",
+      startQuiz: false,
     };
   }
 
@@ -138,7 +139,10 @@ class App extends Component {
   };
 
   exitQuiz = () => {
+    this.props.history.push("/");
+    console.log("steph");
     this.setState({
+      startQuiz: false,
       questionNum: 0,
       isEnd: false,
       isShowingAnswer: false,

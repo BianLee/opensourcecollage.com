@@ -3,56 +3,71 @@ import subjects from "./data/subjects.json";
 import "./style.css";
 import App from "./App";
 import osc from "./images/osc.png";
+import Astronomy from "./data/astronomy.json";
+import Biology from "./data/bio.json";
+import ITF from "./data/itf.json";
+import Economics from "./data/economics.json";
+import Business from "./data/business.json";
+import Networking from "./data/networking.json";
 
 export default class Quiz extends App {
   constructor(props) {
     super(props);
   }
   componentWillMount() {
+    console.log(this.state.questionNum);
+    console.log(this.state.startQuiz);
     console.log(this.props.history.location.pathname);
     if (this.props.history.location.pathname.includes("astronomy")) {
       this.setState({
         topic: "Astronomy",
+        Data: Astronomy,
       });
     } else if (this.props.history.location.pathname.includes("biology")) {
       this.setState({
         topic: "Biology",
+        Data: Biology,
       });
     } else if (this.props.history.location.pathname.includes("business")) {
       this.setState({
         topic: "Business",
+        Data: Business,
       });
     } else if (this.props.history.location.pathname.includes("economics")) {
       this.setState({
         topic: "Economics",
+        Data: Economics,
       });
     } else if (this.props.history.location.pathname.includes("itf")) {
       this.setState({
         topic: "IT Fundamentals",
+        Data: ITF,
       });
     } else if (this.props.history.location.pathname.includes("networking")) {
       this.setState({
         topic: "Computer Networking",
+        Data: Networking,
       });
     }
   }
+
+  beginQuiz() {
+    this.setState(
+      {
+        startQuiz: true,
+      },
+      () => {
+        console.log(this.state.startQuiz);
+      }
+    );
+  }
+
   render() {
     return (
       <>
         <center>
-          {/* 
-            <h3
-              style={{
-                marginTop: "25px",
-                fontFamily: "Source Sans Pro",
-                fontSize: "1.0rem",
-              }}
-            > 
-              Quiz - {this.state.topic}
-            </h3>
-            */}
           <br />
-          {this.state.quizSetting.length != 0 ? (
+          {this.state.startQuiz == true ? (
             <>
               {this.state.isEnd ? (
                 <>
@@ -95,9 +110,6 @@ export default class Quiz extends App {
               ) : (
                 <>
                   <div className="questionBox">
-                    {/* {PostData.map((postDetail, index) => {
-                return <p>{postDetail.title}</p>;
-              })}  */}
                     <p
                       className="questionTitleInner"
                       id="questionTitle"
@@ -136,18 +148,9 @@ export default class Quiz extends App {
                                 }}
                                 htmlFor={this.answerLetters[index]}
                               >
-                                {/* {this.answerLetters[index]}. */}
                                 <label
                                   className="optionText"
                                   style={{
-                                    /* }
-                                  textDecorationLine:
-                                    this.state.isShowingAnswer &&
-                                    this.answerLetters[index] !==
-                                      this.state.Data[this.state.questionNum]
-                                        .correct
-                                      ? "line-through"
-                                : "none", */
                                     display: "flex",
                                     textDecorationThickness: "1.5px",
                                     fontFamily: "Source Sans Pro",
@@ -197,22 +200,6 @@ export default class Quiz extends App {
                             fontFamily: "Source Sans Pro",
                           }}
                         >
-                          {/* • Difficulty:{" "}
-                        {this.state.Data[this.state.questionNum].difficulty}
-                        <br />• Topics:&nbsp;
-                        {this.state.Data[this.state.questionNum].category.map(
-                          (cat, index) => {
-                            return (
-                              <span
-                                style={{ fontSize: "18px", lineHeight: "2rem" }}
-                              >
-                                {index ? ", " : ""}
-                                {cat}
-                              </span>
-                            );
-                          }
-                        )}
-                        <br />➞ Explanation:{" "} */}
                           {this.state.statusArray[this.state.questionNum] ===
                           "✓" ? (
                             <span
@@ -331,7 +318,14 @@ export default class Quiz extends App {
                   </div>
 
                   <br />
-                  <br />
+
+                  <button
+                    onClick={(e) => this.beginQuiz(e)}
+                    style={{ fontFamily: "Source Sans Pro" }}
+                  >
+                    BEGIN
+                  </button>
+
                   {/*
                     <label
                       style={{
