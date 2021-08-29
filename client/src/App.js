@@ -30,7 +30,8 @@ import {
   useHistory,
 } from "react-router-dom";
 
-const QuizDashboard = React.lazy(() => import("./QuizDashboard"));
+const Logo = React.lazy(() => import("./lazyload/Logo"));
+const QuizImage = React.lazy(() => import("./lazyload/QuizImage"));
 
 class App extends Component {
   constructor() {
@@ -504,9 +505,24 @@ class App extends Component {
               >
                 <br />
                 <div className="aligned">
+                  {/*
+                  <Suspense
+                    fallback={
+                      <div className="lazyloadImgParent">
+                        <div className="lazyloadImg"></div>
+                      </div>
+                    }
+                  >
+                    <Logo />
+                  </Suspense> */}
                   <img src={osc} id="logo"></img>
-
-                  <span style={{ fontSize: "17px", lineHeight: "1.9rem" }}>
+                  <span
+                    className="logoDescription"
+                    style={{
+                      fontSize: "17px",
+                      lineHeight: "1.9rem",
+                    }}
+                  >
                     Open Source Collage is a user-friendly platform designed to
                     help students develop their passion and discover new
                     opportunities through providing a search mechanism for
@@ -1273,10 +1289,74 @@ class App extends Component {
             ) : (
               <>
                 <h3>Quiz - {this.state.topic}</h3>
-                <Suspense fallback={<div>Loading...</div>}>
-                  <QuizDashboard />
-                  <p>Hello</p>
-                </Suspense>
+                <div className="quizSettingDashboard">
+                  <span style={{ fontFamily: "Source Sans Pro" }}>
+                    <div className="aligned">
+                      {subjects.map((sub) => {
+                        return (
+                          <>
+                            <div className="lazyloadImgParent">
+                              <img
+                                src={sub.img}
+                                id="logo"
+                                style={{
+                                  display:
+                                    sub.title == this.state.topic
+                                      ? "inline"
+                                      : "none",
+
+                                  marginTop: "10px",
+                                  marginRight: "48px",
+                                }}
+                              ></img>
+                            </div>
+                          </>
+                        );
+                      })}
+
+                      {subjects.map((sub) => {
+                        return (
+                          <>
+                            <span
+                              className="logoDescription"
+                              style={{
+                                display:
+                                  sub.title == this.state.topic
+                                    ? "inline"
+                                    : "none",
+                                fontFamily: "Source Sans Pro",
+                                textAlign: "left",
+                              }}
+                            >
+                              {sub.description}
+                            </span>
+                          </>
+                        );
+                      })}
+                    </div>
+
+                    <br />
+                    <br />
+                    <label
+                      style={{
+                        display: "flex",
+                        textDecorationThickness: "1.5px",
+                        fontFamily: "Source Sans Pro",
+                      }}
+                    >
+                      <input
+                        style={{
+                          margin: "12px",
+                          flexShrink: "0",
+                        }}
+                        onChange={this.setAnswer.bind(this)}
+                        type="radio"
+                        name="options"
+                      />
+                      Quick Practice - 12 Questions
+                    </label>
+                  </span>
+                </div>
               </>
             )}
           </center>

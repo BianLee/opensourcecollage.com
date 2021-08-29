@@ -108,6 +108,9 @@ hr {
 }
 
 @media only screen and (max-width: 1000px) {
+  .logoDescription {
+    width: 100%;
+  }
   #gapSection {
     display: none;
   }
@@ -191,6 +194,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .logoDescription {
+    width: 100% !important;
+  }
   #gapSection {
     display: inline-block !important;
   }
@@ -377,6 +383,20 @@ img {
   margin-left: auto;
   margin-right: auto;
   */
+}
+
+.lazyloadImgParent {
+  margin: auto;
+}
+
+.lazyloadImg {
+  height: 200px;
+  width: 200px;
+  max-height: 100%;
+  max-width: 100%;
+  margin-right: 36px;
+  border-radius: 17px;
+  background-color: white;
 }
 
 #logo {
@@ -568,10 +588,18 @@ input[type="radio"]:checked:after {
 }
 
 .quizSettingDashboard {
-  width: 72%;
+  width: 80%;
   padding-top: 1rem !important;
   padding: 2rem;
   background-color: transparent !important;
   padding-bottom: 40px !important;
   max-width: 1000px !important;
+}
+
+.logoDescription {
+  width: 80%;
+}
+
+.quizDescription {
+  width: 80%;
 }
