@@ -508,7 +508,7 @@ class App extends Component {
                     of others in all parts of the country. OSC leads an effort
                     on its own to bring useful resources to students through
                     facilitating new connections between students and
-                    organizations. - Bian Lee, Founder
+                    organizations.
                   </span>
                 </div>
 
@@ -923,7 +923,6 @@ class App extends Component {
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
                 <center>
-                  <br />
                   <b>Blog</b> - All things students can relate to!
                 </center>
                 <div className="row" style={{ marginTop: "20px" }}>
@@ -995,13 +994,16 @@ class App extends Component {
                   >
                     <ion-icon name="logo-instagram" id="social"></ion-icon>
                   </a>
-                  <a href="https://facebook.com" target="_blank">
-                    <ion-icon name="logo-facebook" id="social"></ion-icon>
-                  </a>
-                  <a href="https://linkedin.com" target="_blank">
+                  <a
+                    href="https://www.linkedin.com/company/opensourcecollage"
+                    target="_blank"
+                  >
                     <ion-icon name="logo-linkedin" id="social"></ion-icon>
                   </a>
-                  <a href="https://github.com" target="_blank">
+                  <a
+                    href="https://github.com/BianLee/opensourcecollage.com"
+                    target="_blank"
+                  >
                     <ion-icon name="logo-github" id="social"></ion-icon>
                   </a>
                   <a href="https://discord.gg/tKfMtXBsPR" target="_blank">
@@ -1205,9 +1207,8 @@ class App extends Component {
                           >
                             ✕ Incorrect
                           </span>
-                        )}
-                        <br />•{" "}
-                        {this.state.Data[this.state.questionNum].solution}
+                        )}{" "}
+                        • {this.state.Data[this.state.questionNum].solution}
                         <br />
                       </p>
                     </div>
@@ -1243,6 +1244,10 @@ class App extends Component {
                     </span>
                   </>
                 )}
+                <br />
+                <br />
+                <br />
+                <br />
                 <br />
               </>
             )}

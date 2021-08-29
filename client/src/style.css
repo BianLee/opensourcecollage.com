@@ -79,6 +79,17 @@ hr {
   color: white;
 }
 
+#quizInfo {
+  cursor: pointer;
+  position: fixed !important;
+  bottom: 40px !important;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
 #exitButton,
 #nextButton,
 #revealAnswerButton {
@@ -332,7 +343,7 @@ h1 {
   cursor: pointer;
 }
 .featured:hover {
-  border: 2px solid #e3d6c8;
+  border: 2px dotted #e3d6c8;
 }
 
 img {
@@ -480,10 +491,10 @@ img {
   font-family: Source Sans Pro;
   padding: 20px;
   font-size: 17px;
-  border: 1px white solid;
+  border: 2px white solid;
 }
 .oppPost:hover {
-  border: 1px gray solid;
+  border: 2px gray dotted;
 }
 
 .loginBox {
