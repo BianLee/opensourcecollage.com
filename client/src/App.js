@@ -1,5 +1,5 @@
 import { everyLimit } from "async";
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 import subjects from "./data/subjects.json";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
@@ -29,6 +29,8 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+
+const QuizDashboard = React.lazy(() => import("./QuizDashboard"));
 
 class App extends Component {
   constructor() {
@@ -1271,61 +1273,10 @@ class App extends Component {
             ) : (
               <>
                 <h3>Quiz - {this.state.topic}</h3>
-                <div className="quizSettingDashboard">
-                  <span style={{ fontFamily: "Source Sans Pro" }}>
-                    {subjects.map((sub) => {
-                      return (
-                        <>
-                          <div className="aligned">
-                            <img
-                              src={sub.img}
-                              id="logo"
-                              style={{
-                                display:
-                                  sub.title == this.state.topic
-                                    ? "inline"
-                                    : "none",
-                              }}
-                            ></img>
-
-                            <span
-                              style={{
-                                display:
-                                  sub.title == this.state.topic
-                                    ? "inline"
-                                    : "none",
-                                fontFamily: "Source Sans Pro",
-                                textAlign: "left",
-                              }}
-                            >
-                              {sub.description}
-                            </span>
-                          </div>
-                        </>
-                      );
-                    })}
-                    <br />
-                    <br />
-                    <label
-                      style={{
-                        display: "flex",
-                        textDecorationThickness: "1.5px",
-                        fontFamily: "Source Sans Pro",
-                      }}
-                    >
-                      <input
-                        style={{
-                          margin: "12px",
-                          flexShrink: "0",
-                        }}
-                        onChange={this.setAnswer.bind(this)}
-                        type="radio"
-                        name="options"
-                      />
-                      Quick Practice - 12 Questions
-                    </label>
-                  </span>
-                </div>
+                <Suspense fallback={<div>Loading...</div>}>
+                  <QuizDashboard />
+                  <p>Hello</p>
+                </Suspense>
               </>
             )}
           </center>
