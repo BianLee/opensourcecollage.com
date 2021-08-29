@@ -2,28 +2,49 @@
     {
        "id":1,
        "title":"Astronomy",
+       "path": "astronomy", 
        "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.", 
        "img": "images/astronomy.jpg",
        "options": ""
     },
     {
        "id":2,
-       "title":"Biology"
+       "title":"Biology",
+       "path": "biology", 
+       "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
+       "img": "images/biology.jpg",
+       "options": ""
     },
     {
-       "id":3,
-       "title":"Business"
+      "id":3,
+      "title":"Business",
+      "path": "business", 
+      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
+      "img": "images/business.jpg",
+      "options": ""
     },
     {
-       "id":4,
-       "title":"Economics"
+      "id":4,
+      "title":"Economics",
+      "path": "economics", 
+      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
+      "img": "images/economics.png",
+      "options": ""
     },
     {
-       "id":1,
-       "title":"IT Fundamentals"
+      "id":5,
+      "title":"IT Fundamentals",
+      "path": "itf", 
+      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
+      "img": "images/itf.png",
+      "options": ""
     },
     {
-       "id":1,
-       "title":"Computer Networking"
+      "id":6,
+      "title":"Computer Networking",
+      "path": "networking", 
+      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
+      "img": "images/networking.jpg",
+      "options": ""
     }
  ]

@@ -400,6 +400,7 @@ img {
 }
 
 #logo {
+  object-fit: cover;
   height: 200px;
   width: 200px;
   margin-right: 36px;
