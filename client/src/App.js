@@ -1013,6 +1013,7 @@ class App extends Component {
               </p>
             </div>
           </center>
+          ;
         </>
       );
     } else {
@@ -1208,7 +1209,8 @@ class App extends Component {
                             ✕ Incorrect
                           </span>
                         )}{" "}
-                        • {this.state.Data[this.state.questionNum].solution}
+                        <br />•{" "}
+                        {this.state.Data[this.state.questionNum].solution}
                         <br />
                       </p>
                     </div>
@@ -1244,14 +1246,17 @@ class App extends Component {
                     </span>
                   </>
                 )}
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
               </>
             )}
           </center>
+          <div id="gapSection">
+            <p>
+              <br />
+              <br />
+              <br />
+              <br />
+            </p>
+          </div>
         </>
       );
     }

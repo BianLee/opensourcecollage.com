@@ -108,6 +108,9 @@ hr {
 }
 
 @media only screen and (max-width: 1000px) {
+  #gapSection {
+    display: none;
+  }
   #nextButton,
   #revealAnswerButton,
   #exitButton {
@@ -140,6 +143,9 @@ hr {
 }
 
 @media only screen and (max-width: 1800px) {
+  #gapSection {
+    display: none;
+  }
   .dashboard {
     width: 90%;
     max-width: 4000px !important;
@@ -153,6 +159,9 @@ hr {
 }
 
 @media only screen and (max-width: 1400px) {
+  #gapSection {
+    display: none;
+  }
   .aligned {
     display: flex;
     flex-direction: column;
@@ -182,6 +191,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  #gapSection {
+    display: inline-block !important;
+  }
   #exitButton {
     display: none;
   }
@@ -218,6 +230,15 @@ hr {
   .flex-container {
     display: flex;
     flex-direction: column !important;
+  }
+  .questionBox {
+    width: 90% !important;
+  }
+  .questionBoxInner {
+    width: 90% !important;
+  }
+  .instructions {
+    width: 90% !important;
   }
 }
 
@@ -512,4 +533,8 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   grid-gap: 1rem;
+}
+
+#gapSection {
+  display: none;
 }
