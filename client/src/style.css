@@ -635,4 +635,5 @@ input[type="radio"]:checked:after {
 
 #subjectDescription {
   font-family: "Source Sans Pro";
+  display: block;
 }
