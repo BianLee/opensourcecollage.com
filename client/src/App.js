@@ -594,10 +594,7 @@ class App extends Component {
                       id="subjectLogo"
                       style={{ pointerEvents: "none" }}
                     ></img>
-                    <p style={{ fontFamily: "Source Sans Pro" }}>
-                      {sub.subtitle} Browse extracurriculars based on your
-                      interests
-                    </p>
+                    <p id="subjectDescription">{sub.subtitle}</p>
                   </button>
                 );
               })}
