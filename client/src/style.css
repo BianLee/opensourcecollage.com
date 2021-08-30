@@ -27,6 +27,15 @@ h1 {
   max-width: 1500px !important;
 }
 
+.quizdashboard {
+  width: 100%;
+  padding-top: 1rem !important;
+  padding: 2rem;
+  background-color: transparent !important;
+  padding-bottom: 40px !important;
+  max-width: 1500px !important;
+}
+
 .dashboardTopics {
   width: 70%;
   padding-top: 1rem !important;

@@ -573,7 +573,7 @@ class App extends Component {
                 );
               })}
             </div>
-            <div className="dashboard">
+            <div className="quizdashboard">
               <center>
                 <b>Quizzes</b> - Test your knowledge!
               </center>
