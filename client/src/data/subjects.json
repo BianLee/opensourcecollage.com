@@ -1,56 +1,56 @@
 [
-    {
-       "id":1,
-       "title":"Astronomy",
-       "subtitle": "Astronomy", 
-       "path": "astronomy", 
-       "description": " This quiz covers basic concepts in astronomy. While some questions relate to physics, all are conceptual based and they don’t require problem solving skills. It should be used to review understanding of terms, and how well you can recall them. Topics include: Celestial sphere, sky motions, solar & lunar movements, origins of astronomy, notable scientists and figures, periodic motions, electromagnetic spectrum, telescopes, planets in the solar system, composition of the planets, and more. ", 
-       "img": "images/astronomy.jpg",
-       "options": ""
-    },
-    {
-       "id":2,
-       "title":"Biology",
-       "subtitle": "Biology", 
-       "path": "biology", 
-       "description": "This quiz covers basic concepts in biology. It includes comprehensive topics taught in introductory biology classes, with most questions being concept based. It should be used to review understanding of terms, and important biological processes. Topics include: Basic chemistry, properties of water, energy and matter, domains of life, cells, membranes, enzymes, photosynthesis, cellular respiration, mitosis, meiosis, Mendelian / Non-Mendelian genetics, ecology, and more.",
-       "img": "images/biology.jpg",
-       "options": ""
-    },
-    {
-      "id":3,
-      "title":"Business",
-      "subtitle": "Business", 
-      "path": "business", 
-      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
-      "img": "images/business.jpg",
-      "options": ""
-    },
-    {
-      "id":4,
-      "title":"Economics",
-      "subtitle": "Economics", 
-      "path": "economics", 
-      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
-      "img": "images/economics.png",
-      "options": ""
-    },
-    {
-      "id":5,
-      "title":"IT Fundamentals",
-      "subtitle": "ITF+", 
-      "path": "itf", 
-      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
-      "img": "images/itf.png",
-      "options": ""
-    },
-    {
-      "id":6,
-      "title":"Computer Networking",
-      "subtitle": "Networking", 
-      "path": "networking", 
-      "description": " In early historic times, astronomy only consisted of the observation and predictions of the motions of objects visible to the naked eye. In some locations, early cultures assembled massive artifacts that possibly had some astronomical purpose. In addition to their ceremonial uses, these observatories could be employed to determine the seasons, an important factor in knowing when to plant crops and in understanding the length of the year.",
-      "img": "images/networking.jpg",
-      "options": ""
-    }
- ]
+  {
+    "id": 1,
+    "title": "Astronomy",
+    "subtitle": "Astronomy",
+    "path": "astronomy",
+    "description": " This quiz covers basic concepts in astronomy. While some questions relate to physics, all are conceptual based and they don’t require problem solving skills. It should be used to review understanding of terms, and how well you can recall them. Topics include: Celestial sphere, sky motions, solar & lunar movements, origins of astronomy, notable scientists and figures, periodic motions, electromagnetic spectrum, telescopes, planets in the solar system, composition of the planets, and more. ",
+    "img": "images/astronomy.jpg",
+    "options": ""
+  },
+  {
+    "id": 2,
+    "title": "Biology",
+    "subtitle": "Biology",
+    "path": "biology",
+    "description": "This quiz covers basic concepts in biology. It includes comprehensive topics taught in introductory biology classes, with most questions being concept based. It should be used to review understanding of terms, and important biological processes. Topics include: Basic chemistry, properties of water, energy and matter, domains of life, cells, membranes, enzymes, photosynthesis, cellular respiration, mitosis, meiosis, Mendelian / Non-Mendelian genetics, ecology, and more.",
+    "img": "images/biology.jpg",
+    "options": ""
+  },
+  {
+    "id": 3,
+    "title": "Business",
+    "subtitle": "Business",
+    "path": "business",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "img": "images/business.jpg",
+    "options": ""
+  },
+  {
+    "id": 4,
+    "title": "Economics",
+    "subtitle": "Economics",
+    "path": "economics",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "img": "images/economics.png",
+    "options": ""
+  },
+  {
+    "id": 5,
+    "title": "IT Fundamentals",
+    "subtitle": "ITF+",
+    "path": "itf",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "img": "images/itf.png",
+    "options": ""
+  },
+  {
+    "id": 6,
+    "title": "Computer Networking",
+    "subtitle": "Networking",
+    "path": "networking",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "img": "images/networking.jpg",
+    "options": ""
+  }
+]
