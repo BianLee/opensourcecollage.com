@@ -502,7 +502,7 @@ class App extends Component {
             <div className="dashboard">
               {" "}
               <br />
-              <h1>Open Source Collage</h1>
+              <h1>Open Source Collages</h1>
               <button className="mobileLoginButton" onClick={this.handleLogin}>
                 Login
               </button>
