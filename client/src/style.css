@@ -198,6 +198,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .quizButton {
+    width: 140px !important;
+  }
   .subjectButton {
     width: 100%;
   }
@@ -623,9 +626,10 @@ input[type="radio"]:checked:after {
 
   background-color: white;
   cursor: pointer;
-  position: relative;
+
   -webkit-appearance: none;
   overflow: visible;
+  margin-bottom: 20px;
   border-radius: 17px;
 }
 .quizButton:active {
