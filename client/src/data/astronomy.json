@@ -1,1 +1,170 @@
-[{"correct":"b","solution":"Kepler\u2019s First Law of Planetary Motion explains that planets move around the Sun in elliptical orbits. The second law states that a planet moves in its ellipse so that the line between the planet and the Sun placed at a focus sweeps out equal areas over equal time. The third law explains how the time it takes for a planet to revolve around the Sun increases with the radius of its orbit. Fourth law does not exist.","id":1,"title":"According to Kepler's __________ Law of Planetary Motion, the planet Mars takes longer to complete one revolution around the Sun when compared to the Earth.","choices":["Second","Third","First","Fourth"],"Timestamp":"2021-08-09 12:45:21"},{"correct":"c","solution":"Nicolaus Copernicus (1473\u20131543) was a mathematician and astronomer who proposed that the sun was stationary in the center of the universe and the earth revolved around it. Kepler (not Copernicus) was the one who proposed the idea that the planets orbit the Sun in elliptical path, formulating three laws of planetary motion. Newton is credited for his theory of gravity, and Galilei was the first person to use telescope to view the nighttime sky. ","id":2,"title":"What was one of the contributions to astronomy made by Nicolaus Copernicus?","choices":["He discovered that the planets orbit the Sun in elliptical orbits.","He created a theory of gravity to explain orbital motion in detail.","He theorized that the Sun is the center of the universe.","He was the first person to use a telescope."],"Timestamp":"2021-08-09 12:45:55"},{"correct":"d","solution":"Tycho Brahe was a Danish astronomer who is best known for making the most accurate celestial observations of his time without the aid of a telescope. Johannes Kepler was a German astronomer, mathematician and an assistant of Brahe, who discovered three major laws of planetary motion. The second law (of Kepler's three laws of planetary motion) states that a planet moves in its ellipse so that the line between the planet and the Sun placed at a focus sweeps out equal areas over equal time.","id":3,"title":"__________ used the extensive records of planetary positions, as measured by __________, to discover that the orbit of the planets is __________ in shape.","choices":["Isaac Newton, Galileo Galilei, circular","Albert Einstein, Isaac Newton, parabolic","Aristotle, Plato, hyperbolic","Johannes Kepler, Tycho Brahe, elliptical"],"Timestamp":"2021-08-09 12:46:26"},{"correct":"c","solution":"Isaac Newton was an English physicist and mathematician, known for having formulated the theory of gravity, as well as inventing calculus. Galilei discovered that Jupiter had four moons in 1610 and that the planets orbit the Sun in elliptical orbits, while Copernicus theorized the helicentric model.","id":4,"title":"What was one of the contributions to astronomy made by Isaac Newton?","choices":["He discovered that Jupiter has several moons.","He theorized that the Sun is at the center of the universe.","He created a theory of gravity to explain orbital motion in detail.","He was the first person to use a telescope."],"Timestamp":"2021-08-09 12:47:00"},{"correct":"a","solution":"According to Newton's law of gravitation, any two bodies attrac each other with the force of gravity. The force between the masses is calculated by product of gravitational constant, mass 1, mass 2, divided by the distance squared (distance between the centers of the two masses).","id":5,"title":"Which object exerts the stronger gravitational force onto the other, the Milky Way galaxy or the Andromeda galaxy? Why?","choices":["Both galaxies exert equal gravitational forces onto each other.","The Andromeda galaxy due to it being more massive than the Milky Way galaxy.","The Milky Way galaxy due to it being larger in size than the Andromeda galaxy.","The Andromeda galaxy due to its shape being perfectly circular, while the Milky Way galaxy is more elliptical in shape."],"Timestamp":"2021-08-09 12:49:27"},{"correct":"d","solution":"Neptune is located the furthest from Sun in our solar system, which means that its orbital period is the longest, as explained by Kepler's third law of planetary motion (the time it takes for a planet to revolve around the Sun increases with the radius of its orbit)","id":6,"title":"Which planet has the longest orbital period in our solar system?","choices":["Saturn","Earth","Mercury","Neptune"],"Timestamp":"2021-08-09 12:50:09"},{"correct":"d","solution":"Mass is the amount of matter the object contains measured in kilograms, and since this is always constant, mass of an object will stay constant regardless of how the object is being impacted by different forces of gravity. Weight, on the other hand, force due to gravity, meaning its value will change when force of gravity changes. Object on moon will have same mass as on Earth, yet different weight. ","id":7,"title":"What is the difference between the variables of \"mass\" and \"weight\"?","choices":["Weight and mass both describe the force associated with gravity","Weight is the acceleration due to gravity, while mass is the amount of space an object takes-up","Weight is the amount of space an object takes-up, while mass is a force associated with gravity that acts on an object","Weight is the force due to gravity, while mass is the amount of inertia that an object has"],"Timestamp":"2021-08-26 21:48:55"},{"correct":"a","solution":"Newton's first law states that if a body is at rest or moving at a constant speed in a straight line, it will remain at rest or keep moving in a straight line at constant speed unless it is acted upon by a force.","id":8,"title":"You throw a football to your friend who is able to catch it. Which of the following laws best relates to this situation? ","choices":["Newton's First Law","Newton's Second Law","Newton's Third Law"],"Timestamp":"2021-08-26 21:51:25"},{"correct":"a","solution":"The force of gravity between the masses is calculated by product of gravitational constant, mass 1, mass 2, divided by the distance squared (distance between the centers of the two masses). This means that the force is inversely proportional to the distance; as the distance increases, the force decreases (and vice versa). The person at the sea-level is closer to the center of the Earth and therefore the distance is shorter. This means that stronger force of gravity acts on that person. ","id":9,"title":"Two people are lying on the ground, but at different altitudes. One is at the top of a high mountain while the other is at sea-level. How do the forces of gravity acting on each person compare? ","choices":["The force of gravity acting on the person at sea-level is stronger than the force of gravity acting on the person on the high mountain","The force of gravity acting on the person at sea-level is weaker than the force of gravity acting on the person on the high mountain","The force of gravity acting on each sister is identical, regardless of their locations","It is not possible to find the relationship between the two forces of gravity with the provided information."],"Timestamp":"2021-08-26 22:00:31"},{"correct":"a","solution":"Eratosthenes is known for having made accurate measurement for the size of the Earth. He also invented a system of longitude and latitude, map of the world, as well as system for finding prime numbers.","id":10,"title":"Which of the following Greek philosophers made contributions to astronomy that are still considered accurate in the modern-day?","choices":["Eratosthenes","Aristarchus","Copernicus","Aristotle"],"Timestamp":"2021-08-26 22:03:20"},{"correct":"b","solution":"Celestial equator is a great circle of the imaginary celestial sphere on the same plane as the equator of Earth, dividing it into northern and southern hemispheres. True horizon refers to the line at which the earth's surface and the sky appear to meet. Prime meridian, which is a line of longitude, is at 0° and goes through Greenwich, UK. Ecliptic. Finally, ecliptic refers to a great circle on the celestial sphere representing the sun's apparent path. ","id":11,"title":"What divides the celestial sphere into northern and southern hemispheres? ","choices":["True horizon","Celestial equator","Prime meridian","Ecliptic"],"Timestamp":"2021-08-26 22:08:39"},{"correct":"b","solution":"Nadir is the point on the celestial sphere directly below an observer, while zenith is directly above an observer. Ecliptic refers to a great circle on the celestial sphere representing the sun's apparent path. True horizon refers to a great circle of the celestial sphere, the plane of which passes through the center of the earth and is parallel to that of the apparent horizon of a place.","id":12,"title":"To a person standing at the Earth's north pole, the south celestial pole is located ","choices":["along their true horizon at all times","at their nadir at all times","along the ecliptic at all times","at their zenith at all times"],"Timestamp":"2021-08-26 22:11:41"},{"correct":"c","solution":"Ptolemy recognized that Aristotle's celestial model gave incorrect results, and proposed Mars retrograde motion (Ptolemy's model of epicycles). While it corrected some of Aristotle's model, it was still wrong.","id":13,"title":"Epicycles were added into Aristotle's model of the universe in order to account for the __________ motion of the planets.","choices":["tangential","prograde","retrograde","precessional"],"Timestamp":"2021-08-26 22:14:26"}]
+[
+    {
+       "correct":"b",
+       "solution":"Kepler\u2019s First Law of Planetary Motion explains that planets move around the Sun in elliptical orbits. The second law states that a planet moves in its ellipse so that the line between the planet and the Sun placed at a focus sweeps out equal areas over equal time. The third law explains how the time it takes for a planet to revolve around the Sun increases with the radius of its orbit. Fourth law does not exist.",
+       "id":1,
+       "title":"According to Kepler's __________ Law of Planetary Motion, the planet Mars takes longer to complete one revolution around the Sun when compared to the Earth.",
+       "choices":[
+          "Second",
+          "Third",
+          "First",
+          "Fourth"
+       ],
+       "Timestamp":"2021-08-09 12:45:21"
+    },
+    {
+       "correct":"c",
+       "solution":"Nicolaus Copernicus (1473\u20131543) was a mathematician and astronomer who proposed that the sun was stationary in the center of the universe and the earth revolved around it. Kepler (not Copernicus) was the one who proposed the idea that the planets orbit the Sun in elliptical path, formulating three laws of planetary motion. Newton is credited for his theory of gravity, and Galilei was the first person to use telescope to view the nighttime sky. ",
+       "id":2,
+       "title":"What was one of the contributions to astronomy made by Nicolaus Copernicus?",
+       "choices":[
+          "He discovered that the planets orbit the Sun in elliptical orbits.",
+          "He created a theory of gravity to explain orbital motion in detail.",
+          "He theorized that the Sun is the center of the universe.",
+          "He was the first person to use a telescope."
+       ],
+       "Timestamp":"2021-08-09 12:45:55"
+    },
+    {
+       "correct":"d",
+       "solution":"Tycho Brahe was a Danish astronomer who is best known for making the most accurate celestial observations of his time without the aid of a telescope. Johannes Kepler was a German astronomer, mathematician and an assistant of Brahe, who discovered three major laws of planetary motion. The second law (of Kepler's three laws of planetary motion) states that a planet moves in its ellipse so that the line between the planet and the Sun placed at a focus sweeps out equal areas over equal time.",
+       "id":3,
+       "title":"__________ used the extensive records of planetary positions, as measured by __________, to discover that the orbit of the planets is __________ in shape.",
+       "choices":[
+          "Isaac Newton, Galileo Galilei, circular",
+          "Albert Einstein, Isaac Newton, parabolic",
+          "Aristotle, Plato, hyperbolic",
+          "Johannes Kepler, Tycho Brahe, elliptical"
+       ],
+       "Timestamp":"2021-08-09 12:46:26"
+    },
+    {
+       "correct":"c",
+       "solution":"Isaac Newton was an English physicist and mathematician, known for having formulated the theory of gravity, as well as inventing calculus. Galilei discovered that Jupiter had four moons in 1610 and that the planets orbit the Sun in elliptical orbits, while Copernicus theorized the helicentric model.",
+       "id":4,
+       "title":"What was one of the contributions to astronomy made by Isaac Newton?",
+       "choices":[
+          "He discovered that Jupiter has several moons.",
+          "He theorized that the Sun is at the center of the universe.",
+          "He created a theory of gravity to explain orbital motion in detail.",
+          "He was the first person to use a telescope."
+       ],
+       "Timestamp":"2021-08-09 12:47:00"
+    },
+    {
+       "correct":"a",
+       "solution":"According to Newton's law of gravitation, any two bodies attrac each other with the force of gravity. The force between the masses is calculated by product of gravitational constant, mass 1, mass 2, divided by the distance squared (distance between the centers of the two masses).",
+       "id":5,
+       "title":"Which object exerts the stronger gravitational force onto the other, the Milky Way galaxy or the Andromeda galaxy? Why?",
+       "choices":[
+          "Both galaxies exert equal gravitational forces onto each other.",
+          "The Andromeda galaxy due to it being more massive than the Milky Way galaxy.",
+          "The Milky Way galaxy due to it being larger in size than the Andromeda galaxy.",
+          "The Andromeda galaxy due to its shape being perfectly circular, while the Milky Way galaxy is more elliptical in shape."
+       ],
+       "Timestamp":"2021-08-09 12:49:27"
+    },
+    {
+       "correct":"d",
+       "solution":"Neptune is located the furthest from Sun in our solar system, which means that its orbital period is the longest, as explained by Kepler's third law of planetary motion (the time it takes for a planet to revolve around the Sun increases with the radius of its orbit)",
+       "id":6,
+       "title":"Which planet has the longest orbital period in our solar system?",
+       "choices":[
+          "Saturn",
+          "Earth",
+          "Mercury",
+          "Neptune"
+       ],
+       "Timestamp":"2021-08-09 12:50:09"
+    },
+    {
+       "correct":"d",
+       "solution":"Mass is the amount of matter the object contains measured in kilograms, and since this is always constant, mass of an object will stay constant regardless of how the object is being impacted by different forces of gravity. Weight, on the other hand, force due to gravity, meaning its value will change when force of gravity changes. Object on moon will have same mass as on Earth, yet different weight. ",
+       "id":7,
+       "title":"What is the difference between the variables of \"mass\" and \"weight\"?",
+       "choices":[
+          "Weight and mass both describe the force associated with gravity",
+          "Weight is the acceleration due to gravity, while mass is the amount of space an object takes-up",
+          "Weight is the amount of space an object takes-up, while mass is a force associated with gravity that acts on an object",
+          "Weight is the force due to gravity, while mass is the amount of inertia that an object has"
+       ],
+       "Timestamp":"2021-08-26 21:48:55"
+    },
+    {
+       "correct":"a",
+       "solution":"Newton's first law states that if a body is at rest or moving at a constant speed in a straight line, it will remain at rest or keep moving in a straight line at constant speed unless it is acted upon by a force.",
+       "id":8,
+       "title":"You throw a football to your friend who is able to catch it. Which of the following laws best relates to this situation? ",
+       "choices":[
+          "Newton's First Law",
+          "Newton's Second Law",
+          "Newton's Third Law"
+       ],
+       "Timestamp":"2021-08-26 21:51:25"
+    },
+    {
+       "correct":"a",
+       "solution":"The force of gravity between the masses is calculated by product of gravitational constant, mass 1, mass 2, divided by the distance squared (distance between the centers of the two masses). This means that the force is inversely proportional to the distance; as the distance increases, the force decreases (and vice versa). The person at the sea-level is closer to the center of the Earth and therefore the distance is shorter. This means that stronger force of gravity acts on that person. ",
+       "id":9,
+       "title":"Two people are lying on the ground, but at different altitudes. One is at the top of a high mountain while the other is at sea-level. How do the forces of gravity acting on each person compare? ",
+       "choices":[
+          "The force of gravity acting on the person at sea-level is stronger than the force of gravity acting on the person on the high mountain",
+          "The force of gravity acting on the person at sea-level is weaker than the force of gravity acting on the person on the high mountain",
+          "The force of gravity acting on each sister is identical, regardless of their locations",
+          "It is not possible to find the relationship between the two forces of gravity with the provided information."
+       ],
+       "Timestamp":"2021-08-26 22:00:31"
+    },
+    {
+       "correct":"a",
+       "solution":"Eratosthenes is known for having made accurate measurement for the size of the Earth. He also invented a system of longitude and latitude, map of the world, as well as system for finding prime numbers.",
+       "id":10,
+       "title":"Which of the following Greek philosophers made contributions to astronomy that are still considered accurate in the modern-day?",
+       "choices":[
+          "Eratosthenes",
+          "Aristarchus",
+          "Copernicus",
+          "Aristotle"
+       ],
+       "Timestamp":"2021-08-26 22:03:20"
+    },
+    {
+       "correct":"b",
+       "solution":"Celestial equator is a great circle of the imaginary celestial sphere on the same plane as the equator of Earth, dividing it into northern and southern hemispheres. True horizon refers to the line at which the earth's surface and the sky appear to meet. Prime meridian, which is a line of longitude, is at 0° and goes through Greenwich, UK. Ecliptic. Finally, ecliptic refers to a great circle on the celestial sphere representing the sun's apparent path. ",
+       "id":11,
+       "title":"What divides the celestial sphere into northern and southern hemispheres? ",
+       "choices":[
+          "True horizon",
+          "Celestial equator",
+          "Prime meridian",
+          "Ecliptic"
+       ],
+       "Timestamp":"2021-08-26 22:08:39"
+    },
+    {
+       "correct":"b",
+       "solution":"Nadir is the point on the celestial sphere directly below an observer, while zenith is directly above an observer. Ecliptic refers to a great circle on the celestial sphere representing the sun's apparent path. True horizon refers to a great circle of the celestial sphere, the plane of which passes through the center of the earth and is parallel to that of the apparent horizon of a place.",
+       "id":12,
+       "title":"To a person standing at the Earth's north pole, the south celestial pole is located ",
+       "choices":[
+          "along their true horizon at all times",
+          "at their nadir at all times",
+          "along the ecliptic at all times",
+          "at their zenith at all times"
+       ],
+       "Timestamp":"2021-08-26 22:11:41"
+    },
+    {
+       "correct":"c",
+       "solution":"Ptolemy recognized that Aristotle's celestial model gave incorrect results, and proposed Mars retrograde motion (Ptolemy's model of epicycles). While it corrected some of Aristotle's model, it was still wrong.",
+       "id":13,
+       "title":"Epicycles were added into Aristotle's model of the universe in order to account for the __________ motion of the planets.",
+       "choices":[
+          "tangential",
+          "prograde",
+          "retrograde",
+          "precessional"
+       ],
+       "Timestamp":"2021-08-26 22:14:26"
+    }
+ ]

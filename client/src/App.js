@@ -582,11 +582,27 @@ class App extends Component {
                 return (
                   <button
                     value={sub.path}
-                    className="subjectButton"
+                    className="quizButton"
                     id={lowerCase(sub.title) + "Button"}
                     onClick={this.chooseTopic.bind(this)}
+                    style={{
+                      fontFamiy: "Source Sans Pro",
+                    }}
                   >
-                    {sub.title}
+                    <img
+                      src={sub.img}
+                      id="subjectLogo"
+                      style={{ pointerEvents: "none" }}
+                    ></img>
+                    <span
+                      id="subjectDescription"
+                      style={{
+                        fontFamiy: "Source Sans Pro",
+                        pointerEvents: "none",
+                      }}
+                    >
+                      {sub.subtitle}
+                    </span>
                   </button>
                 );
               })}

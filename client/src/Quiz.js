@@ -62,6 +62,11 @@ export default class Quiz extends App {
     );
   }
 
+  goHome(e) {
+    console.log("hello");
+    this.props.history.push("/");
+  }
+
   render() {
     return (
       <>
@@ -173,7 +178,7 @@ export default class Quiz extends App {
                                         this.answerLetters[index]
                                     }
                                   />
-                                  {option}
+                                  {this.answerLetters[index]}. {option}
                                 </label>
                               </div>
                             </label>
@@ -320,12 +325,17 @@ export default class Quiz extends App {
                   <br />
 
                   <button
-                    onClick={(e) => this.beginQuiz(e)}
-                    style={{ fontFamily: "Source Sans Pro" }}
+                    onClick={(e) => this.goHome(e)}
+                    className="subjectButton"
                   >
-                    BEGIN
+                    ← Back
                   </button>
-
+                  <button
+                    onClick={(e) => this.beginQuiz(e)}
+                    className="subjectButton"
+                  >
+                    Start Quiz
+                  </button>
                   {/*
                     <label
                       style={{

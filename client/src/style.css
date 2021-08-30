@@ -191,6 +191,10 @@ hr {
   .asdf {
     margin-top: -20px;
   }
+  .quizButton {
+    margin-left: 10px;
+    margin-right: 10px !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -406,6 +410,12 @@ img {
   margin-right: 36px;
   border-radius: 17px;
 }
+#subjectLogo {
+  height: 140px;
+  width: 140px;
+  margin-right: 30px;
+  border-radius: 17px;
+}
 
 .aligned {
   display: flex;
@@ -603,4 +613,23 @@ input[type="radio"]:checked:after {
 
 .quizDescription {
   width: 80%;
+}
+.quizButton {
+  border: 2px solid white;
+  width: 140px;
+  height: 140px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px !important;
+  margin-bottom: 50px !important;
+  border-radius: 17px;
+}
+.quizButton:hover {
+  border: 2px dotted #e3d6c8;
+}
+
+#subjectDescription {
+  font-family: "Source Sans Pro";
 }
