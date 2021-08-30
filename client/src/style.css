@@ -208,11 +208,11 @@ hr {
 
 @media only screen and (max-width: 600px) {
   .quizButton {
-    width: 160px !important;
+    width: 175px !important;
     height: auto !important;
   }
   .quizButton:active {
-    width: 160px !important;
+    width: 175px !important;
     height: auto !important;
     background-color: none;
     color: black;
