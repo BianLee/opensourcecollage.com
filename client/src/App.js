@@ -971,73 +971,53 @@ class App extends Component {
             <div className="dashboard" style={{ marginTop: -10 }}>
               <p
                 className="questionTitleInner"
-                id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
                 <center>
                   <b>Blog</b> - All things students can relate to!
                 </center>
-                <div className="row" style={{ marginTop: "20px" }}>
-                  <div className="column">
-                    {leftBlog.map((entry) => {
-                      return (
-                        <>
+
+                {leftBlog.map((entry) => {
+                  return (
+                    <>
+                      <p
+                        className="questionTitleInner"
+                        style={{ fontSize: "18px", lineHeight: "2rem" }}
+                        id={entry.id}
+                      >
+                        <button
+                          key={entry.id}
+                          id={entry.id}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            marginTop: "30px",
+                          }}
+                          className="subjectButton"
+                          onClick={this.handleClick}
+                        >
                           <div
-                            key={entry.id}
-                            id={entry.id}
-                            className="blogText"
                             style={{
+                              pointerEvents: "none",
                               fontFamily: "Source Sans Pro",
-                              marginTop: "12px",
                             }}
-                            onClick={this.handleClick}
                           >
-                            <div
-                              style={{
-                                fontFamily: "Source Sans Pro",
-                              }}
-                            >
-                              • {entry.title}
-                            </div>
+                            {entry.title}
                           </div>
-                        </>
-                      );
-                    })}
-                  </div>
-                  <div className="column asdf">
-                    {rightBlog.map((entry) => {
-                      return (
-                        <>
-                          <div
-                            key={entry.id}
-                            id={entry.id}
-                            className="blogText"
-                            style={{
-                              fontFamily: "Source Sans Pro",
-                              marginTop: "12px",
-                            }}
-                            onClick={this.handleClick}
-                          >
-                            <div style={{ fontFamily: "Source Sans Pro" }}>
-                              • {entry.title}
-                            </div>
-                          </div>
-                        </>
-                      );
-                    })}
-                  </div>
-                </div>
+                        </button>
+                      </p>
+                    </>
+                  );
+                })}
               </p>
             </div>
 
             <div className="dashboard">
-              <hr></hr>
-
               <p
                 className="questionTitleInner"
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
+                {" "}
                 <br />
                 <center>
                   <a

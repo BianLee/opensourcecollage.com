@@ -198,6 +198,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .subjectButton {
+    width: 100%;
+  }
   .logoDescription {
     width: 100% !important;
   }
