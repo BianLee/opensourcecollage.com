@@ -594,7 +594,7 @@ class App extends Component {
                       id="subjectLogo"
                       style={{ pointerEvents: "none" }}
                     ></img>
-                    <span
+                    <p
                       id="subjectDescription"
                       style={{
                         fontFamiy: "Source Sans Pro",
@@ -602,7 +602,7 @@ class App extends Component {
                       }}
                     >
                       {sub.subtitle}
-                    </span>
+                    </p>
                   </button>
                 );
               })}
