@@ -8,8 +8,7 @@ import Economics from "./data/economics.json";
 import Business from "./data/business.json";
 import Networking from "./data/networking.json";
 import osc from "./images/osc.png";
-import leftBlog from "./data/leftBlog.json";
-import rightBlog from "./data/rightBlog.json";
+import blog from "./data/blog.json";
 import category from "./data/category.json";
 import organizations from "./data/organizations.json";
 import LifeSciences from "./notes/LifeSciences.pdf";
@@ -962,21 +961,18 @@ class App extends Component {
                 </>
               </p>
             </div>
-            <div className="dashboard" style={{ marginTop: -10 }}>
-              <p
-                className="questionTitleInner"
-                style={{ fontSize: "18px", lineHeight: "2rem" }}
-              >
+            <div className="dashboardBlog" style={{ marginTop: -10 }}>
+              <p style={{ fontSize: "18px" }}>
                 <center>
                   <b>Blog</b> - All things students can relate to!
                 </center>
-
-                {leftBlog.map((entry) => {
+                <br />
+                {blog.map((entry) => {
                   return (
                     <>
-                      <p
+                      <span
                         className="questionTitleInner"
-                        style={{ fontSize: "18px", lineHeight: "2rem" }}
+                        style={{ fontSize: "18px" }}
                         id={entry.id}
                       >
                         <button
@@ -984,28 +980,34 @@ class App extends Component {
                           id={entry.id}
                           style={{
                             fontFamily: "Source Sans Pro",
-                            marginTop: "30px",
+                            display: "inline-block",
+                            float: "left",
                           }}
                           className="subjectButton"
                           onClick={this.handleClick}
                         >
-                          <div
+                          <span
+                            id="blogFont"
                             style={{
                               pointerEvents: "none",
                               fontFamily: "Source Sans Pro",
+                              display: "inline-block",
                             }}
                           >
                             {entry.title}
-                          </div>
+                          </span>
                         </button>
-                      </p>
+                      </span>
                     </>
                   );
                 })}
               </p>
             </div>
 
+            {/* id="socialSection" */}
             <div className="dashboard">
+              <br /> <br />
+              <br />
               <p
                 className="questionTitleInner"
                 id="questionTitle"
@@ -1039,7 +1041,6 @@ class App extends Component {
               </p>
             </div>
           </center>
-          ;
         </>
       );
     } else {
