@@ -24,6 +24,7 @@ export default class Blog extends React.Component {
     this.state = {
       terms: "",
       page: "undefined",
+      title: "",
     };
     this.goHome = this.goHome.bind(this);
   }
@@ -44,6 +45,13 @@ export default class Blog extends React.Component {
           this.setState({ terms: text, page: int });
         });
     }
+    blog.map((b) => {
+      if (b.id == int) {
+        this.setState({
+          title: b.title,
+        });
+      }
+    });
   }
 
   goHome(e) {
@@ -56,9 +64,8 @@ export default class Blog extends React.Component {
     const disqusConfig = {
       url: "https://opensourcecollage.com",
       identifier: JSON.stringify(window.location.href).slice(-2, -1),
-      title: "Title of Your Article",
+      title: this.state.title,
     };
-
     return (
       <>
         {this.state.page === "undefined" ? (
