@@ -986,16 +986,7 @@ class App extends Component {
                           className="subjectButton"
                           onClick={this.handleClick}
                         >
-                          <span
-                            id="blogFont"
-                            style={{
-                              pointerEvents: "none",
-                              fontFamily: "Source Sans Pro",
-                              display: "inline-block",
-                            }}
-                          >
-                            {entry.title}
-                          </span>
+                          {entry.title}
                         </button>
                       </span>
                     </>

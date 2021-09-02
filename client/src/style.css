@@ -146,10 +146,6 @@ hr {
     width: 100%;
     max-width: 2000px !important;
   }
-  .dashboardBlog {
-    width: 100%;
-    max-width: 2000px !important;
-  }
   .questionBox {
     width: 100%;
   }
@@ -162,10 +158,6 @@ hr {
 }
 
 @media only screen and (max-width: 1800px) {
-  .dashboardBlog {
-    width: 100% !important;
-    padding: none;
-  }
   #socialSection {
     margin-top: 60px !important;
   }
@@ -174,10 +166,6 @@ hr {
   }
   .dashboard {
     width: 90%;
-    max-width: 4000px !important;
-  }
-  .dashboardBlog {
-    width: 100%;
     max-width: 4000px !important;
   }
   .questionBox {
@@ -189,9 +177,6 @@ hr {
 }
 
 @media only screen and (max-width: 1400px) {
-  .dashboardBlog {
-    width: 80% !important;
-  }
   #gapSection {
     display: none;
   }
@@ -690,7 +675,7 @@ input[type="radio"]:checked:after {
 }
 
 .dashboardBlog {
-  width: 80%;
+  width: 70%;
   padding-top: 1rem !important;
   padding: 2rem;
   background-color: transparent !important;
