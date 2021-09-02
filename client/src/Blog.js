@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import blog from "./data/blog.json";
 import Markdown from "markdown-to-jsx";
 import rehypeRaw from "rehype-raw";
+import Disqus from "disqus-react";
 import { thistle } from "color-name";
 import {
   BrowserRouter as Router,
@@ -40,7 +41,6 @@ export default class Blog extends React.Component {
       fetch(pageToRender)
         .then((response) => response.text())
         .then((text) => {
-          console.log(text);
           this.setState({ terms: text, page: int });
         });
     }
@@ -52,6 +52,13 @@ export default class Blog extends React.Component {
   }
 
   render() {
+    const disqusShortname = "https-opensourcecollage-com";
+    const disqusConfig = {
+      url: "https://opensourcecollage.com",
+      identifier: JSON.stringify(window.location.href).slice(-2, -1),
+      title: "Title of Your Article",
+    };
+
     return (
       <>
         {this.state.page === "undefined" ? (
@@ -99,7 +106,14 @@ export default class Blog extends React.Component {
                   className={style.reactMarkDown}
                   children={this.state.terms}
                 ></ReactMarkdown>
+
                 <br />
+                <br />
+                <Disqus.DiscussionEmbed
+                  shortname={disqusShortname}
+                  config={disqusConfig}
+                  style={{ width: "90%" }}
+                />
               </div>
             </center>
           </>
