@@ -30,6 +30,7 @@ export default class Blog extends React.Component {
   }
 
   componentWillMount() {
+    console.log(window.location.href);
     var int = JSON.stringify(window.location.href).slice(-2, -1);
     console.log(int);
     var pageToRender;
@@ -62,7 +63,7 @@ export default class Blog extends React.Component {
   render() {
     const disqusShortname = "open-source-collage";
     const disqusConfig = {
-      url: "https://opensourcecollage.com",
+      url: window.location.href,
       identifier: this.state.title,
       title: this.state.title,
     };
