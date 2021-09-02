@@ -63,7 +63,7 @@ export default class Blog extends React.Component {
     const disqusShortname = "open-source-collage";
     const disqusConfig = {
       url: "https://opensourcecollage.com",
-      identifier: JSON.stringify(window.location.href).slice(-2, -1),
+      identifier: this.state.title,
       title: this.state.title,
     };
     return (
