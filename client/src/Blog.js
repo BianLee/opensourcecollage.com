@@ -3,6 +3,7 @@ import "./style.css";
 import style from "./markdown-styles.module.css";
 import blog1 from "./blog/1.md";
 import blog2 from "./blog/2.md";
+import blog3 from "./blog/3.md";
 import blogundefined from "./blog/undefined.md";
 import ReactMarkdown from "react-markdown";
 import blog from "./data/blog.json";
@@ -17,6 +18,7 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import { bind } from "jest-each";
 
 export default class Blog extends React.Component {
   constructor(props) {
@@ -25,6 +27,7 @@ export default class Blog extends React.Component {
       terms: "",
       page: "undefined",
       title: "",
+      id: 0,
     };
     this.goHome = this.goHome.bind(this);
   }
@@ -34,7 +37,7 @@ export default class Blog extends React.Component {
     var int = JSON.stringify(window.location.href).slice(-2, -1);
     console.log(int);
     var pageToRender;
-    const pages = [blog1, blog2];
+    const pages = [blog1, blog2, blog3];
     pageToRender = pages[int - 1];
     console.log(pageToRender);
     if (pageToRender == undefined) {
@@ -50,6 +53,7 @@ export default class Blog extends React.Component {
       if (b.id == int) {
         this.setState({
           title: b.title,
+          id: b.id,
         });
       }
     });
@@ -63,7 +67,7 @@ export default class Blog extends React.Component {
   render() {
     const disqusShortname = "open-source-collage";
     const disqusConfig = {
-      url: window.location.href,
+      url: "https://opensourcecollage.com/blog/" + this.state.id,
       identifier: this.state.title,
       title: this.state.title,
     };
