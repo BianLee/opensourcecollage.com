@@ -31,3 +31,19 @@
   margin: 0 auto;
   width: 80%;
 }
+
+b {
+  font-weight: bold !important;
+  font-family: Verdana !important;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  img {
+    max-width: 100% !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}

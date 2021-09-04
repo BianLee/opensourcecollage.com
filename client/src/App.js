@@ -996,8 +996,9 @@ class App extends Component {
             </div>
 
             {/* id="socialSection" */}
-            <div className="dashboard">
-              <br /> <br />
+            <div id="socialSection" className="dashboard">
+              <br />
+              <br />
               <br />
               <p
                 className="questionTitleInner"
