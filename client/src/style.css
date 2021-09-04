@@ -181,7 +181,7 @@ hr {
 
 @media only screen and (max-width: 1500px) {
   .dashboardBlog {
-    width: 100% !important;
+    width: 90% !important;
   }
 }
 
