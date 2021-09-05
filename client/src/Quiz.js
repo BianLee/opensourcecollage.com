@@ -236,7 +236,6 @@ export default class Quiz extends App {
                   ) : (
                     <></>
                   )}
-                  <br />
                   <center>
                     <span
                       style={{
@@ -258,6 +257,12 @@ export default class Quiz extends App {
                         onClick={(e) => this.nextQuestion()}
                       >
                         Next →
+                      </span>
+                      <span>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                       </span>
                     </>
                   ) : (

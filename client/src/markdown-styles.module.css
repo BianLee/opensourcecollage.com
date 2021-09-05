@@ -18,12 +18,26 @@
 }
 
 .reactMarkDown h1 {
-  line-height: 2.8rem;
-
+  line-height: 3rem;
   font-family: Verdana;
   box-sizing: border-box;
   max-width: 100%;
+  font-size: 35px !important;
   margin: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  img {
+    max-width: 100% !important;
+  }
+  .reactMarkDown h1 {
+    line-height: 2.6rem;
+    font-family: Verdana;
+    box-sizing: border-box;
+    max-width: 100%;
+    font-size: 28px !important;
+    margin: auto;
+  }
 }
 
 .reactMarkDown img {
@@ -36,12 +50,6 @@ b {
   font-weight: bold !important;
   font-family: Verdana !important;
   font-size: 18px;
-}
-
-@media only screen and (max-width: 1000px) {
-  img {
-    max-width: 100% !important;
-  }
 }
 
 a {

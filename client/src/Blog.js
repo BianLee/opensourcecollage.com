@@ -79,7 +79,7 @@ export default class Blog extends React.Component {
           <>
             {" "}
             <center>
-              <div className="dashboard">
+              <div className="dashboardArticle">
                 <p
                   className="questionTitleInner"
                   style={{ marginBottom: "10px" }}

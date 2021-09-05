@@ -1036,18 +1036,7 @@ class App extends Component {
         </>
       );
     } else {
-      return (
-        <>
-          <div id="gapSection">
-            <p>
-              <br />
-              <br />
-              <br />
-              <br />
-            </p>
-          </div>
-        </>
-      );
+      return <></>;
     }
   }
 }
