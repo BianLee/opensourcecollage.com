@@ -81,7 +81,7 @@ class App extends Component {
       oppLength: 0,
       startOppIndex: 0,
       renderedPosts: [],
-      renderedBlogs: [],
+      renderedBlogs: blog,
       renderedSearchPosts: [],
       renderedSearchOrganizations: [],
       emptyAnswerWarning: "",
@@ -115,7 +115,6 @@ class App extends Component {
           Opportunities: data.reverse(),
           renderedPosts: data,
           oppLength: data.length,
-          renderedBlogs: blog,
         });
         console.log("data has been received");
         //console.log(JSON.stringify(this.state.posts))
