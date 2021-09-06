@@ -110,7 +110,7 @@ export default class Blog extends React.Component {
                       lineHeight: "2rem",
                     }}
                   >
-                    Blog {this.state.page}
+                    Blog {">"} {this.state.page}
                   </span>
                 </p>
                 <ReactMarkdown

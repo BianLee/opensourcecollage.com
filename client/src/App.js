@@ -15,6 +15,7 @@ import LifeSciences from "./notes/LifeSciences.pdf";
 import Notes from "./data/notes.json";
 // import Opportunities from "./data/opportunities.json";
 import OpportunitiesCategory from "./data/opportunitiesCategory.json";
+import BlogsCategory from "./data/blogsCategory.json";
 import Checkbox from "react-three-state-checkbox";
 import "./style.css";
 import Blog from "./Blog";
@@ -43,9 +44,11 @@ class App extends Component {
     this.nextOrg = this.nextOrg.bind(this);
     this.prevOrg = this.prevOrg.bind(this);
     this.handleOppCat = this.handleOppCat.bind(this);
+    this.handleBlogCat = this.handleBlogCat.bind(this);
     this.nextOpp = this.nextOpp.bind(this);
     this.prevOpp = this.prevOpp.bind(this);
     this.handleOpportunitiesSearch = this.handleOpportunitiesSearch.bind(this);
+    this.handleBlogsSearch = this.handleBlogsSearch.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.state = {
       questionNum: 0,
@@ -72,11 +75,13 @@ class App extends Component {
         "Social Sciences",
         "Art & Music",
       ],
+      blogCat: ["News", "School", "Interview"],
       oppSearch: "",
       Opportunities: [],
       oppLength: 0,
       startOppIndex: 0,
       renderedPosts: [],
+      renderedBlogs: [],
       renderedSearchPosts: [],
       renderedSearchOrganizations: [],
       emptyAnswerWarning: "",
@@ -84,6 +89,7 @@ class App extends Component {
       selectedSettingTopic: "",
       childTopic: "Astronomy",
       startQuiz: false,
+      blogSearch: "",
     };
   }
 
@@ -109,6 +115,7 @@ class App extends Component {
           Opportunities: data.reverse(),
           renderedPosts: data,
           oppLength: data.length,
+          renderedBlogs: blog,
         });
         console.log("data has been received");
         //console.log(JSON.stringify(this.state.posts))
@@ -326,6 +333,7 @@ class App extends Component {
       }
     );
   }
+
   handleOpportunitiesSearch(e) {
     var temp = e.target.value.toLowerCase();
     if (temp.length != 0) {
@@ -369,6 +377,45 @@ class App extends Component {
     });
     console.log(e.target.value);
   }
+
+  handleBlogsSearch(e) {
+    var temp = e.target.value.toLowerCase();
+    if (temp.length != 0) {
+      this.setState({
+        blogCat: [],
+      });
+    } else {
+      this.setState({
+        blogCat: ["News", "School", "Interview"],
+      });
+    }
+    this.setState(
+      {
+        blogSearch: temp,
+      },
+      () => {
+        this.setState({
+          renderedBlogs: blog.filter((opp) => {
+            return opp.title
+              .toLowerCase()
+              .includes(this.state.blogSearch.toLowerCase());
+          }),
+        });
+      }
+    );
+    /* 
+    var counter = 0;
+    this.state.Opportunities.filter((opp) => {
+      if (opp.title.toLowerCase().includes(temp.toLowerCase())) {
+        counter++;
+      }
+    });
+    this.setState({
+      oppLength: counter,
+    });
+    console.log(e.target.value); */
+  }
+
   nextOrg(e) {
     this.setState({
       selectedOrg: "",
@@ -392,6 +439,44 @@ class App extends Component {
       });
     }
   }
+
+  handleBlogCat(e) {
+    var cc;
+    cc = e.target.id;
+    console.log(cc);
+    if (this.state.blogCat.includes(cc)) {
+      this.setState(
+        {
+          blogCat: this.state.blogCat.filter(function (a) {
+            return a !== cc;
+          }),
+        },
+        () => {
+          console.log(this.state.blogCat);
+          this.setState({
+            renderedBlogs: blog.filter((a) => {
+              return this.state.blogCat.includes(a.category);
+            }),
+          });
+        }
+      );
+    } else {
+      this.setState(
+        {
+          blogCat: [...this.state.blogCat, cc],
+        },
+        () => {
+          console.log(this.state.blogCat);
+          this.setState({
+            renderedBlogs: blog.filter((a) => {
+              return this.state.blogCat.includes(a.category);
+            }),
+          });
+        }
+      );
+    }
+  }
+
   handleOppCat(e) {
     var cc;
     cc = e.target.id;
@@ -550,7 +635,6 @@ class App extends Component {
                 <br />
               </p>
             </div>
-
             <div className="dashboard">
               <center>
                 <b>Notes</b> - Why waste time taking notes when these exist?
@@ -573,8 +657,9 @@ class App extends Component {
               })}
             </div>
             <div className="quizdashboard">
+              <br />
               <center>
-                <b>Quizzes</b> - Test your knowledge!
+                <b>Quizzes</b> - Learn by solving problems
               </center>
               <br />
               {subjects.map((sub) => {
@@ -600,7 +685,6 @@ class App extends Component {
                 );
               })}
             </div>
-
             <div className="dashboard">
               <p
                 className="questionTitleInner"
@@ -757,7 +841,7 @@ class App extends Component {
                     </>
                   );
                 })}
-                <br /> <br />
+                <br />
                 <input
                   type="text"
                   name="name"
@@ -771,7 +855,7 @@ class App extends Component {
                 />
               </p>
             </div>
-
+            <br />
             <div className="dashboard" style={{ marginTop: -10 }}>
               <p
                 className="questionTitleInner"
@@ -961,45 +1045,98 @@ class App extends Component {
                 </>
               </p>
             </div>
-            <div className="dashboardBlog" style={{ marginTop: -10 }}>
-              <p style={{ fontSize: "18px" }}>
-                <center>
-                  <b>Blog</b> - All things students can relate to!
-                </center>
-                <br />
-                {blog.map((entry) => {
+
+            <div className="dashboardBlog" style={{ overflow: "auto" }}>
+              <center>
+                <b>Blog</b> - All things students can relate to!
+              </center>
+              <br />
+              {this.state.renderedBlogs.map((entry) => {
+                return (
+                  <>
+                    <span
+                      className="questionTitleInner"
+                      style={{ fontSize: "18px" }}
+                      id={entry.id}
+                    >
+                      <button
+                        key={entry.id}
+                        id={entry.category + "Button"}
+                        style={{
+                          fontFamily: "Source Sans Pro",
+                          display: "inline-block",
+                          float: "left",
+                        }}
+                        className="blogButton"
+                        onClick={this.handleClick}
+                      >
+                        {entry.title}
+                      </button>
+                    </span>
+                  </>
+                );
+              })}
+            </div>
+            <div className="dashboard" style={{ marginTop: "-28px" }}>
+              <p
+                className="questionTitleInner"
+                id="questionTitle"
+                style={{ fontSize: "18px", lineHeight: "2rem" }}
+              >
+                {BlogsCategory.map((a) => {
                   return (
                     <>
-                      <span
-                        className="questionTitleInner"
-                        style={{ fontSize: "18px" }}
-                        id={entry.id}
+                      <div
+                        style={{
+                          display:
+                            this.state.oppSearch.length != 0
+                              ? "none"
+                              : "inline-block",
+                          marginBottom: "20px",
+                        }}
+                        onClick={this.handleBlogCat}
                       >
-                        <button
-                          key={entry.id}
-                          id={entry.id}
+                        <input
+                          key={a.id}
+                          style={{
+                            flexShrink: "0",
+                            padding: "0.2rem",
+                            marginLeft: "20px",
+                          }}
+                          type="checkbox"
+                          defaultChecked="true"
+                          id={a.title}
+                        />{" "}
+                        <label
                           style={{
                             fontFamily: "Source Sans Pro",
+                            fontSize: "17px",
                             display: "inline-block",
-                            float: "left",
+                            marginTop: "5px",
                           }}
-                          className="subjectButton"
-                          onClick={this.handleClick}
+                          for={a.title}
                         >
-                          {entry.title}
-                        </button>
-                      </span>
+                          {a.title}
+                        </label>
+                      </div>
                     </>
                   );
                 })}
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Search Blog"
+                  className="dod-input"
+                  style={{
+                    outline: "currentcolor none medium",
+                  }}
+                  autoComplete="off"
+                  onChange={this.handleBlogsSearch}
+                />
               </p>
             </div>
-
             {/* id="socialSection" */}
-            <div id="socialSection" className="dashboard">
-              <br />
-              <br />
-              <br />
+            <div className="dashboard">
               <p
                 className="questionTitleInner"
                 id="questionTitle"
