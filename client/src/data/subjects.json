@@ -22,7 +22,7 @@
     "title": "Business",
     "subtitle": "Business",
     "path": "business",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": "This quiz covers basic terminology in business. Of course, business isn't an academic subject and it is a very broad field with numerous subfields / subjects. The problems test knowledge in understanding of basic terms, in different topics such as accounting, administration, economics, finance, management, marketing, etc. While it's unlikley that you'd use this to study for a quiz or an exam, it's always good to have foundational knowledge in different subjects, especially in practical fields like business.",
     "img": "images/business.jpg",
     "options": ""
   },
@@ -31,7 +31,7 @@
     "title": "Economics",
     "subtitle": "Economics",
     "path": "economics",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": "This quiz covers basic concepts in economics (Macro & Micro). Most questions are concept based, and please note that there are no questions on graphs. (which is pretty important in economics study). Topics include supply, demand, PPC, GDP, utility, easticity, MPP, competition, labor market, unemployment, etc. Besides basic economic terms, it also covers different types of economist views, history of the US economy, and how it impacts economics policies in US politics (both parties). ",
     "img": "images/economics.png",
     "options": ""
   },
@@ -40,7 +40,7 @@
     "title": "IT Fundamentals",
     "subtitle": "ITF+",
     "path": "itf",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": "IT Fundamentals (ITF+) is a certification exam offered by CompTIA, a non-profit group that administers and issues certifications in information technology. ITF+ is an exam that tests basic knowledge and understanding of computing and other IT topics. The test is 60 minutes, and requires passing score of 650 (scale of 900). The six categories that the exam tests on are: IT Concepts and Terminology, Infrastructure, Applications and Software, Software Development, Database Fundamentals, and Security.",
     "img": "images/itf.png",
     "options": ""
   },
@@ -49,7 +49,7 @@
     "title": "Computer Networking",
     "subtitle": "Networking",
     "path": "networking",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": "This quiz covers fundamental concepts in computer networking. To learn networking, it's helpful to have knowledge in computing & IT, since many concepts are quite obscure and complex. It is even more helpful to learn by testing things out physically, instead of reading over notes and simply doing practice problems. For that matter, Cisco's Packet Tracer is highly recommended, as it allows simulation of networks. Topics on this quiz include topology, TCP/IP, OSI model, ports, sockets, DNS, and more.",
     "img": "images/networking.jpg",
     "options": ""
   }

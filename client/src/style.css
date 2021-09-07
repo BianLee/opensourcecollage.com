@@ -418,6 +418,9 @@ h1 {
 #InterviewButton {
   border-color: #d1deeb;
 }
+#SchoolButton {
+  border-color: #d2ebd1;
+}
 
 .subjectButton:hover,
 #NewsButton:hover {
@@ -425,6 +428,9 @@ h1 {
 }
 #InterviewButton:hover {
   background-color: #d1deeb;
+}
+#SchoolButton:hover {
+  background-color: #d2ebd1;
 }
 .noteButton {
   padding: 6px 18px;

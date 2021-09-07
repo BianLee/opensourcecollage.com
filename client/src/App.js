@@ -1088,7 +1088,7 @@ class App extends Component {
                       <div
                         style={{
                           display:
-                            this.state.oppSearch.length != 0
+                            this.state.blogSearch.length != 0
                               ? "none"
                               : "inline-block",
                           marginBottom: "20px",
@@ -1128,6 +1128,7 @@ class App extends Component {
                   className="dod-input"
                   style={{
                     outline: "currentcolor none medium",
+                    marginTop: "5px",
                   }}
                   autoComplete="off"
                   onChange={this.handleBlogsSearch}

@@ -32,7 +32,7 @@ export default class Blog extends React.Component {
     this.goHome = this.goHome.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     console.log(window.location.href);
     var int = JSON.stringify(window.location.href).slice(-2, -1);
     console.log(int);
