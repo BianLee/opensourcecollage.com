@@ -24,6 +24,7 @@
   max-width: 100%;
   font-size: 35px !important;
   margin: auto;
+  font-family: "Kaisei Tokumin", serif;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -37,6 +38,7 @@
     max-width: 100%;
     font-size: 28px !important;
     margin: auto;
+    font-family: "Kaisei Tokumin", serif;
   }
 }
 
