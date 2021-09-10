@@ -4,6 +4,7 @@ import style from "./markdown-styles.module.css";
 import blog1 from "./blog/1.md";
 import blog2 from "./blog/2.md";
 import blog3 from "./blog/3.md";
+import blog4 from "./blog/4.md";
 import blogundefined from "./blog/undefined.md";
 import ReactMarkdown from "react-markdown";
 import blog from "./data/blog.json";
@@ -37,7 +38,7 @@ export default class Blog extends React.Component {
     var int = JSON.stringify(window.location.href).slice(-2, -1);
     console.log(int);
     var pageToRender;
-    const pages = [blog1, blog2, blog3];
+    const pages = [blog1, blog2, blog3, blog4];
     pageToRender = pages[int - 1];
     console.log(pageToRender);
     if (pageToRender == undefined) {
