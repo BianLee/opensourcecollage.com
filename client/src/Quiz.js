@@ -322,7 +322,6 @@ export default class Quiz extends App {
                           >
                             {sub.description}
                           </span>
-                          <br />
                         </>
                       );
                     })}
@@ -346,7 +345,7 @@ export default class Quiz extends App {
                       </>
                     );
                   })}
-                  <br /> <br />
+                  <br />
                   <button
                     onClick={(e) => this.goHome(e)}
                     className="subjectButton"

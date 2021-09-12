@@ -658,34 +658,150 @@ class App extends Component {
                 );
               })}
             </div>
-            <div className="quizdashboard">
+            <div className="dashboard">
               <br />
               <center>
-                <b>Quizzes</b> - Learn by solving problems
-              </center>
-              <br />
-              {subjects.map((sub) => {
-                return (
+                <p
+                  className="questionTitleInner"
+                  id="questionTitle"
+                  style={{ fontSize: "18px", lineHeight: "2rem" }}
+                >
+                  <center>
+                    <b>Quizzes</b> - Find student-run organizations
+                    <br />
+                    <br />
+                    {subjects.map((sub) => {
+                      return (
+                        <>
+                          <button
+                            value={sub.path}
+                            className="quizButton"
+                            id={lowerCase(sub.title) + "Button"}
+                            onClick={this.chooseTopic.bind(this)}
+                            style={{
+                              fontFamily: "Source Sans Pro",
+                            }}
+                          >
+                            <img
+                              src={sub.img}
+                              id="subjectLogo"
+                              style={{ pointerEvents: "none" }}
+                            ></img>
+                            <span id="subjectDescription">{sub.subtitle}</span>
+                          </button>
+                        </>
+                      );
+                    })}
+                  </center>
+                  <br />
+
                   <>
-                    <button
-                      value={sub.path}
-                      className="quizButton"
-                      id={lowerCase(sub.title) + "Button"}
-                      onClick={this.chooseTopic.bind(this)}
-                      style={{
-                        fontFamiy: "Source Sans Pro",
-                      }}
-                    >
-                      <img
-                        src={sub.img}
-                        id="subjectLogo"
-                        style={{ pointerEvents: "none" }}
-                      ></img>
-                      <span id="subjectDescription">{sub.subtitle}</span>
-                    </button>
+                    {" "}
+                    {organizations.map((org) => {
+                      return (
+                        <>
+                          {" "}
+                          <div
+                            style={{
+                              backgroundColor: "#f7f7f7",
+                              paddingLeft: "45px",
+                              paddingRight: "40px",
+                            }}
+                          >
+                            <p
+                              style={{
+                                display:
+                                  this.state.selectedOrg == org.title
+                                    ? "inline"
+                                    : "none",
+
+                                fontFamily: "Source Sans Pro",
+                              }}
+                            >
+                              <span style={{ fontWeight: "bold" }}>
+                                <br />
+                                {org.title}
+                              </span>{" "}
+                              •{" "}
+                              <a
+                                href={org.link}
+                                target="_blank"
+                                style={{
+                                  fontFamily: "Source Sans Pro",
+                                  overflowWrap: "break-word",
+                                }}
+                              >
+                                {org.link}
+                              </a>
+                              <br />
+                              {org.description}
+                              <br />
+                              <br />
+                            </p>
+                          </div>
+                        </>
+                      );
+                    })}
+                    <>
+                      <center style={{ marginTop: "20px" }}>
+                        <span
+                          onClick={this.prevOrg}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            marginRight: "20px",
+                            cursor: "pointer",
+                          }}
+                        >
+                          ← Prev
+                        </span>
+                        <span
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                          }}
+                        >
+                          {this.state.startOrgIndex / 17 + 1} of{" "}
+                          {this.state.orgSearch != 0
+                            ? Math.ceil(
+                                this.state.renderedSearchOrganizations.length /
+                                  17
+                              ) == 0
+                              ? 1
+                              : Math.ceil(
+                                  this.state.renderedSearchOrganizations
+                                    .length / 17
+                                )
+                            : Math.ceil(organizations.length / 17) == 0
+                            ? 1
+                            : Math.ceil(organizations.length / 17)}
+                        </span>
+                        <span
+                          onClick={this.nextOrg}
+                          style={{
+                            fontFamily: "Source Sans Pro",
+                            marginLeft: "20px",
+                            cursor: "pointer",
+                          }}
+                        >
+                          Next →
+                        </span>
+                      </center>
+                      <br />
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Search Organization"
+                        className="dod-input"
+                        style={{
+                          outline: "currentcolor none medium",
+                        }}
+                        autoComplete="off"
+                        onChange={this.handleOrgSearch}
+                      />
+                      <br />
+                    </>
                   </>
-                );
-              })}
+                </p>
+              </center>
             </div>
             <div className="dashboard">
               <p
