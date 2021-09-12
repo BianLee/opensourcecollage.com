@@ -21,6 +21,9 @@ import "./style.css";
 import Blog from "./Blog";
 import { lowerCase, uniqBy } from "lodash";
 import axios from "axios";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 // import ReactMarkdown from "react-markdown";
 import {
@@ -1045,6 +1048,48 @@ class App extends Component {
               </p>
             </div>
 
+            <div className="dashboard">
+              <p
+                className="questionTitleInner"
+                id="questionTitle"
+                style={{ fontSize: "18px", lineHeight: "2rem" }}
+              >
+                <br />
+                <center>
+                  <b>Blog</b> - Bringing stories of high school students
+                </center>
+                <br />
+                <div className="blog-media-grid">
+                  <>
+                    {" "}
+                    {this.state.renderedBlogs.map((entry) => {
+                      return (
+                        <>
+                          <a
+                            target="_blank"
+                            style={{
+                              textDecoration: "none",
+                              color: "black",
+                            }}
+                            id={entry.id}
+                          >
+                            <div
+                              className="blogPost"
+                              id={entry.category + "Button"}
+                              onClick={this.handleClick}
+                            >
+                              {entry.title}
+                            </div>
+                          </a>
+                        </>
+                      );
+                    })}
+                  </>
+                </div>
+              </p>
+            </div>
+
+            {/* 
             <div className="dashboardBlog" style={{ overflow: "auto" }}>
               <center>
                 <b>Blog</b> - All things students can relate to!
@@ -1076,6 +1121,8 @@ class App extends Component {
                 );
               })}
             </div>
+            */}
+
             <div className="dashboard" style={{ marginTop: "-28px" }}>
               <p
                 className="questionTitleInner"
@@ -1179,3 +1226,24 @@ class App extends Component {
 }
 
 export default App;
+
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join("posts"));
+  const posts = files.map((filename) => {
+    const slug = filename.replace(".md", "");
+    const markdownWithMeta = fs.readFileSync(
+      path.join("posts", filename),
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(markdownWithMeta);
+    return {
+      slug,
+      frontmatter,
+    };
+  });
+  return {
+    props: {
+      posts: posts,
+    },
+  };
+}

@@ -13,6 +13,10 @@ import rehypeRaw from "rehype-raw";
 import Disqus from "disqus-react";
 import { thistle } from "color-name";
 import marked from "marked";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { withRouter } from "react-router-dom";
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,38 +31,26 @@ export default class Blog extends React.Component {
     super(props);
     this.state = {
       terms: "",
-      page: "undefined",
-      title: "",
-      id: 0,
+      page: props.page,
+      title: props.title,
+      id: props.page,
+      content: "",
+      markdown: "",
+      d: props.propRender,
     };
     this.goHome = this.goHome.bind(this);
   }
 
   componentDidMount() {
-    console.log(window.location.href);
-    var int = JSON.stringify(window.location.href).slice(-2, -1);
-    console.log(int);
-    var pageToRender;
-    const pages = [blog1, blog2, blog3, blog4];
-    pageToRender = pages[int - 1];
-    console.log(pageToRender);
-    if (pageToRender == undefined) {
-      pageToRender = blogundefined;
-    } else {
-      fetch(pageToRender)
-        .then((response) => response.text())
-        .then((text) => {
-          this.setState({ terms: text, page: int });
-        });
-    }
-    blog.map((b) => {
-      if (b.id == int) {
+    fetch(this.state.d)
+      .then((response) => {
+        return response.text();
+      })
+      .then((text) => {
         this.setState({
-          title: b.title,
-          id: b.id,
+          markdown: marked(text),
         });
-      }
-    });
+      });
   }
 
   goHome(e) {
@@ -67,6 +59,8 @@ export default class Blog extends React.Component {
   }
 
   render() {
+    const { markdown } = this.state;
+
     const disqusShortname = "opensourcecollage";
     const disqusConfig = {
       url: "https://opensourcecollage.com/blog/" + this.state.id,
@@ -75,63 +69,60 @@ export default class Blog extends React.Component {
     };
     return (
       <>
-        {this.state.page === "undefined" ? (
-          <></>
-        ) : (
-          <>
-            {" "}
-            <center>
-              <div className="dashboardArticle">
-                <p
-                  className="questionTitleInner"
-                  style={{ marginBottom: "10px" }}
+        <>
+          {" "}
+          <center>
+            <div className="dashboardArticle">
+              <p
+                className="questionTitleInner"
+                style={{ marginBottom: "10px" }}
+              >
+                <span
+                  style={{
+                    fontSize: "16px",
+                    lineHeight: "2rem",
+                    cursor: "pointer",
+                  }}
+                  onClick={this.goHome}
                 >
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      lineHeight: "2rem",
-                      cursor: "pointer",
-                      textDecoration: "underline",
-                    }}
-                    onClick={this.goHome}
-                  >
-                    Home
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      lineHeight: "2rem",
-                    }}
-                  >
-                    {" "}
-                    {">"}{" "}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: "16px",
-                      lineHeight: "2rem",
-                    }}
-                  >
-                    Blog {">"} {this.state.page}
-                  </span>
-                </p>
+                  ← Return Home
+                </span>
+                {/*
+                <span
+                  style={{
+                    fontSize: "16px",
+                    lineHeight: "2rem",
+                  }}
+                >
+                  {" "}
+                  {">"}{" "}
+                </span>
+                <span
+                  style={{
+                    fontSize: "16px",
+                    lineHeight: "2rem",
+                  }}
+                >
+                  Blog {">"} {this.state.page}
+                </span>
+                 */}
+              </p>
 
-                <div
-                  className={style.reactMarkDown}
-                  dangerouslySetInnerHTML={{ __html: marked(this.state.terms) }}
-                ></div>
+              <div
+                className={style.reactMarkDown}
+                dangerouslySetInnerHTML={{ __html: markdown }}
+              ></div>
 
-                <br />
-                <br />
-                <Disqus.DiscussionEmbed
-                  shortname={disqusShortname}
-                  config={disqusConfig}
-                  style={{ width: "90%" }}
-                />
-              </div>
-            </center>
-          </>
-        )}
+              <br />
+              <br />
+              <Disqus.DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+                style={{ width: "90%" }}
+              />
+            </div>
+          </center>
+        </>
       </>
     );
   }

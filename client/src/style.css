@@ -167,6 +167,9 @@ hr {
   .oppPost {
     width: 500px !important;
   }
+  .blogPost {
+    width: 500px !important;
+  }
   .mobileLoginButton {
     display: none;
   }
@@ -225,6 +228,10 @@ hr {
     width: 100px !important;
   }
   .oppPost {
+    width: 500px !important;
+    height: 160px !important;
+  }
+  .blogPost {
     width: 500px !important;
     height: 160px !important;
   }
@@ -326,6 +333,10 @@ hr {
     width: 500px !important;
     height: 120px !important;
   }
+  .blogPost {
+    width: 500px !important;
+    height: 160px !important;
+  }
   .flex-container {
     display: flex;
     flex-direction: column !important;
@@ -413,24 +424,30 @@ h1 {
   margin-bottom: 10px;
 }
 #NewsButton {
-  border-color: #e7e7e7;
+  border-color: #eee;
 }
 #InterviewButton {
-  border-color: #d1deeb;
+  border-color: #eee;
 }
 #SchoolButton {
-  border-color: #d2ebd1;
+  border-color: #eee;
 }
 
 .subjectButton:hover,
 #NewsButton:hover {
-  background-color: #e7e7e7;
+  background-color: #e6d3e0;
+  border-color: #e6d3e0;
+  cursor: pointer;
 }
 #InterviewButton:hover {
   background-color: #d1deeb;
+  border-color: #d1deeb;
+  cursor: pointer;
 }
 #SchoolButton:hover {
   background-color: #d2ebd1;
+  border-color: #d2ebd1;
+  cursor: pointer;
 }
 .noteButton {
   padding: 6px 18px;
@@ -653,9 +670,26 @@ img {
   grid-gap: 1rem;
 }
 
+.blog-media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
+.blogPost {
+  background-color: #eee;
+  width: 500px;
+  height: 150px;
+  padding-left: 10px;
+  font-family: Source Sans Pro;
+  padding: 20px;
+  font-size: 17px;
+  border: 2px white solid;
+}
+
 .oppPost {
   background-color: #eee;
-  width: 300px;
+  width: 295px;
   height: 120px;
   padding-left: 10px;
   font-family: Source Sans Pro;
@@ -774,4 +808,8 @@ input[type="radio"]:checked:after {
 
 #blogFont {
   font-size: 18.5px;
+}
+
+b {
+  font-size: 18px;
 }

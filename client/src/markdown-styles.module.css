@@ -48,12 +48,13 @@
   width: 80%;
 }
 
-b {
+.reactMarkDown b {
   font-weight: bold !important;
-  font-family: Verdana !important;
-  font-size: 18px;
+
+  font-size: 20px;
 }
 
 a {
   text-decoration: none;
+  color: purple;
 }
