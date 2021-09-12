@@ -254,6 +254,11 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .blog-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+    grid-gap: 1rem;
+  }
   .dashboardArticle {
     width: 100% !important;
     max-width: 4000px !important;
