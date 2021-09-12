@@ -288,8 +288,8 @@ hr {
   }
   .quizButton {
     border: 2px solid white;
-    width: 110px !important;
-    height: 100px !important;
+    width: 125px !important;
+    height: 125px !important;
     background-color: white;
     cursor: pointer;
     -webkit-appearance: none;
