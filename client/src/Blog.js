@@ -12,6 +12,7 @@ import Markdown from "markdown-to-jsx";
 import rehypeRaw from "rehype-raw";
 import Disqus from "disqus-react";
 import { thistle } from "color-name";
+import marked from "marked";
 import {
   BrowserRouter as Router,
   Switch,
@@ -114,11 +115,11 @@ export default class Blog extends React.Component {
                     Blog {">"} {this.state.page}
                   </span>
                 </p>
-                <ReactMarkdown
-                  rehypePlugins={rehypeRaw}
+
+                <div
                   className={style.reactMarkDown}
-                  children={this.state.terms}
-                ></ReactMarkdown>
+                  dangerouslySetInnerHTML={{ __html: marked(this.state.terms) }}
+                ></div>
 
                 <br />
                 <br />
