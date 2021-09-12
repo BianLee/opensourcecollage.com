@@ -42,7 +42,7 @@ export default class Blog extends React.Component {
   }
 
   componentDidMount() {
-    fetch(blog1)
+    fetch(this.state.d)
       .then((response) => {
         return response.text();
       })
