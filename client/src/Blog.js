@@ -117,12 +117,6 @@ export default class Blog extends React.Component {
 
               <br />
               <br />
-              <Disqus.DiscussionEmbed
-                shortname={disqusShortname}
-                config={disqusConfig}
-                style={{ width: "90%" }}
-              />
-
               <ins
                 class="adsbygoogle"
                 style={{ display: "block", textAlign: "center" }}
@@ -131,6 +125,12 @@ export default class Blog extends React.Component {
                 data-ad-client="ca-pub-2058771761311307"
                 data-ad-slot="9960605838"
               ></ins>
+              <br />
+              <Disqus.DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+                style={{ width: "90%" }}
+              />
             </div>
           </center>
         </>
