@@ -8,14 +8,13 @@ h1 {
 
 .questionBox {
   width: 70% !important;
-  padding-top: 1rem !important;
-  padding-bottom: 1rem !important;
+
   padding: 2rem !important;
   background-color: transparent !important;
   max-width: 1500px !important;
-  background-color: #fffaf5 !important;
-  margin-top: 10px;
-  border: 2px solid #e7e7e7;
+  /* background-color: #fffaf5 !important; */
+
+  /* border: 2px solid #e7e7e7; */
 }
 
 .dashboard {
@@ -439,7 +438,9 @@ h1 {
   border-color: #d2ebd1;
 }
 
-.subjectButton:hover,
+.subjectButton:hover {
+  background-color: #eee;
+}
 #NewsButton:hover {
   background-color: #e6d3e0;
   border-color: #bf6ba5;
@@ -721,7 +722,7 @@ img {
   border: 2px white solid;
 }
 .oppPost:hover {
-  border: 2px gray dotted;
+  border: 2px darkgray solid;
 }
 
 .loginBox {
@@ -745,7 +746,6 @@ img {
   display: none;
 }
 
-/* 
 input[type="radio"]:after {
   width: 15px;
   height: 15px;
@@ -768,10 +768,12 @@ input[type="radio"]:checked:after {
   visibility: visible;
   border: 2px solid white;
 }
-*/
+
+/* 
 .optionInput {
   display: none;
 }
+*/
 
 .quizSettingDashboard {
   width: 80%;

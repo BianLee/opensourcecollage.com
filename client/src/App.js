@@ -703,7 +703,6 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                <br />
                 <center>
                   <b>Opportunities</b> - Browse extracurriculars based on your
                   interests

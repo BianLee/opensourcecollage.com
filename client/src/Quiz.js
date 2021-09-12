@@ -178,7 +178,7 @@ export default class Quiz extends App {
                                         this.answerLetters[index]
                                     }
                                   />
-                                  {this.answerLetters[index]}. {option}
+                                  {/* {this.answerLetters[index]}. */} {option}
                                 </label>
                               </div>
                             </label>
