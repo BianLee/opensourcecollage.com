@@ -349,10 +349,6 @@ hr {
   .instructions {
     width: 90% !important;
   }
-  .quizButton {
-    width: 120px !important ;
-    height: 120px !important;
-  }
 }
 
 @media only screen and (min-width: 1000px) {
