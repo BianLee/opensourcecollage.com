@@ -288,22 +288,14 @@ hr {
   }
   .quizButton {
     border: 2px solid white;
-    width: 150px;
-    height: auto;
-
+    width: 110px !important;
+    height: 100px !important;
     background-color: white;
     cursor: pointer;
-
     -webkit-appearance: none;
     overflow: visible;
     margin-bottom: 20px;
     border-radius: 17px;
-  }
-  .quizButton:active {
-    height: 115px !important;
-    width: 120px !important;
-    background-color: none;
-    color: black;
   }
 
   .subjectButton {
