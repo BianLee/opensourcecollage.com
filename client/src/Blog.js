@@ -126,6 +126,7 @@ export default class Blog extends React.Component {
                 data-ad-slot="9960605838"
               ></ins>
               <br />
+              <br />
               <Disqus.DiscussionEmbed
                 shortname={disqusShortname}
                 config={disqusConfig}
