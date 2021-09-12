@@ -349,6 +349,10 @@ hr {
   .instructions {
     width: 90% !important;
   }
+  .quizButton {
+    width: 175px !important;
+    height: auto !important;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -788,9 +792,11 @@ input[type="radio"]:checked:after {
 .quizButton {
   border: 2px solid white;
   width: 150px;
-  height: 150px;
+  height: auto;
+
   background-color: white;
   cursor: pointer;
+
   -webkit-appearance: none;
   overflow: visible;
   margin-bottom: 20px;
