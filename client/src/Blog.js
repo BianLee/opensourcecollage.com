@@ -51,6 +51,8 @@ export default class Blog extends React.Component {
           markdown: marked(text),
         });
       });
+
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
 
   goHome(e) {
@@ -120,6 +122,15 @@ export default class Blog extends React.Component {
                 config={disqusConfig}
                 style={{ width: "90%" }}
               />
+
+              <ins
+                class="adsbygoogle"
+                style={{ display: "block", textAlign: "center" }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-2058771761311307"
+                data-ad-slot="9960605838"
+              ></ins>
             </div>
           </center>
         </>
