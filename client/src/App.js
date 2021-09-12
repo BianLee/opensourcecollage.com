@@ -667,7 +667,7 @@ class App extends Component {
                   style={{ fontSize: "18px", lineHeight: "2rem" }}
                 >
                   <center>
-                    <b>Quizzes</b> - Find student-run organizations
+                    <b>Quizzes</b> - Learn by solving problems
                     <br />
                     <br />
                     {subjects.map((sub) => {

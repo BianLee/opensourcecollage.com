@@ -287,17 +287,17 @@ hr {
     margin-top: 200px !important;
   }
   .quizButton {
-    height: 115px !important;
-    width: 120px !important;
-    overflow: hidden !important;
-    border: 2px solid transparent !important;
-    border-radius: 17px !important;
-    position: relative !important;
-    display: inline-block !important;
-    margin-right: 10px !important;
-    margin-left: 10px !important;
-    margin-bottom: 30px !important;
-    cursor: pointer !important;
+    border: 2px solid white;
+    width: 150px;
+    height: auto;
+
+    background-color: white;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    overflow: visible;
+    margin-bottom: 20px;
+    border-radius: 17px;
   }
   .quizButton:active {
     height: 115px !important;
