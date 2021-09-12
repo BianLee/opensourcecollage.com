@@ -286,17 +286,6 @@ hr {
   #socialSection {
     margin-top: 200px !important;
   }
-  .quizButton {
-    border: 2px solid white;
-    width: 110px !important;
-    height: 100px !important;
-    background-color: white;
-    cursor: pointer;
-    -webkit-appearance: none;
-    overflow: visible;
-    margin-bottom: 20px;
-    border-radius: 17px;
-  }
 
   .subjectButton {
     width: 100%;
@@ -799,11 +788,9 @@ input[type="radio"]:checked:after {
 .quizButton {
   border: 2px solid white;
   width: 150px;
-  height: auto;
-
+  height: 150px;
   background-color: white;
   cursor: pointer;
-
   -webkit-appearance: none;
   overflow: visible;
   margin-bottom: 20px;
