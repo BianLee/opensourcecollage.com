@@ -975,6 +975,7 @@ class App extends Component {
                               target="_blank"
                               style={{
                                 fontFamily: "Source Sans Pro",
+                                overflowWrap: "break-word",
                               }}
                             >
                               {org.link}
@@ -1056,7 +1057,8 @@ class App extends Component {
               >
                 <br />
                 <center>
-                  <b>Blog</b> - Bringing stories of high school students
+                  <b>Blog</b> - Unique, inspiring, and relatable stories of high
+                  school students
                 </center>
                 <br />
                 <div className="blog-media-grid">

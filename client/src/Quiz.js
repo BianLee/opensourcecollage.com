@@ -322,13 +322,31 @@ export default class Quiz extends App {
                           >
                             {sub.description}
                           </span>
+                          <br />
                         </>
                       );
                     })}
                   </div>
-
                   <br />
-
+                  {subjects.map((sub) => {
+                    return (
+                      <>
+                        <div
+                          className="quizInfo"
+                          style={{
+                            display:
+                              sub.title == this.state.topic ? "" : "none",
+                            fontFamily: "Source Sans Pro",
+                          }}
+                        >
+                          Question Author: {sub.questionAuthor}
+                          <br />
+                          Number of Questions: {sub.numberOfQuestions}
+                        </div>
+                      </>
+                    );
+                  })}
+                  <br /> <br />
                   <button
                     onClick={(e) => this.goHome(e)}
                     className="subjectButton"

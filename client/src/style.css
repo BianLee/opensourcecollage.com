@@ -207,7 +207,7 @@ hr {
   }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1100px) {
   #gapSection {
     display: none;
   }
@@ -254,6 +254,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  #subjectDescription {
+    display: none !important;
+  }
   .blog-media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
@@ -284,15 +287,25 @@ hr {
     margin-top: 200px !important;
   }
   .quizButton {
-    width: 175px !important;
-    height: auto !important;
+    height: 115px !important;
+    width: 120px !important;
+    overflow: hidden !important;
+    border: 2px solid transparent !important;
+    border-radius: 17px !important;
+    position: relative !important;
+    display: inline-block !important;
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+    margin-bottom: 30px !important;
+    cursor: pointer !important;
   }
   .quizButton:active {
-    width: 175px !important;
-    height: auto !important;
+    height: 115px !important;
+    width: 120px !important;
     background-color: none;
     color: black;
   }
+
   .subjectButton {
     width: 100%;
   }
@@ -429,29 +442,32 @@ h1 {
   margin-bottom: 10px;
 }
 #NewsButton {
-  border-color: #eee;
+  background-color: #e6d3e0;
+  border-color: #e6d3e0;
 }
 #InterviewButton {
-  border-color: #eee;
+  background-color: #d1deeb;
+  border-color: #d1deeb;
 }
 #SchoolButton {
-  border-color: #eee;
+  background-color: #d2ebd1;
+  border-color: #d2ebd1;
 }
 
 .subjectButton:hover,
 #NewsButton:hover {
   background-color: #e6d3e0;
-  border-color: #e6d3e0;
+  border-color: #bf6ba5;
   cursor: pointer;
 }
 #InterviewButton:hover {
   background-color: #d1deeb;
-  border-color: #d1deeb;
+  border-color: #8298ad;
   cursor: pointer;
 }
 #SchoolButton:hover {
   background-color: #d2ebd1;
-  border-color: #d2ebd1;
+  border-color: #93b891;
   cursor: pointer;
 }
 .noteButton {
@@ -681,6 +697,12 @@ img {
   grid-gap: 1rem;
 }
 
+.quiz-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+
 .blogPost {
   background-color: #eee;
   width: 500px;
@@ -689,6 +711,17 @@ img {
   font-family: Source Sans Pro;
   padding: 20px;
   font-size: 17px;
+  border: 2px white solid;
+}
+.quizInfo {
+  background-color: #eee;
+  width: 100%;
+  height: auto;
+  padding-left: 10px;
+  font-family: Source Sans Pro;
+  padding: 20px;
+  font-size: 17px;
+  padding-bottom: 30px;
   border: 2px white solid;
 }
 
@@ -784,18 +817,13 @@ input[type="radio"]:checked:after {
   margin-bottom: 20px;
   border-radius: 17px;
 }
-.quizButton:active {
-  width: 150px;
-  height: auto !important;
-  background-color: none;
-  color: black;
-}
 
 #subjectDescription {
   font-family: "Source Sans Pro" !important;
   z-index: 900;
   position: relative;
   pointer-events: none;
+  display: inline-block;
 }
 
 .dashboardBlog {
