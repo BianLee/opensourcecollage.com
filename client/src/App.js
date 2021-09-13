@@ -627,10 +627,9 @@ class App extends Component {
                     a convenient search mechanism. It allows organizations to
                     register on the site and share opportunities they offer upon
                     account creation. OSC leads an effort on its own to bring
-                    useful resources to students by providing academic notes and
-                    quizzes on various subjects. Through weekly blog posts,
-                    students can gain useful advice and get inspired by
-                    interviews with accomplished peers.
+                    useful resources to students by providing academic notes +
+                    quizzes on various subjects, as well as blog posts on all
+                    things students can relate to, and get inspired by.
                   </span>
                 </div>
 
@@ -1066,7 +1065,7 @@ class App extends Component {
               >
                 <br />
                 <center>
-                  <b>Blog</b> - Unique, inspiring, & relatable stories of high
+                  <b>Blog</b> - Relatable & inspiring stories for all high
                   school students
                 </center>
                 <br />
