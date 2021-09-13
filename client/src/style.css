@@ -253,6 +253,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .quizInfo {
+    font-size: 1.1rem !important;
+  }
   #subjectDescription {
     display: none !important;
   }
@@ -270,10 +273,10 @@ hr {
   }
   #questionTitle {
     color: black;
-    font-size: 17px !important;
+    font-size: 19px !important;
   }
   .optionText {
-    font-size: 17px;
+    font-size: 19px;
   }
   .featured {
     margin-right: 15px !important;
@@ -346,7 +349,7 @@ hr {
     width: 96% !important;
   }
   .instructions {
-    width: 90% !important;
+    width: 85% !important;
   }
   .quizButton {
     width: 175px !important;
@@ -703,12 +706,11 @@ img {
   background-color: #eee;
   width: 100%;
   height: auto;
-  padding-left: 10px;
+
   font-family: Source Sans Pro;
   padding: 20px;
   font-size: 17px;
   padding-bottom: 30px;
-  border: 2px white solid;
 }
 
 .oppPost {
@@ -757,6 +759,7 @@ input[type="radio"]:after {
   border: 2px solid white;
 }
 
+/* 
 input[type="radio"]:checked:after {
   width: 15px;
   height: 15px;
@@ -768,6 +771,8 @@ input[type="radio"]:checked:after {
   visibility: visible;
   border: 2px solid white;
 }
+
+*/
 
 /* 
 .optionInput {

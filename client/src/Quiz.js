@@ -194,7 +194,22 @@ export default class Quiz extends App {
                     <>
                       <div
                         className="instructions"
-                        style={{ marginTop: "15px" }}
+                        style={{
+                          marginTop: "10px",
+                          paddingBottom: "30px",
+                          borderRadius: "17px",
+                          border:
+                            this.state.statusArray[this.state.questionNum] !=
+                              "✓" &&
+                            this.state.statusArray[this.state.questionNum] !=
+                              "✕"
+                              ? "transparent 2px solid"
+                              : this.state.statusArray[
+                                  this.state.questionNum
+                                ] === "✓"
+                              ? "#04d904 2px solid"
+                              : "lightgray 2px solid",
+                        }}
                       >
                         <p
                           className="questionTitleInner"
@@ -210,7 +225,7 @@ export default class Quiz extends App {
                             <span
                               style={{
                                 color: "#04d904",
-                                fontWeight: "bold",
+
                                 fontFamily: "Source Sans Pro",
                               }}
                             >
@@ -220,7 +235,6 @@ export default class Quiz extends App {
                             <span
                               style={{
                                 color: "red",
-                                fontWeight: "bold",
                                 fontFamily: "Source Sans Pro",
                               }}
                             >
