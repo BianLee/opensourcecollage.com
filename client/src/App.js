@@ -621,16 +621,16 @@ class App extends Component {
                     }}
                   >
                     Open Source Collage is a user-friendly platform designed to
-                    help students develop their passion and discover new
-                    opportunities through providing a search mechanism for
-                    events, lectures, scholarships, competitions, and
-                    organizations you can get involved with. It also allows you
-                    to share your own events upon creating an account, which
-                    will help you and your organization connect with thousands
-                    of others in all parts of the country. OSC leads an effort
-                    on its own to bring useful resources to students through
-                    facilitating new connections between students and
-                    organizations.
+                    help high school students develop passion and discover new
+                    opportunities by providing access to growing database of
+                    extracurricular activities & student-run organizations, with
+                    a convenient search mechanism. It allows organizations to
+                    register on the site and share opportunities they offer upon
+                    account creation. OSC leads an effort on its own to bring
+                    useful resources to students by providing academic notes and
+                    quizzes on various subjects. Through weekly blog posts,
+                    students can gain useful advice and get inspired by
+                    interviews with accomplished peers.
                   </span>
                 </div>
 
@@ -1066,7 +1066,7 @@ class App extends Component {
               >
                 <br />
                 <center>
-                  <b>Blog</b> - Unique, inspiring, and relatable stories of high
+                  <b>Blog</b> - Unique, inspiring, & relatable stories of high
                   school students
                 </center>
                 <br />
