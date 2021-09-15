@@ -17,7 +17,7 @@
     "path": "biology",
     "description": "This quiz covers basic concepts in biology. It includes comprehensive topics taught in introductory biology classes, with most questions being concept based. It should be used to review understanding of terms, and important biological processes. Topics include: Basic chemistry, properties of water, energy and matter, domains of life, cells, membranes, enzymes, photosynthesis, cellular respiration, mitosis, meiosis, Mendelian / Non-Mendelian genetics, ecology, and more.",
     "img": "images/biology.jpg",
-    "questionAuthor": "Bian Lee", 
+    "questionAuthor": "Bian Lee, InterSTEM", 
     "numberOfQuestions": 4, 
     "options": ""
   },

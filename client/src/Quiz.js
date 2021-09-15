@@ -121,7 +121,7 @@ export default class Quiz extends App {
                       style={{
                         marginBottom: "20px",
                         fontFamily: "Source Sans Pro",
-                        fontSize: "1.1rem",
+                        fontSize: "17px",
                       }}
                     >
                       {this.state.questionNum + 1}.&nbsp;
@@ -149,7 +149,7 @@ export default class Quiz extends App {
                                       this.answerLetters[index]
                                     ? "#fff0de"
                                     : "",
-                                  padding: "15px",
+                                  padding: "12px",
                                 }}
                                 htmlFor={this.answerLetters[index]}
                               >
@@ -172,8 +172,15 @@ export default class Quiz extends App {
                                     id={this.answerLetters[index]}
                                     value={this.answerLetters[index]}
                                     name="options"
+                                    /* 
                                     checked={
+                                      this.state.moveOn &&
                                       !this.state.isShowingAnswer &&
+                                      this.state.chosenAnswer ===
+                                        this.answerLetters[index]
+                                    }*/
+                                    checked={
+                                      this.state.moveOn &&
                                       this.state.chosenAnswer ===
                                         this.answerLetters[index]
                                     }
@@ -195,9 +202,9 @@ export default class Quiz extends App {
                       <div
                         className="instructions"
                         style={{
-                          marginTop: "10px",
                           paddingBottom: "30px",
                           borderRadius: "17px",
+                          /* 
                           border:
                             this.state.statusArray[this.state.questionNum] !=
                               "✓" &&
@@ -208,7 +215,7 @@ export default class Quiz extends App {
                                   this.state.questionNum
                                 ] === "✓"
                               ? "#04d904 2px solid"
-                              : "lightgray 2px solid",
+                              : "lightgray 2px solid", */
                         }}
                       >
                         <p
@@ -229,7 +236,7 @@ export default class Quiz extends App {
                                 fontFamily: "Source Sans Pro",
                               }}
                             >
-                              ✓ Correct
+                              <b>✓ Correct.</b>
                             </span>
                           ) : (
                             <span
@@ -238,10 +245,9 @@ export default class Quiz extends App {
                                 fontFamily: "Source Sans Pro",
                               }}
                             >
-                              ✕ Incorrect
+                              <b>✕ Incorrect.</b>
                             </span>
                           )}{" "}
-                          <br />•{" "}
                           {this.state.Data[this.state.questionNum].solution}
                           <br />
                         </p>
@@ -352,7 +358,7 @@ export default class Quiz extends App {
                             fontFamily: "Source Sans Pro",
                           }}
                         >
-                          Question Author: {sub.questionAuthor}
+                          Question Author(s): {sub.questionAuthor}
                           <br />
                           Number of Questions: {sub.numberOfQuestions}
                         </div>

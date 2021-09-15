@@ -85,7 +85,7 @@ hr {
 
 #questionTitle {
   color: black;
-  font-size: 20px !important;
+  font-size: 19px !important;
 }
 
 #buttonDesign {
@@ -746,6 +746,42 @@ img {
 
 #gapSection {
   display: none;
+}
+
+input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  border-radius: 15px;
+  border: 2px solid gray;
+  background-color: white;
+  -webkit-appearance: none; /*to disable the default appearance of radio button*/
+  -moz-appearance: none;
+}
+
+input[type="radio"]:focus {
+  /*no need, if you don't disable default appearance*/
+  outline: none; /*to remove the square border on focus*/
+}
+
+input[type="radio"]:checked {
+  /*no need, if you don't disable default appearance*/
+  background-color: gray;
+}
+
+input[type="radio"]:checked ~ span:first-of-type {
+  color: white;
+}
+
+label span:first-of-type {
+  position: relative;
+  left: -27px;
+  font-size: 15px;
+  color: #1fbed6;
+}
+
+label span {
+  position: relative;
+  top: -12px;
 }
 
 /* 

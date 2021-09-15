@@ -93,6 +93,7 @@ class App extends Component {
       childTopic: "Astronomy",
       startQuiz: false,
       blogSearch: "",
+      moveOn: true,
     };
   }
 
@@ -181,11 +182,14 @@ class App extends Component {
   };
 
   setAnswer(event) {
-    console.log(event.target.value);
-    this.setState({
-      chosenAnswer: event.target.value,
-      checkStatus: true,
-    });
+    if (this.state.isShowingAnswer) {
+    } else {
+      console.log(event.target.value);
+      this.setState({
+        chosenAnswer: event.target.value,
+        checkStatus: true,
+      });
+    }
   }
 
   showSolution() {
@@ -200,6 +204,7 @@ class App extends Component {
         emptyAnswerWarning: "",
         isShowingAnswer: true,
         finalChosenAnswer: this.state.chosenAnswer,
+        moveOn: true,
       });
       if (
         this.state.chosenAnswer ===
