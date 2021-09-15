@@ -22,10 +22,10 @@
    },
    {
       "id":4,
-      "title":"Modulus",
-      "description":"Modulus is the flagship product of Periapsis Software, a company dedicated to furthering the education sphere through peer-to-peer platforms that bring teachers and students closer together, across the world. As a team of high-achieving high school and college students, we've experienced first-hand the faults of our education system, and we're determined to change it for the better - one line of code at a time.",
-      "link":"https://modulusedu.com/",
-      "img":"images/modulus.png"
+      "title":"Irvine Coding Club",
+      "description":"In 2020, Irvine Coding Club (ICC) was founded as a school CS club (at Rancho SJ). ICC was created as a student run community service organization for CS enthusiasts. Soon, ICC grew to a non-profit organization in Californa covering topics beyond CS, including math, robotics, art, debate, writing and more. In the future, the ICC plans to create more courses and lectures in order to further benefit the community, as well as hosting workshops and tournaments to inspire more students to take part in their academics while having fun.",
+      "link":"https://irvinecoding.club/",
+      "img":"images/icc.png"
    },
    {
       "id":5,
