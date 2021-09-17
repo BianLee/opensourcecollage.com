@@ -632,7 +632,7 @@ class App extends Component {
                     a convenient search mechanism. It allows organizations to
                     register on the site and share opportunities they offer upon
                     account creation. OSC leads an effort on its own to bring
-                    useful resources to students by providing academic notes +
+                    useful resources to students by providing academic notes &
                     quizzes on various subjects, as well as blog posts on all
                     things students can relate to, and get inspired by.
                   </span>
@@ -643,7 +643,7 @@ class App extends Component {
             </div>
             <div className="dashboard">
               <center>
-                <b>Notes</b> - Why waste time taking notes when these exist?
+                <b>Notes</b> - Free access to notes. Use them any way you like!
               </center>
               <br />
               {Notes.map((sub) => {
