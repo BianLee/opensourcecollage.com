@@ -216,7 +216,11 @@ export default function Login() {
                 <a
                   href="https://forms.gle/99WtnQkzcJBA73sbA"
                   target="_blank"
-                  style={{ textDecoration: "none", fontSize: "1rem" }}
+                  style={{
+                    textDecoration: "none",
+                    fontSize: "1rem",
+                    overflowWrap: "break-word",
+                  }}
                 >
                   https://forms.gle/99WtnQkzcJBA73sbA
                 </a>
