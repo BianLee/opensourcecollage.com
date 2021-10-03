@@ -7,7 +7,7 @@ import ITF from "./data/itf.json";
 import Economics from "./data/economics.json";
 import Business from "./data/business.json";
 import Networking from "./data/networking.json";
-import osc from "./images/osc.png";
+import osc from "./images/oct.png";
 import blog from "./data/blog.json";
 import category from "./data/category.json";
 import organizations from "./data/organizations.json";
@@ -593,7 +593,9 @@ class App extends Component {
             <div className="dashboard">
               {" "}
               <br />
-              <h1>Open Source Collage</h1>
+              <h1>
+                Open <span className="orangeTitle">Source</span> Collage
+              </h1>
               <button className="mobileLoginButton" onClick={this.handleLogin}>
                 Login
               </button>

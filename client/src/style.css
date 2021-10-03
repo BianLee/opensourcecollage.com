@@ -386,6 +386,11 @@ h1 {
   font-size: 2rem;
 }
 
+.orangeTitle {
+  color: #e35f10;
+  font-size: 2rem !important;
+}
+
 * {
   font-size: 1.1rem;
   font-family: Verdana;
@@ -600,6 +605,7 @@ img {
   font-size: 16px;
   cursor: pointer;
   border-color: #e7e7e7;
+  border-radius: 14px;
   color: black;
   width: 90px;
   position: fixed !important;
