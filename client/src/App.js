@@ -593,9 +593,8 @@ class App extends Component {
             <div className="dashboard">
               {" "}
               <br />
-              <h1>
-                Open <span className="orangeTitle">Source</span> Collage
-              </h1>
+              {/*  <span className="orangeTitle">Source</span> */}
+              <h1>Open Source Collage</h1>
               <button className="loginButton" onClick={this.handleLogin}>
                 Login
               </button>

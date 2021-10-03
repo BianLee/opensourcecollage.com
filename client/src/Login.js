@@ -209,15 +209,17 @@ export default function Login() {
                 className="questionTitleInner"
                 style={{ marginBottom: "10px", fontFamily: "Source Sans Pro" }}
               >
-                Login is only available for registered organizations. Through
-                logging in, any student-run organization may post and share
-                opportunities to be visible on the front page of this site. If
-                you are part of an organization and wish to register, please
-                fill out this Google Form to apply. All organizations must go
-                through this application to be registered and gain login access
-                (and posting ability) on the site. After completing the form,
-                please allow up to 3 business days to get your login credentials
-                (will be emailed).
+                Accounts are only given to partnered organizations. To form a
+                partnership with OSC, please fill out and submit the following
+                application. Allow up to a week for this form to be processed
+                and get your organization approved for a partnership.{" "}
+                <a
+                  href="https://forms.gle/99WtnQkzcJBA73sbA"
+                  target="_blank"
+                  style={{ textDecoration: "none", fontSize: "1rem" }}
+                >
+                  https://forms.gle/99WtnQkzcJBA73sbA
+                </a>
               </p>
             </div>
           </center>
