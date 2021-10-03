@@ -283,7 +283,7 @@ hr {
     margin-left: 15px !important;
   }
   .dashboardBlog {
-    width: 80% !important;
+    width: 100% !important;
   }
   #socialSection {
     margin-top: 200px !important;
@@ -318,16 +318,17 @@ hr {
     display: none;
   }
   .mobileLoginButton {
-    margin-top: 20px;
     border: 2px solid black;
+    margin-bottom: 30px;
     background-color: #e7e7e7;
+    border-radius: 17px;
     color: black;
     padding: 6px 14px;
     font-size: 16px;
     cursor: pointer;
     border-color: #e7e7e7;
     color: black;
-    width: 90px;
+    width: 100%;
     display: block;
   }
   .oppPost {
@@ -335,7 +336,7 @@ hr {
     height: 120px !important;
   }
   .blogPost {
-    width: 295px !important;
+    width: 500px !important;
     height: 186px !important;
   }
   .flex-container {

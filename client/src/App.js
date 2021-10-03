@@ -596,9 +596,6 @@ class App extends Component {
               <h1>
                 Open <span className="orangeTitle">Source</span> Collage
               </h1>
-              <button className="mobileLoginButton" onClick={this.handleLogin}>
-                Login
-              </button>
               <button className="loginButton" onClick={this.handleLogin}>
                 Login
               </button>
@@ -619,7 +616,13 @@ class App extends Component {
                   >
                     <Logo />
                   </Suspense> */}
-                  <img src={osc} id="logo"></img>
+                  <img src={osc} id="logo"></img>{" "}
+                  <button
+                    className="mobileLoginButton"
+                    onClick={this.handleLogin}
+                  >
+                    Login
+                  </button>
                   <span
                     className="logoDescription"
                     style={{
@@ -1064,7 +1067,7 @@ class App extends Component {
               </p>
             </div>
 
-            <div className="dashboard">
+            <div className="dashboardBlog">
               <p
                 className="questionTitleInner"
                 id="questionTitle"
