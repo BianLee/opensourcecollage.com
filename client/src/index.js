@@ -9,6 +9,7 @@ import blog3 from "./blog/3.md";
 import blog4 from "./blog/4.md";
 import blog5 from "./blog/5.md";
 import blog6 from "./blog/6.md";
+import blog7 from "./blog/7.md";
 import Quiz from "./Quiz";
 import LifeSciences from "./notes/LifeSciences.pdf";
 import {
@@ -103,6 +104,19 @@ ReactDOM.render(
           propRender={blog6}
           page="6"
           title="Is Dual Enrollment Worth it? Ranking and Evaluating Every Community College Class I Took So Far"
+          isAuthed={true}
+        />
+      )}
+    />
+    <Route
+      exact
+      path="/blog/7"
+      render={(props) => (
+        <Blog
+          {...props}
+          propRender={blog7}
+          page="7"
+          title="The Starcoder: Talking Tech with Meldoy, a brilliant young programmer & non-profit founder"
           isAuthed={true}
         />
       )}
