@@ -7,6 +7,13 @@
       "img":"images/osc.png"
    },
    {
+      "id":17,
+      "title":"PacificSTEM",
+      "description":"PacificSTEM is a 501(c) non-profit organization dedicated to the mission of making STEM more accessible to students and families on the West Coast. Through our STEMLearning program, we empower elementary and middle school students to discover their passions in STEM and provide them with resources to help them learn valuable technical skills in different STEM fields. We also host a yearly March Event, inviting professionals to speak and inspire young students to pursue STEM in the future. PacificSTEM is run by high school student volunteers, who are given the opportunity to undertake projects involving community engagement, outreach, professional development, and furthering STEM education.",
+      "link":"https://pacificSTEM.org",
+      "img":"images/pacificstem.png" 
+   }, 
+   {
       "id":2,
       "title":"InterSTEM",
       "description":"InterSTEM is a non-profit organization that hopes to raise awareness about the relevance of STEM-related topics to the world. Functioning mainly online, this platform offers a tutoring service for students, updates readers about current news in STEM through articles and blog posts, and plans collaborative projects between high school and elementary students. Through the integration of science, technology, engineering, and mathematics, InterSTEM provides students of all backgrounds the opportunity to explore and dive deeper into the world of STEM.",
@@ -113,7 +120,7 @@
    },
    {
       "id":16,
-      "title":"Medixly1",
+      "title":"Medixly",
       "description":"Medixly is a startup aiming to provide healthcare innovation for patients through an application. Through the collaboration of the teams, each contributing towards the development of the projects we work on, the startup presents various software on the application to assist patients with specific areas of their health.",
       "link":"https://linktr.ee/medixly",
       "img":"images/medixly.png"
