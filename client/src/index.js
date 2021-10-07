@@ -12,6 +12,7 @@ import blog6 from "./blog/6.md";
 import blog7 from "./blog/7.md";
 import Quiz from "./Quiz";
 import LifeSciences from "./notes/LifeSciences.pdf";
+import Organizations from "./Organizations";
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,6 +31,7 @@ ReactDOM.render(
     <Route exact path="/quiz/networking" component={Quiz} />
     <Route exact path="/" component={App} />
     <Route exact path="/login" component={Login} />
+    <Route exact path="/organizations" component={Organizations} />
     <Route
       exact
       path="/blog/1"
@@ -103,7 +105,7 @@ ReactDOM.render(
           {...props}
           propRender={blog6}
           page="6"
-          title="Is Dual Enrollment Worth it? Ranking and Evaluating Every Community College Class I Took So Far"
+          title="TheCodingWizard: Nathan’s Rise to Becoming One of the Best Programmers and Problem Solvers of Our Generation"
           isAuthed={true}
         />
       )}

@@ -53,6 +53,7 @@ class App extends Component {
     this.handleOpportunitiesSearch = this.handleOpportunitiesSearch.bind(this);
     this.handleBlogsSearch = this.handleBlogsSearch.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.gotoOrgs = this.gotoOrgs.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -126,6 +127,7 @@ class App extends Component {
       .catch(() => {
         alert("error retreving data!!");
       });
+    document.title = "Open Source Collage";
   };
 
   getPost = () => {
@@ -220,6 +222,10 @@ class App extends Component {
         });
       }
     }
+  }
+
+  gotoOrgs() {
+    this.props.history.push("/organizations");
   }
 
   chooseTopic(event) {
@@ -1003,10 +1009,19 @@ class App extends Component {
                             <br />
                           </p>
                         </div>
+                        <br
+                          style={{
+                            display:
+                              this.state.selectedOrg == org.title
+                                ? "inline"
+                                : "none",
+                          }}
+                        />
                       </>
                     );
                   })}
                   <>
+                    {/* 
                     <center style={{ marginTop: "20px" }}>
                       <span
                         onClick={this.prevOrg}
@@ -1049,6 +1064,7 @@ class App extends Component {
                       </span>
                     </center>
                     <br />
+                    
                     <input
                       type="text"
                       name="name"
@@ -1060,6 +1076,23 @@ class App extends Component {
                       autoComplete="off"
                       onChange={this.handleOrgSearch}
                     />
+                    <br />*/}
+
+                    <span
+                      onClick={this.gotoOrgs}
+                      style={{
+                        float: "right",
+                        fontFamily: "Source Sans Pro",
+                        marginLeft: "20px",
+                        cursor: "pointer",
+                        backgroundColor: "#e7e7e7",
+                        borderRadius: "12px",
+                        color: "black",
+                        padding: "8px 22px",
+                      }}
+                    >
+                      See All Organizations →
+                    </span>
                     <br />
                   </>
                 </>

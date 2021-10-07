@@ -17,6 +17,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { withRouter } from "react-router-dom";
+import MetaTags from "react-meta-tags";
 import {
   BrowserRouter as Router,
   Switch,
@@ -34,6 +35,7 @@ export default class Blog extends React.Component {
       page: props.page,
       title: props.title,
       id: props.page,
+      description: props.description,
       content: "",
       markdown: "",
       d: props.propRender,
@@ -73,6 +75,14 @@ export default class Blog extends React.Component {
       <>
         <>
           {" "}
+          <MetaTags>
+            <title>{this.state.title}</title>
+            <meta
+              id="meta-description"
+              name="description"
+              content={this.state.description}
+            />
+          </MetaTags>
           <center>
             <div className="dashboardArticle">
               <p
