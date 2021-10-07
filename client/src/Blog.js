@@ -119,7 +119,7 @@ export default class Blog extends React.Component {
               <br />
               <ins
                 class="adsbygoogle"
-                style="display:block"
+                style={{ display: "block" }}
                 data-ad-client="ca-pub-9584425027469512"
                 data-ad-slot="7829178193"
                 data-ad-format="auto"
