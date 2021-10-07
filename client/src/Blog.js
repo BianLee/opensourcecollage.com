@@ -18,6 +18,7 @@ import path from "path";
 import matter from "gray-matter";
 import { withRouter } from "react-router-dom";
 import MetaTags from "react-meta-tags";
+
 import {
   BrowserRouter as Router,
   Switch,
