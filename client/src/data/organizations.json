@@ -28,6 +28,13 @@
       "img":"images/icc.png"
    },
    {
+      "id": 18,
+      "title": "Mediacheck",
+      "description": "Mediacheck is a nonpolitical student run 501(c)(3) nonprofit organization dedicated to combatting misinformation with education. We strive to teach people, specifically the younger generation, about how to navigate the world of misinformation and bias news that we currently have so that they are prepared when they need it.", 
+      "link": "https://www.mediachecknonprofit.com/",
+      "img": "images/mediacheck.png"
+   }, 
+   {
       "id":17,
       "title":"PacificSTEM",
       "description":"PacificSTEM is a 501(c) non-profit organization dedicated to the mission of making STEM more accessible to students and families on the West Coast. Through our STEMLearning program, we empower elementary and middle school students to discover their passions in STEM and provide them with resources to help them learn valuable technical skills in different STEM fields. We also host a yearly March Event, inviting professionals to speak and inspire young students to pursue STEM in the future. PacificSTEM is run by high school student volunteers, who are given the opportunity to undertake projects involving community engagement, outreach, professional development, and furthering STEM education.",
