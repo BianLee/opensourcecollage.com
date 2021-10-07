@@ -628,6 +628,23 @@ class App extends Component {
                   >
                     Login
                   </button>
+                  <a
+                    className="onlyMobile"
+                    href="https://discord.com/invite/tKfMtXBsPR"
+                    target="_blank"
+                  >
+                    <button
+                      className="mobileLoginButton"
+                      style={{
+                        backgroundColor: "#5865f2",
+                        borderColor: "#5865f2",
+                        color: "white",
+                        marginTop: "-15px",
+                      }}
+                    >
+                      Discord
+                    </button>
+                  </a>
                   <span
                     className="logoDescription"
                     style={{
@@ -644,7 +661,20 @@ class App extends Component {
                     account creation. OSC leads an effort on its own to bring
                     useful resources to students by providing academic notes &
                     quizzes on various subjects, as well as blog posts on all
-                    things students can relate to, and get inspired by.
+                    things students can relate to, and get inspired by.{" "}
+                    <span className="discordText">
+                      <a
+                        href="https://discord.com/invite/tKfMtXBsPR"
+                        target="_blank"
+                        style={{
+                          fontSize: "17px",
+                          color: "#5865F2",
+                          lineHeight: "1.9rem",
+                        }}
+                      >
+                        Click To Join Discord Server!
+                      </a>
+                    </span>
                   </span>
                 </div>
 

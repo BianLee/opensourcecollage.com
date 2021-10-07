@@ -253,6 +253,12 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .onlyMobile {
+    width: 100% !important;
+  }
+  .discordText {
+    display: none !important;
+  }
   .quizInfo {
     font-size: 1.1rem !important;
   }
@@ -331,6 +337,7 @@ hr {
     width: 100%;
     display: block;
   }
+
   .oppPost {
     width: 500px !important;
     height: 120px !important;
@@ -545,6 +552,10 @@ h1 {
 
 .featuredTwo:hover {
   border: 2px dotted #e3d6c8;
+}
+
+.discordText {
+  display: inline;
 }
 
 img {
