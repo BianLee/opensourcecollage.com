@@ -109,7 +109,7 @@ class App extends Component {
     "IT Fundamentals",
     "Computer Networking",
   ];
-  */
+  */ z;
 
   componentDidMount = () => {
     axios

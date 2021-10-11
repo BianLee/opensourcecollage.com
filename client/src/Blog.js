@@ -18,6 +18,7 @@ import path from "path";
 import matter from "gray-matter";
 import { withRouter } from "react-router-dom";
 import MetaTags from "react-meta-tags";
+import { Helmet } from "react-helmet";
 
 import {
   BrowserRouter as Router,
@@ -144,6 +145,20 @@ export default class Blog extends React.Component {
                 style={{ width: "90%" }}
               />
             </div>
+            <Helmet>
+              <script
+                data-name="BMC-Widget"
+                data-cfasync="false"
+                src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+                data-id="bianleedev"
+                data-description="Support me on Buy me a coffee!"
+                data-message=""
+                data-color="#FF5F5F"
+                data-position="Right"
+                data-x_margin="30"
+                data-y_margin="30"
+              />
+            </Helmet>
           </center>
         </>
       </>

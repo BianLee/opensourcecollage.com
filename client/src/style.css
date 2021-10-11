@@ -375,7 +375,7 @@ hr {
   #nextButton {
     position: fixed !important;
     bottom: 40px !important;
-    right: 50px !important;
+    right: 120px !important;
   }
 
   #revealAnswerButton {
