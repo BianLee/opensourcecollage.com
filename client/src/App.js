@@ -1265,7 +1265,7 @@ class App extends Component {
               </p>
             </div>
             {/* id="socialSection" */}
-            <div className="dashboard">
+            <div className="dashboard" style={{ width: "100%" }}>
               <p
                 className="questionTitleInner"
                 id="questionTitle"
@@ -1274,6 +1274,9 @@ class App extends Component {
                 {" "}
                 <br />
                 <center>
+                  <a href="https://discord.gg/tKfMtXBsPR" target="_blank">
+                    <ion-icon name="logo-discord" id="social"></ion-icon>
+                  </a>
                   <a
                     href="https://instagram.com/opensourcecollage"
                     target="_blank"
@@ -1292,8 +1295,14 @@ class App extends Component {
                   >
                     <ion-icon name="logo-github" id="social"></ion-icon>
                   </a>
-                  <a href="https://discord.gg/tKfMtXBsPR" target="_blank">
-                    <ion-icon name="logo-discord" id="social"></ion-icon>
+                  <a
+                    href="https://www.facebook.com/opensourcecollage"
+                    target="_blank"
+                  >
+                    <ion-icon name="logo-facebook" id="social"></ion-icon>
+                  </a>
+                  <a href="https://twitter.com/OSCollage" target="_blank">
+                    <ion-icon name="logo-twitter" id="social"></ion-icon>
                   </a>
                 </center>
               </p>
