@@ -652,8 +652,8 @@ class App extends Component {
                       lineHeight: "1.9rem",
                     }}
                   >
-                    Open Source Collage is a user-friendly platform designed to
-                    help high school students develop passion and discover new
+                    Open Source Collage is a platform designed to help high
+                    school students develop passion and discover new
                     opportunities by providing access to growing database of
                     extracurricular activities & student-run organizations, with
                     a convenient search mechanism. It allows organizations to
@@ -672,7 +672,7 @@ class App extends Component {
                           lineHeight: "1.9rem",
                         }}
                       >
-                        Click To Join Discord Server!
+                        Join Discord Server!
                       </a>
                     </span>
                   </span>
