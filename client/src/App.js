@@ -781,7 +781,11 @@ class App extends Component {
                                       : "none",
                                 }}
                               >
-                                <div className="oppPost" id={opp.colorcode}>
+                                <div
+                                  style={{ wordWrap: "break-word" }}
+                                  className="oppPost"
+                                  id={opp.colorcode}
+                                >
                                   {opp.title}
                                 </div>
                               </a>

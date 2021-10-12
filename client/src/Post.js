@@ -97,6 +97,7 @@ export default class Post extends React.Component {
     if (
       this.state.category.length > 0 &&
       this.state.title.length > 0 &&
+      this.state.title.length <= 52 &&
       this.state.link.length > 0 &&
       this.state.colorcode.length > 0
     ) {
@@ -129,10 +130,18 @@ export default class Post extends React.Component {
           className="loginBox"
           style={{
             outline: "currentcolor none medium",
+            marginRight: "20px",
           }}
           autoComplete="off"
           onChange={this.handleTitle}
         />
+        <label
+          style={{
+            color: this.state.title.length <= 52 ? "green" : "red",
+          }}
+        >
+          {52 - this.state.title.length}
+        </label>
         <br />
         <input
           type="text"
@@ -142,12 +151,14 @@ export default class Post extends React.Component {
           style={{
             outline: "currentcolor none medium",
             marginTop: "20px",
+            marginRight: "20px",
           }}
           autoComplete="off"
           onChange={this.handleURL}
         />
+        <label>&nbsp;&nbsp;&nbsp;</label>
         <br /> <br />
-        <div style={{ width: "60%" }}>
+        <div style={{ width: "100%" }}>
           {OpportunitiesCategory.map((cat) => {
             return (
               <>
@@ -192,12 +203,13 @@ export default class Post extends React.Component {
         </button>
         <br />
         <br />
+        <br />
         <p
           className="questionTitleInner"
           style={{
             marginBottom: "10px",
             fontFamily: "Source Sans Pro",
-            width: "50%",
+            width: "100%",
           }}
         >
           *Spam posts will result in permanent account & IP ban.

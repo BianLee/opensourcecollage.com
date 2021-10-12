@@ -184,7 +184,7 @@ export default function Login() {
               />
               <br />
               <input
-                type="text"
+                type="password"
                 name="name"
                 placeholder="Password"
                 className="loginBox"
