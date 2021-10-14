@@ -1145,29 +1145,28 @@ class App extends Component {
                   school students
                 </center>
                 <br />
+
                 <div className="blog-media-grid">
                   <>
                     {" "}
                     {this.state.renderedBlogs.map((entry) => {
                       return (
-                        <>
-                          <a
-                            target="_blank"
-                            style={{
-                              textDecoration: "none",
-                              color: "black",
-                            }}
-                            id={entry.id}
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "black",
+                          }}
+                          id={entry.id}
+                          to={"/blog/" + entry.id}
+                        >
+                          <div
+                            className="blogPost"
+                            // onClick={this.handleClick}
+                            id={entry.category + "Button"}
                           >
-                            <div
-                              className="blogPost"
-                              id={entry.category + "Button"}
-                              onClick={this.handleClick}
-                            >
-                              {entry.title}
-                            </div>
-                          </a>
-                        </>
+                            {entry.title}
+                          </div>
+                        </Link>
                       );
                     })}
                   </>
