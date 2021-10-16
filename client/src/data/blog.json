@@ -1,9 +1,17 @@
 [
   {
+    "id": 8,
+    "title": "Life After High School: Austin’s Student Life at Yale!",
+    "author": "Bian Lee",
+    "description": "Interview with Austin Wang, a first-year student at Yale University",
+    "date": "2012-04-23T18:25:43.511Z",
+    "category": "Interview"
+  },
+  {
     "id": 7,
     "title": "The Starcoder: Talking Tech with Melody, a brilliant young programmer & non-profit founder",
     "author": "Bian Lee",
-    "description": "Interview with Melody Yu, a high school freshman programmer (USACO Platinum competitor) who founded Irvine Coding Club and Project Starcoder", 
+    "description": "Interview with Melody Yu, a high school freshman programmer (USACO Platinum competitor) who founded Irvine Coding Club and Project Starcoder",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "Interview"
   },
@@ -11,7 +19,7 @@
     "id": 6,
     "title": "TheCodingWizard: Nathan’s Rise to Becoming One of the Best Programmers and Problem Solvers of Our Generation",
     "author": "Bian Lee",
-    "description": "Interview with Nathan Wang, a 3x USACO Finalist, 5x AIME qualifier, and a full stack web developer who founded Competitive Programming Initiative and USACO guide", 
+    "description": "Interview with Nathan Wang, a 3x USACO Finalist, 5x AIME qualifier, and a full stack web developer who founded Competitive Programming Initiative and USACO guide",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "Interview"
   },
@@ -19,7 +27,7 @@
     "id": 5,
     "title": "Is Dual Enrollment Worth it? Ranking and Evaluating Every Community College Class I Took So Far",
     "author": "Bian Lee",
-    "description": "Community college classes to take (or avoid) if you dual-enroll", 
+    "description": "Community college classes to take (or avoid) if you dual-enroll",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "School"
   },
@@ -27,7 +35,7 @@
     "id": 4,
     "title": "Ellen Xu: A Driven, Optimistic Innovator With Unique Approach to Today's Technology and Research",
     "author": "Bian Lee",
-    "description": "Interview with Ellen Xu, a 2x ISEF Finalist, CyberPatriot national champion, and a researcher at UCSD Kawasaki Disease Research Center. ", 
+    "description": "Interview with Ellen Xu, a 2x ISEF Finalist, CyberPatriot national champion, and a researcher at UCSD Kawasaki Disease Research Center. ",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "Interview"
   },
@@ -35,7 +43,7 @@
     "id": 3,
     "title": "The Single Best Decision I Made in High School",
     "author": "Bian Lee",
-    "description": "How a small decision ended up changing my whole identity", 
+    "description": "How a small decision ended up changing my whole identity",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "School"
   },
@@ -43,7 +51,7 @@
     "id": 2,
     "title": "From Cloud Computing to Audio Engineering: Tao's Venture in the World of Business and Technology",
     "author": "Bian Lee",
-    "description": "Interview with Tao Lin, a driven high school entrepreneur with quite an unconventional career", 
+    "description": "Interview with Tao Lin, a driven high school entrepreneur with quite an unconventional career",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "Interview"
   },
@@ -51,9 +59,8 @@
     "id": 1,
     "title": "The Development Journey of Open Source Collage",
     "author": "Bian Lee",
-    "description": "The story behind how and why OSC was built, and what the future holds for the platform.", 
+    "description": "The story behind how and why OSC was built, and what the future holds for the platform.",
     "date": "2012-04-23T18:25:43.511Z",
     "category": "News"
   }
 ]
-

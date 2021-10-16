@@ -10,6 +10,7 @@ import blog4 from "./blog/4.md";
 import blog5 from "./blog/5.md";
 import blog6 from "./blog/6.md";
 import blog7 from "./blog/7.md";
+import blog8 from "./blog/8.md";
 import Quiz from "./Quiz";
 import LifeSciences from "./notes/LifeSciences.pdf";
 import Organizations from "./Organizations";
@@ -119,6 +120,19 @@ ReactDOM.render(
           propRender={blog7}
           page="7"
           title="The Starcoder: Talking Tech with Meldoy, a brilliant young programmer & non-profit founder"
+          isAuthed={true}
+        />
+      )}
+    />
+    <Route
+      exact
+      path="/blog/8"
+      render={(props) => (
+        <Blog
+          {...props}
+          propRender={blog8}
+          page="8"
+          title="Life After High school: Austin’s Student Life at Yale!"
           isAuthed={true}
         />
       )}
