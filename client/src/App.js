@@ -636,8 +636,8 @@ class App extends Component {
                     <button
                       className="mobileLoginButton"
                       style={{
-                        backgroundColor: "#5865f2",
-                        borderColor: "#5865f2",
+                        backgroundColor: "#e67a27",
+                        borderColor: "#e67a27",
                         color: "white",
                         marginTop: "-15px",
                       }}
@@ -647,6 +647,7 @@ class App extends Component {
                   </a>
                   <span
                     className="logoDescription"
+                    id="landingpage"
                     style={{
                       fontSize: "17px",
                       lineHeight: "1.9rem",
@@ -683,7 +684,14 @@ class App extends Component {
             </div>
             <div className="dashboard">
               <center>
-                <b>Notes</b> - Free access to notes. Use them any way you like!
+                <b>Notes</b> - Free access to notes.{" "}
+                <span
+                  style={{
+                    color: "#e67a27",
+                  }}
+                >
+                  Use them any way you like!
+                </span>
               </center>
               <br />
               {Notes.map((sub) => {
@@ -711,7 +719,15 @@ class App extends Component {
                   style={{ fontSize: "18px", lineHeight: "2rem" }}
                 >
                   <center>
-                    <b>Quizzes</b> - Learn by solving problems
+                    <b>Quizzes</b> -{" "}
+                    <span
+                      style={{
+                        color: "#5865F2",
+                      }}
+                    >
+                      Learn by solving problems.
+                    </span>{" "}
+                    Prepare for tests!
                     <br />
                     <br />{" "}
                     {subjects.map((sub) => {
@@ -748,8 +764,15 @@ class App extends Component {
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
                 <center>
-                  <b>Opportunities</b> - Browse extracurriculars based on your
-                  interests
+                  <b>Opportunities</b> -{" "}
+                  <span
+                    style={{
+                      color: "#e67a27",
+                    }}
+                  >
+                    Browse extracurriculars
+                  </span>{" "}
+                  based on your interests
                 </center>
                 <br />
                 <div className="dod-media-grid dod-stack-15">
@@ -923,7 +946,14 @@ class App extends Component {
               >
                 <center>
                   <br />
-                  <b>Organizations</b> - Find student-run organizations
+                  <b>Organizations</b> - Find student-run organizations, and{" "}
+                  <span
+                    style={{
+                      color: "#5865F2",
+                    }}
+                  >
+                    add yours today!
+                  </span>
                   <br />
                   <br />
                   {this.state.orgSearch.length != 0 ? (
@@ -1141,8 +1171,15 @@ class App extends Component {
               >
                 <br />
                 <center>
-                  <b>Blog</b> - Relatable & inspiring stories for all high
-                  school students
+                  <b>Blog</b> -{" "}
+                  <span
+                    style={{
+                      color: "#e67a27",
+                    }}
+                  >
+                    Relatable & inspiring
+                  </span>{" "}
+                  stories for all high school students
                 </center>
                 <br />
 

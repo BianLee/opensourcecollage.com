@@ -864,8 +864,15 @@ input[type="radio"]:checked:after {
   max-width: 1000px !important;
 }
 
+#landingpage {
+  width: 80%;
+  padding: 20px;
+  background-color: #fff4eb;
+}
+
 .logoDescription {
   width: 80%;
+  border-radius: 17px;
 }
 
 .quizDescription {
