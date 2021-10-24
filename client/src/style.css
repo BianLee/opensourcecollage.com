@@ -253,6 +253,9 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .dashboard {
+    width: 100%;
+  }
   .onlyMobile {
     width: 100% !important;
   }
@@ -344,7 +347,6 @@ hr {
   }
   .blogPost {
     width: 500px !important;
-    height: 186px !important;
   }
   .flex-container {
     display: flex;
