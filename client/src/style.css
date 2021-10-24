@@ -865,8 +865,10 @@ input[type="radio"]:checked:after {
 }
 
 #landingpage {
-  width: 80%;
+  width: 100%;
   padding: 20px;
+  padding-right: 32px;
+  padding-left: 32px;
   background-color: #fff4eb;
 }
 
