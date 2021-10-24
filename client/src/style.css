@@ -228,7 +228,7 @@ hr {
   }
   .oppPost {
     width: 500px !important;
-    height: 160px !important;
+    height: 120px !important;
   }
   .blogPost {
     width: 500px !important;
@@ -249,6 +249,18 @@ hr {
   }
   .blogButton {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .blogPost {
+    height: auto !important;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .oppPost {
+    height: auto !important;
   }
 }
 
@@ -343,10 +355,11 @@ hr {
 
   .oppPost {
     width: 500px !important;
-    height: 120px !important;
+    height: auto !important;
   }
   .blogPost {
     width: 500px !important;
+    height: auto !important;
   }
   .flex-container {
     display: flex;
@@ -753,7 +766,7 @@ img {
 
 .oppPost {
   background-color: #eee;
-  width: 295px;
+  width: 500px;
   height: 120px;
   padding-left: 10px;
   font-family: Source Sans Pro;
