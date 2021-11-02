@@ -7,7 +7,7 @@ import ITF from "./data/itf.json";
 import Economics from "./data/economics.json";
 import Business from "./data/business.json";
 import Networking from "./data/networking.json";
-import osc from "./images/oct.png";
+import osc from "./images/osc.png";
 import blog from "./data/blog.json";
 import category from "./data/category.json";
 import organizations from "./data/organizations.json";

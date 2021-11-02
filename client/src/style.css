@@ -882,7 +882,7 @@ input[type="radio"]:checked:after {
   padding: 20px;
   padding-right: 32px;
   padding-left: 32px;
-  background-color: #fff4eb;
+  background-color: #f2f2f2;
 }
 
 .logoDescription {
