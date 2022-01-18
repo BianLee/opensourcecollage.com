@@ -7,7 +7,7 @@
     "description": " This quiz covers basic concepts in astronomy. While some questions relate to physics, all are conceptual based and they don’t require problem solving skills. It should be used to review understanding of terms, and how well you can recall them. Topics include: Celestial sphere, sky motions, solar & lunar movements, origins of astronomy, notable scientists and figures, periodic motions, electromagnetic spectrum, telescopes, planets in the solar system, composition of the planets, and more. ",
     "img": "images/astronomy.jpg",
     "questionAuthor": "Bian Lee",
-    "numberOfQuestions": 13, 
+    "numberOfQuestions": 13,
     "options": ""
   },
   {
@@ -17,8 +17,8 @@
     "path": "biology",
     "description": "This quiz covers basic concepts in biology. It includes comprehensive topics taught in introductory biology classes, with most questions being concept based. It should be used to review understanding of terms, and important biological processes. Topics include: Basic chemistry, properties of water, energy and matter, domains of life, cells, membranes, enzymes, photosynthesis, cellular respiration, mitosis, meiosis, Mendelian / Non-Mendelian genetics, ecology, and more.",
     "img": "images/biology.jpg",
-    "questionAuthor": "Bian Lee, InterSTEM", 
-    "numberOfQuestions": 4, 
+    "questionAuthor": "Bian Lee",
+    "numberOfQuestions": 4,
     "options": ""
   },
   {
@@ -28,8 +28,8 @@
     "path": "business",
     "description": "This quiz covers basic terminology in business. Of course, business isn't an academic subject and it is a very broad field with numerous subfields / subjects. The problems test knowledge in understanding of basic terms, in different topics such as accounting, administration, economics, finance, management, marketing, etc. While it's unlikley that you'd use this to study for a quiz or an exam, it's always good to have foundational knowledge in different subjects, especially in practical fields like business.",
     "img": "images/business.jpg",
-    "questionAuthor": "Bian Lee", 
-    "numberOfQuestions": 4, 
+    "questionAuthor": "Bian Lee",
+    "numberOfQuestions": 4,
     "options": ""
   },
   {
@@ -39,8 +39,8 @@
     "path": "economics",
     "description": "This quiz covers basic concepts in economics (Macro & Micro). Most questions are concept based, and please note that there are no questions on graphs. (which is pretty important in economics study). Topics include supply, demand, PPC, GDP, utility, easticity, MPP, competition, labor market, unemployment, etc. Besides basic economic terms, it also covers different types of economist views, history of the US economy, and how it impacts economics policies in US politics (both parties). ",
     "img": "images/economics.png",
-    "questionAuthor": "Bian Lee", 
-    "numberOfQuestions": 10, 
+    "questionAuthor": "Bian Lee",
+    "numberOfQuestions": 10,
     "options": ""
   },
   {
@@ -50,8 +50,8 @@
     "path": "itf",
     "description": "IT Fundamentals (ITF+) is a certification exam offered by CompTIA, a non-profit group that administers and issues certifications in information technology. ITF+ is an exam that tests basic knowledge and understanding of computing and other IT topics. The test is 60 minutes, and requires passing score of 650 (scale of 900). The six categories that the exam tests on are: IT Concepts and Terminology, Infrastructure, Applications and Software, Software Development, Database Fundamentals, and Security.",
     "img": "images/itf.png",
-    "questionAuthor": "Bian Lee", 
-    "numberOfQuestions": 8, 
+    "questionAuthor": "Bian Lee",
+    "numberOfQuestions": 8,
     "options": ""
   },
   {
@@ -61,8 +61,8 @@
     "path": "networking",
     "description": "This quiz covers fundamental concepts in computer networking. To learn networking, it's helpful to have knowledge in computing & IT, since many concepts are quite obscure and complex. It is even more helpful to learn by testing things out physically, instead of reading over notes and simply doing practice problems. For that matter, Cisco's Packet Tracer is highly recommended, as it allows simulation of networks. Topics on this quiz include topology, TCP/IP, OSI model, ports, sockets, DNS, and more.",
     "img": "images/networking.jpg",
-    "questionAuthor": "Bian Lee", 
-    "numberOfQuestions": 7, 
+    "questionAuthor": "Bian Lee",
+    "numberOfQuestions": 7,
     "options": ""
   }
 ]

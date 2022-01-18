@@ -300,7 +300,9 @@ export default class Quiz extends App {
             </>
           ) : (
             <>
-              <h3>Quiz - {this.state.topic}</h3>
+              <h3 style={{ fontFamily: "Source Sans Pro" }}>
+                Quiz - {this.state.topic}
+              </h3>
               <div className="quizSettingDashboard">
                 <span style={{ fontFamily: "Source Sans Pro" }}>
                   <div className="aligned">
@@ -336,6 +338,9 @@ export default class Quiz extends App {
                                 sub.title == this.state.topic
                                   ? "inline"
                                   : "none",
+                              fontFamily: "Source Sans Pro",
+                              fontSize: "18px",
+                              lineHeight: "1.9rem",
                               fontFamily: "Source Sans Pro",
                               textAlign: "left",
                             }}

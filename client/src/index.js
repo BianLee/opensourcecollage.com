@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import BlogPosts from "./BlogPosts";
 import Blog from "./Blog";
 import Login from "./Login";
 import blog1 from "./blog/1.md";
@@ -34,6 +35,7 @@ ReactDOM.render(
     <Route exact path="/" component={App} />
     <Route exact path="/login" component={Login} />
     <Route exact path="/organizations" component={Organizations} />
+    <Route exact path="/blog" component={BlogPosts} />
     <Route
       exact
       path="/blog/1"

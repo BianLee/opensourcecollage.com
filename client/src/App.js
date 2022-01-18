@@ -54,6 +54,7 @@ class App extends Component {
     this.handleBlogsSearch = this.handleBlogsSearch.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.gotoOrgs = this.gotoOrgs.bind(this);
+    this.gotoBlog = this.gotoBlog.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -226,6 +227,9 @@ class App extends Component {
 
   gotoOrgs() {
     this.props.history.push("/organizations");
+  }
+  gotoBlog() {
+    this.props.history.push("/blog");
   }
 
   chooseTopic(event) {
@@ -649,8 +653,9 @@ class App extends Component {
                     className="logoDescription"
                     id="landingpage"
                     style={{
-                      fontSize: "17px",
+                      fontSize: "18px",
                       lineHeight: "1.9rem",
+                      fontFamily: "Source Sans Pro",
                     }}
                   >
                     Open Source Collage is a platform designed to help high
@@ -663,6 +668,7 @@ class App extends Component {
                     useful resources to students by providing academic notes &
                     quizzes on various subjects, as well as blog posts on all
                     things students can relate to, and get inspired by.{" "}
+                    {/* 
                     <span className="discordText">
                       <a
                         href="https://discord.com/invite/tKfMtXBsPR"
@@ -676,18 +682,26 @@ class App extends Component {
                         Join Discord Server!
                       </a>
                     </span>
+                    */}
                   </span>
                 </div>
-
-                <br />
               </p>
             </div>
             <div className="dashboard">
-              <center>
-                <b>Notes</b> - Free access to notes.{" "}
+              <center
+                style={{
+                  fontSize: "18px",
+                  lineHeight: "1.9rem",
+                  fontFamily: "Source Sans Pro",
+                }}
+              >
+                Free access to notes to help you cruise through the school year.{" "}
                 <span
                   style={{
                     color: "#e67a27",
+                    fontSize: "18px",
+                    lineHeight: "1.9rem",
+                    fontFamily: "Source Sans Pro",
                   }}
                 >
                   Use them any way you like!
@@ -711,23 +725,30 @@ class App extends Component {
               })}
             </div>
             <div className="dashboard">
-              <br />
               <center>
                 <p
                   className="questionTitleInner"
                   id="questionTitle"
                   style={{ fontSize: "18px", lineHeight: "2rem" }}
                 >
-                  <center>
-                    <b>Quizzes</b> -{" "}
+                  <center
+                    style={{
+                      fontSize: "18px",
+                      lineHeight: "1.9rem",
+                      fontFamily: "Source Sans Pro",
+                    }}
+                  >
                     <span
                       style={{
                         color: "#5865F2",
+                        fontSize: "18px",
+                        lineHeight: "1.9rem",
+                        fontFamily: "Source Sans Pro",
                       }}
                     >
                       Learn by solving problems.
                     </span>{" "}
-                    Prepare for tests!
+                    Prepare for quizzes & tests!
                     <br />
                     <br />{" "}
                     {subjects.map((sub) => {
@@ -747,13 +768,21 @@ class App extends Component {
                               id="subjectLogo"
                               style={{ pointerEvents: "none" }}
                             ></img>
-                            <span id="subjectDescription">{sub.subtitle}</span>
+                            <span
+                              style={{
+                                fontSize: "18px",
+                                lineHeight: "1.9rem",
+                                fontFamily: "Source Sans Pro",
+                              }}
+                              id="subjectDescription"
+                            >
+                              {sub.subtitle}
+                            </span>
                           </button>
                         </>
                       );
                     })}
                   </center>
-                  <br />
                 </p>
               </center>
             </div>
@@ -763,14 +792,22 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                <center>
-                  <b>Opportunities</b> -{" "}
+                <center
+                  style={{
+                    fontSize: "18px",
+                    lineHeight: "1.9rem",
+                    fontFamily: "Source Sans Pro",
+                  }}
+                >
                   <span
                     style={{
                       color: "#e67a27",
+                      fontSize: "18px",
+                      lineHeight: "1.9rem",
+                      fontFamily: "Source Sans Pro",
                     }}
                   >
-                    Browse extracurriculars
+                    Browse extracurriculars opportunities
                   </span>{" "}
                   based on your interests
                 </center>
@@ -931,28 +968,38 @@ class App extends Component {
                   className="dod-input"
                   style={{
                     outline: "currentcolor none medium",
+                    fontFamily: "Source Sans Pro",
                   }}
                   autoComplete="off"
                   onChange={this.handleOpportunitiesSearch}
                 />
               </p>
             </div>
-            <br />
+
             <div className="dashboard" style={{ marginTop: -10 }}>
               <p
                 className="questionTitleInner"
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                <center>
+                <center
+                  style={{
+                    fontSize: "18px",
+                    lineHeight: "1.9rem",
+                    fontFamily: "Source Sans Pro",
+                  }}
+                >
                   <br />
-                  <b>Organizations</b> - Find student-run organizations, and{" "}
+                  Find student-run organizations, and{" "}
                   <span
                     style={{
                       color: "#5865F2",
+                      fontSize: "18px",
+                      lineHeight: "1.9rem",
+                      fontFamily: "Source Sans Pro",
                     }}
                   >
-                    add yours today!
+                    register yours today!
                   </span>
                   <br />
                   <br />
@@ -1052,7 +1099,12 @@ class App extends Component {
                               fontFamily: "Source Sans Pro",
                             }}
                           >
-                            <span style={{ fontWeight: "bold" }}>
+                            <span
+                              style={{
+                                fontWeight: "bold",
+                                fontFamily: "Source Sans Pro",
+                              }}
+                            >
                               <br />
                               {org.title}
                             </span>{" "}
@@ -1068,7 +1120,15 @@ class App extends Component {
                               {org.link}
                             </a>
                             <br />
-                            {org.description}
+                            <span
+                              style={{
+                                fontSize: "18px",
+                                lineHeight: "1.9rem",
+                                fontFamily: "Source Sans Pro",
+                              }}
+                            >
+                              {org.description}
+                            </span>
                             <br />
                             <br />
                           </p>
@@ -1149,10 +1209,11 @@ class App extends Component {
                         fontFamily: "Source Sans Pro",
                         marginLeft: "20px",
                         cursor: "pointer",
+                        fontSize: "18px",
                         backgroundColor: "#e7e7e7",
                         borderRadius: "12px",
                         color: "black",
-                        padding: "8px 22px",
+                        padding: "6px 20px",
                       }}
                     >
                       See All Organizations →
@@ -1169,24 +1230,31 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                <br />
-                <center>
-                  <b>Blog</b> -{" "}
+                <center
+                  style={{
+                    fontSize: "18px",
+                    lineHeight: "1.9rem",
+                    fontFamily: "Source Sans Pro",
+                  }}
+                >
                   <span
                     style={{
                       color: "#e67a27",
+                      fontSize: "18px",
+                      lineHeight: "1.9rem",
+                      fontFamily: "Source Sans Pro",
                     }}
                   >
                     Relatable & inspiring
                   </span>{" "}
-                  stories for all high school students
+                  stories for high school students, by high school students
                 </center>
                 <br />
 
                 <div className="blog-media-grid">
                   <>
                     {" "}
-                    {this.state.renderedBlogs.map((entry) => {
+                    {this.state.renderedBlogs.slice(0, 6).map((entry) => {
                       return (
                         <Link
                           style={{
@@ -1251,57 +1319,22 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
-                {BlogsCategory.map((a) => {
-                  return (
-                    <>
-                      <div
-                        style={{
-                          display:
-                            this.state.blogSearch.length != 0
-                              ? "none"
-                              : "inline-block",
-                          marginBottom: "20px",
-                        }}
-                        onClick={this.handleBlogCat}
-                      >
-                        <input
-                          key={a.id}
-                          style={{
-                            flexShrink: "0",
-                            padding: "0.2rem",
-                            marginLeft: "20px",
-                          }}
-                          type="checkbox"
-                          defaultChecked="true"
-                          id={a.title}
-                        />{" "}
-                        <label
-                          style={{
-                            fontFamily: "Source Sans Pro",
-                            fontSize: "17px",
-                            display: "inline-block",
-                            marginTop: "5px",
-                          }}
-                          for={a.title}
-                        >
-                          {a.title}
-                        </label>
-                      </div>
-                    </>
-                  );
-                })}
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Search Blog"
-                  className="dod-input"
+                <span
+                  onClick={this.gotoBlog}
                   style={{
-                    outline: "currentcolor none medium",
-                    marginTop: "5px",
+                    float: "right",
+                    fontFamily: "Source Sans Pro",
+                    marginLeft: "20px",
+                    cursor: "pointer",
+                    fontSize: "18px",
+                    backgroundColor: "#e7e7e7",
+                    borderRadius: "12px",
+                    color: "black",
+                    padding: "6px 20px",
                   }}
-                  autoComplete="off"
-                  onChange={this.handleBlogsSearch}
-                />
+                >
+                  See All Blog Posts →
+                </span>
               </p>
             </div>
             {/* id="socialSection" */}
