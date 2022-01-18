@@ -1,54 +1,39 @@
 [
-   {
-      "correct":"b",
-      "solution":"Denaturing is changes to protein shape that inhibit or destroy protein function, and this could be caused by extreme conditions in pH, temperature, or due to product inhibitions. ",
-      "id":1,
-      "title":"Denaturing refers to",
-      "choices":[
-         "Temperature change within a cell",
-         "Changes in protein shape affecting protein function",
-         "Mistake in genetic code causing unwanted conditions",
-         "pH change of protein"
-      ],
-      "Timestamp":"2021-08-22 19:50:19"
-   },
-   {
-      "correct":"c",
-      "solution":"",
-      "id":2,
-      "title":"Which of the following is NOT a final energy product of glycolysis?",
-      "choices":[
-         "2 NADH",
-         "2 ATP",
-         "2 NAD+", 
-         "2 Pyruvate"
-      ],
-      "Timestamp":"2021-08-22 19:52:41"
-   },
-   {
-      "correct":"b",
-      "solution":"",
-      "id":3,
-      "title":"Atoms of a given element that differ from each other because their nuclei have different numbers of neutrons are called",
-      "choices":[
-         "Protons",
-         "Isotopes",
-         "Elements",
-         "Ion"
-      ],
-      "Timestamp":"2021-08-22 19:54:10"
-   },
-   {
-      "correct":"c",
-      "solution":"",
-      "id":4,
-      "title":"During what stage of meiosis do the centromeres break?",
-      "choices":[
-         "Metaphase I",
-         "Telophase II",
-         "Anaphase II",
-         "Prophase I"
-      ],
-      "Timestamp":"2021-08-22 19:55:02"
-   }
+  {
+    "correct": "b",
+    "solution": "Denaturing is changes to protein shape that inhibit or destroy protein function, and this could be caused by extreme conditions in pH, temperature, or due to product inhibitions. ",
+    "id": 1,
+    "title": "Denaturing refers to",
+    "choices": [
+      "Temperature change within a cell",
+      "Changes in protein shape affecting protein function",
+      "Mistake in genetic code causing unwanted conditions",
+      "pH change of protein"
+    ],
+    "Timestamp": "2021-08-22 19:50:19"
+  },
+  {
+    "correct": "c",
+    "solution": "",
+    "id": 2,
+    "title": "Which of the following is NOT a final energy product of glycolysis?",
+    "choices": ["2 NADH", "2 ATP", "2 NAD+", "2 Pyruvate"],
+    "Timestamp": "2021-08-22 19:52:41"
+  },
+  {
+    "correct": "b",
+    "solution": "",
+    "id": 3,
+    "title": "Atoms of a given element that differ from each other because their nuclei have different numbers of neutrons are called",
+    "choices": ["Protons", "Isotopes", "Elements", "Ion"],
+    "Timestamp": "2021-08-22 19:54:10"
+  },
+  {
+    "correct": "c",
+    "solution": "",
+    "id": 4,
+    "title": "During what stage of meiosis do the centromeres break?",
+    "choices": ["Metaphase I", "Telophase II", "Anaphase II", "Prophase I"],
+    "Timestamp": "2021-08-22 19:55:02"
+  }
 ]

@@ -7,7 +7,7 @@ import blog3 from "./blog/3.md";
 import blog4 from "./blog/4.md";
 import blogundefined from "./blog/undefined.md";
 import ReactMarkdown from "react-markdown";
-import blog from "./data/blog.json";
+// import blog from "./data/blog.json";
 import Markdown from "markdown-to-jsx";
 import rehypeRaw from "rehype-raw";
 import Disqus from "disqus-react";
