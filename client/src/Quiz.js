@@ -222,7 +222,7 @@ export default class Quiz extends App {
                           className="questionTitleInner"
                           id="questionTitle"
                           style={{
-                            fontSize: "1.1rem",
+                            fontSize: "18px",
                             lineHeight: "2rem",
                             fontFamily: "Source Sans Pro",
                           }}
@@ -234,9 +234,10 @@ export default class Quiz extends App {
                                 color: "#04d904",
 
                                 fontFamily: "Source Sans Pro",
+                                fontSize: "18px",
                               }}
                             >
-                              <b>✓ Correct.</b>
+                              ✓ Correct.
                             </span>
                           ) : (
                             <span
@@ -245,7 +246,7 @@ export default class Quiz extends App {
                                 fontFamily: "Source Sans Pro",
                               }}
                             >
-                              <b>✕ Incorrect.</b>
+                              ✕ Incorrect.
                             </span>
                           )}{" "}
                           {this.state.Data[this.state.questionNum].solution}

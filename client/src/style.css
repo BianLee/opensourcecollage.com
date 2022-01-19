@@ -85,7 +85,7 @@ hr {
 
 #questionTitle {
   color: black;
-  font-size: 19px !important;
+  font-size: 18px !important;
 }
 
 #buttonDesign {
@@ -294,7 +294,7 @@ hr {
   }
   #questionTitle {
     color: black;
-    font-size: 19px !important;
+    font-size: 18px !important;
   }
   .optionText {
     font-size: 19px;
@@ -578,6 +578,7 @@ img {
   max-height: 100%;
   height: auto;
   width: auto;
+  display: block;
   /* 
   display: block;
   margin-left: auto;
@@ -741,6 +742,26 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
+}
+
+#normal {
+  margin-left: 20px;
+}
+#compact {
+  margin-left: 20px;
+}
+
+.instagramPost {
+  width: 500px !important;
+  height: auto;
+  padding: none;
+  font-family: Source Sans Pro;
+  font-size: 17px;
+  border: 1px #e9ecf0 solid;
+}
+
+.instagramPost:hover {
+  border: 1px #8298ad solid;
 }
 
 .blogPost {

@@ -14,6 +14,8 @@
   font-family: "Source Sans Pro";
   text-align: left !important;
   width: 90%;
+  font-size: 18px;
+  line-height: 1.9rem;
   font-weight: 500;
 }
 
@@ -51,7 +53,7 @@
 .reactMarkDown b {
   font-weight: bold !important;
 
-  font-size: 20px;
+  font-size: 19px;
 }
 
 a {

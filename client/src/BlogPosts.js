@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import blog from "./data/blog.json";
+import instagram from "./data/instagram.json";
 import "./style.css";
 import organizations from "./data/organizations.json";
 import BlogsCategory from "./data/blogsCategory.json";
@@ -22,8 +23,11 @@ export default class BlogPosts extends React.Component {
       blogCat: ["News", "School", "Interview"],
       renderedPosts: [],
       renderedBlogs: blog,
+      blogModeInstagram: true,
     };
     this.goHome = this.goHome.bind(this);
+    this.handleNormalView = this.handleNormalView.bind(this);
+    this.handleCompactView = this.handleCompactView.bind(this);
   }
 
   goHome(e) {
@@ -57,6 +61,7 @@ export default class BlogPosts extends React.Component {
         blogCat: ["News", "School", "Interview"],
       });
     }
+
     this.setState(
       {
         blogSearch: temp,
@@ -110,11 +115,25 @@ export default class BlogPosts extends React.Component {
     }
   }
 
+  handleNormalView(e) {
+    this.setState({
+      blogModeInstagram: true,
+    });
+  }
+  handleCompactView(e) {
+    this.setState({
+      blogModeInstagram: false,
+    });
+  }
+
   render() {
     document.title = "Blog";
     return (
       <>
-        <div className="dashboardBlog" style={{ marginTop: "15px" }}>
+        <div
+          className="dashboardBlog"
+          style={{ marginTop: "15px", marginBottom: "30px" }}
+        >
           <p
             className="questionTitleInner"
             id="questionTitle"
@@ -131,52 +150,67 @@ export default class BlogPosts extends React.Component {
               ← Return Home
             </span>
             <br />
-
-            <div className="blog-media-grid" style={{ marginTop: "20px" }}>
-              <>
-                {" "}
-                {this.state.renderedBlogs.map((entry) => {
-                  return (
-                    <Link
-                      style={{
-                        textDecoration: "none",
-                        color: "black",
-                      }}
-                      id={entry.id}
-                      to={"/blog/" + entry.id}
-                    >
-                      <div
-                        className="blogPost"
-                        // onClick={this.handleClick}
-                        id={entry.category + "Button"}
-                      >
-                        {entry.title}
-                      </div>
-                    </Link>
-                  );
-                })}
-              </>
-            </div>
-          </p>
-        </div>
-        <div className="dashboard" style={{ marginTop: "-28px" }}>
-          <p
-            className="questionTitleInner"
-            id="questionTitle"
-            style={{ fontSize: "18px", lineHeight: "2rem" }}
-          >
-            <span
+            <input
+              type="text"
+              name="name"
+              placeholder="Search Blog"
+              className="dod-input"
               style={{
-                paddingLeft: "20px",
+                float: "left",
+                outline: "currentcolor none medium",
+                fontFamily: "Source Sans Pro",
+                marginTop: "15px",
+              }}
+              autoComplete="off"
+              onChange={this.handleBlogsSearch}
+            />
+            <input
+              style={{
+                flexShrink: "0",
+                padding: "0.2rem",
+
+                marginTop: "15px",
+                display: "inline-block",
+              }}
+              type="radio"
+              name="subject"
+              onClick={this.handleNormalView}
+              id="normal"
+              defaultChecked={this.state.blogModeInstagram}
+            />{" "}
+            <label
+              style={{
+                fontFamily: "Source Sans Pro",
+                fontSize: "17px",
+                marginTop: "15px",
+                display: "inline-block",
+              }}
+              for="normal"
+            >
+              Normal
+            </label>
+            <input
+              style={{
+                flexShrink: "0",
+                padding: "0.2rem",
+
+                display: "inline-block",
+              }}
+              type="radio"
+              name="subject"
+              onClick={this.handleCompactView}
+              id="compact"
+            />{" "}
+            <label
+              style={{
                 fontFamily: "Source Sans Pro",
                 fontSize: "17px",
                 display: "inline-block",
-                marginTop: "5px",
               }}
+              for="compact"
             >
-              Categories:
-            </span>
-
+              Compact
+            </label>
             {BlogsCategory.map((a) => {
               return (
                 <>
@@ -186,7 +220,6 @@ export default class BlogPosts extends React.Component {
                         this.state.blogSearch.length != 0
                           ? "none"
                           : "inline-block",
-                      marginBottom: "20px",
                     }}
                     onClick={this.handleBlogCat}
                   >
@@ -216,21 +249,67 @@ export default class BlogPosts extends React.Component {
                 </>
               );
             })}
-            <input
-              type="text"
-              name="name"
-              placeholder="Search Blog"
-              className="dod-input"
-              style={{
-                float: "left",
-                outline: "currentcolor none medium",
-                fontFamily: "Source Sans Pro",
-                marginTop: "5px",
-              }}
-              autoComplete="off"
-              onChange={this.handleBlogsSearch}
-            />
+            <div className="blog-media-grid" style={{ marginTop: "40px" }}>
+              {this.state.blogModeInstagram ? (
+                <>
+                  {this.state.renderedBlogs.map((post) => {
+                    return (
+                      <>
+                        <Link
+                          style={{
+                            textDecoration: "none",
+                            color: "black",
+                          }}
+                          id={post.id}
+                          to={"/blog/" + post.id}
+                        >
+                          <div
+                            className="instagramPost"
+                            id={post.category + "Button"}
+                          >
+                            <img src={post.img}></img>
+                          </div>
+                        </Link>
+                      </>
+                    );
+                  })}
+                </>
+              ) : (
+                <>
+                  {" "}
+                  {this.state.renderedBlogs.map((entry) => {
+                    return (
+                      <Link
+                        style={{
+                          textDecoration: "none",
+                          color: "black",
+                        }}
+                        id={entry.id}
+                        to={"/blog/" + entry.id}
+                      >
+                        <div
+                          className="blogPost"
+                          // onClick={this.handleClick}
+
+                          id={entry.category + "Button"}
+                          onMouseOver={this.handleHover}
+                        >
+                          {entry.title}
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </>
+              )}
+            </div>
           </p>
+        </div>
+        <div className="dashboard" style={{ marginTop: "-28px" }}>
+          <p
+            className="questionTitleInner"
+            id="questionTitle"
+            style={{ fontSize: "18px", lineHeight: "2rem" }}
+          ></p>
         </div>
       </>
     );

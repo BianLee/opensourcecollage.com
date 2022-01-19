@@ -24,6 +24,7 @@ import axios from "axios";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import instagram from "./data/instagram.json";
 
 // import ReactMarkdown from "react-markdown";
 import {
@@ -55,6 +56,9 @@ class App extends Component {
     this.handleLogin = this.handleLogin.bind(this);
     this.gotoOrgs = this.gotoOrgs.bind(this);
     this.gotoBlog = this.gotoBlog.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+    this.handleNormalView = this.handleNormalView.bind(this);
+    this.handleCompactView = this.handleCompactView.bind(this);
     this.state = {
       questionNum: 0,
       isEnd: false,
@@ -96,6 +100,7 @@ class App extends Component {
       startQuiz: false,
       blogSearch: "",
       moveOn: true,
+      blogModeInstagram: true,
     };
   }
 
@@ -111,6 +116,9 @@ class App extends Component {
     "Computer Networking",
   ];
   */ z;
+  handleCat(e) {
+    console.log("hello world");
+  }
 
   componentDidMount = () => {
     axios
@@ -325,6 +333,11 @@ class App extends Component {
         selectedOrg: e.target.parentNode.id,
       });
     }
+  }
+
+  handleHover(e) {
+    console.log("hovering over a blog post");
+    console.log(e.target.parentNode.id);
   }
 
   handleClick(e) {
@@ -580,6 +593,17 @@ class App extends Component {
   }
   handleLogin(e) {
     this.props.history.push("/login");
+  }
+
+  handleNormalView(e) {
+    this.setState({
+      blogModeInstagram: true,
+    });
+  }
+  handleCompactView(e) {
+    this.setState({
+      blogModeInstagram: false,
+    });
   }
 
   render() {
@@ -1247,34 +1271,62 @@ class App extends Component {
                   >
                     Relatable & inspiring
                   </span>{" "}
-                  stories for high school students, by high school students
+                  stories for high school students, from high school students
                 </center>
                 <br />
 
                 <div className="blog-media-grid">
-                  <>
-                    {" "}
-                    {this.state.renderedBlogs.slice(0, 6).map((entry) => {
-                      return (
-                        <Link
-                          style={{
-                            textDecoration: "none",
-                            color: "black",
-                          }}
-                          id={entry.id}
-                          to={"/blog/" + entry.id}
-                        >
-                          <div
-                            className="blogPost"
-                            // onClick={this.handleClick}
-                            id={entry.category + "Button"}
+                  {this.state.blogModeInstagram ? (
+                    <>
+                      {instagram.slice(0, 3).map((post) => {
+                        return (
+                          <>
+                            <Link
+                              style={{
+                                textDecoration: "none",
+                                color: "black",
+                              }}
+                              id={post.id}
+                              to={"/blog/" + post.id}
+                            >
+                              <div
+                                className="instagramPost"
+                                id={post.category + "Button"}
+                              >
+                                <img src={post.img}></img>
+                              </div>
+                            </Link>
+                          </>
+                        );
+                      })}
+                    </>
+                  ) : (
+                    <>
+                      {" "}
+                      {this.state.renderedBlogs.slice(0, 6).map((entry) => {
+                        return (
+                          <Link
+                            style={{
+                              textDecoration: "none",
+                              color: "black",
+                            }}
+                            id={entry.id}
+                            to={"/blog/" + entry.id}
                           >
-                            {entry.title}
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </>
+                            <div
+                              className="blogPost"
+                              // onClick={this.handleClick}
+
+                              id={entry.category + "Button"}
+                              onMouseOver={this.handleHover}
+                            >
+                              {entry.title}
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </>
+                  )}
                 </div>
               </p>
             </div>
@@ -1319,6 +1371,53 @@ class App extends Component {
                 id="questionTitle"
                 style={{ fontSize: "18px", lineHeight: "2rem" }}
               >
+                <input
+                  style={{
+                    flexShrink: "0",
+                    padding: "0.2rem",
+                    marginLeft: "20px",
+                    display: "inline-block",
+                  }}
+                  type="radio"
+                  name="subject"
+                  onClick={this.handleNormalView}
+                  id="normal"
+                  defaultChecked={this.state.blogModeInstagram}
+                />{" "}
+                <label
+                  style={{
+                    fontFamily: "Source Sans Pro",
+                    fontSize: "17px",
+                    display: "inline-block",
+                    marginTop: "5px",
+                  }}
+                  for="normal"
+                >
+                  Normal
+                </label>
+                <input
+                  style={{
+                    flexShrink: "0",
+                    padding: "0.2rem",
+                    marginLeft: "20px",
+                    display: "inline-block",
+                  }}
+                  type="radio"
+                  name="subject"
+                  onClick={this.handleCompactView}
+                  id="compact"
+                />{" "}
+                <label
+                  style={{
+                    fontFamily: "Source Sans Pro",
+                    fontSize: "17px",
+                    display: "inline-block",
+                    marginTop: "5px",
+                  }}
+                  for="compact"
+                >
+                  Compact
+                </label>
                 <span
                   onClick={this.gotoBlog}
                   style={{

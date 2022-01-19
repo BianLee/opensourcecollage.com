@@ -7,50 +7,50 @@
   },
   {
     "id": 8,
-    "title": "Life After High School: Austin’s Student Life at Yale!",
     "img": "images/blog/8.png",
+    "title": "Life After High School: Austin’s Student Life at Yale!",
     "category": "Interview"
   },
   {
     "id": 7,
-    "title": "The Starcoder: Talking Tech with Melody, a brilliant young programmer & non-profit founder",
     "img": "images/blog/7.png",
+    "title": "The Starcoder: Talking Tech with Melody, a brilliant young programmer & non-profit founder",
     "category": "Interview"
   },
   {
     "id": 6,
-    "title": "TheCodingWizard: Nathan’s Rise to Becoming One of the Best Programmers and Problem Solvers of Our Generation",
     "img": "images/blog/6.png",
+    "title": "TheCodingWizard: Nathan’s Rise to Becoming One of the Best Programmers and Problem Solvers of Our Generation",
     "category": "Interview"
   },
   {
     "id": 5,
-    "title": "Is Dual Enrollment Worth it? Ranking and Evaluating Every Community College Class I Took So Far",
     "img": "images/blog/5.png",
+    "title": "Is Dual Enrollment Worth it? Ranking and Evaluating Every Community College Class I Took So Far",
     "category": "School"
   },
   {
     "id": 4,
-    "title": "Ellen Xu: A Driven, Optimistic Innovator With Unique Approach to Today's Technology and Research",
     "img": "images/blog/4.png",
+    "title": "Ellen Xu: A Driven, Optimistic Innovator With Unique Approach to Today's Technology and Research",
     "category": "Interview"
   },
   {
     "id": 3,
-    "title": "The Single Best Decision I Made in High School",
     "img": "images/blog/3.png",
+    "title": "The Single Best Decision I Made in High School",
     "category": "School"
   },
   {
     "id": 2,
-    "title": "From Cloud Computing to Audio Engineering: Tao's Venture in the World of Business and Technology",
     "img": "images/blog/2.png",
+    "title": "From Cloud Computing to Audio Engineering: Tao's Venture in the World of Business and Technology",
     "category": "Interview"
   },
   {
     "id": 1,
-    "title": "The Development Journey of Open Source Collage",
     "img": "images/blog/1.png",
+    "title": "The Development Journey of Open Source Collage",
     "category": "News"
   }
 ]
