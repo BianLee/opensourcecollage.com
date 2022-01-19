@@ -1,3 +1,5 @@
+// remove.js
+
 const { MongoClient, Double } = require("mongodb");
 const prompt = require("prompt-sync")({ sigint: true });
 const password = prompt.hide("MongoDB Password: ");
@@ -19,7 +21,8 @@ async function main() {
     const database = client.db("cluster0");
 
     const posts = database.collection("posts");
-    posts.deleteMany({});
+
+    const result = await posts.deleteMany({});
     // posts.deleteMany({});
     /* 
     const query = { title: "Join Bumper Ambassador Program!" };
@@ -31,50 +34,7 @@ async function main() {
     }
     */
 
-    const docs = [
-      {
-        title: "Sample Opportunity #1",
-        link: "https://www.joinbumper.com/ambassadors",
-        colorcode: "engineering",
-        category: "Humanities",
-      },
-      {
-        title: "Sample Opportunity #2",
-        link: "https://interstem.us/",
-        colorcode: "math",
-        category: "Sciences",
-      },
-      {
-        title: "Sample Opportunity #3",
-        link: "https://interstem.us/",
-        colorcode: "biology",
-        category: "IT & Tech",
-      },
-      {
-        title: "Sample Opportunity #4",
-        link: "https://interstem.us/",
-        colorcode: "other",
-        category: "Art & Music",
-      },
-      {
-        title: "Sample Opportunity #5",
-        link: "https://interstem.us/",
-        colorcode: "physics",
-        category: "Math & CS",
-      },
-      {
-        title: "Sample Opportunity #6",
-        link: "https://interstem.us/",
-        colorcode: "music",
-        category: "Humanities",
-      },
-    ];
-
     // this option prevents additional documents from being inserted if one fails
-
-    const options = { ordered: true };
-
-    const result = await posts.insertMany(docs, options);
 
     // Make the appropriate DB calls
     // await listDatabases(client);
@@ -86,3 +46,4 @@ async function main() {
 }
 
 main().catch(console.error);
+
