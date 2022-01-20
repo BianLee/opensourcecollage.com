@@ -18,7 +18,7 @@ async function main() {
   try {
     // Connect to the MongoDB cluster
     await client.connect();
-    const database = client.db("cluster0");
+    const database = client.db("myFirstDatabase");
 
     const posts = database.collection("posts");
 
@@ -46,4 +46,3 @@ async function main() {
 }
 
 main().catch(console.error);
-

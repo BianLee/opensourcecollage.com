@@ -18,7 +18,7 @@ async function main() {
   try {
     // Connect to the MongoDB cluster
     await client.connect();
-    const database = client.db("cluster0");
+    const database = client.db("myFirstDatabase");
 
     const posts = database.collection("posts");
 
@@ -35,76 +35,28 @@ async function main() {
     */
     const docs = [
       {
-        title: "Sample Opportunity #1",
+        title: "Join Bumper Ambassador Program",
         link: "https://www.joinbumper.com/ambassadors",
         colorcode: "engineering",
         category: "Humanities",
       },
       {
-        title: "Sample Opportunity #2",
+        title: "InterSTEM non-profit",
         link: "https://interstem.us/",
         colorcode: "math",
         category: "Sciences",
       },
       {
-        title: "Sample Opportunity #3",
-        link: "https://interstem.us/",
-        colorcode: "biology",
-        category: "IT & Tech",
-      },
-      {
-        title: "Sample Opportunity #4",
-        link: "https://interstem.us/",
-        colorcode: "other",
-        category: "Art & Music",
-      },
-      {
-        title: "Sample Opportunity #5",
-        link: "https://interstem.us/",
-        colorcode: "physics",
-        category: "Math & CS",
-      },
-      {
-        title: "Sample Opportunity #6",
-        link: "https://interstem.us/",
-        colorcode: "music",
-        category: "Humanities",
-      },
-      {
-        title: "Sample Opportunity #7",
-        link: "https://www.joinbumper.com/ambassadors",
+        title: "Become a tutor at Interverse!",
+        link: "https://interversemedia.org/",
         colorcode: "engineering",
         category: "Humanities",
       },
       {
-        title: "Sample Opportunity #8",
-        link: "https://interstem.us/",
-        colorcode: "math",
-        category: "Sciences",
-      },
-      {
-        title: "Sample Opportunity #9",
-        link: "https://interstem.us/",
+        title: "Open-source dev @ OSC",
+        link: "https://github.com/BianLee/opensourcecollage.com",
         colorcode: "biology",
         category: "IT & Tech",
-      },
-      {
-        title: "Sample Opportunity #10",
-        link: "https://interstem.us/",
-        colorcode: "other",
-        category: "Art & Music",
-      },
-      {
-        title: "Sample Opportunity #11",
-        link: "https://interstem.us/",
-        colorcode: "physics",
-        category: "Math & CS",
-      },
-      {
-        title: "Sample Opportunity #12",
-        link: "https://interstem.us/",
-        colorcode: "music",
-        category: "Humanities",
       },
     ];
 
@@ -124,4 +76,3 @@ async function main() {
 }
 
 main().catch(console.error);
-
