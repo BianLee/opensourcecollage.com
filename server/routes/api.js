@@ -1,6 +1,7 @@
 // http://localhost:5000/api/
 
 const express = require("express");
+const JsonPost = require("../models/jsonpost");
 const router = express.Router();
 const Post = require("../models/post");
 
@@ -8,6 +9,12 @@ const Post = require("../models/post");
 router.route("/getPost").get((req, res) => {
   Post.find()
     .then((posts) => res.json(posts))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/getJsonPost").get((req, res) => {
+  JsonPost.find()
+    .then((jsonposts) => res.json(jsonposts))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
@@ -26,6 +33,23 @@ router.route("/postPost").post((req, res) => {
   newPost
     .save()
     .then(() => res.json("Post posted!"))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
+router.route("/postJsonPost").post((req, res) => {
+  const title = req.body.title;
+  const choices = req.body.choices;
+  const correct = req.body.correct;
+  const solution = req.body.solution;
+  const newJsonPost = new JsonPost({
+    title,
+    choices,
+    correct,
+    solution,
+  });
+  newJsonPost
+    .save()
+    .then(() => res.json("JsonPost posted!"))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 

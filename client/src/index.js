@@ -14,6 +14,7 @@ import blog7 from "./blog/7.md";
 import blog8 from "./blog/8.md";
 import blog9 from "./blog/9.md";
 import Quiz from "./Quiz";
+import JSON from "./JSON";
 import LifeSciences from "./notes/LifeSciences.pdf";
 import Organizations from "./Organizations";
 import {
@@ -36,6 +37,7 @@ ReactDOM.render(
     <Route exact path="/login" component={Login} />
     <Route exact path="/organizations" component={Organizations} />
     <Route exact path="/blog" component={BlogPosts} />
+    <Route exact path="/json" component={JSON} />
     <Route
       exact
       path="/blog/1"
