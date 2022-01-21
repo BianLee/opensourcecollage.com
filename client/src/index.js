@@ -4,6 +4,9 @@ import App from "./App";
 import BlogPosts from "./BlogPosts";
 import Blog from "./Blog";
 import Login from "./Login";
+
+import One from "./blogs/blog1";
+
 import blog1 from "./blog/1.md";
 import blog2 from "./blog/2.md";
 import blog3 from "./blog/3.md";
@@ -46,7 +49,7 @@ ReactDOM.render(
           {...props}
           propRender={blog1}
           page="1"
-          title="The Development Journey of Open Source Collage"
+          title="From Cloud Computing to Audio Engineering: Tao's Ventures in the World of Business and Technology"
           isAuthed={true}
         />
       )}

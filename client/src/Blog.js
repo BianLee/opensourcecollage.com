@@ -1,10 +1,7 @@
 import React from "react";
 import "./style.css";
 import style from "./markdown-styles.module.css";
-import blog1 from "./blog/1.md";
-import blog2 from "./blog/2.md";
-import blog3 from "./blog/3.md";
-import blog4 from "./blog/4.md";
+
 import blogundefined from "./blog/undefined.md";
 import ReactMarkdown from "react-markdown";
 // import blog from "./data/blog.json";
@@ -19,6 +16,16 @@ import matter from "gray-matter";
 import { withRouter } from "react-router-dom";
 import MetaTags from "react-meta-tags";
 import { Helmet } from "react-helmet";
+
+import One from "./blogs/blog1";
+import Two from "./blogs/blog2";
+import Three from "./blogs/blog3";
+import Four from "./blogs/blog4";
+import Five from "./blogs/blog5";
+import Six from "./blogs/blog6";
+import Seven from "./blogs/blog7";
+import Eight from "./blogs/blog8";
+import Nine from "./blogs/blog9";
 
 import {
   BrowserRouter as Router,
@@ -42,10 +49,12 @@ export default class Blog extends React.Component {
       markdown: "",
       d: props.propRender,
     };
+
     this.goHome = this.goHome.bind(this);
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     fetch(this.state.d)
       .then((response) => {
         return response.text();
@@ -66,6 +75,26 @@ export default class Blog extends React.Component {
 
   render() {
     const { markdown } = this.state;
+    let blogToRender;
+    if (this.state.id == "1") {
+      blogToRender = <One />;
+    } else if (this.state.id == "2") {
+      blogToRender = <Two />;
+    } else if (this.state.id == "3") {
+      blogToRender = <Three />;
+    } else if (this.state.id == "4") {
+      blogToRender = <Four />;
+    } else if (this.state.id == "5") {
+      blogToRender = <Five />;
+    } else if (this.state.id == "6") {
+      blogToRender = <Six />;
+    } else if (this.state.id == "7") {
+      blogToRender = <Seven />;
+    } else if (this.state.id == "8") {
+      blogToRender = <Eight />;
+    } else if (this.state.id == "9") {
+      blogToRender = <Nine />;
+    }
 
     const disqusShortname = "opensourcecollage";
     const disqusConfig = {
@@ -122,10 +151,7 @@ export default class Blog extends React.Component {
                  */}
               </p>
 
-              <div
-                className={style.reactMarkDown}
-                dangerouslySetInnerHTML={{ __html: markdown }}
-              ></div>
+              <div className={style.reactMarkDown}>{blogToRender}</div>
 
               <br />
               <br />
