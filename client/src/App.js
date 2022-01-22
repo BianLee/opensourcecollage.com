@@ -905,6 +905,30 @@ class App extends Component {
                         })}
                     </>
                   )}
+                  <Link
+                    to="/login"
+                    target="_blank"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                      display: "inline-block",
+                    }}
+                  >
+                    <center>
+                      <div
+                        style={{
+                          wordWrap: "break-word",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "35px",
+                        }}
+                        className="oppPost"
+                      >
+                        +
+                      </div>
+                    </center>
+                  </Link>
                 </div>
                 <center style={{ marginTop: "40px" }}>
                   <span
