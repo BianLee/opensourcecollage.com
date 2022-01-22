@@ -15,6 +15,7 @@ import {
 
 export default class BlogPosts extends React.Component {
   constructor() {
+    window.scrollTo(0, 0);
     super();
     this.handleBlogCat = this.handleBlogCat.bind(this);
     this.handleBlogsSearch = this.handleBlogsSearch.bind(this);
