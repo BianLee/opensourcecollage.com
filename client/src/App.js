@@ -1443,6 +1443,7 @@ class App extends Component {
                   Compact
                 </label>
                 <span
+                  className="gotoBlogButton"
                   onClick={this.gotoBlog}
                   style={{
                     float: "right",
@@ -1460,6 +1461,8 @@ class App extends Component {
                 </span>
               </p>
             </div>
+            <br />
+            <br />
             {/* id="socialSection" */}
             <div className="dashboard" style={{ width: "100%" }}>
               <p

@@ -50,7 +50,7 @@ export default class Blog extends React.Component {
       d: props.propRender,
     };
 
-    this.goHome = this.goHome.bind(this);
+    this.goToBlog = this.goToBlog.bind(this);
   }
 
   componentDidMount() {
@@ -68,9 +68,9 @@ export default class Blog extends React.Component {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
 
-  goHome(e) {
+  goToBlog(e) {
     console.log("hello");
-    this.props.history.push("/");
+    this.props.history.push("/blog");
   }
 
   render() {
@@ -126,9 +126,9 @@ export default class Blog extends React.Component {
                     lineHeight: "2rem",
                     cursor: "pointer",
                   }}
-                  onClick={this.goHome}
+                  onClick={this.goToBlog}
                 >
-                  ← Return Home
+                  ← Return to blog
                 </span>
                 {/*
                 <span

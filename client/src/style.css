@@ -265,6 +265,10 @@ hr {
 }
 
 @media only screen and (max-width: 600px) {
+  .gotoBlogButton {
+    margin-top: 20px;
+  }
+
   .jsonBox {
     width: 100% !important;
   }
