@@ -1302,7 +1302,7 @@ class App extends Component {
                 <div className="blog-media-grid">
                   {this.state.blogModeInstagram ? (
                     <>
-                      {instagram.slice(0, 3).map((post) => {
+                      {blog.slice(0, 3).map((post) => {
                         return (
                           <>
                             <Link

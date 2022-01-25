@@ -16,6 +16,7 @@ import blog6 from "./blog/6.md";
 import blog7 from "./blog/7.md";
 import blog8 from "./blog/8.md";
 import blog9 from "./blog/9.md";
+import blog10 from "./blog/10.md";
 import Quiz from "./Quiz";
 import JSON from "./JSON";
 import LifeSciences from "./notes/LifeSciences.pdf";
@@ -154,6 +155,19 @@ ReactDOM.render(
           propRender={blog9}
           page="9"
           title="Life Updates from 12 High School Alumni (Current College Students)!"
+          isAuthed={true}
+        />
+      )}
+    />
+    <Route
+      exact
+      path="/blog/10"
+      render={(props) => (
+        <Blog
+          {...props}
+          propRender={blog10}
+          page="10"
+          title="Advantages of Sports Participation Throughout High School "
           isAuthed={true}
         />
       )}

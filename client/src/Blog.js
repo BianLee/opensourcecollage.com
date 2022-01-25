@@ -26,6 +26,7 @@ import Six from "./blogs/blog6";
 import Seven from "./blogs/blog7";
 import Eight from "./blogs/blog8";
 import Nine from "./blogs/blog9";
+import Ten from "./blogs/blog10";
 
 import {
   BrowserRouter as Router,
@@ -94,6 +95,8 @@ export default class Blog extends React.Component {
       blogToRender = <Eight />;
     } else if (this.state.id == "9") {
       blogToRender = <Nine />;
+    } else if (this.state.id == "10") {
+      blogToRender = <Ten />;
     }
 
     const disqusShortname = "opensourcecollage";
