@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import blog from "./data/blog.json";
 import instagram from "./data/instagram.json";
 import "./style.css";
@@ -264,12 +264,21 @@ export default class BlogPosts extends React.Component {
                           id={post.id}
                           to={"/blog/" + post.id}
                         >
-                          <div
-                            className="instagramPost"
-                            id={post.category + "Button"}
+                          <Suspense
+                            fallback={
+                              <div
+                                className="instagramPost"
+                                id={post.category + "Button"}
+                              ></div>
+                            }
                           >
-                            <img src={post.img}></img>
-                          </div>
+                            <div
+                              className="instagramPost"
+                              id={post.category + "Button"}
+                            >
+                              <img src={post.img}></img>
+                            </div>
+                          </Suspense>
                         </Link>
                       </>
                     );
