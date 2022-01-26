@@ -1,5 +1,6 @@
 import { everyLimit } from "async";
 import React, { Component, Suspense } from "react";
+import LazyLoad from "react-lazyload";
 import subjects from "./data/subjects.json";
 import Astronomy from "./data/astronomy.json";
 import Biology from "./data/bio.json";
@@ -740,6 +741,9 @@ class App extends Component {
                         key={sub.id}
                         className="noteButton"
                         id={sub.colorcode}
+                        style={{
+                          color: "black",
+                        }}
                       >
                         {sub.title}
                       </button>
@@ -1313,12 +1317,12 @@ class App extends Component {
                               id={post.id}
                               to={"/blog/" + post.id}
                             >
-                              <div
+                              <LazyLoad
                                 className="instagramPost"
                                 id={post.category + "Button"}
                               >
                                 <img src={post.img}></img>
-                              </div>
+                              </LazyLoad>
                             </Link>
                           </>
                         );

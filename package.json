@@ -2,6 +2,7 @@
   "dependencies": {
     "mongodb": "^4.3.0",
     "prompt-sync": "^4.2.0",
+    "react-lazyload": "^3.2.0",
     "react-meta-tags": "^1.0.1"
   }
 }
