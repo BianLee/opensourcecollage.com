@@ -13,6 +13,8 @@ import {
   useHistory,
 } from "react-router-dom";
 
+const Pic1 = React.lazy(() => import("./lazyload/One"));
+
 export default class BlogPosts extends React.Component {
   constructor() {
     window.scrollTo(0, 0);
@@ -267,17 +269,17 @@ export default class BlogPosts extends React.Component {
                           <Suspense
                             fallback={
                               <div
-                                className="instagramPost"
-                                id={post.category + "Button"}
+                                style={{
+                                  width: "500px",
+                                  height: "380px",
+                                  display: "block",
+                                  backgroundColor: "gray",
+                                  border: "black",
+                                }}
                               ></div>
                             }
                           >
-                            <div
-                              className="instagramPost"
-                              id={post.category + "Button"}
-                            >
-                              <img src={post.img}></img>
-                            </div>
+                            <Pic1 />
                           </Suspense>
                         </Link>
                       </>
