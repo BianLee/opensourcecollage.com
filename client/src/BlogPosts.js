@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import blog from "./data/blog.json";
 import instagram from "./data/instagram.json";
 import "./style.css";
@@ -12,8 +12,6 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
-
-const Pic1 = React.lazy(() => import("./lazyload/One"));
 
 export default class BlogPosts extends React.Component {
   constructor() {
@@ -266,21 +264,12 @@ export default class BlogPosts extends React.Component {
                           id={post.id}
                           to={"/blog/" + post.id}
                         >
-                          <Suspense
-                            fallback={
-                              <div
-                                style={{
-                                  width: "500px",
-                                  height: "380px",
-                                  display: "block",
-                                  backgroundColor: "gray",
-                                  border: "black",
-                                }}
-                              ></div>
-                            }
+                          <div
+                            className="instagramPost"
+                            id={post.category + "Button"}
                           >
-                            <Pic1 />
-                          </Suspense>
+                            <img src={post.img}></img>
+                          </div>
                         </Link>
                       </>
                     );
